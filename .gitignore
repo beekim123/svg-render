@@ -1,0 +1,12 @@
+# 生成物
+out/
+build/
+dist/
+
+# 依赖和缓存
+node_modules/
+.cache/
+
+# 系统
+.DS_Store
+*.log
