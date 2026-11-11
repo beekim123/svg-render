@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-card_art_potion" viewBox="0 0 176 188" width="176" height="188">
+<title>额外牌原画 · 药水</title>
+<style>
+.svg-card_art_potion g { transform-box: view-box; }
+.svg-card_art_potion #root { transform-origin: 96px 112px; }
+.svg-card_art_potion #bottle_unit { transform-origin: 96px 124px; }
+.svg-card_art_potion #ruby_liquid { transform-origin: 96px 136px; }
+.svg-card_art_potion #cork { transform-origin: 96px 52px; }
+.svg-card_art_potion #wood_tag { transform-origin: 114px 74px; }
+.svg-card_art_potion #heart_light { transform-origin: 96px 56px; opacity: 0; }
+
+/* 待机 idle（3000ms 循环）：0ms(0%) -> 1500ms(50%) -> 3000ms(100%)
+   液面轻轻晃，木牌微摆 */
+@keyframes svg-card_art_potion-idle-liquid {
+  0% { transform: rotate(0deg) scale(1, 1); }
+  50% { transform: rotate(-4deg) scale(1.02, 0.98); }
+  100% { transform: rotate(0deg) scale(1, 1); }
+}
+@keyframes svg-card_art_potion-idle-tag {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+.svg-card_art_potion:not([data-anim]) #ruby_liquid,
+.svg-card_art_potion[data-anim="idle"] #ruby_liquid {
+  animation: svg-card_art_potion-idle-liquid 3s ease-in-out infinite;
+}
+.svg-card_art_potion:not([data-anim]) #wood_tag,
+.svg-card_art_potion[data-anim="idle"] #wood_tag {
+  animation: svg-card_art_potion-idle-tag 3s ease-in-out infinite;
+}
+
+/* play（600ms）：
+   0ms(0%) 静止 -> 100ms(16.6667%) 塞子“啵”地弹起来 -> 250ms(41.6667%) 一颗红色心形的光从瓶口冒出来往上飘，液面降到瓶底
+   -> 400ms(66.6667%) 心形淡出 -> 600ms(100%) 回到满瓶。
+   所有部件严格共用：0%, 16.6667%, 41.6667%, 66.6667%, 100% */
+@keyframes svg-card_art_potion-play-bottle {
+  0% { transform: translate(0px, 0px) scale(1, 1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { transform: translate(0px, 5px) scale(1.05, 0.94); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.6667% { transform: translate(0px, -3px) scale(0.98, 1.03); animation-timing-function: linear; }
+  66.6667% { transform: translate(0px, -2px) scale(0.99, 1.01); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px, 0px) scale(1, 1); }
+}
+@keyframes svg-card_art_potion-play-cork {
+  0% { transform: translate(0px, 0px) rotate(0deg); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { transform: translate(-22px, -24px) rotate(-28deg); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.6667% { transform: translate(-30px, -28px) rotate(-38deg); animation-timing-function: linear; }
+  66.6667% { transform: translate(-26px, -22px) rotate(-25deg); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+@keyframes svg-card_art_potion-play-liquid {
+  0% { transform: translate(0px, 0px) scale(1, 1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { transform: translate(0px, 4px) scale(0.96, 0.85); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.6667% { transform: translate(0px, 18px) scale(0.72, 0.25); animation-timing-function: linear; }
+  66.6667% { transform: translate(0px, 18px) scale(0.72, 0.25); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px, 0px) scale(1, 1); }
+}
+@keyframes svg-card_art_potion-play-tag {
+  0% { transform: rotate(0deg); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { transform: rotate(16deg); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.6667% { transform: rotate(-10deg); animation-timing-function: linear; }
+  66.6667% { transform: rotate(-8deg); animation-timing-function: ease-in-out; }
+  100% { transform: rotate(0deg); }
+}
+@keyframes svg-card_art_potion-play-heart {
+  0% { opacity: 0; transform: translate(0px, 14px) scale(0.45); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { opacity: 0.85; transform: translate(0px, -2px) scale(0.85); animation-timing-function: cubic-bezier(.34,1.56,.64,1); }
+  41.6667% { opacity: 1; transform: translate(0px, -22px) scale(1.12); animation-timing-function: linear; }
+  66.6667% { opacity: 0.18; transform: translate(0px, -28px) scale(1.18); animation-timing-function: linear; }
+  100% { opacity: 0; transform: translate(0px, 14px) scale(0.45); }
+}
+.svg-card_art_potion[data-anim="play"] #bottle_unit {
+  animation: svg-card_art_potion-play-bottle 0.6s both;
+}
+.svg-card_art_potion[data-anim="play"] #cork {
+  animation: svg-card_art_potion-play-cork 0.6s both;
+}
+.svg-card_art_potion[data-anim="play"] #ruby_liquid {
+  animation: svg-card_art_potion-play-liquid 0.6s both;
+}
+.svg-card_art_potion[data-anim="play"] #wood_tag {
+  animation: svg-card_art_potion-play-tag 0.6s both;
+}
+.svg-card_art_potion[data-anim="play"] #heart_light {
+  animation: svg-card_art_potion-play-heart 0.6s both;
+}
+</style>
+<g id="root">
+  <!-- 左上角 x:0..30, y:0..90 留空 -->
+  <ellipse cx="96" cy="168" rx="46" ry="8" fill="#0D111C" opacity="0.6"/>
+
+  <!-- 1. 圆肚旧玻璃药瓶本体 bottle_unit -->
+  <g id="bottle_unit">
+    <!-- 玻璃瓶底衬（冷灰蓝暗玻璃 #161221 + #1E2C33） -->
+    <path d="M82,58 H110 V76 C132,84 144,104 142,128 C140,152 122,166 96,166 C70,166 52,152 50,128 C48,104 60,84 82,76 Z" fill="#161221" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+
+    <!-- 瓶内鲜艳红宝石色液体 ruby_liquid（唯一鲜艳处：#E3263A + #FF5C6E + #9E1424） -->
+    <g id="ruby_liquid">
+      <path d="M56,112 Q76,106 96,111 Q116,116 136,110 C138,136 122,160 96,160 C70,160 54,138 56,112 Z" fill="#E3263A" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round"/>
+      <!-- 右下背光深红宝石暗部 -->
+      <path d="M96,111 Q116,116 136,110 C138,136 122,160 96,160 Z" fill="#9E1424" opacity="0.82"/>
+      <!-- 液面亮红宝石椭圆波光与晶面高光 -->
+      <ellipse cx="96" cy="112" rx="39" ry="6.5" fill="#FF5C6E" stroke="#1C1412" stroke-width="2"/>
+      <polygon points="66,124 76,120 74,136 64,134" fill="#FF5C6E" opacity="0.85"/>
+      <circle cx="84" cy="142" r="3" fill="#FF5C6E" opacity="0.8"/>
+      <circle cx="106" cy="130" r="2.2" fill="#FFFFFF" opacity="0.85"/>
+    </g>
+
+    <!-- 玻璃瓶身左侧冷受光弧线与瓶口厚玻璃唇边 -->
+    <path d="M60,124 C58,106 66,90 82,82" fill="none" stroke="#8CAAB5" stroke-width="2.6" stroke-linecap="round" opacity="0.85"/>
+    <path d="M132,126 C134,142 122,154 106,158" fill="none" stroke="#5A7682" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+    <rect x="78" y="54" width="36" height="9" rx="3" fill="#5A7682" stroke="#1C1412" stroke-width="2.8"/>
+    <line x1="82" y1="57" x2="108" y2="57" stroke="#E2D6BA" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- 瓶颈麻绳圈 -->
+    <rect x="80" y="68" width="32" height="6" rx="2" fill="#9A8968" stroke="#1C1412" stroke-width="2.2"/>
+
+    <!-- 瓶颈挂着的小木牌 wood_tag（不写任何字） -->
+    <g id="wood_tag">
+      <line x1="112" y1="72" x2="132" y2="82" stroke="#1C1412" stroke-width="3"/>
+      <polygon points="126,80 152,76 158,104 132,108" fill="#704122" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+      <polygon points="139,78 152,76 158,104 145,106" fill="#3D2212" opacity="0.8"/>
+      <line x1="130" y1="83" x2="148" y2="80" stroke="#C48A5C" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="132" cy="84" r="2.2" fill="#9A7B46" stroke="#1C1412" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <!-- 2. 软木塞 cork -->
+  <g id="cork">
+    <polygon points="82,38 110,38 106,56 86,56" fill="#9A8968" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <polygon points="96,38 110,38 106,56 96,56" fill="#704122" opacity="0.78"/>
+    <line x1="86" y1="42" x2="104" y2="42" stroke="#E2D6BA" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M90,46 V52 M101,45 V51" stroke="#1C1412" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- 3. play 时从瓶口冒出来往上飘的红色心形光 heart_light（多切面红宝石心 + 亮白星芒） -->
+  <g id="heart_light">
+    <path d="M96,46 L87,38 L77,42 L74,52 L79,62 L96,76 L113,62 L118,52 L115,42 L105,38 Z" fill="#E3263A" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <polygon points="96,46 87,38 77,42 74,52 86,55 96,50" fill="#FF5C6E"/>
+    <polygon points="96,46 105,38 115,42 118,52 113,62 96,76 96,50" fill="#9E1424" opacity="0.8"/>
+    <polygon points="83,45 90,43 88,50 82,49" fill="#FFFFFF" opacity="0.95"/>
+    <!-- 伴随心形光上升的红宝石星芒碎光 -->
+    <polygon points="68,48 71,53 76,56 71,59 68,64 65,59 60,56 65,53" fill="#FF5C6E" stroke="#1C1412" stroke-width="1.2"/>
+    <polygon points="124,44 127,49 132,52 127,55 124,60 121,55 116,52 121,49" fill="#FF5C6E" stroke="#1C1412" stroke-width="1.2"/>
+  </g>
+</g>
+</svg>

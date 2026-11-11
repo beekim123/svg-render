@@ -1,0 +1,507 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <style>
+    svg.act-explode #explosion_smoke_ring {
+      animation: smokeExpandCss 1s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
+    }
+    svg.act-explode #explosion_core_group {
+      animation: coreFlashCss 1s ease-out 1 forwards;
+    }
+    @keyframes smokeExpandCss {
+      0% { transform: scale(0.35); opacity: 0.95; }
+      70% { transform: scale(1.22); opacity: 0.75; }
+      100% { transform: scale(1.48); opacity: 0.15; }
+    }
+    @keyframes coreFlashCss {
+      0% { transform: scale(0.4); filter: brightness(1.8); }
+      35% { transform: scale(1.12); filter: brightness(1.2); }
+      100% { transform: scale(1.32); filter: brightness(0.6); opacity: 0.25; }
+    }
+  </style>
+  <defs>
+    <radialGradient id="exp_core_grad" cx="0.5" cy="0.5" r="0.5" fx="0.44" fy="0.44">
+      <stop offset="0%" stop-color="#ffffff">
+        <animate id="exp_c0" attributeName="stop-color" values="#ffffff;#fff3b0;#ff6b00;#590d22" keyTimes="0;0.25;0.65;1" dur="1s" begin="indefinite" fill="freeze"/>
+      </stop>
+      <stop offset="35%" stop-color="#ffbe0b">
+        <animate id="exp_c1" attributeName="stop-color" values="#ffffff;#ff9f1c;#e85d04;#370617" keyTimes="0;0.25;0.65;1" dur="1s" begin="indefinite" fill="freeze"/>
+      </stop>
+      <stop offset="72%" stop-color="#fb5607">
+        <animate id="exp_c2" attributeName="stop-color" values="#ffbe0b;#d00000;#6a040f;#1b0308" keyTimes="0;0.25;0.65;1" dur="1s" begin="indefinite" fill="freeze"/>
+      </stop>
+      <stop offset="100%" stop-color="#370617" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="exp_shockwave_grad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffbe0b" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#ff5400" stop-opacity="0.65"/>
+      <stop offset="88%" stop-color="#ffffff" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#ff0055" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="smoke_puff_grad" cx="0.4" cy="0.4" r="0.55">
+      <stop offset="0%" stop-color="#5c2c2c" stop-opacity="0.88"/>
+      <stop offset="55%" stop-color="#2b1418" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="#0d0609" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Fireball Blur Filter with animated stdDeviation (1s one-shot) -->
+    <filter id="exp_fire_blur" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur_out">
+        <animate id="exp_blur_anim" attributeName="stdDeviation" values="1.5;6.5;18.0;11.0" keyTimes="0;0.3;0.75;1" dur="1s" begin="indefinite" fill="freeze"/>
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur_out"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Smoke Edge Filter using feMorphology (dilate/erode) + blur -->
+    <filter id="smoke_morphology_filter" x="-30%" y="-30%" width="160%" height="160%">
+      <feMorphology in="SourceGraphic" operator="dilate" radius="4.5" result="dilated_smoke">
+        <animate id="exp_morph_anim" attributeName="radius" values="2;7.5;12" dur="1s" begin="indefinite" fill="freeze"/>
+      </feMorphology>
+      <feMorphology in="SourceGraphic" operator="erode" radius="2.0" result="eroded_smoke"/>
+      <feComposite in="dilated_smoke" in2="eroded_smoke" operator="out" result="smoke_rim"/>
+      <feGaussianBlur in="dilated_smoke" stdDeviation="5" result="soft_smoke"/>
+      <feMerge>
+        <feMergeNode in="soft_smoke"/>
+        <feMergeNode in="smoke_rim"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="explosion_root" style="mix-blend-mode: screen;">
+    <g id="explosion_smoke_ring" filter="url(#smoke_morphology_filter)" style="transform-origin: 256px 256px;">
+      <animateTransform id="smoke_expand_smil" attributeName="transform" type="scale" from="0.55" to="1.42" additive="sum" dur="1s" begin="indefinite" fill="freeze"/>
+      <circle cx="374.0" cy="256.0" r="36" fill="url(#smoke_puff_grad)"/>
+      <circle cx="364.1" cy="255.5" r="23.4" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="399.2" cy="284.5" r="45" fill="url(#smoke_puff_grad)"/>
+      <circle cx="387.3" cy="281.7" r="29.2" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="416.8" cy="322.6" r="54" fill="url(#smoke_puff_grad)"/>
+      <circle cx="403.4" cy="316.8" r="35.1" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="424.0" cy="368.2" r="63" fill="url(#smoke_puff_grad)"/>
+      <circle cx="410.0" cy="358.8" r="41.0" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="339.4" cy="339.4" r="72" fill="url(#smoke_puff_grad)"/>
+      <circle cx="332.3" cy="332.3" r="46.8" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="337.1" cy="377.4" r="36" fill="url(#smoke_puff_grad)"/>
+      <circle cx="330.1" cy="367.2" r="23.4" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="322.6" cy="416.8" r="45" fill="url(#smoke_puff_grad)"/>
+      <circle cx="316.8" cy="403.4" r="29.2" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="295.4" cy="454.1" r="54" fill="url(#smoke_puff_grad)"/>
+      <circle cx="291.8" cy="437.8" r="35.1" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="256.0" cy="374.0" r="63" fill="url(#smoke_puff_grad)"/>
+      <circle cx="255.5" cy="364.1" r="41.0" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="227.5" cy="399.2" r="72" fill="url(#smoke_puff_grad)"/>
+      <circle cx="229.3" cy="387.3" r="46.8" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="189.4" cy="416.8" r="36" fill="url(#smoke_puff_grad)"/>
+      <circle cx="194.3" cy="403.4" r="23.4" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="143.8" cy="424.0" r="45" fill="url(#smoke_puff_grad)"/>
+      <circle cx="152.3" cy="410.0" r="29.2" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="172.6" cy="339.4" r="54" fill="url(#smoke_puff_grad)"/>
+      <circle cx="178.8" cy="332.3" r="35.1" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="134.6" cy="337.1" r="63" fill="url(#smoke_puff_grad)"/>
+      <circle cx="143.8" cy="330.1" r="41.0" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="95.2" cy="322.6" r="72" fill="url(#smoke_puff_grad)"/>
+      <circle cx="107.6" cy="316.8" r="46.8" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="57.9" cy="295.4" r="36" fill="url(#smoke_puff_grad)"/>
+      <circle cx="73.3" cy="291.8" r="23.4" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="138.0" cy="256.0" r="45" fill="url(#smoke_puff_grad)"/>
+      <circle cx="147.0" cy="255.5" r="29.2" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="112.8" cy="227.5" r="54" fill="url(#smoke_puff_grad)"/>
+      <circle cx="123.8" cy="229.3" r="35.1" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="95.2" cy="189.4" r="63" fill="url(#smoke_puff_grad)"/>
+      <circle cx="107.6" cy="194.3" r="41.0" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="88.0" cy="143.8" r="72" fill="url(#smoke_puff_grad)"/>
+      <circle cx="101.0" cy="152.3" r="46.8" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="172.6" cy="172.6" r="36" fill="url(#smoke_puff_grad)"/>
+      <circle cx="178.8" cy="178.8" r="23.4" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="174.9" cy="134.6" r="45" fill="url(#smoke_puff_grad)"/>
+      <circle cx="180.9" cy="143.8" r="29.2" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="189.4" cy="95.2" r="54" fill="url(#smoke_puff_grad)"/>
+      <circle cx="194.3" cy="107.6" r="35.1" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="216.6" cy="57.9" r="63" fill="url(#smoke_puff_grad)"/>
+      <circle cx="219.3" cy="73.3" r="41.0" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="256.0" cy="138.0" r="72" fill="url(#smoke_puff_grad)"/>
+      <circle cx="255.5" cy="147.0" r="46.8" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="284.5" cy="112.8" r="36" fill="url(#smoke_puff_grad)"/>
+      <circle cx="281.7" cy="123.8" r="23.4" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="322.6" cy="95.2" r="45" fill="url(#smoke_puff_grad)"/>
+      <circle cx="316.8" cy="107.6" r="29.2" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="368.2" cy="88.0" r="54" fill="url(#smoke_puff_grad)"/>
+      <circle cx="358.8" cy="101.0" r="35.1" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="339.4" cy="172.6" r="63" fill="url(#smoke_puff_grad)"/>
+      <circle cx="332.3" cy="178.8" r="41.0" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="377.4" cy="174.9" r="72" fill="url(#smoke_puff_grad)"/>
+      <circle cx="367.2" cy="180.9" r="46.8" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="416.8" cy="189.4" r="36" fill="url(#smoke_puff_grad)"/>
+      <circle cx="403.4" cy="194.3" r="23.4" fill="#ff4800" fill-opacity="0.28"/>
+      <circle cx="454.1" cy="216.6" r="45" fill="url(#smoke_puff_grad)"/>
+      <circle cx="437.8" cy="219.3" r="29.2" fill="#ff4800" fill-opacity="0.28"/>
+    </g>
+    <g id="explosion_core_group" filter="url(#exp_fire_blur)" style="transform-origin: 256px 256px;">
+      <circle cx="256" cy="256" r="195" fill="url(#exp_shockwave_grad)">
+        <animate id="shock_r_anim" attributeName="r" values="45;195;248" dur="1s" begin="indefinite" fill="freeze"/>
+      </circle>
+      <path d="M 430.9 249.0 L 332.5 271.2 L 414.9 329.4 L 322.5 296.7 L 379.7 379.7 L 296.7 322.5 L 329.4 414.9 L 271.2 332.5 L 249.0 430.9 L 243.9 333.0 L 189.0 417.7 L 210.1 319.1 L 137.3 384.6 L 191.1 299.3 L 91.8 316.5 L 180.2 274.3 L 81.0 256.0 L 180.2 237.7 L 91.8 195.5 L 191.1 212.7 L 137.3 127.4 L 210.1 192.9 L 189.0 94.3 L 243.9 179.0 L 249.0 81.1 L 271.2 179.5 L 329.4 97.1 L 296.7 189.5 L 379.7 132.3 L 322.5 215.3 L 414.9 182.6 L 332.5 240.8 Z" fill="url(#exp_core_grad)" opacity="0.95" style="mix-blend-mode: screen;">
+        <animate id="fireball_morph_0" attributeName="d" values="M 430.9 249.0 L 332.5 271.2 L 414.9 329.4 L 322.5 296.7 L 379.7 379.7 L 296.7 322.5 L 329.4 414.9 L 271.2 332.5 L 249.0 430.9 L 243.9 333.0 L 189.0 417.7 L 210.1 319.1 L 137.3 384.6 L 191.1 299.3 L 91.8 316.5 L 180.2 274.3 L 81.0 256.0 L 180.2 237.7 L 91.8 195.5 L 191.1 212.7 L 137.3 127.4 L 210.1 192.9 L 189.0 94.3 L 243.9 179.0 L 249.0 81.1 L 271.2 179.5 L 329.4 97.1 L 296.7 189.5 L 379.7 132.3 L 322.5 215.3 L 414.9 182.6 L 332.5 240.8 Z;M 493.8 265.5 L 368.8 278.4 L 479.3 338.2 L 349.0 323.7 L 424.3 424.3 L 323.7 349.0 L 338.2 479.3 L 278.4 368.8 L 265.5 493.8 L 229.1 367.8 L 164.9 475.9 L 196.0 354.1 L 81.1 417.4 L 160.4 319.9 L 39.9 355.8 L 142.4 273.9 L 18.0 256.0 L 142.4 238.1 L 39.9 156.2 L 160.4 192.1 L 81.1 94.6 L 196.0 157.9 L 164.9 36.1 L 229.1 144.2 L 265.5 18.2 L 278.4 143.2 L 338.2 32.7 L 323.7 163.0 L 424.3 87.7 L 349.0 188.3 L 479.3 173.8 L 368.8 233.6 Z" dur="1s" begin="indefinite" fill="freeze"/>
+      </path>
+      <path d="M 393.9 250.5 L 312.9 267.3 L 381.3 313.9 L 305.5 286.3 L 353.6 353.6 L 286.3 305.5 L 313.9 381.3 L 267.3 312.9 L 250.5 393.9 L 247.0 313.3 L 203.2 383.5 L 221.9 302.9 L 162.4 357.4 L 207.8 288.2 L 126.5 303.7 L 199.6 269.6 L 118.0 256.0 L 199.6 242.4 L 126.5 208.3 L 207.8 223.8 L 162.4 154.6 L 221.9 209.1 L 203.2 128.5 L 247.0 198.7 L 250.5 118.1 L 267.3 199.1 L 313.9 130.7 L 286.3 206.5 L 353.6 158.4 L 305.5 225.7 L 381.3 198.1 L 312.9 244.7 Z" fill="#ff9f1c" opacity="0.83" style="mix-blend-mode: screen;">
+        <animate id="fireball_morph_1" attributeName="d" values="M 393.9 250.5 L 312.9 267.3 L 381.3 313.9 L 305.5 286.3 L 353.6 353.6 L 286.3 305.5 L 313.9 381.3 L 267.3 312.9 L 250.5 393.9 L 247.0 313.3 L 203.2 383.5 L 221.9 302.9 L 162.4 357.4 L 207.8 288.2 L 126.5 303.7 L 199.6 269.6 L 118.0 256.0 L 199.6 242.4 L 126.5 208.3 L 207.8 223.8 L 162.4 154.6 L 221.9 209.1 L 203.2 128.5 L 247.0 198.7 L 250.5 118.1 L 267.3 199.1 L 313.9 130.7 L 286.3 206.5 L 353.6 158.4 L 305.5 225.7 L 381.3 198.1 L 312.9 244.7 Z;M 447.8 263.7 L 346.2 273.9 L 436.2 322.3 L 330.4 310.1 L 391.8 391.8 L 310.1 330.4 L 322.3 436.2 L 273.9 346.2 L 263.7 447.8 L 234.5 345.4 L 182.5 433.4 L 208.0 334.5 L 114.9 386.2 L 179.5 307.1 L 81.7 336.5 L 165.1 270.3 L 64.0 256.0 L 165.1 241.7 L 81.7 175.5 L 179.5 204.9 L 114.9 125.8 L 208.0 177.5 L 182.5 78.6 L 234.5 166.6 L 263.7 64.2 L 273.9 165.8 L 322.3 75.8 L 310.1 181.6 L 391.8 120.2 L 330.4 201.9 L 436.2 189.7 L 346.2 238.1 Z" dur="1s" begin="indefinite" fill="freeze"/>
+        <animate id="fireball_col_1" attributeName="fill" values="#ffffff;#ff9f1c;#d00000;#4a0404" keyTimes="0;0.3;0.7;1" dur="1s" begin="indefinite" fill="freeze"/>
+      </path>
+      <path d="M 351.9 252.2 L 291.3 263.0 L 343.2 296.3 L 286.7 274.8 L 323.9 323.9 L 274.8 286.7 L 296.3 343.2 L 263.0 291.3 L 252.2 351.9 L 250.4 291.6 L 219.3 344.7 L 234.8 285.1 L 190.9 326.5 L 226.1 276.0 L 165.9 289.2 L 221.0 264.4 L 160.0 256.0 L 221.0 247.6 L 165.9 222.8 L 226.1 236.0 L 190.9 185.5 L 234.8 226.9 L 219.3 167.3 L 250.4 220.4 L 252.2 160.1 L 263.0 220.7 L 296.3 168.8 L 274.8 225.3 L 323.9 188.1 L 286.7 237.2 L 343.2 215.7 L 291.3 249.0 Z" fill="#ffffff" opacity="0.71" style="mix-blend-mode: screen;">
+        <animate id="fireball_morph_2" attributeName="d" values="M 351.9 252.2 L 291.3 263.0 L 343.2 296.3 L 286.7 274.8 L 323.9 323.9 L 274.8 286.7 L 296.3 343.2 L 263.0 291.3 L 252.2 351.9 L 250.4 291.6 L 219.3 344.7 L 234.8 285.1 L 190.9 326.5 L 226.1 276.0 L 165.9 289.2 L 221.0 264.4 L 160.0 256.0 L 221.0 247.6 L 165.9 222.8 L 226.1 236.0 L 190.9 185.5 L 234.8 226.9 L 219.3 167.3 L 250.4 220.4 L 252.2 160.1 L 263.0 220.7 L 296.3 168.8 L 274.8 225.3 L 323.9 188.1 L 286.7 237.2 L 343.2 215.7 L 291.3 249.0 Z;M 397.9 261.7 L 318.8 268.5 L 389.3 305.1 L 307.7 293.7 L 356.4 356.4 L 293.7 307.7 L 305.1 389.3 L 268.5 318.8 L 261.7 397.9 L 241.0 318.2 L 201.7 387.2 L 222.6 310.6 L 151.7 352.3 L 202.8 291.6 L 127.1 315.5 L 192.8 266.0 L 114.0 256.0 L 192.8 246.0 L 127.1 196.5 L 202.8 220.4 L 151.7 159.7 L 222.6 201.4 L 201.7 124.8 L 241.0 193.8 L 261.7 114.1 L 268.5 193.2 L 305.1 122.7 L 293.7 204.3 L 356.4 155.6 L 307.7 218.3 L 389.3 206.9 L 318.8 243.5 Z" dur="1s" begin="indefinite" fill="freeze"/>
+        <animate id="fireball_col_2" attributeName="fill" values="#ffffff;#ff9f1c;#d00000;#4a0404" keyTimes="0;0.3;0.7;1" dur="1s" begin="indefinite" fill="freeze"/>
+      </path>
+      <line x1="280.8" y1="256.1" x2="339.3" y2="256.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" opacity="0.61"/>
+      <circle cx="367.2" cy="259.9" r="1.8" fill="#ffffff" opacity="0.51"/>
+      <polygon points="367.2,257.0 369.8,259.9 367.2,262.9 364.6,259.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="295.0" y1="257.1" x2="343.7" y2="258.6" stroke="#ffbe0b" stroke-width="2.0" stroke-linecap="round" opacity="0.52"/>
+      <circle cx="369.3" cy="261.7" r="4.2" fill="#ffbe0b" opacity="0.83"/>
+      <line x1="318.0" y1="260.3" x2="449.3" y2="269.6" stroke="#ff3b00" stroke-width="3.4" stroke-linecap="round" opacity="0.69"/>
+      <circle cx="467.1" cy="277.5" r="5.0" fill="#ff3b00" opacity="0.92"/>
+      <polygon points="467.1,269.5 474.1,277.5 467.1,285.5 460.1,277.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="315.4" y1="264.6" x2="422.4" y2="280.0" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.84"/>
+      <circle cx="431.3" cy="287.4" r="2.4" fill="#ffffff" opacity="0.69"/>
+      <line x1="308.0" y1="265.3" x2="373.6" y2="277.0" stroke="#ffbe0b" stroke-width="1.4" stroke-linecap="round" opacity="0.47"/>
+      <circle cx="394.6" cy="284.7" r="4.1" fill="#ffbe0b" opacity="0.59"/>
+      <polygon points="394.6,278.3 400.3,284.7 394.6,291.2 388.9,284.7" fill="#ffee88" opacity="0.75"/>
+      <line x1="281.7" y1="262.0" x2="343.9" y2="276.5" stroke="#ff3b00" stroke-width="2.6" stroke-linecap="round" opacity="0.65"/>
+      <circle cx="352.6" cy="283.6" r="1.9" fill="#ff3b00" opacity="0.53"/>
+      <line x1="296.4" y1="267.1" x2="376.3" y2="289.1" stroke="#ffffff" stroke-width="3.3" stroke-linecap="round" opacity="0.59"/>
+      <circle cx="389.5" cy="298.4" r="3.0" fill="#ffffff" opacity="0.64"/>
+      <polygon points="389.5,293.6 393.6,298.4 389.5,303.1 385.3,298.4" fill="#ffee88" opacity="0.75"/>
+      <line x1="341.4" y1="282.0" x2="417.5" y2="305.1" stroke="#ffbe0b" stroke-width="3.7" stroke-linecap="round" opacity="0.70"/>
+      <circle cx="435.1" cy="317.3" r="2.8" fill="#ffbe0b" opacity="0.85"/>
+      <line x1="321.6" y1="280.5" x2="430.6" y2="321.3" stroke="#ff3b00" stroke-width="3.7" stroke-linecap="round" opacity="0.46"/>
+      <circle cx="445.7" cy="332.5" r="3.1" fill="#ff3b00" opacity="0.84"/>
+      <polygon points="445.7,327.6 450.0,332.5 445.7,337.4 441.4,332.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="298.1" y1="273.7" x2="333.4" y2="288.6" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" opacity="0.68"/>
+      <circle cx="357.8" cy="300.0" r="3.4" fill="#ffffff" opacity="0.71"/>
+      <line x1="322.5" y1="287.7" x2="375.5" y2="313.0" stroke="#ffbe0b" stroke-width="1.7" stroke-linecap="round" opacity="0.73"/>
+      <circle cx="393.9" cy="325.2" r="3.2" fill="#ffbe0b" opacity="0.58"/>
+      <polygon points="393.9,320.1 398.4,325.2 393.9,330.4 389.4,325.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="316.5" y1="288.0" x2="415.8" y2="340.5" stroke="#ff3b00" stroke-width="3.2" stroke-linecap="round" opacity="0.50"/>
+      <circle cx="434.2" cy="351.4" r="4.1" fill="#ff3b00" opacity="0.61"/>
+      <line x1="319.7" y1="294.6" x2="411.7" y2="350.4" stroke="#ffffff" stroke-width="3.7" stroke-linecap="round" opacity="0.82"/>
+      <circle cx="424.0" cy="367.8" r="2.2" fill="#ffffff" opacity="0.89"/>
+      <polygon points="424.0,364.2 427.1,367.8 424.0,371.3 420.9,367.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="295.3" y1="280.8" x2="402.5" y2="348.7" stroke="#ffbe0b" stroke-width="3.6" stroke-linecap="round" opacity="0.93"/>
+      <circle cx="417.5" cy="360.9" r="2.8" fill="#ffbe0b" opacity="0.83"/>
+      <line x1="300.1" y1="288.8" x2="401.5" y2="364.2" stroke="#ff3b00" stroke-width="1.9" stroke-linecap="round" opacity="0.66"/>
+      <circle cx="413.2" cy="375.2" r="2.8" fill="#ff3b00" opacity="0.88"/>
+      <polygon points="413.2,370.8 417.1,375.2 413.2,379.6 409.4,375.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="283.0" y1="277.2" x2="343.1" y2="324.4" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
+      <circle cx="356.7" cy="343.7" r="3.6" fill="#ffffff" opacity="0.76"/>
+      <line x1="297.2" y1="291.3" x2="331.8" y2="321.0" stroke="#ffbe0b" stroke-width="2.1" stroke-linecap="round" opacity="0.63"/>
+      <circle cx="345.3" cy="332.9" r="4.8" fill="#ffbe0b" opacity="0.90"/>
+      <polygon points="345.3,325.2 352.1,332.9 345.3,340.6 338.6,332.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="284.4" y1="283.8" x2="317.7" y2="316.4" stroke="#ff3b00" stroke-width="3.4" stroke-linecap="round" opacity="0.85"/>
+      <circle cx="328.6" cy="326.2" r="2.1" fill="#ff3b00" opacity="0.68"/>
+      <line x1="276.4" y1="277.7" x2="344.7" y2="350.6" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.87"/>
+      <circle cx="348.0" cy="363.5" r="5.0" fill="#ffffff" opacity="0.97"/>
+      <polygon points="348.0,355.6 355.0,363.5 348.0,371.5 341.1,363.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="285.0" y1="288.8" x2="348.7" y2="361.0" stroke="#ffbe0b" stroke-width="1.3" stroke-linecap="round" opacity="0.58"/>
+      <circle cx="359.6" cy="371.5" r="2.2" fill="#ffbe0b" opacity="0.73"/>
+      <line x1="303.9" y1="317.1" x2="340.9" y2="364.2" stroke="#ff3b00" stroke-width="3.6" stroke-linecap="round" opacity="0.75"/>
+      <circle cx="346.5" cy="380.5" r="3.3" fill="#ff3b00" opacity="0.94"/>
+      <polygon points="346.5,375.2 351.2,380.5 346.5,385.8 341.9,380.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="307.9" y1="328.6" x2="346.0" y2="381.9" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0.65"/>
+      <circle cx="355.4" cy="397.9" r="5.0" fill="#ffffff" opacity="0.90"/>
+      <line x1="293.5" y1="311.1" x2="337.3" y2="375.6" stroke="#ffbe0b" stroke-width="3.2" stroke-linecap="round" opacity="0.81"/>
+      <circle cx="341.9" cy="397.3" r="3.8" fill="#ffbe0b" opacity="0.63"/>
+      <polygon points="341.9,391.2 347.2,397.3 341.9,403.4 336.6,397.3" fill="#ffee88" opacity="0.75"/>
+      <line x1="291.7" y1="315.5" x2="347.4" y2="408.5" stroke="#ff3b00" stroke-width="2.2" stroke-linecap="round" opacity="0.52"/>
+      <circle cx="353.4" cy="425.0" r="4.4" fill="#ff3b00" opacity="0.88"/>
+      <line x1="291.1" y1="318.2" x2="317.5" y2="365.1" stroke="#ffffff" stroke-width="3.3" stroke-linecap="round" opacity="0.66"/>
+      <circle cx="324.2" cy="385.0" r="2.1" fill="#ffffff" opacity="0.63"/>
+      <polygon points="324.2,381.5 327.2,385.0 324.2,388.4 321.2,385.0" fill="#ffee88" opacity="0.75"/>
+      <line x1="290.9" y1="325.2" x2="338.0" y2="418.5" stroke="#ffbe0b" stroke-width="1.6" stroke-linecap="round" opacity="0.50"/>
+      <circle cx="340.8" cy="434.1" r="4.7" fill="#ffbe0b" opacity="0.59"/>
+      <line x1="273.7" y1="296.7" x2="325.9" y2="417.1" stroke="#ff3b00" stroke-width="2.4" stroke-linecap="round" opacity="0.52"/>
+      <circle cx="327.6" cy="443.5" r="1.9" fill="#ff3b00" opacity="0.98"/>
+      <polygon points="327.6,440.4 330.3,443.5 327.6,446.5 324.9,443.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="283.2" y1="327.7" x2="305.1" y2="385.4" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" opacity="0.75"/>
+      <circle cx="307.9" cy="402.4" r="4.8" fill="#ffffff" opacity="0.62"/>
+      <line x1="265.3" y1="286.0" x2="278.2" y2="327.8" stroke="#ffbe0b" stroke-width="1.2" stroke-linecap="round" opacity="0.51"/>
+      <circle cx="280.1" cy="343.2" r="2.8" fill="#ffbe0b" opacity="0.72"/>
+      <polygon points="280.1,338.8 284.0,343.2 280.1,347.7 276.2,343.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="272.2" y1="313.7" x2="300.3" y2="414.2" stroke="#ff3b00" stroke-width="2.3" stroke-linecap="round" opacity="0.82"/>
+      <circle cx="300.6" cy="440.2" r="3.5" fill="#ff3b00" opacity="0.60"/>
+      <line x1="263.9" y1="293.6" x2="284.9" y2="393.7" stroke="#ffffff" stroke-width="2.0" stroke-linecap="round" opacity="0.56"/>
+      <circle cx="285.3" cy="416.7" r="5.0" fill="#ffffff" opacity="0.93"/>
+      <polygon points="285.3,408.7 292.3,416.7 285.3,424.7 278.3,416.7" fill="#ffee88" opacity="0.75"/>
+      <line x1="270.5" y1="333.1" x2="281.2" y2="390.0" stroke="#ffbe0b" stroke-width="3.7" stroke-linecap="round" opacity="0.60"/>
+      <circle cx="278.5" cy="413.8" r="3.3" fill="#ffbe0b" opacity="0.52"/>
+      <line x1="264.2" y1="312.6" x2="281.5" y2="432.3" stroke="#ff3b00" stroke-width="2.6" stroke-linecap="round" opacity="0.63"/>
+      <circle cx="279.1" cy="443.3" r="3.4" fill="#ff3b00" opacity="0.64"/>
+      <polygon points="279.1,437.8 283.8,443.3 279.1,448.8 274.3,443.3" fill="#ffee88" opacity="0.75"/>
+      <line x1="261.7" y1="309.8" x2="269.2" y2="381.3" stroke="#ffffff" stroke-width="3.0" stroke-linecap="round" opacity="0.71"/>
+      <circle cx="266.1" cy="391.9" r="2.9" fill="#ffffff" opacity="0.74"/>
+      <line x1="260.9" y1="341.2" x2="265.7" y2="425.4" stroke="#ffbe0b" stroke-width="1.6" stroke-linecap="round" opacity="0.79"/>
+      <circle cx="261.3" cy="441.0" r="4.4" fill="#ffbe0b" opacity="0.76"/>
+      <polygon points="261.3,434.0 267.4,441.0 261.3,448.0 255.2,441.0" fill="#ffee88" opacity="0.75"/>
+      <line x1="255.5" y1="285.2" x2="254.5" y2="343.9" stroke="#ff3b00" stroke-width="2.1" stroke-linecap="round" opacity="0.66"/>
+      <circle cx="250.9" cy="370.6" r="2.2" fill="#ff3b00" opacity="0.96"/>
+      <line x1="254.7" y1="280.5" x2="251.2" y2="349.1" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" opacity="0.45"/>
+      <circle cx="246.9" cy="367.2" r="1.8" fill="#ffffff" opacity="0.75"/>
+      <polygon points="246.9,364.3 249.5,367.2 246.9,370.1 244.4,367.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="249.9" y1="318.8" x2="238.3" y2="439.4" stroke="#ffbe0b" stroke-width="1.5" stroke-linecap="round" opacity="0.89"/>
+      <circle cx="230.7" cy="452.9" r="2.2" fill="#ffbe0b" opacity="0.61"/>
+      <line x1="248.1" y1="307.5" x2="233.2" y2="404.9" stroke="#ff3b00" stroke-width="1.6" stroke-linecap="round" opacity="0.90"/>
+      <circle cx="225.5" cy="416.6" r="4.3" fill="#ff3b00" opacity="0.84"/>
+      <polygon points="225.5,409.7 231.5,416.6 225.5,423.5 219.6,416.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="239.5" y1="342.8" x2="231.3" y2="386.4" stroke="#ffffff" stroke-width="2.0" stroke-linecap="round" opacity="0.79"/>
+      <circle cx="222.2" cy="405.2" r="4.8" fill="#ffffff" opacity="0.56"/>
+      <line x1="248.0" y1="290.1" x2="224.6" y2="390.4" stroke="#ffbe0b" stroke-width="1.3" stroke-linecap="round" opacity="0.62"/>
+      <circle cx="218.2" cy="398.9" r="4.1" fill="#ffbe0b" opacity="0.88"/>
+      <polygon points="218.2,392.3 224.0,398.9 218.2,405.5 212.4,398.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="239.1" y1="319.5" x2="204.9" y2="448.0" stroke="#ff3b00" stroke-width="1.4" stroke-linecap="round" opacity="0.58"/>
+      <circle cx="195.9" cy="471.8" r="3.7" fill="#ff3b00" opacity="0.81"/>
+      <line x1="242.7" y1="297.3" x2="223.8" y2="356.0" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" opacity="0.82"/>
+      <circle cx="215.9" cy="369.8" r="3.5" fill="#ffffff" opacity="0.89"/>
+      <polygon points="215.9,364.2 220.7,369.8 215.9,375.3 211.1,369.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="240.1" y1="300.5" x2="220.5" y2="355.7" stroke="#ffbe0b" stroke-width="3.3" stroke-linecap="round" opacity="0.90"/>
+      <circle cx="213.5" cy="379.6" r="3.1" fill="#ffbe0b" opacity="0.68"/>
+      <line x1="220.5" y1="342.4" x2="187.4" y2="423.2" stroke="#ff3b00" stroke-width="3.4" stroke-linecap="round" opacity="0.54"/>
+      <circle cx="178.9" cy="442.9" r="4.6" fill="#ff3b00" opacity="0.67"/>
+      <polygon points="178.9,435.5 185.4,442.9 178.9,450.3 172.4,442.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="231.5" y1="307.2" x2="195.0" y2="383.6" stroke="#ffffff" stroke-width="3.0" stroke-linecap="round" opacity="0.47"/>
+      <circle cx="182.3" cy="391.7" r="5.1" fill="#ffffff" opacity="0.55"/>
+      <line x1="236.4" y1="292.9" x2="198.8" y2="363.6" stroke="#ffbe0b" stroke-width="1.2" stroke-linecap="round" opacity="0.76"/>
+      <circle cx="184.3" cy="378.3" r="3.1" fill="#ffbe0b" opacity="0.68"/>
+      <polygon points="184.3,373.3 188.6,378.3 184.3,383.2 179.9,378.3" fill="#ffee88" opacity="0.75"/>
+      <line x1="233.1" y1="294.9" x2="190.4" y2="367.5" stroke="#ff3b00" stroke-width="3.5" stroke-linecap="round" opacity="0.93"/>
+      <circle cx="175.3" cy="378.0" r="2.4" fill="#ff3b00" opacity="0.75"/>
+      <line x1="206.5" y1="333.0" x2="186.0" y2="364.8" stroke="#ffffff" stroke-width="3.1" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="176.3" cy="380.9" r="3.3" fill="#ffffff" opacity="0.52"/>
+      <polygon points="176.3,375.5 180.9,380.9 176.3,386.2 171.6,380.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="205.7" y1="328.2" x2="164.5" y2="387.4" stroke="#ffbe0b" stroke-width="3.7" stroke-linecap="round" opacity="0.83"/>
+      <circle cx="154.6" cy="392.2" r="4.8" fill="#ffbe0b" opacity="0.56"/>
+      <line x1="202.2" y1="325.5" x2="170.4" y2="366.7" stroke="#ff3b00" stroke-width="3.0" stroke-linecap="round" opacity="0.68"/>
+      <circle cx="155.5" cy="376.8" r="5.2" fill="#ff3b00" opacity="0.84"/>
+      <polygon points="155.5,368.5 162.8,376.8 155.5,385.0 148.3,376.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="219.3" y1="298.2" x2="134.8" y2="395.2" stroke="#ffffff" stroke-width="2.0" stroke-linecap="round" opacity="0.65"/>
+      <circle cx="124.5" cy="405.4" r="4.6" fill="#ffffff" opacity="0.70"/>
+      <line x1="243.1" y1="269.2" x2="184.8" y2="328.5" stroke="#ffbe0b" stroke-width="3.2" stroke-linecap="round" opacity="0.56"/>
+      <circle cx="169.6" cy="343.8" r="2.8" fill="#ffbe0b" opacity="0.89"/>
+      <polygon points="169.6,339.3 173.4,343.8 169.6,348.2 165.7,343.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="235.5" y1="276.0" x2="171.9" y2="337.8" stroke="#ff3b00" stroke-width="3.6" stroke-linecap="round" opacity="0.83"/>
+      <circle cx="161.9" cy="350.9" r="2.2" fill="#ff3b00" opacity="0.67"/>
+      <line x1="209.8" y1="296.8" x2="123.2" y2="373.5" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="109.7" cy="381.6" r="3.9" fill="#ffffff" opacity="0.77"/>
+      <polygon points="109.7,375.4 115.1,381.6 109.7,387.8 104.2,381.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="229.3" y1="278.1" x2="187.6" y2="312.7" stroke="#ffbe0b" stroke-width="1.6" stroke-linecap="round" opacity="0.47"/>
+      <circle cx="167.0" cy="322.1" r="4.0" fill="#ffbe0b" opacity="0.76"/>
+      <line x1="187.5" y1="305.6" x2="100.7" y2="368.4" stroke="#ff3b00" stroke-width="3.6" stroke-linecap="round" opacity="0.83"/>
+      <circle cx="86.4" cy="375.6" r="3.8" fill="#ff3b00" opacity="0.84"/>
+      <polygon points="86.4,369.6 91.7,375.6 86.4,381.6 81.2,375.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="180.6" y1="304.8" x2="140.0" y2="331.1" stroke="#ffffff" stroke-width="3.7" stroke-linecap="round" opacity="0.89"/>
+      <circle cx="125.2" cy="342.0" r="2.8" fill="#ffffff" opacity="0.83"/>
+      <line x1="231.4" y1="270.6" x2="144.5" y2="322.0" stroke="#ffbe0b" stroke-width="1.7" stroke-linecap="round" opacity="0.46"/>
+      <circle cx="122.5" cy="330.2" r="4.7" fill="#ffbe0b" opacity="0.65"/>
+      <polygon points="122.5,322.7 129.1,330.2 122.5,337.8 115.9,330.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="223.0" y1="273.7" x2="157.8" y2="308.4" stroke="#ff3b00" stroke-width="2.3" stroke-linecap="round" opacity="0.49"/>
+      <circle cx="146.8" cy="317.0" r="3.8" fill="#ff3b00" opacity="0.53"/>
+      <line x1="222.7" y1="271.4" x2="128.0" y2="315.2" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.73"/>
+      <circle cx="109.7" cy="314.6" r="4.9" fill="#ffffff" opacity="0.62"/>
+      <polygon points="109.7,306.8 116.5,314.6 109.7,322.3 103.0,314.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="203.0" y1="278.1" x2="131.0" y2="308.1" stroke="#ffbe0b" stroke-width="3.6" stroke-linecap="round" opacity="0.52"/>
+      <circle cx="108.9" cy="310.5" r="2.1" fill="#ffbe0b" opacity="0.83"/>
+      <line x1="170.4" y1="287.1" x2="61.0" y2="326.9" stroke="#ff3b00" stroke-width="3.6" stroke-linecap="round" opacity="0.82"/>
+      <circle cx="32.4" cy="329.5" r="4.3" fill="#ff3b00" opacity="0.70"/>
+      <polygon points="32.4,322.7 38.4,329.5 32.4,336.4 26.4,329.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="194.2" y1="276.5" x2="133.6" y2="296.5" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" opacity="0.51"/>
+      <circle cx="113.6" cy="298.9" r="4.3" fill="#ffffff" opacity="0.90"/>
+      <line x1="179.0" y1="275.7" x2="96.2" y2="296.9" stroke="#ffbe0b" stroke-width="1.5" stroke-linecap="round" opacity="0.84"/>
+      <circle cx="77.0" cy="297.8" r="5.2" fill="#ffbe0b" opacity="0.78"/>
+      <polygon points="77.0,289.6 84.2,297.8 77.0,306.1 69.7,297.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="203.6" y1="267.5" x2="91.9" y2="291.9" stroke="#ff3b00" stroke-width="3.1" stroke-linecap="round" opacity="0.83"/>
+      <circle cx="65.2" cy="290.2" r="4.7" fill="#ff3b00" opacity="0.96"/>
+      <line x1="203.9" y1="266.0" x2="107.9" y2="284.4" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" opacity="0.53"/>
+      <circle cx="87.0" cy="281.9" r="3.5" fill="#ffffff" opacity="0.66"/>
+      <polygon points="87.0,276.2 91.9,281.9 87.0,287.5 82.0,281.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="196.3" y1="264.7" x2="125.1" y2="275.1" stroke="#ffbe0b" stroke-width="1.6" stroke-linecap="round" opacity="0.84"/>
+      <circle cx="106.7" cy="274.3" r="4.3" fill="#ffbe0b" opacity="0.83"/>
+      <line x1="206.7" y1="260.4" x2="148.7" y2="265.5" stroke="#ff3b00" stroke-width="2.3" stroke-linecap="round" opacity="0.58"/>
+      <circle cx="136.3" cy="263.4" r="3.8" fill="#ff3b00" opacity="0.91"/>
+      <polygon points="136.3,257.3 141.6,263.4 136.3,269.4 131.0,263.4" fill="#ffee88" opacity="0.75"/>
+      <line x1="168.0" y1="260.6" x2="87.1" y2="264.9" stroke="#ffffff" stroke-width="3.3" stroke-linecap="round" opacity="0.66"/>
+      <circle cx="68.6" cy="260.3" r="4.2" fill="#ffffff" opacity="0.59"/>
+      <line x1="181.4" y1="257.3" x2="87.4" y2="258.9" stroke="#ffbe0b" stroke-width="3.4" stroke-linecap="round" opacity="0.78"/>
+      <circle cx="72.2" cy="253.5" r="2.8" fill="#ffbe0b" opacity="0.84"/>
+      <polygon points="72.2,249.0 76.1,253.5 72.2,258.0 68.3,253.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="186.8" y1="251.6" x2="79.1" y2="244.7" stroke="#ff3b00" stroke-width="3.1" stroke-linecap="round" opacity="0.83"/>
+      <circle cx="52.9" cy="238.5" r="4.5" fill="#ff3b00" opacity="0.66"/>
+      <line x1="211.0" y1="251.2" x2="154.2" y2="245.2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.68"/>
+      <circle cx="141.2" cy="240.3" r="3.5" fill="#ffffff" opacity="0.86"/>
+      <polygon points="141.2,234.7 146.1,240.3 141.2,245.9 136.3,240.3" fill="#ffee88" opacity="0.75"/>
+      <line x1="211.6" y1="250.5" x2="161.9" y2="244.3" stroke="#ffbe0b" stroke-width="1.7" stroke-linecap="round" opacity="0.45"/>
+      <circle cx="151.8" cy="237.2" r="2.5" fill="#ffbe0b" opacity="0.80"/>
+      <line x1="216.2" y1="248.9" x2="149.2" y2="236.9" stroke="#ff3b00" stroke-width="2.3" stroke-linecap="round" opacity="0.77"/>
+      <circle cx="132.9" cy="229.1" r="3.0" fill="#ff3b00" opacity="0.91"/>
+      <polygon points="132.9,224.2 137.1,229.1 132.9,234.0 128.6,229.1" fill="#ffee88" opacity="0.75"/>
+      <line x1="228.7" y1="250.2" x2="144.6" y2="232.4" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity="0.66"/>
+      <circle cx="137.3" cy="225.8" r="3.6" fill="#ffffff" opacity="0.56"/>
+      <line x1="195.3" y1="240.4" x2="65.2" y2="207.1" stroke="#ffbe0b" stroke-width="2.9" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="39.9" cy="195.5" r="4.9" fill="#ffbe0b" opacity="0.53"/>
+      <polygon points="39.9,187.7 46.7,195.5 39.9,203.2 33.1,195.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="224.9" y1="246.5" x2="167.9" y2="229.1" stroke="#ff3b00" stroke-width="3.2" stroke-linecap="round" opacity="0.79"/>
+      <circle cx="143.1" cy="221.6" r="4.9" fill="#ff3b00" opacity="0.89"/>
+      <line x1="171.7" y1="222.9" x2="112.6" y2="199.6" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity="0.80"/>
+      <circle cx="95.6" cy="186.4" r="3.2" fill="#ffffff" opacity="0.75"/>
+      <polygon points="95.6,181.3 100.1,186.4 95.6,191.5 91.2,186.4" fill="#ffee88" opacity="0.75"/>
+      <line x1="211.7" y1="237.2" x2="159.2" y2="215.1" stroke="#ffbe0b" stroke-width="1.4" stroke-linecap="round" opacity="0.83"/>
+      <circle cx="150.4" cy="202.3" r="2.7" fill="#ffbe0b" opacity="0.58"/>
+      <line x1="239.8" y1="248.0" x2="203.0" y2="229.9" stroke="#ff3b00" stroke-width="2.7" stroke-linecap="round" opacity="0.52"/>
+      <circle cx="179.8" cy="220.3" r="3.0" fill="#ff3b00" opacity="0.63"/>
+      <polygon points="179.8,215.5 184.0,220.3 179.8,225.1 175.6,220.3" fill="#ffee88" opacity="0.75"/>
+      <line x1="234.6" y1="244.3" x2="153.6" y2="200.1" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.62"/>
+      <circle cx="147.2" cy="191.2" r="3.4" fill="#ffffff" opacity="0.82"/>
+      <line x1="221.2" y1="235.2" x2="112.3" y2="170.3" stroke="#ffbe0b" stroke-width="3.0" stroke-linecap="round" opacity="0.82"/>
+      <circle cx="91.7" cy="160.2" r="4.1" fill="#ffbe0b" opacity="0.78"/>
+      <polygon points="91.7,153.7 97.3,160.2 91.7,166.6 86.0,160.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="211.8" y1="227.8" x2="172.5" y2="202.7" stroke="#ff3b00" stroke-width="1.4" stroke-linecap="round" opacity="0.94"/>
+      <circle cx="162.5" cy="189.9" r="3.0" fill="#ff3b00" opacity="0.82"/>
+      <line x1="186.5" y1="206.1" x2="134.8" y2="169.1" stroke="#ffffff" stroke-width="2.0" stroke-linecap="round" opacity="0.66"/>
+      <circle cx="117.0" cy="156.4" r="3.8" fill="#ffffff" opacity="0.72"/>
+      <polygon points="117.0,150.2 122.4,156.4 117.0,162.5 111.6,156.4" fill="#ffee88" opacity="0.75"/>
+      <line x1="224.7" y1="231.8" x2="157.9" y2="180.2" stroke="#ffbe0b" stroke-width="2.7" stroke-linecap="round" opacity="0.50"/>
+      <circle cx="142.3" cy="171.2" r="3.2" fill="#ffbe0b" opacity="0.72"/>
+      <line x1="185.5" y1="193.2" x2="135.6" y2="148.8" stroke="#ff3b00" stroke-width="1.3" stroke-linecap="round" opacity="0.62"/>
+      <circle cx="130.1" cy="139.2" r="5.0" fill="#ff3b00" opacity="0.86"/>
+      <polygon points="130.1,131.3 137.1,139.2 130.1,147.2 123.2,139.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="200.6" y1="204.8" x2="159.5" y2="166.9" stroke="#ffffff" stroke-width="3.0" stroke-linecap="round" opacity="0.55"/>
+      <circle cx="145.4" cy="147.3" r="5.1" fill="#ffffff" opacity="0.83"/>
+      <line x1="197.7" y1="193.8" x2="114.3" y2="104.8" stroke="#ffbe0b" stroke-width="2.3" stroke-linecap="round" opacity="0.87"/>
+      <circle cx="106.0" cy="93.5" r="2.3" fill="#ffbe0b" opacity="0.52"/>
+      <polygon points="106.0,89.8 109.3,93.5 106.0,97.2 102.8,93.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="235.3" y1="232.9" x2="167.8" y2="157.8" stroke="#ff3b00" stroke-width="1.5" stroke-linecap="round" opacity="0.54"/>
+      <circle cx="163.0" cy="142.7" r="3.0" fill="#ff3b00" opacity="0.69"/>
+      <line x1="204.9" y1="194.0" x2="129.0" y2="101.9" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="123.0" cy="85.2" r="3.8" fill="#ffffff" opacity="0.92"/>
+      <polygon points="123.0,79.0 128.4,85.2 123.0,91.4 117.7,85.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="236.4" y1="229.5" x2="168.9" y2="138.0" stroke="#ffbe0b" stroke-width="3.4" stroke-linecap="round" opacity="0.58"/>
+      <circle cx="159.9" cy="113.1" r="3.2" fill="#ffbe0b" opacity="0.79"/>
+      <line x1="220.8" y1="202.7" x2="163.2" y2="115.6" stroke="#ff3b00" stroke-width="3.3" stroke-linecap="round" opacity="0.48"/>
+      <circle cx="156.4" cy="98.9" r="3.2" fill="#ff3b00" opacity="0.89"/>
+      <polygon points="156.4,93.8 160.9,98.9 156.4,104.0 151.9,98.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="214.5" y1="184.9" x2="196.0" y2="153.3" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" opacity="0.93"/>
+      <circle cx="192.5" cy="137.9" r="2.5" fill="#ffffff" opacity="0.81"/>
+      <line x1="238.7" y1="224.8" x2="179.0" y2="117.4" stroke="#ffbe0b" stroke-width="2.9" stroke-linecap="round" opacity="0.95"/>
+      <circle cx="176.5" cy="103.0" r="4.1" fill="#ffbe0b" opacity="0.67"/>
+      <polygon points="176.5,96.4 182.2,103.0 176.5,109.6 170.8,103.0" fill="#ffee88" opacity="0.75"/>
+      <line x1="240.4" y1="222.4" x2="205.0" y2="145.8" stroke="#ff3b00" stroke-width="1.7" stroke-linecap="round" opacity="0.67"/>
+      <circle cx="200.1" cy="128.2" r="4.2" fill="#ff3b00" opacity="0.71"/>
+      <line x1="226.8" y1="185.4" x2="176.2" y2="62.8" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" opacity="0.72"/>
+      <circle cx="177.4" cy="39.8" r="2.8" fill="#ffffff" opacity="0.70"/>
+      <polygon points="177.4,35.2 181.4,39.8 177.4,44.3 173.5,39.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="232.6" y1="193.4" x2="203.6" y2="115.9" stroke="#ffbe0b" stroke-width="3.6" stroke-linecap="round" opacity="0.57"/>
+      <circle cx="201.0" cy="96.8" r="4.6" fill="#ffbe0b" opacity="0.80"/>
+      <line x1="235.6" y1="189.4" x2="216.1" y2="125.6" stroke="#ff3b00" stroke-width="1.7" stroke-linecap="round" opacity="0.77"/>
+      <circle cx="214.8" cy="103.8" r="3.6" fill="#ff3b00" opacity="0.81"/>
+      <polygon points="214.8,98.0 219.9,103.8 214.8,109.6 209.8,103.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="239.9" y1="197.5" x2="222.3" y2="133.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity="0.81"/>
+      <circle cx="219.8" cy="106.8" r="2.7" fill="#ffffff" opacity="0.62"/>
+      <line x1="247.7" y1="216.6" x2="228.7" y2="125.7" stroke="#ffbe0b" stroke-width="2.7" stroke-linecap="round" opacity="0.84"/>
+      <circle cx="231.1" cy="112.0" r="2.7" fill="#ffbe0b" opacity="0.55"/>
+      <polygon points="231.1,107.8 234.9,112.0 231.1,116.3 227.4,112.0" fill="#ffee88" opacity="0.75"/>
+      <line x1="244.0" y1="193.6" x2="228.9" y2="114.9" stroke="#ff3b00" stroke-width="2.4" stroke-linecap="round" opacity="0.59"/>
+      <circle cx="229.5" cy="99.6" r="3.9" fill="#ff3b00" opacity="0.93"/>
+      <line x1="247.3" y1="183.4" x2="238.4" y2="109.9" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.60"/>
+      <circle cx="241.6" cy="95.9" r="4.1" fill="#ffffff" opacity="0.87"/>
+      <polygon points="241.6,89.3 247.3,95.9 241.6,102.4 235.9,95.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="253.2" y1="227.6" x2="245.8" y2="151.3" stroke="#ffbe0b" stroke-width="2.1" stroke-linecap="round" opacity="0.62"/>
+      <circle cx="247.3" cy="124.5" r="2.7" fill="#ffbe0b" opacity="0.74"/>
+      <line x1="250.7" y1="166.4" x2="245.1" y2="71.8" stroke="#ff3b00" stroke-width="3.7" stroke-linecap="round" opacity="0.49"/>
+      <circle cx="249.9" cy="53.6" r="4.6" fill="#ff3b00" opacity="0.75"/>
+      <polygon points="249.9,46.3 256.2,53.6 249.9,60.9 243.5,53.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="256.5" y1="219.2" x2="258.2" y2="100.2" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity="0.51"/>
+      <circle cx="263.4" cy="77.5" r="4.0" fill="#ffffff" opacity="0.84"/>
+      <line x1="257.5" y1="201.8" x2="259.1" y2="141.1" stroke="#ffbe0b" stroke-width="3.4" stroke-linecap="round" opacity="0.63"/>
+      <circle cx="263.7" cy="132.6" r="3.8" fill="#ffbe0b" opacity="0.72"/>
+      <polygon points="263.7,126.5 269.0,132.6 263.7,138.7 258.4,132.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="258.8" y1="225.0" x2="262.3" y2="186.3" stroke="#ff3b00" stroke-width="2.1" stroke-linecap="round" opacity="0.75"/>
+      <circle cx="266.1" cy="160.3" r="2.9" fill="#ff3b00" opacity="0.56"/>
+      <line x1="263.4" y1="193.3" x2="272.3" y2="117.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" opacity="0.47"/>
+      <circle cx="277.7" cy="105.7" r="2.3" fill="#ffffff" opacity="0.51"/>
+      <polygon points="277.7,102.1 280.9,105.7 277.7,109.3 274.5,105.7" fill="#ffee88" opacity="0.75"/>
+      <line x1="271.7" y1="172.0" x2="278.6" y2="134.9" stroke="#ffbe0b" stroke-width="3.2" stroke-linecap="round" opacity="0.72"/>
+      <circle cx="284.0" cy="115.9" r="4.1" fill="#ffbe0b" opacity="0.72"/>
+      <line x1="273.3" y1="173.1" x2="299.6" y2="46.7" stroke="#ff3b00" stroke-width="2.7" stroke-linecap="round" opacity="0.94"/>
+      <circle cx="312.1" cy="25.7" r="3.2" fill="#ff3b00" opacity="0.93"/>
+      <polygon points="312.1,20.6 316.6,25.7 312.1,30.7 307.7,25.7" fill="#ffee88" opacity="0.75"/>
+      <line x1="277.2" y1="177.2" x2="309.6" y2="56.7" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" opacity="0.73"/>
+      <circle cx="320.1" cy="41.5" r="3.3" fill="#ffffff" opacity="0.94"/>
+      <line x1="265.8" y1="226.4" x2="286.6" y2="163.1" stroke="#ffbe0b" stroke-width="2.7" stroke-linecap="round" opacity="0.60"/>
+      <circle cx="292.6" cy="147.6" r="3.1" fill="#ffbe0b" opacity="0.51"/>
+      <polygon points="292.6,142.6 297.0,147.6 292.6,152.6 288.2,147.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="271.8" y1="215.6" x2="288.6" y2="172.7" stroke="#ff3b00" stroke-width="1.3" stroke-linecap="round" opacity="0.72"/>
+      <circle cx="296.9" cy="155.9" r="3.2" fill="#ff3b00" opacity="0.97"/>
+      <line x1="268.3" y1="228.2" x2="306.2" y2="142.5" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="320.7" cy="135.2" r="4.3" fill="#ffffff" opacity="0.85"/>
+      <polygon points="320.7,128.4 326.7,135.2 320.7,142.1 314.7,135.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="283.9" y1="199.3" x2="305.7" y2="155.1" stroke="#ffbe0b" stroke-width="2.3" stroke-linecap="round" opacity="0.69"/>
+      <circle cx="313.0" cy="143.4" r="3.0" fill="#ffbe0b" opacity="0.96"/>
+      <line x1="278.9" y1="215.0" x2="301.2" y2="175.1" stroke="#ff3b00" stroke-width="2.7" stroke-linecap="round" opacity="0.51"/>
+      <circle cx="310.7" cy="153.8" r="4.7" fill="#ff3b00" opacity="0.77"/>
+      <polygon points="310.7,146.3 317.3,153.8 310.7,161.4 304.1,153.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="291.0" y1="198.3" x2="352.8" y2="96.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0.50"/>
+      <circle cx="365.6" cy="88.2" r="4.8" fill="#ffffff" opacity="0.66"/>
+      <line x1="276.0" y1="226.9" x2="323.5" y2="157.8" stroke="#ffbe0b" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
+      <circle cx="336.4" cy="149.0" r="4.2" fill="#ffbe0b" opacity="0.79"/>
+      <polygon points="336.4,142.4 342.2,149.0 336.4,155.7 330.6,149.0" fill="#ffee88" opacity="0.75"/>
+      <line x1="267.7" y1="240.4" x2="297.8" y2="200.3" stroke="#ff3b00" stroke-width="2.2" stroke-linecap="round" opacity="0.59"/>
+      <circle cx="308.9" cy="194.9" r="2.2" fill="#ff3b00" opacity="0.93"/>
+      <line x1="279.9" y1="227.1" x2="351.2" y2="140.9" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity="0.93"/>
+      <circle cx="366.3" cy="136.8" r="4.0" fill="#ffffff" opacity="0.57"/>
+      <polygon points="366.3,130.4 372.0,136.8 366.3,143.3 360.7,136.8" fill="#ffee88" opacity="0.75"/>
+      <line x1="279.3" y1="230.1" x2="334.6" y2="168.4" stroke="#ffbe0b" stroke-width="3.6" stroke-linecap="round" opacity="0.73"/>
+      <circle cx="346.2" cy="157.1" r="3.8" fill="#ffbe0b" opacity="0.54"/>
+      <line x1="298.1" y1="212.5" x2="353.8" y2="154.9" stroke="#ff3b00" stroke-width="1.7" stroke-linecap="round" opacity="0.81"/>
+      <circle cx="368.8" cy="141.7" r="3.6" fill="#ff3b00" opacity="0.62"/>
+      <polygon points="368.8,135.9 373.9,141.7 368.8,147.4 363.8,141.7" fill="#ffee88" opacity="0.75"/>
+      <line x1="319.0" y1="196.6" x2="346.4" y2="170.7" stroke="#ffffff" stroke-width="3.3" stroke-linecap="round" opacity="0.83"/>
+      <circle cx="368.5" cy="162.4" r="2.0" fill="#ffffff" opacity="0.74"/>
+      <line x1="310.1" y1="208.7" x2="351.5" y2="172.5" stroke="#ffbe0b" stroke-width="1.4" stroke-linecap="round" opacity="0.88"/>
+      <circle cx="367.0" cy="160.4" r="2.0" fill="#ffbe0b" opacity="0.96"/>
+      <polygon points="367.0,157.2 369.8,160.4 367.0,163.6 364.1,160.4" fill="#ffee88" opacity="0.75"/>
+      <line x1="283.0" y1="233.6" x2="378.0" y2="154.7" stroke="#ff3b00" stroke-width="1.8" stroke-linecap="round" opacity="0.50"/>
+      <circle cx="402.8" cy="153.0" r="4.2" fill="#ff3b00" opacity="0.98"/>
+      <line x1="305.0" y1="220.8" x2="361.3" y2="180.4" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" opacity="0.52"/>
+      <circle cx="371.6" cy="173.5" r="4.2" fill="#ffffff" opacity="0.81"/>
+      <polygon points="371.6,166.8 377.4,173.5 371.6,180.1 365.8,173.5" fill="#ffee88" opacity="0.75"/>
+      <line x1="277.1" y1="241.5" x2="371.7" y2="176.4" stroke="#ffbe0b" stroke-width="3.0" stroke-linecap="round" opacity="0.93"/>
+      <circle cx="389.4" cy="170.2" r="4.2" fill="#ffbe0b" opacity="0.66"/>
+      <line x1="336.0" y1="207.2" x2="386.0" y2="176.8" stroke="#ff3b00" stroke-width="1.8" stroke-linecap="round" opacity="0.80"/>
+      <circle cx="406.9" cy="169.2" r="5.1" fill="#ff3b00" opacity="0.60"/>
+      <polygon points="406.9,161.2 414.0,169.2 406.9,177.3 399.8,169.2" fill="#ffee88" opacity="0.75"/>
+      <line x1="338.0" y1="213.6" x2="434.7" y2="163.6" stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" opacity="0.72"/>
+      <circle cx="455.3" cy="162.8" r="5.0" fill="#ffffff" opacity="0.96"/>
+      <line x1="310.6" y1="228.5" x2="353.7" y2="206.8" stroke="#ffbe0b" stroke-width="2.5" stroke-linecap="round" opacity="0.50"/>
+      <circle cx="371.4" cy="202.4" r="4.9" fill="#ffbe0b" opacity="0.79"/>
+      <polygon points="371.4,194.6 378.3,202.4 371.4,210.2 364.6,202.4" fill="#ffee88" opacity="0.75"/>
+      <line x1="299.1" y1="236.9" x2="361.6" y2="209.2" stroke="#ff3b00" stroke-width="3.0" stroke-linecap="round" opacity="0.79"/>
+      <circle cx="378.6" cy="204.7" r="4.4" fill="#ff3b00" opacity="0.89"/>
+      <line x1="303.5" y1="238.1" x2="339.3" y2="224.7" stroke="#ffffff" stroke-width="2.0" stroke-linecap="round" opacity="0.65"/>
+      <circle cx="358.1" cy="222.6" r="3.4" fill="#ffffff" opacity="0.82"/>
+      <polygon points="358.1,217.2 362.8,222.6 358.1,228.0 353.4,222.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="287.4" y1="246.1" x2="376.4" y2="217.9" stroke="#ffbe0b" stroke-width="2.3" stroke-linecap="round" opacity="0.49"/>
+      <circle cx="398.8" cy="215.4" r="3.9" fill="#ffbe0b" opacity="0.86"/>
+      <line x1="283.5" y1="248.7" x2="381.9" y2="222.7" stroke="#ff3b00" stroke-width="2.9" stroke-linecap="round" opacity="0.60"/>
+      <circle cx="391.4" cy="221.9" r="4.4" fill="#ff3b00" opacity="0.78"/>
+      <polygon points="391.4,214.8 397.6,221.9 391.4,229.1 385.2,221.9" fill="#ffee88" opacity="0.75"/>
+      <line x1="300.1" y1="246.5" x2="340.8" y2="237.7" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" opacity="0.89"/>
+      <circle cx="354.6" cy="238.6" r="4.9" fill="#ffffff" opacity="0.76"/>
+      <line x1="338.4" y1="241.2" x2="433.8" y2="224.1" stroke="#ffbe0b" stroke-width="1.4" stroke-linecap="round" opacity="0.75"/>
+      <circle cx="444.0" cy="227.6" r="5.1" fill="#ffbe0b" opacity="0.56"/>
+      <polygon points="444.0,219.5 451.1,227.6 444.0,235.7 436.9,227.6" fill="#ffee88" opacity="0.75"/>
+      <line x1="320.3" y1="246.2" x2="429.7" y2="229.6" stroke="#ff3b00" stroke-width="3.5" stroke-linecap="round" opacity="0.95"/>
+      <circle cx="444.7" cy="233.3" r="2.2" fill="#ff3b00" opacity="0.54"/>
+      <line x1="314.3" y1="249.6" x2="350.6" y2="245.7" stroke="#ffffff" stroke-width="3.0" stroke-linecap="round" opacity="0.94"/>
+      <circle cx="368.2" cy="247.7" r="4.9" fill="#ffffff" opacity="0.89"/>
+      <polygon points="368.2,239.9 375.0,247.7 368.2,255.5 361.4,247.7" fill="#ffee88" opacity="0.75"/>
+      <line x1="340.7" y1="253.9" x2="470.0" y2="250.6" stroke="#ffbe0b" stroke-width="3.5" stroke-linecap="round" opacity="0.84"/>
+      <circle cx="484.3" cy="257.1" r="5.1" fill="#ffbe0b" opacity="0.52"/>
+    </g>
+  </g>
+</svg>

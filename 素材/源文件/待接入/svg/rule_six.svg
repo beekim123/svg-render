@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-rule_six" viewBox="0 0 64 64" width="64" height="64">
+<title>规矩图标 · 限六张</title>
+<g id="root">
+  <!-- 顶部粗壮 U 形锁梁 -->
+  <path d="M20,28 V17 C20,8 44,8 44,17 V28" fill="none" stroke="#1C1412" stroke-width="10" stroke-linecap="round"/>
+  <path d="M20,28 V17 C20,8 44,8 44,17 V28" fill="none" stroke="#8CAAB5" stroke-width="4.8" stroke-linecap="round"/>
+  <path d="M32,10 C40,10 44,13 44,17 V28" fill="none" stroke="#3B515C" stroke-width="4.8" stroke-linecap="round"/>
+
+  <!-- 冷灰铁小挂锁锁身（x:10..54, y:24..57） -->
+  <rect x="10" y="24" width="44" height="33" rx="5" fill="#5A7682" stroke="#1C1412" stroke-width="3.4"/>
+  <!-- 右侧背光暗铁面 -->
+  <rect x="32" y="24" width="22" height="33" rx="4" fill="#3B515C" opacity="0.88"/>
+  <!-- 左上冷亮边 -->
+  <polyline points="13,52 13,27 48,27" fill="none" stroke="#8CAAB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 锁身深色内盘（衬托六道竖杠） -->
+  <rect x="14" y="30" width="36" height="21" rx="2.5" fill="#1E2C33" stroke="#1C1412" stroke-width="2.2"/>
+
+  <!-- 锁身上刻的六道清晰竖杠（上3下3或并排6道，这里并排6道高对比亮骨白刻杠，18pt 下根根分明） -->
+  <g id="six_bars" stroke="#1C1412" stroke-width="1.2">
+    <rect x="16.5" y="33" width="3.8" height="15" rx="1" fill="#E2D6BA"/>
+    <rect x="22.1" y="33" width="3.8" height="15" rx="1" fill="#E2D6BA"/>
+    <rect x="27.7" y="33" width="3.8" height="15" rx="1" fill="#E2D6BA"/>
+    <rect x="33.3" y="33" width="3.8" height="15" rx="1" fill="#E2D6BA"/>
+    <rect x="38.9" y="33" width="3.8" height="15" rx="1" fill="#E2D6BA"/>
+    <rect x="44.5" y="33" width="3.8" height="15" rx="1" fill="#E2D6BA"/>
+  </g>
+
+  <!-- 外框重描 -->
+  <rect x="10" y="24" width="44" height="33" rx="5" fill="none" stroke="#1C1412" stroke-width="3.4"/>
+</g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-relic_rbheal" viewBox="0 0 96 96" width="96" height="96">
+<title>宝物 · 彩虹回心</title>
+<defs>
+  <!-- 心形玻璃瓶内腔裁切路径 -->
+  <clipPath id="relic_rbheal-heart-clip">
+    <path d="M48,36 C39,24 17,27 17,45 C17,62 34,73 48,84 C62,73 79,62 79,45 C79,27 57,24 48,36 Z"/>
+  </clipPath>
+</defs>
+<g id="root">
+  <!-- 瓶口软木塞与旧银瓶颈箍环 -->
+  <g id="bottle_neck">
+    <!-- 软木塞 -->
+    <polygon points="41,8 55,8 53,19 43,19" fill="#9E6238" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+    <polygon points="48,8 55,8 53,19 48,19" fill="#704122"/>
+    <!-- 玻璃瓶口折边与瓶颈 -->
+    <rect x="36" y="17" width="24" height="7" rx="3" fill="#8CAAB5" stroke="#1C1412" stroke-width="3"/>
+    <rect x="40" y="24" width="16" height="9" fill="#5A7682" stroke="#1C1412" stroke-width="3"/>
+  </g>
+
+  <!-- 心形小玻璃瓶厚壁外衬（冷灰青玻璃壁 #5A7682 / #8CAAB5） -->
+  <path d="M48,32 C37,18 11,22 11,44 C11,64 31,77 48,90 C65,77 85,64 85,44 C85,22 59,18 48,32 Z" fill="#5A7682" stroke="#1C1412" stroke-width="3.6" stroke-linejoin="round"/>
+  <path d="M48,32 C59,18 85,22 85,44 C85,64 65,77 48,90 Z" fill="#3B515C"/>
+
+  <!-- 瓶内六色彩虹细条纹（红、黄、绿、青、蓝、品红，严格使用 palette.mix 颜色） -->
+  <g id="rainbow_stripes" clip-path="url(#relic_rbheal-heart-clip)">
+    <!-- 1. 红 (#E3263A) -->
+    <rect x="14" y="25" width="68" height="12" fill="#E3263A"/>
+    <!-- 2. 黄 (#FFD84A) -->
+    <rect x="14" y="37" width="68" height="9" fill="#FFD84A"/>
+    <!-- 3. 绿 (#1DBF5E) -->
+    <rect x="14" y="46" width="68" height="9" fill="#1DBF5E"/>
+    <!-- 4. 青 (#3FE3F0) -->
+    <rect x="14" y="55" width="68" height="9" fill="#3FE3F0"/>
+    <!-- 5. 蓝 (#2E66F0) -->
+    <rect x="14" y="64" width="68" height="9" fill="#2E66F0"/>
+    <!-- 6. 品红 (#E94FD8) -->
+    <rect x="14" y="73" width="68" height="14" fill="#E94FD8"/>
+
+    <!-- 条纹之间的手绘细墨线分隔 -->
+    <path d="M14,37 H82 M14,46 H82 M14,55 H82 M14,64 H82 M14,73 H82" stroke="#1C1412" stroke-width="2"/>
+    <!-- 右侧瓶腔背光微压暗层（保留宝石鲜艳度同时赋予立体感） -->
+    <rect x="48" y="24" width="36" height="64" fill="#161221" opacity="0.22"/>
+    <!-- 左上心瓣玻璃高光白弧 -->
+    <path d="M23,46 C23,36 31,32 39,35" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" opacity="0.92"/>
+  </g>
+
+  <!-- 心形内腔与外瓶壁描边重绘 -->
+  <path d="M48,36 C39,24 17,27 17,45 C17,62 34,73 48,84 C62,73 79,62 79,45 C79,27 57,24 48,36 Z" fill="none" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+  <path d="M48,32 C37,18 11,22 11,44 C11,64 31,77 48,90 C65,77 85,64 85,44 C85,22 59,18 48,32 Z" fill="none" stroke="#1C1412" stroke-width="3.6" stroke-linejoin="round"/>
+</g>
+</svg>

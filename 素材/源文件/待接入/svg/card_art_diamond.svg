@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-card_art_diamond" viewBox="0 0 176 188" width="176" height="188">
+<title>额外牌原画 · 钻石</title>
+<style>
+.svg-card_art_diamond g { transform-box: view-box; }
+.svg-card_art_diamond #root { transform-origin: 96px 108px; }
+.svg-card_art_diamond #claw_base { transform-origin: 96px 146px; }
+.svg-card_art_diamond #diamond_main { transform-origin: 96px 96px; }
+.svg-card_art_diamond #facet_glint { transform-origin: 96px 86px; }
+.svg-card_art_diamond #diamond_clone { transform-origin: 96px 96px; opacity: 0; }
+
+/* 待机 idle（3000ms 循环）：0ms(0%) -> 1500ms(50%) -> 3000ms(100%)
+   切面上一道亮光慢慢扫过 */
+@keyframes svg-card_art_diamond-idle-glint {
+  0% { opacity: 0.35; transform: translate(-10px, 2px) scale(0.88); }
+  50% { opacity: 1; transform: translate(12px, -4px) scale(1.12); }
+  100% { opacity: 0.35; transform: translate(-10px, 2px) scale(0.88); }
+}
+@keyframes svg-card_art_diamond-idle-main {
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(0px, -3px); }
+  100% { transform: translate(0px, 0px); }
+}
+.svg-card_art_diamond:not([data-anim]) #facet_glint,
+.svg-card_art_diamond[data-anim="idle"] #facet_glint {
+  animation: svg-card_art_diamond-idle-glint 3s ease-in-out infinite;
+}
+.svg-card_art_diamond:not([data-anim]) #diamond_main,
+.svg-card_art_diamond[data-anim="idle"] #diamond_main {
+  animation: svg-card_art_diamond-idle-main 3s ease-in-out infinite;
+}
+
+/* play（600ms）：
+   0ms(0%) 静止 -> 100ms(16.6667%) 钻石一震 -> 250ms(41.6667%) 右边弹出一个一模一样的半透明分身，两颗并排
+   -> 400ms(66.6667%) 停住 -> 600ms(100%) 分身叠回本体。
+   所有部件严格共用：0%, 16.6667%, 41.6667%, 66.6667%, 100% */
+@keyframes svg-card_art_diamond-play-base {
+  0% { transform: translate(0px, 0px) scale(1, 1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { transform: translate(0px, 4px) scale(1.06, 0.92); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.6667% { transform: translate(-14px, 0px) scale(1, 1); animation-timing-function: linear; }
+  66.6667% { transform: translate(-14px, 0px) scale(1, 1); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px, 0px) scale(1, 1); }
+}
+@keyframes svg-card_art_diamond-play-main {
+  0% { transform: translate(0px, 0px) scale(1, 1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { transform: translate(-4px, 5px) scale(1.06, 0.92); animation-timing-function: cubic-bezier(.34,1.56,.64,1); }
+  41.6667% { transform: translate(-18px, -4px) scale(0.88, 0.88); animation-timing-function: linear; }
+  66.6667% { transform: translate(-18px, -4px) scale(0.88, 0.88); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px, 0px) scale(1, 1); }
+}
+@keyframes svg-card_art_diamond-play-clone {
+  0% { opacity: 0; transform: translate(0px, 0px) scale(0.85, 0.85); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { opacity: 0.45; transform: translate(8px, 4px) scale(0.9, 0.85); animation-timing-function: cubic-bezier(.34,1.56,.64,1); }
+  41.6667% { opacity: 0.72; transform: translate(26px, -4px) scale(0.88, 0.88); animation-timing-function: linear; }
+  66.6667% { opacity: 0.72; transform: translate(26px, -4px) scale(0.88, 0.88); animation-timing-function: ease-in-out; }
+  100% { opacity: 0; transform: translate(0px, 0px) scale(0.85, 0.85); }
+}
+@keyframes svg-card_art_diamond-play-glint {
+  0% { opacity: 0.35; transform: translate(-10px, 2px) scale(0.88); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { opacity: 0.9; transform: translate(0px, 0px) scale(1.1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.6667% { opacity: 1; transform: translate(-18px, -6px) scale(1.18); animation-timing-function: linear; }
+  66.6667% { opacity: 1; transform: translate(-18px, -6px) scale(1.18); animation-timing-function: ease-in-out; }
+  100% { opacity: 0.35; transform: translate(-10px, 2px) scale(0.88); }
+}
+.svg-card_art_diamond[data-anim="play"] #claw_base {
+  animation: svg-card_art_diamond-play-base 0.6s both;
+}
+.svg-card_art_diamond[data-anim="play"] #diamond_main {
+  animation: svg-card_art_diamond-play-main 0.6s both;
+}
+.svg-card_art_diamond[data-anim="play"] #diamond_clone {
+  animation: svg-card_art_diamond-play-clone 0.6s both;
+}
+.svg-card_art_diamond[data-anim="play"] #facet_glint {
+  animation: svg-card_art_diamond-play-glint 0.6s both;
+}
+</style>
+<g id="root">
+  <!-- 左上角 x:0..30, y:0..90 留空 -->
+  <ellipse cx="96" cy="168" rx="50" ry="8" fill="#0D111C" opacity="0.6"/>
+
+  <!-- 1. 旧铜爪托底座 claw_base -->
+  <g id="claw_base">
+    <!-- 底座铜台 -->
+    <polygon points="64,148 128,148 136,164 56,164" fill="#9A7B46" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <polygon points="96,148 128,148 136,164 96,164" fill="#6E542B" opacity="0.85"/>
+    <polygon points="74,134 118,134 124,148 68,148" fill="#6E542B" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+    <!-- 左右托爪 -->
+    <path d="M68,140 C52,130 46,112 52,96 L60,102 C56,114 60,126 74,134 Z" fill="#9A7B46" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <path d="M124,140 C140,130 146,112 140,96 L132,102 C136,114 132,126 118,134 Z" fill="#6E542B" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <line x1="62" y1="152" x2="94" y2="152" stroke="#E2D6BA" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- 2. 右边弹出的半透明分身钻石 diamond_clone（平时 opacity: 0） -->
+  <g id="diamond_clone">
+    
+      <!-- 钻石外轮廓底色 (#F4F1FF) -->
+      <polygon points="70,68 122,68 138,88 96,138 54,88" fill="#F4F1FF" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+      <!-- 切面里隐约透出的红、绿、蓝三色棱镜折射面 -->
+      <polygon points="54,88 78,88 96,138" fill="#FF8598" opacity="0.55"/>
+      <polygon points="78,88 114,88 96,138" fill="#7CEB9E" opacity="0.48"/>
+      <polygon points="114,88 138,88 96,138" fill="#7CA8FF" opacity="0.62"/>
+      <!-- 冠部左上亮白面与右上冷灰白面 -->
+      <polygon points="70,68 96,68 78,88 54,88" fill="#FFFFFF"/>
+      <polygon points="96,68 122,68 138,88 114,88" fill="#D8D4EB"/>
+      <!-- 正中台面 -->
+      <polygon points="80,74 112,74 114,88 78,88" fill="#FFFFFF" stroke="#1C1412" stroke-width="1.8" stroke-linejoin="round"/>
+      <!-- 内部切面折线 -->
+      <path d="M54,88 H138 M70,68 L78,88 L96,138 L114,88 L122,68" fill="none" stroke="#1C1412" stroke-width="1.8" stroke-linejoin="round"/>
+      <!-- 常驻高光斑 -->
+      <polygon points="84,77 98,77 94,85 82,85" fill="#FFFFFF"/>
+      <polygon points="70,68 122,68 138,88 96,138 54,88" fill="none" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    
+  </g>
+
+  <!-- 3. 主白钻石本体 diamond_main -->
+  <g id="diamond_main">
+    
+      <!-- 钻石外轮廓底色 (#F4F1FF) -->
+      <polygon points="70,68 122,68 138,88 96,138 54,88" fill="#F4F1FF" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+      <!-- 切面里隐约透出的红、绿、蓝三色棱镜折射面 -->
+      <polygon points="54,88 78,88 96,138" fill="#FF8598" opacity="0.55"/>
+      <polygon points="78,88 114,88 96,138" fill="#7CEB9E" opacity="0.48"/>
+      <polygon points="114,88 138,88 96,138" fill="#7CA8FF" opacity="0.62"/>
+      <!-- 冠部左上亮白面与右上冷灰白面 -->
+      <polygon points="70,68 96,68 78,88 54,88" fill="#FFFFFF"/>
+      <polygon points="96,68 122,68 138,88 114,88" fill="#D8D4EB"/>
+      <!-- 正中台面 -->
+      <polygon points="80,74 112,74 114,88 78,88" fill="#FFFFFF" stroke="#1C1412" stroke-width="1.8" stroke-linejoin="round"/>
+      <!-- 内部切面折线 -->
+      <path d="M54,88 H138 M70,68 L78,88 L96,138 L114,88 L122,68" fill="none" stroke="#1C1412" stroke-width="1.8" stroke-linejoin="round"/>
+      <!-- 常驻高光斑 -->
+      <polygon points="84,77 98,77 94,85 82,85" fill="#FFFFFF"/>
+      <polygon points="70,68 122,68 138,88 96,138 54,88" fill="none" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    
+  </g>
+
+  <!-- 4. 切面上扫过的亮光与星芒 facet_glint -->
+  <g id="facet_glint">
+    <polygon points="84,68 94,68 82,92 72,92" fill="#FFFFFF" opacity="0.88"/>
+    <polygon points="112,62 116,72 126,76 116,80 112,90 108,80 98,76 108,72" fill="#FFFFFF" stroke="#1C1412" stroke-width="1.4" stroke-linejoin="round"/>
+  </g>
+</g>
+</svg>

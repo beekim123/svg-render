@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-rule_cap" viewBox="0 0 64 64" width="64" height="64">
+<title>规矩图标 · 压倍率</title>
+<g id="root">
+  <!-- 下半截：被铁护手死死压住、只露出一半的白色大宝石（#F4F1FF / #FFFFFF + 三色折射小切面） -->
+  <g id="white_gem_half">
+    <!-- 宝石下半截多边形主轮廓（上半截被压在 y=33 之下） -->
+    <polygon points="14,33 50,33 54,42 32,58 10,42" fill="#F4F1FF" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <!-- 左下红光折射刻面 -->
+    <polygon points="10,42 22,42 32,58" fill="#FF5C6E" opacity="0.88"/>
+    <!-- 右下蓝光折射刻面 -->
+    <polygon points="54,42 42,42 32,58" fill="#6B9BFF" opacity="0.88"/>
+    <!-- 底部中央绿光折射小刻面 -->
+    <polygon points="22,42 42,42 32,58" fill="#5CE892" opacity="0.85"/>
+    <!-- 正中纯白亮台面 -->
+    <polygon points="18,33 46,33 42,44 22,44" fill="#FFFFFF" stroke="#1C1412" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- 宝石切面分界线与外框重描 -->
+    <path d="M10,42 L22,44 L32,58 L42,44 L54,42" fill="none" stroke="#1C1412" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="14,33 50,33 54,42 32,58 10,42" fill="none" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 左右两侧被往下死死压出的短促震波线 -->
+  <path d="M5,36 L10,40 M59,36 L54,40" stroke="#1C1412" stroke-width="4.4" stroke-linecap="round"/>
+  <path d="M5,36 L10,40 M59,36 L54,40" stroke="#E2D6BA" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 上半截：掌心朝下、重重压住宝石顶部的冷灰铁护手（#5A7682 + 暗面 #3B515C / #1E2C33） -->
+  <g id="iron_gauntlet">
+    <!-- 腕部铁甲袖口 -->
+    <polygon points="18,6 46,6 50,16 14,16" fill="#3B515C" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <polygon points="32,6 46,6 50,16 32,16" fill="#1E2C33"/>
+    <line x1="20" y1="9" x2="36" y2="9" stroke="#8CAAB5" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- 手背厚铁甲片 -->
+    <path d="M10,15 H54 L57,28 H7 Z" fill="#5A7682" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <polygon points="32,15 54,15 57,28 32,28" fill="#3B515C"/>
+    <path d="M13,18 H34" stroke="#8CAAB5" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- 手背铆钉 -->
+    <circle cx="20" cy="22" r="2.4" fill="#8CAAB5" stroke="#1C1412" stroke-width="1.4"/>
+    <circle cx="32" cy="22" r="2.4" fill="#8CAAB5" stroke="#1C1412" stroke-width="1.4"/>
+    <circle cx="44" cy="22" r="2.4" fill="#3B515C" stroke="#1C1412" stroke-width="1.4"/>
+
+    <!-- 掌心朝下重压的五指铁指节与封顶横铁板（死死压在 y=35 封顶线上） -->
+    <rect x="5" y="27" width="54" height="9" rx="3" fill="#5A7682" stroke="#1C1412" stroke-width="3.2"/>
+    <rect x="32" y="27" width="27" height="9" rx="3" fill="#1E2C33" opacity="0.78"/>
+    <line x1="8" y1="30" x2="42" y2="30" stroke="#8CAAB5" stroke-width="2" stroke-linecap="round"/>
+    <!-- 四道铁指节分缝 -->
+    <path d="M17,27 V36 M27,27 V36 M37,27 V36 M47,27 V36" stroke="#1C1412" stroke-width="2.6"/>
+    <rect x="5" y="27" width="54" height="9" rx="3" fill="none" stroke="#1C1412" stroke-width="3.2"/>
+  </g>
+</g>
+</svg>

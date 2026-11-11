@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-relic_shine" viewBox="0 0 96 96" width="96" height="96">
+<title>宝物 · 闪光 300</title>
+<g id="root">
+  <!-- 左下：小铜磨轮（旧铜 #9A7B46 + 暗面 #6E542B + 轮缘齿槽与摇柄轴） -->
+  <g id="brass_wheel">
+    <!-- 磨轮底座斜撑木架 -->
+    <polygon points="10,82 26,56 38,62 24,86" fill="#704122" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+    <!-- 铜磨轮主体圆盘 (cx=34, cy=56, r=23) -->
+    <circle cx="34" cy="56" r="23" fill="#9A7B46" stroke="#1C1412" stroke-width="3.4"/>
+    <!-- 右下背光暗铜面 -->
+    <path d="M50,40 A23,23 0 0,1 18,72 L34,56 Z" fill="#6E542B"/>
+    <!-- 左上受光亮弧 -->
+    <path d="M16,49 A19,19 0 0,1 41,37" fill="none" stroke="#E2D6BA" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- 磨轮内圈凹槽与放射磨纹 -->
+    <circle cx="34" cy="56" r="15" fill="#6E542B" stroke="#1C1412" stroke-width="2.4"/>
+    <path d="M34,33 V41 M34,71 V79 M11,56 H19 M49,56 H57 M18,40 L24,46 M44,66 L50,72 M50,40 L44,46 M24,66 L18,72" stroke="#1C1412" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- 磨轮中心旧银轴心 -->
+    <circle cx="34" cy="56" r="6.5" fill="#C2A670" stroke="#1C1412" stroke-width="2.6"/>
+    <circle cx="34" cy="56" r="2.5" fill="#1C1412"/>
+    <circle cx="34" cy="56" r="23" fill="none" stroke="#1C1412" stroke-width="3.4"/>
+  </g>
+
+  <!-- 右上：轮边紧紧抵着的一颗切好的鲜艳蓝宝石（三角切面 #2E66F0 + #6B9BFF + #193D9E） -->
+  <g id="cut_blue_gem">
+    <polygon points="64,14 88,56 40,56" fill="#2E66F0" stroke="#1C1412" stroke-width="3.4" stroke-linejoin="round"/>
+    <!-- 右侧背光暗刻面 -->
+    <polygon points="64,14 88,56 64,56" fill="#193D9E"/>
+    <!-- 左上受光亮刻面 -->
+    <polygon points="64,14 40,56 51,50 64,25" fill="#6B9BFF"/>
+    <!-- 中央三角切好台面与刻面棱线 -->
+    <polygon points="64,25 77,50 51,50" fill="#2E66F0" stroke="#1C1412" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="64" y1="14" x2="64" y2="25" stroke="#1C1412" stroke-width="2"/>
+    <line x1="40" y1="56" x2="51" y2="50" stroke="#1C1412" stroke-width="2"/>
+    <line x1="88" y1="56" x2="77" y2="50" stroke="#1C1412" stroke-width="2"/>
+    <polygon points="62,29 68,41 57,43" fill="#FFFFFF" opacity="0.95"/>
+    <polygon points="64,14 88,56 40,56" fill="none" stroke="#1C1412" stroke-width="3.4" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 宝石顶角/右上角醒目的四角小星芒（点明“闪光 300”） -->
+  <g id="four_point_star">
+    <polygon points="75,7 79,19 91,23 79,27 75,39 71,27 59,23 71,19" fill="#FFFFFF" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+    <polygon points="75,12 77.5,20.5 86,23 77.5,25.5 75,34 72.5,25.5 64,23 72.5,20.5" fill="#3FE3F0"/>
+    <circle cx="75" cy="23" r="3.5" fill="#FFFFFF"/>
+  </g>
+</g>
+</svg>

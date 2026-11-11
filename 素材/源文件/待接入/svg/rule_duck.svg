@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-rule_duck" viewBox="0 0 64 64" width="64" height="64">
+<title>规矩图标 · 缩头</title>
+<g id="root">
+  <!-- 半掀开的盒盖与黑黝黝的盒缝内腔（y:18..36） -->
+  <rect x="10" y="18" width="44" height="20" fill="#0D111C" stroke="#1C1412" stroke-width="3"/>
+
+  <!-- 盖缝里露出的两只诡萌大眼睛（18pt 下极高对比度） -->
+  <g id="peeking_eyes">
+    <circle cx="23" cy="28" r="6.5" fill="#FFD84A" stroke="#1C1412" stroke-width="2.6"/>
+    <circle cx="24" cy="28" r="2.6" fill="#1C1412"/>
+    <circle cx="21.5" cy="26" r="1.6" fill="#FFFFFF"/>
+
+    <circle cx="41" cy="28" r="6.5" fill="#FFD84A" stroke="#1C1412" stroke-width="2.6"/>
+    <circle cx="40" cy="28" r="2.6" fill="#1C1412"/>
+    <circle cx="38.5" cy="26" r="1.6" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 半掀起的盒盖（左低右高斜掀，压在眼睛上方） -->
+  <g id="box_lid">
+    <polygon points="7,18 55,9 58,19 9,24" fill="#9E6238" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <polygon points="32,13.5 55,9 58,19 32,21.5" fill="#704122"/>
+    <line x1="11" y1="19" x2="52" y2="12" stroke="#E2D6BA" stroke-width="2" stroke-linecap="round"/>
+    <polygon points="7,18 55,9 58,19 9,24" fill="none" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 下半截小方木盒（y:34..56） -->
+  <g id="box_body">
+    <rect x="9" y="34" width="46" height="22" rx="3" fill="#704122" stroke="#1C1412" stroke-width="3.4"/>
+    <rect x="32" y="34" width="23" height="22" rx="2" fill="#3D2212" opacity="0.82"/>
+    <!-- 左右铁包边 -->
+    <rect x="9" y="34" width="9" height="22" fill="#5A7682" stroke="#1C1412" stroke-width="2.8"/>
+    <rect x="46" y="34" width="9" height="22" fill="#3B515C" stroke="#1C1412" stroke-width="2.8"/>
+    <!-- 上沿高光 -->
+    <line x1="19" y1="37" x2="44" y2="37" stroke="#C48A5C" stroke-width="2" stroke-linecap="round"/>
+    <rect x="9" y="34" width="46" height="22" rx="3" fill="none" stroke="#1C1412" stroke-width="3.4"/>
+  </g>
+</g>
+</svg>

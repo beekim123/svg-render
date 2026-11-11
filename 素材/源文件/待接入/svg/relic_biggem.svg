@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-relic_biggem" viewBox="0 0 192 192" width="192" height="192">
+<title>大宝石</title>
+<g id="root">
+  <!-- 旧金皇家六爪镶托底座（压暗旧金 #9A7B46 / #6E542B / #3B2B14，不画外部光晕，四边留白约 14px） -->
+  <g id="gold_claw_mount">
+    <!-- 底部哥特八角王冠式旧金托座 -->
+    <polygon points="56,144 136,144 152,164 128,178 64,178 40,164" fill="#6E542B" stroke="#1C1412" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="96,144 136,144 152,164 128,178 96,178" fill="#3B2B14"/>
+    <polygon points="62,150 130,150 140,163 122,171 70,171 52,163" fill="#9A7B46" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round"/>
+    <line x1="58" y1="154" x2="114" y2="154" stroke="#E2D6BA" stroke-width="2.6" stroke-linecap="round"/>
+
+    <!-- 托座两侧与后方伸出的旧金外护翼 -->
+    <polygon points="24,84 14,96 24,116 40,108" fill="#9A7B46" stroke="#1C1412" stroke-width="3.8" stroke-linejoin="round"/>
+    <polygon points="168,84 178,96 168,116 152,108" fill="#6E542B" stroke="#1C1412" stroke-width="3.8" stroke-linejoin="round"/>
+    <polygon points="78,22 96,12 114,22 108,34 84,34" fill="#9A7B46" stroke="#1C1412" stroke-width="3.8" stroke-linejoin="round"/>
+    <polygon points="96,12 114,22 108,34 96,34" fill="#6E542B"/>
+  </g>
+
+  <!-- 多切面大白宝石本体（#F4F1FF 主体 + 内部透出红圆/绿方/蓝三角三色光 + 纯白星芒台面） -->
+  <g id="great_white_gem">
+    <!-- 十二边形皇家切工外轮廓 (x:26..166, y:22..162) -->
+    <polygon points="96,22 134,32 160,60 166,96 154,132 126,156 96,162 66,156 38,132 26,96 32,60 58,32" fill="#F4F1FF" stroke="#1C1412" stroke-width="4.2" stroke-linejoin="round"/>
+
+    <!-- 外圈冠部切面：左红（#E3263A / #FF5C6E）、上绿（#1DBF5E / #5CE892）、右蓝（#2E66F0 / #6B9BFF）呼应宝石龙肚皮三宝石 -->
+    <!-- 1. 左上与左侧切面：透出鲜艳红宝石光 -->
+    <polygon points="32,60 58,32 72,54 48,74" fill="#FF5C6E"/>
+    <polygon points="26,96 32,60 48,74 44,98" fill="#E3263A"/>
+    <polygon points="38,132 26,96 44,98 56,120" fill="#FF5C6E"/>
+
+    <!-- 2. 顶部正中切面：透出鲜艳绿宝石光 -->
+    <polygon points="58,32 96,22 96,46 72,54" fill="#5CE892"/>
+    <polygon points="96,22 134,32 120,54 96,46" fill="#1DBF5E"/>
+
+    <!-- 3. 右上与右侧切面：透出鲜艳蓝宝石光 -->
+    <polygon points="134,32 160,60 144,74 120,54" fill="#6B9BFF"/>
+    <polygon points="160,60 166,96 148,98 144,74" fill="#2E66F0"/>
+    <polygon points="166,96 154,132 136,120 148,98" fill="#193D9E" opacity="0.88"/>
+
+    <!-- 4. 下半圈亭部过渡切面：三色交融的黄(#FFD84A)、品红(#E94FD8)、青(#3FE3F0)与冷白(#E6E0FA) -->
+    <polygon points="38,132 56,120 74,136 66,156" fill="#FFD84A" opacity="0.85"/>
+    <polygon points="66,156 74,136 96,142 96,162" fill="#E94FD8" opacity="0.82"/>
+    <polygon points="96,162 96,142 118,136 126,156" fill="#3FE3F0" opacity="0.85"/>
+    <polygon points="126,156 118,136 136,120 154,132" fill="#6B9BFF" opacity="0.85"/>
+
+    <!-- 中圈八角星冠刻面（清澈亮白 #F4F1FF / #FFFFFF，将三色光聚向中心） -->
+    <polygon points="96,46 120,54 144,74 148,98 136,120 118,136 96,142 74,136 56,120 44,98 48,74 72,54" fill="#F4F1FF" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round"/>
+    <!-- 中圈内部三色轻透三角刻面 -->
+    <polygon points="48,74 72,54 64,88 44,98" fill="#FF5C6E" opacity="0.55"/>
+    <polygon points="72,54 96,46 120,54 96,62" fill="#5CE892" opacity="0.6"/>
+    <polygon points="120,54 144,74 148,98 128,88" fill="#6B9BFF" opacity="0.55"/>
+    <polygon points="56,120 74,136 96,124 64,88" fill="#FFD84A" opacity="0.45"/>
+    <polygon points="136,120 118,136 96,124 128,88" fill="#3FE3F0" opacity="0.45"/>
+
+    <!-- 正中心大八角纯白主台面（#FFFFFF，全游戏最亮最干净的切面） -->
+    <polygon points="96,60 118,68 128,90 120,114 96,124 72,114 64,90 74,68" fill="#FFFFFF" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+
+    <!-- 全部切面钢笔棱线（焦茶近黑 #1C1412） -->
+    <g stroke="#1C1412" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="96" y1="22" x2="96" y2="46"/>
+      <line x1="58" y1="32" x2="72" y2="54"/>
+      <line x1="134" y1="32" x2="120" y2="54"/>
+      <line x1="32" y1="60" x2="48" y2="74"/>
+      <line x1="160" y1="60" x2="144" y2="74"/>
+      <line x1="26" y1="96" x2="44" y2="98"/>
+      <line x1="166" y1="96" x2="148" y2="98"/>
+      <line x1="38" y1="132" x2="56" y2="120"/>
+      <line x1="154" y1="132" x2="136" y2="120"/>
+      <line x1="66" y1="156" x2="74" y2="136"/>
+      <line x1="126" y1="156" x2="118" y2="136"/>
+      <line x1="96" y1="162" x2="96" y2="142"/>
+      <!-- 中圈连往内台面棱线 -->
+      <line x1="96" y1="46" x2="96" y2="60"/>
+      <line x1="72" y1="54" x2="74" y2="68"/>
+      <line x1="120" y1="54" x2="118" y2="68"/>
+      <line x1="48" y1="74" x2="64" y2="90"/>
+      <line x1="144" y1="74" x2="128" y2="90"/>
+      <line x1="44" y1="98" x2="64" y2="90"/>
+      <line x1="148" y1="98" x2="128" y2="90"/>
+      <line x1="56" y1="120" x2="72" y2="114"/>
+      <line x1="136" y1="120" x2="120" y2="114"/>
+      <line x1="74" y1="136" x2="72" y2="114"/>
+      <line x1="118" y1="136" x2="120" y2="114"/>
+      <line x1="96" y1="142" x2="96" y2="124"/>
+    </g>
+
+    <!-- 台面内的锐利纯白四角星反光与高光块（不超出宝石边界） -->
+    <polygon points="82,70 96,65 104,72 88,88 75,84" fill="#F4F1FF"/>
+    <polygon points="78,52 82,63 93,67 82,71 78,82 74,71 63,67 74,63" fill="#FFFFFF" stroke="#1C1412" stroke-width="1.8" stroke-linejoin="round"/>
+    <polygon points="116,96 119,103 126,106 119,109 116,116 113,109 106,106 113,103" fill="#FFFFFF" stroke="#1C1412" stroke-width="1.6" stroke-linejoin="round"/>
+
+    <!-- 大宝石外框粗墨线重描 -->
+    <polygon points="96,22 134,32 160,60 166,96 154,132 126,156 96,162 66,156 38,132 26,96 32,60 58,32" fill="none" stroke="#1C1412" stroke-width="4.2" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 前景六只厚重旧金龙爪扣（牢牢扣住大宝石边缘，压暗旧金 #C2A670 / #9A7B46 / #6E542B） -->
+  <g id="front_gold_claws" stroke="#1C1412" stroke-width="3.6" stroke-linejoin="round">
+    <!-- 左上金爪 -->
+    <polygon points="24,52 46,44 42,62 24,68" fill="#C2A670"/>
+    <!-- 右上金爪 -->
+    <polygon points="168,52 146,44 150,62 168,68" fill="#9A7B46"/>
+    <!-- 左下金爪 -->
+    <polygon points="26,124 48,118 52,136 34,142" fill="#9A7B46"/>
+    <!-- 右下金爪 -->
+    <polygon points="166,124 144,118 140,136 158,142" fill="#6E542B"/>
+    <!-- 底左金爪 -->
+    <polygon points="56,164 68,144 82,152 74,170" fill="#9A7B46"/>
+    <!-- 底右金爪 -->
+    <polygon points="136,164 124,144 110,152 118,170" fill="#6E542B"/>
+  </g>
+</g>
+</svg>

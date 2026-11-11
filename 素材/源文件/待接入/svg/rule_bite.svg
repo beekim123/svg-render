@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-rule_bite" viewBox="0 0 64 64" width="64" height="64">
+<title>规矩图标 · 咬手</title>
+<g id="root">
+  <!-- 暗色衬底凹槽感背影，让尖牙与绿方宝石在 18pt 下依然醒目分明 -->
+  <rect x="6" y="6" width="52" height="52" rx="8" fill="#161221" stroke="#1C1412" stroke-width="3.2"/>
+
+  <!-- 正中被上下尖牙咬住的鲜艳斜切角绿方宝石（方形、斜切四角、中央完整亮台面，绝不呈 H 形） -->
+  <g id="gem_green">
+    <!-- 斜切角正方宝石外框（x:14..50, y:16..48，四角 5px 斜切） -->
+    <polygon points="19,16 45,16 50,21 50,43 45,48 19,48 14,43 14,21" fill="#1DBF5E" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+    <!-- 左上受光亮斜刻面 -->
+    <polygon points="19,16 45,16 41,22 23,22 23,40 14,43 14,21" fill="#5CE892"/>
+    <!-- 右下背光暗斜刻面 -->
+    <polygon points="45,16 50,21 50,43 45,48 19,48 23,42 41,42 41,22" fill="#117A3B"/>
+    <!-- 四角斜切刻面分割线 -->
+    <path d="M19,16 L23,22 M45,16 L41,22 M50,21 L41,24 M50,43 L41,40 M45,48 L41,42 M19,48 L23,42 M14,43 L23,40 M14,21 L23,24" stroke="#1C1412" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- 中央完整的大方台面与醒目亮面（不被牙齿遮挡分割） -->
+    <polygon points="24,22 40,22 42,24 42,40 40,42 24,42 22,40 22,24" fill="#1DBF5E" stroke="#1C1412" stroke-width="2.2" stroke-linejoin="round"/>
+    <polygon points="25,24 39,24 39,34 32,38 25,38" fill="#7BFFAE"/>
+    <rect x="26" y="25" width="9" height="7" rx="1" fill="#FFFFFF"/>
+    <polygon points="19,16 45,16 50,21 50,43 45,48 19,48 14,43 14,21" fill="none" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 上排三大尖牙（咬在绿方宝石上沿外斜面 y=20..21，不切入中央方亮面） -->
+  <g id="teeth_top" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round">
+    <polygon points="8,8 23,8 15,22" fill="#E2D6BA"/>
+    <polygon points="15,8 23,8 15,22" fill="#9A8968"/>
+    <polygon points="24,8 40,8 32,20" fill="#E2D6BA"/>
+    <polygon points="32,8 40,8 32,20" fill="#9A8968"/>
+    <polygon points="41,8 56,8 49,22" fill="#E2D6BA"/>
+    <polygon points="49,8 56,8 49,22" fill="#9A8968"/>
+    <polygon points="8,8 23,8 15,22" fill="none"/>
+    <polygon points="24,8 40,8 32,20" fill="none"/>
+    <polygon points="41,8 56,8 49,22" fill="none"/>
+  </g>
+
+  <!-- 下排三大尖牙（咬在绿方宝石下沿外斜面 y=43..44，保留中央完整方宝石轮廓） -->
+  <g id="teeth_bottom" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round">
+    <polygon points="8,56 23,56 15,42" fill="#E2D6BA"/>
+    <polygon points="15,56 23,56 15,42" fill="#9A8968"/>
+    <polygon points="24,56 40,56 32,44" fill="#E2D6BA"/>
+    <polygon points="32,56 40,56 32,44" fill="#9A8968"/>
+    <polygon points="41,56 56,56 49,42" fill="#E2D6BA"/>
+    <polygon points="49,56 56,56 49,42" fill="#9A8968"/>
+    <polygon points="8,56 23,56 15,42" fill="none"/>
+    <polygon points="24,56 40,56 32,44" fill="none"/>
+    <polygon points="41,56 56,56 49,42" fill="none"/>
+  </g>
+
+  <!-- 外框重描 -->
+  <rect x="6" y="6" width="52" height="52" rx="8" fill="none" stroke="#1C1412" stroke-width="3.4"/>
+</g>
+</svg>

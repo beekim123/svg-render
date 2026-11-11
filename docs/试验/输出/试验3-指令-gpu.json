@@ -1,0 +1,889 @@
+[
+ {
+  "layer": [
+   400,
+   405
+  ],
+  "commands": [
+   {
+    "method": "drawPaint",
+    "params": {
+     "paint": {
+      "color": "#00000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "blendMode": "Src"
+     }
+    }
+   },
+   {
+    "method": "drawRect",
+    "params": {
+     "rect": {
+      "left": 0,
+      "top": 0,
+      "right": 400,
+      "bottom": 405
+     },
+     "paint": {
+      "color": "#00000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "blendMode": "Src"
+     }
+    }
+   }
+  ]
+ },
+ {
+  "layer": [
+   400,
+   405
+  ],
+  "commands": [
+   {
+    "method": "drawPaint",
+    "params": {
+     "paint": {
+      "color": "#00000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "blendMode": "Src"
+     }
+    }
+   },
+   {
+    "method": "save"
+   },
+   {
+    "method": "clipRect",
+    "params": {
+     "rect": {
+      "left": 0,
+      "top": 0,
+      "right": 400,
+      "bottom": 400
+     },
+     "SkRegion::Op": "kIntersect_Op",
+     "softClipEdgeStyle": true
+    }
+   },
+   {
+    "method": "drawPath",
+    "params": {
+     "path": {
+      "fillType": "Winding",
+      "convex": true,
+      "isRect": false,
+      "pathPoints": [
+       {
+        "verb": "Move",
+        "points": [
+         {
+          "x": 44,
+          "y": 20
+         }
+        ]
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": 356,
+          "y": 20
+         }
+        ]
+       },
+       {
+        "verb": "Conic",
+        "points": [
+         {
+          "x": 380,
+          "y": 20
+         },
+         {
+          "x": 380,
+          "y": 44
+         }
+        ],
+        "conicWeight": 0.70710676908493
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": 380,
+          "y": 356
+         }
+        ]
+       },
+       {
+        "verb": "Conic",
+        "points": [
+         {
+          "x": 380,
+          "y": 380
+         },
+         {
+          "x": 356,
+          "y": 380
+         }
+        ],
+        "conicWeight": 0.70710676908493
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": 44,
+          "y": 380
+         }
+        ]
+       },
+       {
+        "verb": "Conic",
+        "points": [
+         {
+          "x": 20,
+          "y": 380
+         },
+         {
+          "x": 20,
+          "y": 356
+         }
+        ],
+        "conicWeight": 0.70710676908493
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": 20,
+          "y": 44
+         }
+        ]
+       },
+       {
+        "verb": "Conic",
+        "points": [
+         {
+          "x": 20,
+          "y": 20
+         },
+         {
+          "x": 44,
+          "y": 20
+         }
+        ],
+        "conicWeight": 0.70710676908493
+       },
+       {
+        "verb": "Close",
+        "points": []
+       }
+      ],
+      "bounds": {
+       "left": 20,
+       "top": 20,
+       "right": 380,
+       "bottom": 380
+      }
+     },
+     "paint": {
+      "color": "#FF161221",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   },
+   {
+    "method": "drawRect",
+    "params": {
+     "rect": {
+      "left": 40,
+      "top": 180,
+      "right": 360,
+      "bottom": 220
+     },
+     "paint": {
+      "shader": {},
+      "color": "#FF000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias|Dither",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   },
+   {
+    "method": "restore"
+   }
+  ]
+ },
+ {
+  "layer": [
+   84,
+   84
+  ],
+  "commands": [
+   {
+    "method": "drawPaint",
+    "params": {
+     "paint": {
+      "color": "#00000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "blendMode": "Src"
+     }
+    }
+   },
+   {
+    "method": "save"
+   },
+   {
+    "method": "translate",
+    "params": {
+     "dx": -248,
+     "dy": -248
+    }
+   },
+   {
+    "method": "drawRect",
+    "params": {
+     "rect": {
+      "left": 250,
+      "top": 250,
+      "right": 330,
+      "bottom": 330
+     },
+     "paint": {
+      "shader": {},
+      "color": "#FF000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias|Dither",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   },
+   {
+    "method": "drawRect",
+    "params": {
+     "rect": {
+      "left": 250,
+      "top": 250,
+      "right": 330,
+      "bottom": 330
+     },
+     "paint": {
+      "color": "#FFC2A670",
+      "strokeWidth": 3,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Stroke"
+     }
+    }
+   },
+   {
+    "method": "restore"
+   }
+  ]
+ },
+ {
+  "layer": [
+   160,
+   66
+  ],
+  "commands": [
+   {
+    "method": "drawPaint",
+    "params": {
+     "paint": {
+      "color": "#00000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "blendMode": "Src"
+     }
+    }
+   },
+   {
+    "method": "save"
+   },
+   {
+    "method": "translate",
+    "params": {
+     "dx": -40,
+     "dy": -267
+    }
+   },
+   {
+    "method": "saveLayer",
+    "params": {
+     "bounds": {
+      "left": 40,
+      "top": 267,
+      "right": 200,
+      "bottom": 333
+     },
+     "paint": {
+      "color": "#FF000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "imageFilter": "SkImageFilter"
+     },
+     "saveFlags": 0
+    }
+   },
+   {
+    "method": "drawPath",
+    "params": {
+     "path": {
+      "fillType": "Winding",
+      "convex": true,
+      "isRect": false,
+      "pathPoints": [
+       {
+        "verb": "Move",
+        "points": [
+         {
+          "x": 40,
+          "y": 300
+         }
+        ]
+       },
+       {
+        "verb": "Cubic",
+        "points": [
+         {
+          "x": 80,
+          "y": 256.125152587891
+         },
+         {
+          "x": 160,
+          "y": 257.416748046875
+         },
+         {
+          "x": 200,
+          "y": 300
+         }
+        ]
+       },
+       {
+        "verb": "Cubic",
+        "points": [
+         {
+          "x": 160,
+          "y": 343.874847412109
+         },
+         {
+          "x": 80,
+          "y": 342.583251953125
+         },
+         {
+          "x": 40,
+          "y": 300
+         }
+        ]
+       },
+       {
+        "verb": "Close",
+        "points": []
+       }
+      ],
+      "bounds": {
+       "left": 40,
+       "top": 256.125152587891,
+       "right": 200,
+       "bottom": 343.874847412109
+      }
+     },
+     "paint": {
+      "color": "#FF6E542B",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   },
+   {
+    "method": "restore"
+   },
+   {
+    "method": "restore"
+   }
+  ]
+ },
+ {
+  "layer": [
+   296,
+   227
+  ],
+  "commands": [
+   {
+    "method": "drawPaint",
+    "params": {
+     "paint": {
+      "color": "#00000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "blendMode": "Src"
+     }
+    }
+   },
+   {
+    "method": "save"
+   },
+   {
+    "method": "translate",
+    "params": {
+     "dx": -52,
+     "dy": -33
+    }
+   },
+   {
+    "method": "drawPath",
+    "params": {
+     "path": {
+      "fillType": "Winding",
+      "convex": true,
+      "isRect": false,
+      "pathPoints": [
+       {
+        "verb": "Move",
+        "points": [
+         {
+          "x": 225,
+          "y": 110
+         }
+        ]
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": 310,
+          "y": 125
+         }
+        ]
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": 295,
+          "y": 165
+         }
+        ]
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": 215,
+          "y": 155
+         }
+        ]
+       },
+       {
+        "verb": "Close",
+        "points": []
+       }
+      ],
+      "bounds": {
+       "left": 215,
+       "top": 110,
+       "right": 310,
+       "bottom": 165
+      }
+     },
+     "paint": {
+      "color": "#CC1DBF5E",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   },
+   {
+    "method": "drawOval",
+    "params": {
+     "oval": {
+      "left": 102,
+      "top": 112,
+      "right": 138,
+      "bottom": 148
+     },
+     "paint": {
+      "color": "#FF46DBE8",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   },
+   {
+    "method": "drawPath",
+    "params": {
+     "path": {
+      "fillType": "Winding",
+      "convex": false,
+      "isRect": false,
+      "pathPoints": [
+       {
+        "verb": "Move",
+        "points": [
+         {
+          "x": 60,
+          "y": 240
+         }
+        ]
+       },
+       {
+        "verb": "Cubic",
+        "points": [
+         {
+          "x": 120,
+          "y": 200
+         },
+         {
+          "x": 180,
+          "y": 280
+         },
+         {
+          "x": 240,
+          "y": 240
+         }
+        ]
+       },
+       {
+        "verb": "Cubic",
+        "points": [
+         {
+          "x": 300,
+          "y": 200
+         },
+         {
+          "x": 320,
+          "y": 220
+         },
+         {
+          "x": 340,
+          "y": 250
+         }
+        ]
+       }
+      ],
+      "bounds": {
+       "left": 60,
+       "top": 200,
+       "right": 340,
+       "bottom": 280
+      }
+     },
+     "paint": {
+      "color": "#FFF4F1FF",
+      "strokeWidth": 4,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Round",
+      "strokeJoin": "Miter",
+      "styleName": "Stroke"
+     }
+    }
+   },
+   {
+    "method": "drawPath",
+    "params": {
+     "path": {
+      "fillType": "Winding",
+      "convex": true,
+      "isRect": false,
+      "pathPoints": [
+       {
+        "verb": "Move",
+        "points": [
+         {
+          "x": 60,
+          "y": 80
+         }
+        ]
+       },
+       {
+        "verb": "Cubic",
+        "points": [
+         {
+          "x": 120,
+          "y": 20
+         },
+         {
+          "x": 280,
+          "y": 20
+         },
+         {
+          "x": 340,
+          "y": 80
+         }
+        ]
+       }
+      ],
+      "bounds": {
+       "left": 60,
+       "top": 20,
+       "right": 340,
+       "bottom": 80
+      }
+     },
+     "paint": {
+      "color": "#FF9A8968",
+      "strokeWidth": 1,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Stroke"
+     }
+    }
+   },
+   {
+    "method": "save"
+   },
+   {
+    "method": "concat44",
+    "params": {
+     "matrix44": [
+      0.92133766412735,
+      -0.38876336812973,
+      0,
+      0,
+      0.38876336812973,
+      0.92133766412735,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      101.924774169922,
+      53.0188179016113,
+      0,
+      1
+     ]
+    }
+   },
+   {
+    "method": "drawPath",
+    "params": {
+     "path": {
+      "fillType": "Winding",
+      "convex": true,
+      "isRect": false,
+      "pathPoints": [
+       {
+        "verb": "Move",
+        "points": [
+         {
+          "x": -10,
+          "y": -6
+         }
+        ]
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": 10,
+          "y": 0
+         }
+        ]
+       },
+       {
+        "verb": "Line",
+        "points": [
+         {
+          "x": -10,
+          "y": 6
+         }
+        ]
+       },
+       {
+        "verb": "Close",
+        "points": []
+       }
+      ],
+      "bounds": {
+       "left": -10,
+       "top": -6,
+       "right": 10,
+       "bottom": 6
+      }
+     },
+     "paint": {
+      "color": "#FFE6DEC8",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   },
+   {
+    "method": "restore"
+   },
+   {
+    "method": "restore"
+   }
+  ]
+ },
+ {
+  "layer": [
+   92,
+   92
+  ],
+  "commands": [
+   {
+    "method": "drawPaint",
+    "params": {
+     "paint": {
+      "color": "#00000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "blendMode": "Src"
+     }
+    }
+   },
+   {
+    "method": "save"
+   },
+   {
+    "method": "translate",
+    "params": {
+     "dx": -74,
+     "dy": -84
+    }
+   },
+   {
+    "method": "saveLayer",
+    "params": {
+     "bounds": {
+      "left": 74,
+      "top": 84,
+      "right": 166,
+      "bottom": 176
+     },
+     "paint": {
+      "color": "#FF000000",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill",
+      "imageFilter": "SkImageFilter"
+     },
+     "saveFlags": 0
+    }
+   },
+   {
+    "method": "drawOval",
+    "params": {
+     "oval": {
+      "left": 80,
+      "top": 90,
+      "right": 160,
+      "bottom": 170
+     },
+     "paint": {
+      "color": "#FF3FE3F0",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "AntiAlias",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   },
+   {
+    "method": "restore"
+   },
+   {
+    "method": "restore"
+   }
+  ]
+ },
+ {
+  "layer": [
+   20,
+   20
+  ],
+  "commands": [
+   {
+    "method": "drawPaint",
+    "params": {
+     "paint": {
+      "color": "#FFE94FD8",
+      "strokeWidth": 0,
+      "strokeMiter": 4,
+      "flags": "none",
+      "strokeCap": "Butt",
+      "strokeJoin": "Miter",
+      "styleName": "Fill"
+     }
+    }
+   }
+  ]
+ }
+]

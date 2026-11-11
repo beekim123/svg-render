@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-prop_curtain" viewBox="0 0 120 240" width="120" height="240">
+<title>长廊摆件 · 旧天鹅绒窗帘</title>
+<defs>
+  <filter id="prop_curtain-grunge" filterUnits="userSpaceOnUse" x="0" y="0" width="120" height="240" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="2" seed="19" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.11  0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0.09 0" result="grain"/>
+    <feComposite in="grain" in2="SourceGraphic" operator="in" result="clippedGrain"/>
+    <feBlend mode="multiply" in="SourceGraphic" in2="clippedGrain"/>
+  </filter>
+</defs>
+<g id="root">
+  <!-- pivot: 60,240 -->
+  <!-- 拖地暗影 -->
+  <ellipse cx="56" cy="233" rx="46" ry="6" fill="#0D111C" opacity="0.65"/>
+  <path d="M18,236 L26,229 M30,237 L38,229 M42,237 L50,229 M54,237 L62,229 M66,236 L74,229 M78,235 L86,229" stroke="#1C1412" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+
+  <g filter="url(#prop_curtain-grunge)">
+    <!-- 顶部旧铁窗帘杆与铜环（紧贴画框顶部 y:6..18） -->
+    <rect x="10" y="8" width="96" height="6" rx="2" fill="#3B515C" stroke="#1C1412" stroke-width="2.4"/>
+    <polygon points="8,5 16,5 16,17 8,17" fill="#6E542B" stroke="#1C1412" stroke-width="2.2"/>
+    <polygon points="100,5 108,5 108,17 100,17" fill="#3B2B14" stroke="#1C1412" stroke-width="2.2"/>
+
+    <!-- 旧天鹅绒窗帘主体（暗酒红 #5E242C / #381318，中间被旧绳收束挽向左侧，下摆拖在地上，带两个破洞洞口） -->
+    <!-- 使用 fill-rule="evenodd" 挖出两个真实透明破洞 -->
+    <path fill-rule="evenodd" d="M18,14 H94 C90,54 78,94 64,126 C72,162 84,202 92,228 L76,234 L62,228 L48,235 L26,233 L14,226 C18,188 26,154 30,124 C20,88 16,48 18,14 Z M42,68 L54,62 L58,78 L44,82 Z M46,168 L60,162 L64,180 L48,184 Z" fill="#5E242C" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- 右侧背光深酒红褶皱暗面 -->
+    <path fill-rule="evenodd" d="M54,14 H94 C90,54 78,94 64,126 C72,162 84,202 92,228 L76,234 L62,228 L52,232 C54,190 50,154 48,126 C54,88 56,48 54,14 Z M46,168 L60,162 L64,180 L48,184 Z" fill="#381318" opacity="0.82"/>
+
+    <!-- 左侧微弱受光褶皱边与垂坠折线 -->
+    <path d="M22,18 C20,50 24,86 33,122 C29,154 22,188 18,224" fill="none" stroke="#8C3B45" stroke-width="2.2" stroke-linecap="round" opacity="0.75"/>
+    <path d="M38,16 C36,52 38,88 42,124 C40,158 36,196 34,230 M68,16 C66,54 60,90 54,125 C60,160 68,196 74,230" fill="none" stroke="#1C1412" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- 破洞边缘残破线头与下摆缺口交叉排线 -->
+    <path d="M42,68 L54,62 L58,78 L44,82 Z M46,168 L60,162 L64,180 L48,184 Z" fill="none" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M62,196 L82,216 M66,186 L86,206 M58,208 L76,226" stroke="#1C1412" stroke-width="1.1" opacity="0.5"/>
+
+    <!-- 顶部挂环 -->
+    <g fill="#6E542B" stroke="#1C1412" stroke-width="1.8">
+      <rect x="20" y="6" width="5" height="10" rx="1.5"/>
+      <rect x="38" y="6" width="5" height="10" rx="1.5"/>
+      <rect x="56" y="6" width="5" height="10" rx="1.5"/>
+      <rect x="74" y="6" width="5" height="10" rx="1.5"/>
+      <rect x="90" y="6" width="5" height="10" rx="1.5"/>
+    </g>
+
+    <!-- 挽住窗帘的旧麻绳与垂穗（在 y=124 处束紧，连接到左侧墙钩 x=12, y=108） -->
+    <path d="M12,108 L29,122" stroke="#1C1412" stroke-width="5" stroke-linecap="round"/>
+    <path d="M12,108 L29,122" stroke="#6E542B" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="12" cy="108" r="4" fill="#6E542B" stroke="#1C1412" stroke-width="2"/>
+    <polygon points="27,118 67,120 65,131 29,129" fill="#9A8968" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+    <polygon points="47,119 67,120 65,131 47,130" fill="#6E542B"/>
+    <path d="M34,120 L38,129 M44,120 L48,129 M54,120 L58,129" stroke="#1C1412" stroke-width="1.6"/>
+    <!-- 麻绳垂穗 -->
+    <polygon points="44,130 52,130 56,150 40,150" fill="#6E542B" stroke="#1C1412" stroke-width="2.2" stroke-linejoin="round"/>
+  </g>
+</g>
+</svg>

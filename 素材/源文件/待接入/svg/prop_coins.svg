@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-prop_coins" viewBox="0 0 120 240" width="120" height="240">
+<title>宝库摆件 · 金币堆</title>
+<defs>
+  <filter id="prop_coins-grunge" filterUnits="userSpaceOnUse" x="0" y="0" width="120" height="240" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="2" seed="17" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.11  0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0.09 0" result="grain"/>
+    <feComposite in="grain" in2="SourceGraphic" operator="in" result="clippedGrain"/>
+    <feBlend mode="multiply" in="SourceGraphic" in2="clippedGrain"/>
+  </filter>
+</defs>
+<g id="root">
+  <!-- pivot: 60,240 -->
+  <!-- 落地排线暗影（落地点 60,240，上半截 y:0..116 完全透明留空） -->
+  <ellipse cx="60" cy="232" rx="50" ry="6.5" fill="#0D111C" opacity="0.65"/>
+  <path d="M18,235 L26,228 M28,236 L36,228 M38,236 L46,228 M48,237 L56,228 M58,237 L66,228 M68,236 L76,228 M78,236 L86,228 M88,235 L96,229" stroke="#1C1412" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+
+  <g filter="url(#prop_coins-grunge)">
+    <!-- 下半截：压暗的旧金币小山堆（y:152..232，压暗旧金 #6E542B / #3B2B14，不发光、不抢怪风头） -->
+    <g id="coin_mound">
+      <!-- 金币堆主体轮廓 -->
+      <path d="M10,230 C12,196 30,164 58,162 C86,160 106,194 110,230 Z" fill="#6E542B" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+      <!-- 右侧背光深暗面 -->
+      <path d="M58,162 C86,160 106,194 110,230 H56 Z" fill="#3B2B14" opacity="0.86"/>
+      <!-- 左上微弱受光边 -->
+      <path d="M15,222 C18,194 33,170 55,166" fill="none" stroke="#9A7B46" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- 堆内叠压的几摞旧金币横截面与排线 -->
+      <g fill="#6E542B" stroke="#1C1412" stroke-width="2" stroke-linejoin="round">
+        <!-- 左下金币叠层 -->
+        <ellipse cx="32" cy="212" rx="13" ry="5.5" fill="#9A7B46"/>
+        <ellipse cx="30" cy="205" rx="12" ry="5" fill="#6E542B"/>
+        <ellipse cx="33" cy="198" rx="11" ry="4.5" fill="#9A7B46"/>
+        <!-- 中前散落大金币 -->
+        <ellipse cx="56" cy="220" rx="14" ry="6" fill="#6E542B"/>
+        <ellipse cx="58" cy="213" rx="13" ry="5.5" fill="#3B2B14"/>
+        <!-- 右下背光金币叠层 -->
+        <ellipse cx="84" cy="216" rx="13" ry="5.5" fill="#3B2B14"/>
+        <ellipse cx="81" cy="208" rx="12" ry="5" fill="#6E542B"/>
+        <!-- 堆腰散落金币 -->
+        <ellipse cx="46" cy="186" rx="11" ry="4.5" transform="rotate(-12 46 186)" fill="#9A7B46"/>
+        <ellipse cx="72" cy="190" rx="11" ry="4.5" transform="rotate(15 72 190)" fill="#3B2B14"/>
+      </g>
+
+      <!-- 右下背光交叉排线 -->
+      <path d="M68,182 L94,208 M64,194 L92,222 M76,176 L98,198" stroke="#1C1412" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+      <path d="M92,184 L68,208 M96,198 L74,220" stroke="#1C1412" stroke-width="1" stroke-linecap="round" opacity="0.38"/>
+    </g>
+
+    <!-- 斜插在金币堆顶上的倒置旧金高脚杯（y:118..182，刚巧到画框一半高度 120） -->
+    <g id="tilted_goblet">
+      <!-- 高脚杯底座圆盘与细杯柄（斜向左上翘起） -->
+      <ellipse cx="35" cy="130" rx="13" ry="5" transform="rotate(-38 35 130)" fill="#6E542B" stroke="#1C1412" stroke-width="2.4"/>
+      <polygon points="36,133 41,128 57,145 51,150" fill="#3B2B14" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="46" cy="139" r="4.5" fill="#6E542B" stroke="#1C1412" stroke-width="2.2"/>
+
+      <!-- 倒斜插进金币堆里的杯身（杯口朝右下斜张） -->
+      <path d="M48,148 L66,130 C79,138 88,150 86,164 L64,178 C54,172 48,160 48,148 Z" fill="#6E542B" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M57,139 L66,130 C79,138 88,150 86,164 L75,171 Z" fill="#3B2B14" opacity="0.82"/>
+      <path d="M51,150 C53,159 58,167 65,172" fill="none" stroke="#9A7B46" stroke-width="1.8" stroke-linecap="round"/>
+
+      <!-- 倾斜杯口椭圆深暗内腔 -->
+      <ellipse cx="75" cy="171" rx="14" ry="6.5" transform="rotate(-32 75 171)" fill="#161221" stroke="#1C1412" stroke-width="2.6"/>
+      <!-- 从杯口滚落出的两枚旧金币 -->
+      <ellipse cx="78" cy="178" rx="9" ry="4" transform="rotate(14 78 178)" fill="#6E542B" stroke="#1C1412" stroke-width="2"/>
+      <ellipse cx="64" cy="182" rx="9" ry="4" transform="rotate(-8 64 182)" fill="#9A7B46" stroke="#1C1412" stroke-width="2"/>
+    </g>
+
+    <!-- 堆底两侧散落的单枚旧金币 -->
+    <ellipse cx="18" cy="228" rx="9" ry="3.8" fill="#6E542B" stroke="#1C1412" stroke-width="2.2"/>
+    <ellipse cx="102" cy="228" rx="9" ry="3.8" fill="#3B2B14" stroke="#1C1412" stroke-width="2.2"/>
+  </g>
+</g>
+</svg>

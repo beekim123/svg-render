@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-relic_first2" viewBox="0 0 96 96" width="96" height="96">
+<title>宝物 · 开打多摸两张</title>
+<g id="root">
+  <!-- 后方第一张牌（向左上方错开，牌背朝外） -->
+  <g id="card_back_1" transform="translate(34, 34) rotate(-18)">
+    <rect x="-18" y="-24" width="36" height="48" rx="4" fill="#262036" stroke="#1C1412" stroke-width="3.2"/>
+    <rect x="-14" y="-20" width="28" height="40" rx="2" fill="#161221" stroke="#9A7B46" stroke-width="1.8"/>
+    <!-- 牌背正中三色宝石徽记 -->
+    <polygon points="0,-13 10,-4 0,11 -10,-4" fill="#6E542B" stroke="#1C1412" stroke-width="1.8"/>
+    <circle cx="0" cy="-6" r="3.6" fill="#E3263A" stroke="#1C1412" stroke-width="1.2"/>
+    <rect x="-6.5" y="-1" width="5.5" height="5.5" fill="#1DBF5E" stroke="#1C1412" stroke-width="1.2"/>
+    <polygon points="4,-1 8,5 0,5" fill="#2E66F0" stroke="#1C1412" stroke-width="1.2"/>
+  </g>
+
+  <!-- 前方第二张牌（向右上方错开，牌背朝外） -->
+  <g id="card_back_2" transform="translate(58, 36) rotate(12)">
+    <rect x="-18" y="-24" width="36" height="48" rx="4" fill="#262036" stroke="#1C1412" stroke-width="3.2"/>
+    <rect x="-14" y="-20" width="28" height="40" rx="2" fill="#161221" stroke="#C2A670" stroke-width="1.8"/>
+    <!-- 牌背正中三色宝石徽记 -->
+    <polygon points="0,-13 10,-4 0,11 -10,-4" fill="#6E542B" stroke="#1C1412" stroke-width="1.8"/>
+    <circle cx="0" cy="-6" r="3.8" fill="#E3263A" stroke="#1C1412" stroke-width="1.2"/>
+    <rect x="-6.5" y="-1" width="5.5" height="5.5" fill="#1DBF5E" stroke="#1C1412" stroke-width="1.2"/>
+    <polygon points="4,-1 8,5 0,5" fill="#2E66F0" stroke="#1C1412" stroke-width="1.2"/>
+  </g>
+
+  <!-- 旧皮手套主体（中指在两张牌后面托住，食指与拇指在前面夹住两张牌） -->
+  <g id="glove">
+    <!-- 手掌与弯曲的无名指、小指（右下暗部） -->
+    <path d="M22,60 C22,48 34,44 48,46 L68,50 C76,52 78,64 70,74 L58,82 L24,80 Z" fill="#704122" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <path d="M46,48 L68,50 C76,52 78,64 70,74 L58,82 L44,81 Z" fill="#3D2212" opacity="0.82"/>
+
+    <!-- 食指（横跨在两张牌前方，与后面的中指形成明显的“夹牌”剪影） -->
+    <path d="M24,54 L56,40 C62,38 66,43 62,48 L36,62 Z" fill="#9E6238" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <path d="M27,52 L54,41" stroke="#C48A5C" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- 拇指（左下按住手掌与牌角） -->
+    <path d="M18,58 C16,48 26,44 36,49 L42,56 C44,61 38,66 30,65 Z" fill="#9E6238" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+
+    <!-- 手套翻边护腕 -->
+    <polygon points="16,74 64,76 68,88 12,86" fill="#3D2212" stroke="#1C1412" stroke-width="3.4" stroke-linejoin="round"/>
+    <line x1="20" y1="78" x2="58" y2="79" stroke="#9A8968" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"/>
+    <!-- 护腕旧铜扣 -->
+    <rect x="34" y="74" width="12" height="12" rx="2" fill="#9A7B46" stroke="#1C1412" stroke-width="2.4"/>
+  </g>
+</g>
+</svg>

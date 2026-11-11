@@ -1,0 +1,828 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 240" width="1280" height="240">
+  <style>
+    .hud-num-bounce {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: numJump 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+    }
+    @keyframes numJump {
+      0%, 70%, 100% { transform: translateY(0px) scale(1); }
+      20% { transform: translateY(-9px) scale(1.22); }
+      40% { transform: translateY(2px) scale(0.95); }
+    }
+  </style>
+  <defs>
+    <linearGradient id="hud_metal_bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c1d3d"/>
+      <stop offset="45%" stop-color="#160d24"/>
+      <stop offset="100%" stop-color="#090410"/>
+    </linearGradient>
+
+    <linearGradient id="hud_gold_trim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff3b0"/>
+      <stop offset="35%" stop-color="#d4af37"/>
+      <stop offset="75%" stop-color="#85581a"/>
+      <stop offset="100%" stop-color="#3d2406"/>
+    </linearGradient>
+
+    <linearGradient id="blood_liquid_grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4d6d"/>
+      <stop offset="40%" stop-color="#c9184a"/>
+      <stop offset="100%" stop-color="#590d22"/>
+    </linearGradient>
+
+    <linearGradient id="mana_liquid_grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0077b6"/>
+      <stop offset="55%" stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#90e0ef"/>
+    </linearGradient>
+
+    <!-- Arrow Markers for HUD indicator lines -->
+    <marker id="hud_arrow_gold" viewBox="0 0 12 12" refX="6" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 L 3.5 6 Z" fill="#ffd166" stroke="#3d2406" stroke-width="0.8"/>
+    </marker>
+
+    <marker id="hud_arrow_cyan" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <polygon points="0,1 10,5 0,9 2.5,5" fill="#00f5d4"/>
+    </marker>
+
+    <clipPath id="clip_hp_bar">
+      <rect x="240" y="64" width="380" height="36" rx="18"/>
+    </clipPath>
+
+    <clipPath id="clip_blood_vial">
+      <circle cx="118" cy="120" r="76"/>
+    </clipPath>
+  </defs>
+  <path d="M 18 24 L 1262 24 L 1274 120 L 1252 222 L 28 222 L 6 120 Z" fill="url(#hud_metal_bg)" stroke="url(#hud_gold_trim)" stroke-width="4"/>
+  <path d="M 30 34 L 1250 34 L 1260 120 L 1240 210 L 40 210 L 20 120 Z" fill="none" stroke="#6c4675" stroke-width="1.5" stroke-dasharray="12 6"/>
+  <g id="non_scaling_ironwork">
+    <g transform="translate(225.0, 36) scale(1.35, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(225.0, 206) scale(1.35, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(244.5, 36) scale(1.80, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(244.5, 206) scale(1.80, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(264.0, 36) scale(2.25, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(264.0, 206) scale(2.25, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(283.5, 36) scale(2.70, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(283.5, 206) scale(2.70, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(303.0, 36) scale(1.35, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(303.0, 206) scale(1.35, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(322.5, 36) scale(1.80, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(322.5, 206) scale(1.80, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(342.0, 36) scale(2.25, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(342.0, 206) scale(2.25, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(361.5, 36) scale(2.70, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(361.5, 206) scale(2.70, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(381.0, 36) scale(1.35, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(381.0, 206) scale(1.35, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(400.5, 36) scale(1.80, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(400.5, 206) scale(1.80, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(420.0, 36) scale(2.25, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(420.0, 206) scale(2.25, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(439.5, 36) scale(2.70, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(439.5, 206) scale(2.70, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(459.0, 36) scale(1.35, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(459.0, 206) scale(1.35, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(478.5, 36) scale(1.80, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(478.5, 206) scale(1.80, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(498.0, 36) scale(2.25, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(498.0, 206) scale(2.25, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(517.5, 36) scale(2.70, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(517.5, 206) scale(2.70, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(537.0, 36) scale(1.35, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(537.0, 206) scale(1.35, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(556.5, 36) scale(1.80, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(556.5, 206) scale(1.80, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(576.0, 36) scale(2.25, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(576.0, 206) scale(2.25, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(595.5, 36) scale(2.70, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(595.5, 206) scale(2.70, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(615.0, 36) scale(1.35, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(615.0, 206) scale(1.35, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(634.5, 36) scale(1.80, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(634.5, 206) scale(1.80, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(654.0, 36) scale(2.25, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(654.0, 206) scale(2.25, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(673.5, 36) scale(2.70, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(673.5, 206) scale(2.70, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(693.0, 36) scale(1.35, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(693.0, 206) scale(1.35, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(712.5, 36) scale(1.80, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(712.5, 206) scale(1.80, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(732.0, 36) scale(2.25, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(732.0, 206) scale(2.25, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(751.5, 36) scale(2.70, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(751.5, 206) scale(2.70, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(771.0, 36) scale(1.35, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(771.0, 206) scale(1.35, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(790.5, 36) scale(1.80, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(790.5, 206) scale(1.80, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(810.0, 36) scale(2.25, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(810.0, 206) scale(2.25, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(829.5, 36) scale(2.70, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(829.5, 206) scale(2.70, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(849.0, 36) scale(1.35, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(849.0, 206) scale(1.35, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(868.5, 36) scale(1.80, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(868.5, 206) scale(1.80, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(888.0, 36) scale(2.25, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(888.0, 206) scale(2.25, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(907.5, 36) scale(2.70, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(907.5, 206) scale(2.70, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(927.0, 36) scale(1.35, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(927.0, 206) scale(1.35, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(946.5, 36) scale(1.80, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(946.5, 206) scale(1.80, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(966.0, 36) scale(2.25, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(966.0, 206) scale(2.25, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(985.5, 36) scale(2.70, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(985.5, 206) scale(2.70, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1005.0, 36) scale(1.35, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1005.0, 206) scale(1.35, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1024.5, 36) scale(1.80, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1024.5, 206) scale(1.80, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1044.0, 36) scale(2.25, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1044.0, 206) scale(2.25, 0.65)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1063.5, 36) scale(2.70, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1063.5, 206) scale(2.70, 1.20)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1083.0, 36) scale(1.35, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <circle cx="0" cy="0" r="3" fill="#00f5d4" stroke="#120824" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </g>
+    <g transform="translate(1083.0, 206) scale(1.35, 1.75)">
+      <path d="M -8 0 L 0 -10 L 8 0 L 0 10 Z" fill="#1e1030" stroke="#ffd166" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+    </g>
+  </g>
+  <g id="hud_blood_orb_and_hp_bar">
+    <circle cx="118" cy="120" r="82" fill="#0c0414" stroke="url(#hud_gold_trim)" stroke-width="5"/>
+    <g clip-path="url(#clip_blood_vial)">
+      <path d="M 32 108 C 68 92, 102 124, 136 108 C 168 92, 192 122, 210 108 L 210 210 L 32 210 Z" fill="url(#blood_liquid_grad)">
+        <animate attributeName="d" values="M 32 108 C 68 92, 102 124, 136 108 C 168 92, 192 122, 210 108 L 210 210 L 32 210 Z;M 32 108 C 68 124, 102 92, 136 108 C 168 124, 192 94, 210 108 L 210 210 L 32 210 Z;M 32 108 C 68 92, 102 124, 136 108 C 168 92, 192 122, 210 108 L 210 210 L 32 210 Z" dur="2.2s" repeatCount="indefinite"/>
+      </path>
+      <ellipse cx="96" cy="84" rx="34" ry="16" fill="#ffffff" opacity="0.22" transform="rotate(-24 96 84)"/>
+    </g>
+    <rect x="236" y="60" width="388" height="44" rx="22" fill="#0a0412" stroke="url(#hud_gold_trim)" stroke-width="3.5"/>
+    <g clip-path="url(#clip_hp_bar)">
+      <path d="M 240 60 L 552 60 C 562 70, 542 82, 554 92 C 560 98, 550 104, 552 104 L 240 104 Z" fill="url(#blood_liquid_grad)">
+        <animate attributeName="d" values="M 240 60 L 552 60 C 562 70, 542 82, 554 92 C 560 98, 550 104, 552 104 L 240 104 Z;M 240 60 L 552 60 C 542 70, 562 82, 550 92 C 544 98, 556 104, 552 104 L 240 104 Z;M 240 60 L 552 60 C 562 70, 542 82, 554 92 C 560 98, 550 104, 552 104 L 240 104 Z" dur="1.8s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 240 72 C 310 62, 380 82, 450 70 C 500 62, 530 78, 554 70 L 554 104 L 240 104 Z" fill="#ff758f" opacity="0.38">
+        <animate attributeName="d" values="M 240 72 C 310 62, 380 82, 450 70 C 500 62, 530 78, 554 70 L 554 104 L 240 104 Z;M 240 72 C 310 82, 380 62, 450 74 C 500 82, 530 64, 554 72 L 554 104 L 240 104 Z;M 240 72 C 310 62, 380 82, 450 70 C 500 62, 530 78, 554 70 L 554 104 L 240 104 Z" dur="2.0s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <rect x="236" y="122" width="388" height="38" rx="19" fill="#0a0412" stroke="url(#hud_gold_trim)" stroke-width="3"/>
+    <rect x="240" y="126" width="318" height="30" rx="15" fill="url(#mana_liquid_grad)"/>
+  </g>
+  <g id="hud_tactical_markers">
+    <path d="M 242 50 L 430 50 L 616 50" fill="none" stroke="#ffd166" stroke-width="1.8" marker-start="url(#hud_arrow_gold)" marker-mid="url(#hud_arrow_cyan)" marker-end="url(#hud_arrow_gold)"/>
+    <path d="M 242 174 L 430 174 L 616 174" fill="none" stroke="#00f5d4" stroke-width="1.6" stroke-dasharray="6 4" marker-start="url(#hud_arrow_cyan)" marker-end="url(#hud_arrow_gold)"/>
+    <path d="M 664 52 L 880 52 L 1096 52" fill="none" stroke="#ffd166" stroke-width="1.8" marker-start="url(#hud_arrow_gold)" marker-mid="url(#hud_arrow_cyan)" marker-end="url(#hud_arrow_gold)"/>
+  </g>
+  <g id="hud_nested_svg_slots">
+    <rect x="664" y="68" width="76" height="76" rx="12" fill="#110722" stroke="url(#hud_gold_trim)" stroke-width="3"/>
+    <svg x="668" y="72" width="68" height="68" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+      <rect width="100" height="100" rx="14" fill="#1d0e36"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#ff4d6d" stroke-width="4" stroke-dasharray="10 5" vector-effect="non-scaling-stroke"/>
+      <polygon points="50,12 82,50 50,88 18,50" fill="#ff4d6d" fill-opacity="0.65" stroke="#ffffff" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      <circle cx="50" cy="50" r="14" fill="#ffffff"/>
+    </svg>
+    <text x="702" y="164" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="13" font-weight="bold" fill="#fff3b0" stroke="#120624" stroke-width="3.5" paint-order="stroke fill">血契斩</text>
+    <rect x="754" y="68" width="76" height="76" rx="12" fill="#110722" stroke="url(#hud_gold_trim)" stroke-width="3"/>
+    <svg x="758" y="72" width="68" height="68" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+      <rect width="100" height="100" rx="14" fill="#1d0e36"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#00f5d4" stroke-width="4" stroke-dasharray="10 5" vector-effect="non-scaling-stroke"/>
+      <polygon points="50,12 82,50 50,88 18,50" fill="#00f5d4" fill-opacity="0.65" stroke="#ffffff" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      <circle cx="50" cy="50" r="14" fill="#ffffff"/>
+    </svg>
+    <text x="792" y="164" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="13" font-weight="bold" fill="#fff3b0" stroke="#120624" stroke-width="3.5" paint-order="stroke fill">冥火盾</text>
+    <rect x="844" y="68" width="76" height="76" rx="12" fill="#110722" stroke="url(#hud_gold_trim)" stroke-width="3"/>
+    <svg x="848" y="72" width="68" height="68" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+      <rect width="100" height="100" rx="14" fill="#1d0e36"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#ffbe0b" stroke-width="4" stroke-dasharray="10 5" vector-effect="non-scaling-stroke"/>
+      <polygon points="50,12 82,50 50,88 18,50" fill="#ffbe0b" fill-opacity="0.65" stroke="#ffffff" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      <circle cx="50" cy="50" r="14" fill="#ffffff"/>
+    </svg>
+    <text x="882" y="164" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="13" font-weight="bold" fill="#fff3b0" stroke="#120624" stroke-width="3.5" paint-order="stroke fill">圣银弩</text>
+    <rect x="934" y="68" width="76" height="76" rx="12" fill="#110722" stroke="url(#hud_gold_trim)" stroke-width="3"/>
+    <svg x="938" y="72" width="68" height="68" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+      <rect width="100" height="100" rx="14" fill="#1d0e36"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#b5179e" stroke-width="4" stroke-dasharray="10 5" vector-effect="non-scaling-stroke"/>
+      <polygon points="50,12 82,50 50,88 18,50" fill="#b5179e" fill-opacity="0.65" stroke="#ffffff" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      <circle cx="50" cy="50" r="14" fill="#ffffff"/>
+    </svg>
+    <text x="972" y="164" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="13" font-weight="bold" fill="#fff3b0" stroke="#120624" stroke-width="3.5" paint-order="stroke fill">鸦群咒</text>
+    <rect x="1024" y="68" width="76" height="76" rx="12" fill="#110722" stroke="url(#hud_gold_trim)" stroke-width="3"/>
+    <svg x="1028" y="72" width="68" height="68" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+      <rect width="100" height="100" rx="14" fill="#1d0e36"/>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#4cc9f0" stroke-width="4" stroke-dasharray="10 5" vector-effect="non-scaling-stroke"/>
+      <polygon points="50,12 82,50 50,88 18,50" fill="#4cc9f0" fill-opacity="0.65" stroke="#ffffff" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      <circle cx="50" cy="50" r="14" fill="#ffffff"/>
+    </svg>
+    <text x="1062" y="164" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="13" font-weight="bold" fill="#fff3b0" stroke="#120624" stroke-width="3.5" paint-order="stroke fill">终焉钟</text>
+    <rect x="1134" y="50" width="112" height="140" rx="16" fill="#120624" stroke="url(#hud_gold_trim)" stroke-width="3.5"/>
+    <svg x="1138" y="54" width="104" height="132" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+      <circle cx="100" cy="100" r="90" fill="#240046" stroke="#ffd166" stroke-width="6"/>
+      <polygon points="100,20 170,100 100,180 30,100" fill="#ff2a6d" stroke="#ffffff" stroke-width="4"/>
+      <circle cx="100" cy="100" r="32" fill="#00f5d4"/>
+    </svg>
+  </g>
+  <g id="hud_typography_paint_order" font-family="Noto Sans CJK SC">
+    <!-- Bouncing Blood Orb Number (transform only, text content constant) -->
+    <g class="hud-num-bounce">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0; 0,0" keyTimes="0;0.2;0.45;1" dur="1.6s" repeatCount="indefinite"/>
+      <text x="118" y="132" text-anchor="middle" font-size="34" font-weight="bold" fill="#ffffff" stroke="#3b0414" stroke-width="7" paint-order="stroke fill" style="paint-order: stroke fill;">840</text>
+    </g>
+    <text x="118" y="162" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffd166" stroke="#1a062b" stroke-width="4" paint-order="stroke fill" style="paint-order: stroke fill;">血魂值</text>
+
+    <!-- Bouncing HP & Mana Numbers -->
+    <g class="hud-num-bounce" style="animation-delay: -0.5s;">
+      <text x="430" y="88" text-anchor="middle" font-size="20" font-weight="bold" fill="#fff0f3" stroke="#2b030c" stroke-width="5" paint-order="stroke fill" style="paint-order: stroke fill;">生命 840 / 1000</text>
+    </g>
+    <g class="hud-num-bounce" style="animation-delay: -0.9s;">
+      <text x="430" y="148" text-anchor="middle" font-size="18" font-weight="bold" fill="#e0fbfc" stroke="#031a2e" stroke-width="4.5" paint-order="stroke fill" style="paint-order: stroke fill;">魔力 7 / 10</text>
+    </g>
+    <text x="1190" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#00f5d4" stroke="#10002b" stroke-width="4" paint-order="stroke fill" style="paint-order: stroke fill;">第 12 回合</text>
+  </g>
+  <g id="hud_rivets_and_facets">
+    <circle cx="34" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="34" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="63" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="63" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="92" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="92" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="121" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="121" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="150" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="150" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="179" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="179" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="208" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="208" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="237" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="237" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="266" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="266" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="295" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="295" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="324" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="324" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="353" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="353" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="382" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="382" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="411" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="411" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="440" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="440" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="469" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="469" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="498" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="498" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="527" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="527" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="556" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="556" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="585" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="585" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="614" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="614" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="643" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="643" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="672" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="672" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="701" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="701" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="730" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="730" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="759" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="759" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="788" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="788" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="817" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="817" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="846" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="846" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="875" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="875" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="904" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="904" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="933" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="933" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="962" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="962" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="991" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="991" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1020" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1020" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1049" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1049" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1078" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1078" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1107" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1107" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1136" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1136" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1165" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1165" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1194" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1194" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1223" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1223" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="40" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="40" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="69" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="69" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="98" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="98" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="127" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="127" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="156" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="156" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="185" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="185" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="214" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="214" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="243" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="243" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="272" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="272" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="301" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="301" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="330" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="330" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="359" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="359" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="388" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="388" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="417" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="417" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="446" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="446" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="475" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="475" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="504" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="504" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="533" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="533" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="562" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="562" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="591" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="591" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="620" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="620" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="649" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="649" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="678" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="678" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="707" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="707" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="736" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="736" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="765" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="765" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="794" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="794" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="823" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="823" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="852" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="852" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="881" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="881" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="910" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="910" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="939" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="939" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="968" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="968" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="997" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="997" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1026" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1026" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1055" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1055" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1084" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1084" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1113" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1113" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1142" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1142" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1171" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1171" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1200" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1200" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1229" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1229" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="46" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="46" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="75" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="75" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="104" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="104" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="133" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="133" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="162" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="162" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="191" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="191" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="220" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="220" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="249" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="249" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="278" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="278" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="307" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="307" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="336" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="336" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="365" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="365" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="394" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="394" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="423" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="423" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="452" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="452" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="481" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="481" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="510" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="510" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="539" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="539" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="568" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="568" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="597" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="597" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="626" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="626" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="655" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="655" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="684" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="684" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="713" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="713" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="742" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="742" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="771" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="771" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="800" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="800" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="829" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="829" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="858" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="858" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="887" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="887" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="916" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="916" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="945" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="945" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="974" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="974" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1003" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1003" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1032" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1032" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1061" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1061" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1090" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1090" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1119" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1119" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1148" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1148" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1177" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1177" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1206" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1206" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1235" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1235" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="52" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="52" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="81" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="81" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="110" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="110" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="139" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="139" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="168" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="168" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="197" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="197" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="226" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="226" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="255" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="255" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="284" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="284" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="313" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="313" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="342" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="342" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="371" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="371" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="400" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="400" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="429" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="429" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="458" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="458" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="487" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="487" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="516" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="516" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="545" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="545" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="574" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="574" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="603" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="603" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="632" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="632" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="661" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="661" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="690" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="690" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="719" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="719" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="748" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="748" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="777" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="777" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="806" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="806" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="835" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="835" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="864" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="864" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="893" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="893" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="922" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="922" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="951" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="951" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="980" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="980" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1009" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1009" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1038" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1038" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1067" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1067" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1096" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1096" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1125" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1125" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1154" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1154" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1183" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1183" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="1212" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1212" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="1241" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="1241" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="58" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="58" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="87" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="87" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="116" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="116" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="145" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="145" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="174" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="174" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="203" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="203" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="232" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="232" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="261" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="261" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="290" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="290" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="319" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="319" cy="214" r="1.1" fill="#fff3b0"/>
+    <circle cx="348" cy="28" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="348" cy="28" r="1.1" fill="#fff3b0"/>
+    <circle cx="377" cy="214" r="2.8" fill="url(#hud_gold_trim)" stroke="#120624" stroke-width="0.9" vector-effect="non-scaling-stroke"/>
+    <circle cx="377" cy="214" r="1.1" fill="#fff3b0"/>
+  </g>
+</svg>

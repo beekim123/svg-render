@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-relic_slow" viewBox="0 0 96 96" width="96" height="96">
+<title>宝物 · 慢一拍</title>
+<g id="root">
+  <!-- 右下垂下的旧铜表链（粗环清晰，不细碎） -->
+  <g id="watch_chain" stroke="#1C1412" stroke-width="3" stroke-linejoin="round">
+    <ellipse cx="72" cy="64" rx="7" ry="4.5" transform="rotate(35 72 64)" fill="#6E542B"/>
+    <ellipse cx="79" cy="73" rx="7" ry="4.5" transform="rotate(68 79 73)" fill="#9A7B46"/>
+    <ellipse cx="75" cy="82" rx="7.5" ry="4.5" transform="rotate(15 75 82)" fill="#6E542B"/>
+    <circle cx="66" cy="84" r="4" fill="#C2A670"/>
+  </g>
+
+  <!-- 左上掀开的表盖（斜向左上打开，与怀表主体拉开明确夹角） -->
+  <g id="open_lid">
+    <ellipse cx="26" cy="26" rx="18" ry="11" transform="rotate(-42 26 26)" fill="#6E542B" stroke="#1C1412" stroke-width="3.2"/>
+    <ellipse cx="28" cy="28" rx="13" ry="7.5" transform="rotate(-42 28 28)" fill="#3B2B14" stroke="#1C1412" stroke-width="2"/>
+    <path d="M16,30 A16,10 0 0,1 31,15" fill="none" stroke="#C2A670" stroke-width="2" stroke-linecap="round"/>
+    <!-- 合页连接块 -->
+    <polygon points="32,34 40,28 44,35 36,41" fill="#9A7B46" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 怀表顶部表冠与吊环 -->
+  <circle cx="56" cy="15" r="5.5" fill="none" stroke="#1C1412" stroke-width="5.2"/>
+  <circle cx="56" cy="15" r="5.5" fill="none" stroke="#9A7B46" stroke-width="2.4"/>
+  <rect x="51" y="18" width="10" height="7" rx="2" fill="#9A7B46" stroke="#1C1412" stroke-width="2.8"/>
+
+  <!-- 怀表旧铜外壳主体 -->
+  <circle cx="52" cy="54" r="30" fill="#9A7B46" stroke="#1C1412" stroke-width="3.4"/>
+  <!-- 右下背光暗铜面 -->
+  <path d="M73,33 A30,30 0 0,1 31,75 L52,54 Z" fill="#6E542B" opacity="0.85"/>
+  <!-- 左上高光弧 -->
+  <path d="M26,48 A27,27 0 0,1 56,27" fill="none" stroke="#E2D6BA" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- 旧羊皮纸表盘 -->
+  <circle cx="52" cy="54" r="23" fill="#C8B894" stroke="#1C1412" stroke-width="3"/>
+  <!-- 表盘右下暗面 -->
+  <path d="M68,38 A23,23 0 0,1 36,70 A21,21 0 0,0 68,38 Z" fill="#9A8968"/>
+  <!-- 四正粗刻度 -->
+  <path d="M52,34 V38 M52,70 V74 M32,54 H36 M68,54 H72" stroke="#1C1412" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 短时针（指向左下方） -->
+  <polygon points="52,54 39,61 42,65 54,57" fill="#5E242C" stroke="#1C1412" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- 弯折的长表针（先往右上走，半路咔嚓折弯垂向右下，一眼看出“表针弯了、慢一拍”） -->
+  <path d="M52,54 L56,38 L68,46" fill="none" stroke="#1C1412" stroke-width="6.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52,54 L56,38 L68,46" fill="none" stroke="#3FE3F0" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 中心青宝石轴钉（唯一鲜艳点缀） -->
+  <circle cx="52" cy="54" r="4.5" fill="#3FE3F0" stroke="#1C1412" stroke-width="2.4"/>
+  <circle cx="50.5" cy="52.5" r="1.5" fill="#FFFFFF"/>
+
+  <!-- 怀表外框重描 -->
+  <circle cx="52" cy="54" r="30" fill="none" stroke="#1C1412" stroke-width="3.4"/>
+</g>
+</svg>

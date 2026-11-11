@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-relic_shun" viewBox="0 0 96 96" width="96" height="96">
+<title>宝物 · 顺色 ×3</title>
+<g id="root">
+  <!-- 短项链连接链环（从左上斜贯至右下，依次串起红、绿、蓝三颗宝石并接三齿小钩） -->
+  <g id="short_chain" stroke="#1C1412" stroke-width="3" stroke-linejoin="round">
+    <!-- 左上起端吊环 -->
+    <circle cx="13" cy="15" r="5" fill="#9A7B46"/>
+    <line x1="16" y1="18" x2="21" y2="23" stroke-width="5" stroke-linecap="round"/>
+    <!-- 红宝石 → 绿宝石 链段 -->
+    <ellipse cx="34" cy="30" rx="6.5" ry="4" transform="rotate(18 34 30)" fill="#9A7B46"/>
+    <!-- 绿宝石 → 蓝宝石 链段 -->
+    <ellipse cx="55" cy="34" rx="6.5" ry="4" transform="rotate(-14 55 34)" fill="#6E542B"/>
+    <!-- 蓝宝石 → 末端三齿小钩 链段 -->
+    <ellipse cx="70" cy="46" rx="6.5" ry="4" transform="rotate(68 70 46)" fill="#9A7B46"/>
+    <ellipse cx="67" cy="56" rx="6.5" ry="4" transform="rotate(82 67 56)" fill="#6E542B"/>
+  </g>
+
+  <!-- 依次串着的三颗不同颜色宝石：1. 红圆 (23,28) -> 2. 绿方 (45,38) -> 3. 蓝三角 (69,28) -->
+  <!-- 1. 红宝石（圆） -->
+  <g id="gem_1_red">
+    <circle cx="22" cy="27" r="12.5" fill="#E3263A" stroke="#1C1412" stroke-width="3.2"/>
+    <path d="M31,18 A12.5,12.5 0 0,1 13,36 L22,27 Z" fill="#9E1424"/>
+    <circle cx="22" cy="27" r="7.2" fill="#FF5C6E" stroke="#1C1412" stroke-width="1.4"/>
+    <circle cx="19" cy="24" r="2.6" fill="#FFFFFF"/>
+    <circle cx="22" cy="27" r="12.5" fill="none" stroke="#1C1412" stroke-width="3.2"/>
+  </g>
+
+  <!-- 2. 绿宝石（方） -->
+  <g id="gem_2_green">
+    <rect x="34" y="25" width="22" height="22" rx="3" fill="#1DBF5E" stroke="#1C1412" stroke-width="3.2"/>
+    <polygon points="56,25 56,47 34,47 39,42 51,42 51,30" fill="#117A3B"/>
+    <rect x="39" y="30" width="12" height="12" rx="1.2" fill="#5CE892" stroke="#1C1412" stroke-width="1.4"/>
+    <rect x="41" y="32" width="4.5" height="4.5" fill="#FFFFFF"/>
+    <rect x="34" y="25" width="22" height="22" rx="3" fill="none" stroke="#1C1412" stroke-width="3.2"/>
+  </g>
+
+  <!-- 3. 蓝宝石（三角） -->
+  <g id="gem_3_blue">
+    <polygon points="71,12 86,39 56,39" fill="#2E66F0" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <polygon points="71,12 86,39 71,39" fill="#193D9E"/>
+    <polygon points="71,20 79,35 63,35" fill="#6B9BFF" stroke="#1C1412" stroke-width="1.4" stroke-linejoin="round"/>
+    <polygon points="70,22 73,29 67,30" fill="#FFFFFF"/>
+    <polygon points="71,12 86,39 56,39" fill="none" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 链子末端醒目的旧铜三齿小钩（×3 识别特征，位于下半部 x:28..86, y:54..88） -->
+  <g id="three_prong_hook">
+    <!-- 钩柄横梁与吊环座 -->
+    <rect x="49" y="55" width="28" height="9" rx="3.5" fill="#9A7B46" stroke="#1C1412" stroke-width="3.2"/>
+    <rect x="63" y="55" width="14" height="9" rx="3" fill="#6E542B"/>
+    <circle cx="63" cy="59.5" r="2.5" fill="#E2D6BA" stroke="#1C1412" stroke-width="1.4"/>
+
+    <!-- 左钩齿（第1齿） -->
+    <path d="M55,63 C52,72 42,78 33,76 C28,75 26,69 31,66 L36,70 C41,71 46,68 48,62 Z" fill="#9A7B46" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <!-- 中钩齿（第2齿，最长居中朝下弯） -->
+    <path d="M66,63 C66,75 60,86 50,87 C44,87 42,81 47,77 L52,80 C56,80 59,73 59,63 Z" fill="#C2A670" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <!-- 右钩齿（第3齿，朝右下弯） -->
+    <path d="M73,63 C77,72 84,76 87,70 C89,66 85,61 81,64 L80,68 C78,68 76,65 75,61 Z" fill="#6E542B" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+
+    <!-- 重描钩柄确保层级干净 -->
+    <rect x="49" y="55" width="28" height="9" rx="3.5" fill="none" stroke="#1C1412" stroke-width="3.2"/>
+    <line x1="52" y1="58" x2="68" y2="58" stroke="#E2D6BA" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+</g>
+</svg>

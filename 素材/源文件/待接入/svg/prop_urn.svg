@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-prop_urn" viewBox="0 0 120 240" width="120" height="240">
+<title>宝库摆件 · 大陶瓶</title>
+<defs>
+  <filter id="prop_urn-grunge" filterUnits="userSpaceOnUse" x="0" y="0" width="120" height="240" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="2" seed="23" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.11  0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0.09 0" result="grain"/>
+    <feComposite in="grain" in2="SourceGraphic" operator="in" result="clippedGrain"/>
+    <feBlend mode="multiply" in="SourceGraphic" in2="clippedGrain"/>
+  </filter>
+</defs>
+<g id="root">
+  <!-- pivot: 60,240 -->
+  <!-- 落地排线暗影（落地点 60,240） -->
+  <ellipse cx="60" cy="232" rx="46" ry="6" fill="#0D111C" opacity="0.65"/>
+  <path d="M22,235 L30,228 M32,236 L40,228 M42,236 L50,228 M52,237 L60,228 M62,237 L70,228 M72,236 L80,228 M82,236 L90,228 M92,235 L98,229" stroke="#1C1412" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+
+  <g filter="url(#prop_urn-grunge)">
+    <!-- 欧式古堡双耳弯曲陶柄（旧铜褐暗釉 #4A4742 / #2E2C28，位于瓶肩两侧） -->
+    <g id="twin_handles">
+      <!-- 左耳柄 -->
+      <path d="M36,84 C14,76 10,114 24,136" fill="none" stroke="#1C1412" stroke-width="9.5" stroke-linecap="round"/>
+      <path d="M36,84 C14,76 10,114 24,136" fill="none" stroke="#6E6A63" stroke-width="4.5" stroke-linecap="round"/>
+      <!-- 右耳柄 -->
+      <path d="M84,86 C106,78 110,116 96,138" fill="none" stroke="#1C1412" stroke-width="9.5" stroke-linecap="round"/>
+      <path d="M84,86 C106,78 110,116 96,138" fill="none" stroke="#4A4742" stroke-width="4.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- 底部欧式石座与收腰瓶足（y:198..232） -->
+    <polygon points="28,214 92,215 96,232 24,232" fill="#4A4742" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <polygon points="60,214 92,215 96,232 60,232" fill="#2E2C28"/>
+    <polygon points="38,194 82,195 88,215 32,214" fill="#3A324D" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+    <polygon points="60,194 82,195 88,215 60,214" fill="#262036"/>
+
+    <!-- 大陶瓶暗色釉瓶身（欧式古堡哥特暗紫灰釉 #3A324D / #262036 / #161221，绝非青花瓷） -->
+    <path d="M38,88 L82,90 C102,114 100,164 82,195 L38,194 C20,164 18,112 38,88 Z" fill="#3A324D" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <!-- 瓶身右侧背光深暗面 -->
+    <path d="M60,89 L82,90 C102,114 100,164 82,195 L60,194 Z" fill="#262036"/>
+    <path d="M74,90 L82,90 C102,114 100,164 82,195 L72,195 C86,164 88,116 74,90 Z" fill="#161221" opacity="0.82"/>
+    <!-- 瓶身左侧冷灰紫暗釉反光弧 -->
+    <path d="M39,96 C26,118 26,158 39,186" fill="none" stroke="#62577D" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- 欧式古堡浮雕横箍带（上下两道旧铜暗箍，压暗不抢眼） -->
+    <path d="M25,118 H95 M24,126 H96" stroke="#1C1412" stroke-width="2.2"/>
+    <polygon points="25,118 95,119 96,126 24,125" fill="#6E542B" stroke="#1C1412" stroke-width="2.2"/>
+    <polygon points="60,118.5 95,119 96,126 60,125.5" fill="#3B2B14"/>
+    <path d="M27,168 H93" stroke="#1C1412" stroke-width="2.2"/>
+
+    <!-- 瓶颈与外翻宽瓶口（y:52..90） -->
+    <polygon points="40,64 80,66 82,90 38,88" fill="#262036" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <polygon points="32,52 88,54 84,67 36,65" fill="#4A4742" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <polygon points="60,53 88,54 84,67 60,66" fill="#2E2C28"/>
+    <line x1="36" y1="56" x2="64" y2="57" stroke="#948F86" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- 瓶身正面一道醒目的贯穿裂纹（核心识别特征：从瓶肩蜿蜒裂至瓶腹下沿） -->
+    <g id="urn_crack">
+      <path d="M56,89 L50,112 L63,132 L52,158 L61,182" fill="none" stroke="#62577D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(1.5, 0)"/>
+      <path d="M56,89 L50,112 L63,132 L52,158 L61,182" fill="none" stroke="#1C1412" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 裂纹分叉细纹 -->
+      <path d="M50,112 L41,120 M63,132 L73,140 M52,158 L43,165" fill="none" stroke="#1C1412" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- 右下背光交叉排线 -->
+    <path d="M68,136 L88,156 M66,150 L88,172 M64,164 L82,182" stroke="#1C1412" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+    <path d="M88,138 L68,158 M86,154 L66,174" stroke="#1C1412" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- 瓶身外框重描 -->
+    <path d="M38,88 L82,90 C102,114 100,164 82,195 L38,194 C20,164 18,112 38,88 Z" fill="none" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+  </g>
+</g>
+</svg>

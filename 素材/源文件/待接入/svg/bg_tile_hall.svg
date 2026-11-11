@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-bg_tile_hall" viewBox="0 0 512 512" width="512" height="512">
+<title>整屏背景 · 长廊旧壁纸</title>
+<g id="root">
+  <path d="M0,0 H512 V512 H0 Z" fill="#0F0C16"/>
+  <rect x="0" y="0" width="32" height="512" fill="#16111F" opacity="0.55"/>
+  <line x1="0" y1="0" x2="0" y2="512" stroke="#241829" stroke-width="1.2" opacity="0.45"/>
+  <line x1="32" y1="0" x2="32" y2="512" stroke="#1E1420" stroke-width="1" opacity="0.38"/>
+  <rect x="64" y="0" width="32" height="512" fill="#1B121B" opacity="0.55"/>
+  <line x1="64" y1="0" x2="64" y2="512" stroke="#241829" stroke-width="1.2" opacity="0.45"/>
+  <line x1="96" y1="0" x2="96" y2="512" stroke="#1E1420" stroke-width="1" opacity="0.38"/>
+  <rect x="128" y="0" width="32" height="512" fill="#16111F" opacity="0.55"/>
+  <line x1="128" y1="0" x2="128" y2="512" stroke="#241829" stroke-width="1.2" opacity="0.45"/>
+  <line x1="160" y1="0" x2="160" y2="512" stroke="#1E1420" stroke-width="1" opacity="0.38"/>
+  <rect x="192" y="0" width="32" height="512" fill="#1B121B" opacity="0.55"/>
+  <line x1="192" y1="0" x2="192" y2="512" stroke="#241829" stroke-width="1.2" opacity="0.45"/>
+  <line x1="224" y1="0" x2="224" y2="512" stroke="#1E1420" stroke-width="1" opacity="0.38"/>
+  <rect x="256" y="0" width="32" height="512" fill="#16111F" opacity="0.55"/>
+  <line x1="256" y1="0" x2="256" y2="512" stroke="#241829" stroke-width="1.2" opacity="0.45"/>
+  <line x1="288" y1="0" x2="288" y2="512" stroke="#1E1420" stroke-width="1" opacity="0.38"/>
+  <rect x="320" y="0" width="32" height="512" fill="#1B121B" opacity="0.55"/>
+  <line x1="320" y1="0" x2="320" y2="512" stroke="#241829" stroke-width="1.2" opacity="0.45"/>
+  <line x1="352" y1="0" x2="352" y2="512" stroke="#1E1420" stroke-width="1" opacity="0.38"/>
+  <rect x="384" y="0" width="32" height="512" fill="#16111F" opacity="0.55"/>
+  <line x1="384" y1="0" x2="384" y2="512" stroke="#241829" stroke-width="1.2" opacity="0.45"/>
+  <line x1="416" y1="0" x2="416" y2="512" stroke="#1E1420" stroke-width="1" opacity="0.38"/>
+  <rect x="448" y="0" width="32" height="512" fill="#1B121B" opacity="0.55"/>
+  <line x1="448" y1="0" x2="448" y2="512" stroke="#241829" stroke-width="1.2" opacity="0.45"/>
+  <line x1="480" y1="0" x2="480" y2="512" stroke="#1E1420" stroke-width="1" opacity="0.38"/>
+  <path d="M32,0 C46,32 46,96 32,128 C46,160 46,224 32,256 C46,288 46,352 32,384 C46,416 46,480 32,512" fill="none" stroke="#2B1A28" stroke-width="1.5" opacity="0.42"/>
+  <path d="M42,64 Q54,54 48,44 Q40,52 42,64 Z" fill="#241522" opacity="0.45"/>
+  <path d="M42,64 Q30,74 36,84 Q44,76 42,64 Z" fill="#201528" opacity="0.42"/>
+  <path d="M42,192 Q54,182 48,172 Q40,180 42,192 Z" fill="#241522" opacity="0.45"/>
+  <path d="M42,192 Q30,202 36,212 Q44,204 42,192 Z" fill="#201528" opacity="0.42"/>
+  <path d="M42,320 Q54,310 48,300 Q40,308 42,320 Z" fill="#241522" opacity="0.45"/>
+  <path d="M42,320 Q30,330 36,340 Q44,332 42,320 Z" fill="#201528" opacity="0.42"/>
+  <path d="M42,448 Q54,438 48,428 Q40,436 42,448 Z" fill="#241522" opacity="0.45"/>
+  <path d="M42,448 Q30,458 36,468 Q44,460 42,448 Z" fill="#201528" opacity="0.42"/>
+  <path d="M160,0 C174,32 174,96 160,128 C174,160 174,224 160,256 C174,288 174,352 160,384 C174,416 174,480 160,512" fill="none" stroke="#2B1A28" stroke-width="1.5" opacity="0.42"/>
+  <path d="M170,64 Q182,54 176,44 Q168,52 170,64 Z" fill="#241522" opacity="0.45"/>
+  <path d="M170,64 Q158,74 164,84 Q172,76 170,64 Z" fill="#201528" opacity="0.42"/>
+  <path d="M170,192 Q182,182 176,172 Q168,180 170,192 Z" fill="#241522" opacity="0.45"/>
+  <path d="M170,192 Q158,202 164,212 Q172,204 170,192 Z" fill="#201528" opacity="0.42"/>
+  <path d="M170,320 Q182,310 176,300 Q168,308 170,320 Z" fill="#241522" opacity="0.45"/>
+  <path d="M170,320 Q158,330 164,340 Q172,332 170,320 Z" fill="#201528" opacity="0.42"/>
+  <path d="M170,448 Q182,438 176,428 Q168,436 170,448 Z" fill="#241522" opacity="0.45"/>
+  <path d="M170,448 Q158,458 164,468 Q172,460 170,448 Z" fill="#201528" opacity="0.42"/>
+  <path d="M288,0 C302,32 302,96 288,128 C302,160 302,224 288,256 C302,288 302,352 288,384 C302,416 302,480 288,512" fill="none" stroke="#2B1A28" stroke-width="1.5" opacity="0.42"/>
+  <path d="M298,64 Q310,54 304,44 Q296,52 298,64 Z" fill="#241522" opacity="0.45"/>
+  <path d="M298,64 Q286,74 292,84 Q300,76 298,64 Z" fill="#201528" opacity="0.42"/>
+  <path d="M298,192 Q310,182 304,172 Q296,180 298,192 Z" fill="#241522" opacity="0.45"/>
+  <path d="M298,192 Q286,202 292,212 Q300,204 298,192 Z" fill="#201528" opacity="0.42"/>
+  <path d="M298,320 Q310,310 304,300 Q296,308 298,320 Z" fill="#241522" opacity="0.45"/>
+  <path d="M298,320 Q286,330 292,340 Q300,332 298,320 Z" fill="#201528" opacity="0.42"/>
+  <path d="M298,448 Q310,438 304,428 Q296,436 298,448 Z" fill="#241522" opacity="0.45"/>
+  <path d="M298,448 Q286,458 292,468 Q300,460 298,448 Z" fill="#201528" opacity="0.42"/>
+  <path d="M416,0 C430,32 430,96 416,128 C430,160 430,224 416,256 C430,288 430,352 416,384 C430,416 430,480 416,512" fill="none" stroke="#2B1A28" stroke-width="1.5" opacity="0.42"/>
+  <path d="M426,64 Q438,54 432,44 Q424,52 426,64 Z" fill="#241522" opacity="0.45"/>
+  <path d="M426,64 Q414,74 420,84 Q428,76 426,64 Z" fill="#201528" opacity="0.42"/>
+  <path d="M426,192 Q438,182 432,172 Q424,180 426,192 Z" fill="#241522" opacity="0.45"/>
+  <path d="M426,192 Q414,202 420,212 Q428,204 426,192 Z" fill="#201528" opacity="0.42"/>
+  <path d="M426,320 Q438,310 432,300 Q424,308 426,320 Z" fill="#241522" opacity="0.45"/>
+  <path d="M426,320 Q414,330 420,340 Q428,332 426,320 Z" fill="#201528" opacity="0.42"/>
+  <path d="M426,448 Q438,438 432,428 Q424,436 426,448 Z" fill="#241522" opacity="0.45"/>
+  <path d="M426,448 Q414,458 420,468 Q428,460 426,448 Z" fill="#201528" opacity="0.42"/>
+  <path d="M96,0 C82,32 82,96 96,128 C82,160 82,224 96,256 C82,288 82,352 96,384 C82,416 82,480 96,512" fill="none" stroke="#231A2E" stroke-width="1.4" opacity="0.38"/>
+  <polygon points="96,50 104,64 96,78 88,64" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="96,178 104,192 96,206 88,192" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="96,306 104,320 96,334 88,320" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="96,434 104,448 96,462 88,448" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <path d="M224,0 C210,32 210,96 224,128 C210,160 210,224 224,256 C210,288 210,352 224,384 C210,416 210,480 224,512" fill="none" stroke="#231A2E" stroke-width="1.4" opacity="0.38"/>
+  <polygon points="224,50 232,64 224,78 216,64" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="224,178 232,192 224,206 216,192" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="224,306 232,320 224,334 216,320" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="224,434 232,448 224,462 216,448" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <path d="M352,0 C338,32 338,96 352,128 C338,160 338,224 352,256 C338,288 338,352 352,384 C338,416 338,480 352,512" fill="none" stroke="#231A2E" stroke-width="1.4" opacity="0.38"/>
+  <polygon points="352,50 360,64 352,78 344,64" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="352,178 360,192 352,206 344,192" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="352,306 360,320 352,334 344,320" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="352,434 360,448 352,462 344,448" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <path d="M480,0 C466,32 466,96 480,128 C466,160 466,224 480,256 C466,288 466,352 480,384 C466,416 466,480 480,512" fill="none" stroke="#231A2E" stroke-width="1.4" opacity="0.38"/>
+  <polygon points="480,50 488,64 480,78 472,64" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="480,178 488,192 480,206 472,192" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="480,306 488,320 480,334 472,320" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+  <polygon points="480,434 488,448 480,462 472,448" fill="#1D1426" stroke="#2B1C30" stroke-width="1" opacity="0.4"/>
+</g>
+</svg>

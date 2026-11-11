@@ -1,0 +1,176 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>美术验收</title>
+<style>
+  body { background:#222; color:#ddd; font:13px/1.5 system-ui, "PingFang SC", sans-serif; margin:12px; }
+  #stage { position:absolute; left:-9999px; top:0; }
+  table { border-collapse:collapse; margin:6px 0 18px; }
+  td, th { border:1px solid #444; padding:2px 6px; vertical-align:top; }
+  .bad { color:#ff7b7b; } .ok { color:#8fd18f; } .warn { color:#f2c46d; }
+  .sheet { display:flex; flex-wrap:wrap; gap:4px; margin:4px 0 14px; align-items:flex-end; }
+  .cell { text-align:center; font-size:11px; color:#aaa; }
+  .cell svg { outline:1px solid #e33; background:#3a3530; display:block; width:auto; height:200px; }
+  h2 { margin:22px 0 4px; font-size:16px; }
+</style>
+<p>用法：<code>检查.html?pack=本体第2批</code>（读 <code>&lt;pack&gt;/美术包/交回/gemcard/out/</code> 里的 SVG，对照 <code>素材清单.json</code>）。加 <code>&amp;only=mon_box</code> 只查一个；加 <code>&amp;sheet=1</code> 出关键帧对照图。</p>
+<div id="out"></div>
+<div id="stage"></div>
+<script>
+// 验收：时间点、缓动、静止姿势、待机首尾、出框（每 20ms 一帧，沿线取点）、关键帧对照图。
+const Q = new URLSearchParams(location.search);
+const PACK = Q.get('pack'), ONLY = Q.get('only'), SHEET = Q.get('sheet') === '1';
+const STEP = 20;
+const STD = { hit:[0,50,130,330,400], hit_big:[0,60,200,500,700], attack:[0,250,330,450,800], die:[0,150,300,600,1000],
+  play:[0,100,250,400,600], duck:[0,40,160,260,300], refuse:[0,50,180,300], click:[0,40,120,250], shut:[0,60,200,500],
+  regrow:[0,200,300,400,500,600,800], cap:[0,80,250,500], unwind:[0,60,140,300], wound_down:[0,200,600],
+  tick:[0,50,150,500], ring:[0,60,140,300,400], layer:[0,200,300,400,500,600,800], idle:[0,1500,3000], daze:[0,600], 'daze~loop':[0,1000,2000] };
+const EASE = new Set(['cubic-bezier(0.2, 0.8, 0.2, 1)','ease-in-out','cubic-bezier(0.34, 1.56, 0.64, 1)','linear']);
+const out = document.getElementById('out'), stage = document.getElementById('stage');
+const h = (tag, html, cls) => { const e = document.createElement(tag); e.innerHTML = html; if (cls) e.className = cls; out.append(e); return e; };
+
+function anims(svg) { return svg.getAnimations({ subtree:true }); }
+function seek(svg, t) { for (const a of anims(svg)) { a.pause(); a.currentTime = t; } }
+function opacityChain(el, root) { let o = 1; for (let e = el; e && e !== root.parentNode; e = e.parentElement) { const cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden') return 0; o *= +cs.opacity; } return o; }
+function geoms(svg) { return [...svg.querySelectorAll('path,rect,circle,ellipse,line,polyline,polygon')].filter(e => !e.closest('defs,clipPath,mask,symbol,pattern,marker')); }
+function label(e) { const g = e.closest('[id]'); const c = e.closest('[class]'); return (g && g !== e.ownerSVGElement ? '#' + g.id : '') + (c && c.getAttribute('class') && !c.getAttribute('class').startsWith('svg-') ? '.' + c.getAttribute('class').split(' ')[0] : ''); }
+function overflow(svg, W, H) {
+  let worst = { d:0 };
+  for (const e of geoms(svg)) {
+    if (opacityChain(e, svg) < 0.02) continue;
+    let len; try { len = e.getTotalLength(); } catch { continue; }
+    const m = e.getCTM(); if (!m) continue;
+    const n = Math.max(24, Math.ceil(len / 2));
+    for (let i = 0; i <= n; i++) {
+      const p = e.getPointAtLength(len * i / n), x = m.a*p.x + m.c*p.y + m.e, y = m.b*p.x + m.d*p.y + m.f;
+      const d = Math.max(-x, x - W, -y, y - H);
+      if (d > worst.d) worst = { d, who:label(e), x:Math.round(x), y:Math.round(y) };
+    }
+  }
+  return worst;
+}
+function pose(svg) {
+  const r = [];
+  for (const e of svg.querySelectorAll('g,path,rect,circle,ellipse,line,polyline,polygon,use')) {
+    const cs = getComputedStyle(e); let t = cs.transform === 'none' ? 'matrix(1, 0, 0, 1, 0, 0)' : cs.transform;
+    t = t.replace(/-?\d+(\.\d+)?(e-?\d+)?/g, v => (Math.round(+v * 100) / 100 + 0).toString());
+    const vis = opacityChain(e, svg) > 0.02;
+    r.push(vis ? t + '|' + (Math.round(+cs.opacity * 100) / 100) : 'hidden');
+  }
+  return r;
+}
+function diff(a, b, svg) { const els = [...svg.querySelectorAll('g,path,rect,circle,ellipse,line,polyline,polygon,use')]; const d = []; for (let i = 0; i < a.length; i++) if (a[i] !== b[i] && !(a[i] === 'hidden' && b[i] === 'hidden')) d.push(label(els[i]) || els[i].tagName); return [...new Set(d)]; }
+function freeze(svg) { // 冻成静止的克隆：把此刻的 transform、opacity 写成行内样式
+  const c = svg.cloneNode(true); const src = [...svg.querySelectorAll('*')], dst = [...c.querySelectorAll('*')];
+  src.forEach((e, i) => { const cs = getComputedStyle(e); if (dst[i].style) { dst[i].style.animation = 'none'; dst[i].style.transform = cs.transform; dst[i].style.opacity = cs.opacity; } });
+  c.removeAttribute('data-anim'); c.style.animation = 'none'; c.querySelectorAll('style').forEach(s => s.textContent += '\n*{animation:none!important}');
+  return c;
+}
+function keyTimes(svg) { // 每个动画的关键时间（毫秒，从事件开始算）
+  const r = [];
+  for (const a of anims(svg)) {
+    const tm = a.effect.getTiming(), dur = +tm.duration, delay = +tm.delay || 0, loop = tm.iterations === Infinity;
+    const offs = a.effect.getKeyframes().map(k => k.computedOffset);
+    const kf = a.effect.getKeyframes();
+    const eases = new Set([tm.easing, ...kf.filter(k => k.computedOffset < 1).map(k => k.easing)]); // 最后一帧的缓动不起作用
+    r.push({ name:a.animationName, dur, delay, loop, times:offs.map(o => Math.round((o * dur) * 10) / 10), eases:[...eases] });
+  }
+  return r;
+}
+
+async function checkOne(def, text) {
+  const id = def.id; const [,, W, H] = def.viewBox.split(' ').map(Number);
+  stage.innerHTML = text; const svg = stage.querySelector('svg');
+  svg.setAttribute('width', W); svg.setAttribute('height', H);
+  const rows = []; const sheets = [];
+  const events = ['idle', ...Object.keys(def.events || {})];
+  // 静止姿势 = 没有 data-anim、所有动画停在 0
+  svg.removeAttribute('data-anim'); await new Promise(r => requestAnimationFrame(r)); seek(svg, 0);
+  const rest = pose(svg);
+  for (const ev of events) {
+    if (ev === 'idle') svg.removeAttribute('data-anim'); else svg.setAttribute('data-anim', ev);
+    await new Promise(r => requestAnimationFrame(r));
+    const list = anims(svg);
+    const stay = (def.stay || []).includes(ev);
+    let total = ev === 'idle' ? 3000 : def.events[ev] + (stay ? 2000 : 0);
+    const isIdle = ev === 'idle';
+    if (isIdle && !list.length) { rows.push([ev, '<span class="ok">不动</span>', '', '', '', overflowCell(svg, W, H, 0)]); continue; }
+    // 时间点
+    const kt = keyTimes(svg); const bad = new Set(), easeBad = new Set(); let period = '';
+    for (const k of kt) {
+      const key = isIdle ? 'idle' : (k.loop && stay ? 'daze~loop' : ev);
+      const allowed = STD[key] || STD[ev];
+      const rel = k.loop && !isIdle ? k.times : k.times.map(t => t + (k.loop ? 0 : k.delay));
+      if (allowed) for (const t of rel) if (!allowed.some(a => Math.abs(a - t) <= 1)) bad.add(Math.round(t));
+      if (isIdle && k.loop && 3000 % k.dur !== 0) period += `${k.name}:${k.dur} `;
+      for (const e of k.eases) if (!EASE.has(e)) easeBad.add(e);
+    }
+    // 出框
+    let worst = { d:0 }; const times = [];
+    for (let t = 0; t <= total; t += STEP) times.push(t);
+    for (const t of times) { seek(svg, Math.min(t, total - 0.5)); const w = overflow(svg, W, H); if (w.d > worst.d) worst = { ...w, t }; }
+    // 首尾
+    seek(svg, 0); const first = diff(rest, pose(svg), svg);
+    let last = [];
+    if (isIdle) { seek(svg, 2999.5); last = diff(rest, pose(svg), svg); }
+    else if (!stay && ev !== 'die' && ev !== 'out') { seek(svg, def.events[ev] - 0.5); last = diff(rest, pose(svg), svg); }
+    rows.push([ev, total + (stay ? '（含循环 2000）' : ''),
+      bad.size ? `<span class="bad">表外：${[...bad].sort((a,b)=>a-b).join(', ')}</span>` : '<span class="ok">对</span>',
+      (easeBad.size ? `<span class="bad">缓动：${[...easeBad].join(' / ')}</span> ` : '') + (period ? `<span class="bad">周期：${period}</span>` : ''),
+      (first.length ? `<span class="bad">首帧≠静止：${first.slice(0,4).join(' ')}</span> ` : '') + (last.length ? `<span class="${ev==='idle'?'bad':'bad'}">尾帧≠静止：${last.slice(0,4).join(' ')}</span>` : ''),
+      worst.d > 0.5 ? `<span class="bad">${worst.d.toFixed(1)}px @${worst.t}ms ${worst.who} (${worst.x},${worst.y})</span>` : '<span class="ok">0</span>']);
+    if (SHEET) {
+      const keys = (STD[ev] || []).filter(t => t <= total);
+      const pts = ev === 'idle' ? [0, 750, 1500, 2250] : stay ? [0, 300, 600, 1100, 1600] : keys;
+      const cells = [];
+      for (const t of pts) { seek(svg, Math.min(t, total - 0.5)); cells.push([t, freeze(svg)]); }
+      if (worst.d > 0.5) { seek(svg, worst.t); cells.push([`出框 ${worst.t}`, freeze(svg)]); }
+      sheets.push([ev, cells]);
+    }
+  }
+  return { rows, sheets };
+}
+function overflowCell(svg, W, H) { const w = overflow(svg, W, H); return w.d > 0.5 ? `<span class="bad">${w.d.toFixed(1)}px ${w.who}</span>` : '<span class="ok">0</span>'; }
+
+function staticChecks(def, text) {
+  const p = [];
+  for (const [re, name] of [[/transition\s*:/, 'transition'], [/<animate/, '<animate>'], [/<script/, '脚本'], [/<text[\s>]/, '<text>'], [/<image/, '<image>'], [/steps\(/, 'steps()'], [/:hover|:active/, ':hover'], [/@media/, '@media'], [/(href|src)\s*=\s*"(https?:|\/\/)/, '外部引用'], [/#000\b|#000000/i, '纯黑']]) if (re.test(text)) p.push(name);
+  const vb = (text.match(/viewBox="([^"]+)"/) || [])[1]; if (vb !== def.viewBox) p.push(`viewBox ${vb} ≠ ${def.viewBox}`);
+  for (const part of def.parts || []) if (!new RegExp(`id="${part}"`).test(text)) p.push(`缺部件 #${part}`);
+  for (const s of Object.keys(def.slots || {})) if (!new RegExp(`id="${s}"`).test(text)) p.push(`缺槽 #${s}`);
+  if (def.tint && !/currentColor/.test(text)) p.push('没用 currentColor');
+  if (def.load === 'img' && /@keyframes/.test(text) && !def.idle) p.push('静态素材里有动画');
+  for (const ev of Object.keys(def.events || {})) if (!text.includes(`data-anim="${ev}"`)) p.push(`没写事件 ${ev}`);
+  return p;
+}
+
+(async () => {
+  const manifest = await (await fetch('../素材清单.json')).json();
+  const defs = Object.fromEntries(manifest.assets.map(a => [a.id, a]));
+  const base = `../${PACK}/美术包/交回/gemcard/out/`;
+  const listing = await (await fetch(base)).text();
+  const files = [...new Set([...listing.matchAll(/href="([^"]+\.svg)"/g)].map(m => decodeURIComponent(m[1])))].filter(f => !ONLY || f === ONLY + '.svg');
+  const summary = [];
+  for (const f of files) {
+    const id = f.replace(/\.svg$/, ''); const def = defs[id];
+    if (!def) { h('p', `${f}：清单里没有`, 'bad'); continue; }
+    const text = await (await fetch(base + f)).text();
+    const st = staticChecks(def, text);
+    h('h2', `${id}　<small>${def.viewBox}　${def.load}</small>`);
+    h('div', st.length ? `<span class="bad">静态：${st.join('；')}</span>` : '<span class="ok">静态检查通过</span>');
+    const { rows, sheets } = await checkOne(def, text);
+    const t = h('table', '<tr><th>动作</th><th>时长</th><th>时间点</th><th>缓动/周期</th><th>首尾</th><th>出框</th></tr>' + rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join(''));
+    const bad = st.length + rows.filter(r => r.join('').includes('class="bad"')).length;
+    summary.push([id, bad, rows.filter(r => r[5].includes('bad')).map(r => r[0] + ' ' + r[5].replace(/<[^>]+>/g, ''))]);
+    for (const [ev, cells] of sheets) {
+      h('div', `<b>${ev}</b>`);
+      const s = h('div', '', 'sheet');
+      for (const [t, c] of cells) { const d = document.createElement('div'); d.className = 'cell'; d.append(c, document.createTextNode(t + '')); s.append(d); }
+    }
+  }
+  stage.innerHTML = '';
+  const s = document.createElement('div');
+  s.innerHTML = '<h2>汇总</h2><table><tr><th>素材</th><th>问题数</th><th>出框</th></tr>' + summary.map(([id, n, o]) => `<tr><td>${id}</td><td class="${n ? 'bad' : 'ok'}">${n}</td><td>${o.join('<br>')}</td></tr>`).join('') + '</table>';
+  out.prepend(s);
+  window.SUMMARY = summary; document.title = '完成';
+})();
+</script>

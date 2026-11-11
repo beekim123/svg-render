@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-prop_frame" viewBox="0 0 120 240" width="120" height="240">
+<title>长廊摆件 · 空画框</title>
+<defs>
+  <filter id="prop_frame-grunge" filterUnits="userSpaceOnUse" x="0" y="0" width="120" height="240" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.065" numOctaves="2" seed="31" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.11  0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0.09 0" result="grain"/>
+    <feComposite in="grain" in2="SourceGraphic" operator="in" result="clippedGrain"/>
+    <feBlend mode="multiply" in="SourceGraphic" in2="clippedGrain"/>
+  </filter>
+</defs>
+<g id="root">
+  <!-- pivot: 60,240 -->
+  <!-- 落地排线暗影 -->
+  <ellipse cx="60" cy="233" rx="48" ry="6" fill="#0D111C" opacity="0.65"/>
+  <path d="M20,236 L28,229 M32,237 L40,229 M44,237 L52,229 M56,237 L64,229 M68,237 L76,229 M80,236 L88,229 M92,235 L100,229" stroke="#1C1412" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+
+  <g filter="url(#prop_frame-grunge)">
+    <!-- 后方支撑立柱（仅在画框上下露出，绝不横穿透明画框内孔，保证框里完全透明） -->
+    <polygon points="55,44 63,44 61,68 53,68" fill="#3D2212" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round"/>
+    <polygon points="56,184 65,184 72,232 63,233" fill="#3D2212" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round"/>
+
+    <!-- 矮木画架左右前腿（落在 y:233..235） -->
+    <polygon points="34,178 44,178 28,234 18,233" fill="#704122" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+    <polygon points="39,178 44,178 28,234 23,233" fill="#3D2212" opacity="0.75"/>
+    <polygon points="76,178 86,178 102,233 92,234" fill="#704122" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+    <polygon points="80,178 86,178 102,233 96,234" fill="#3D2212" opacity="0.82"/>
+
+    <!-- 斜靠在木架上的空的旧金画框（压暗旧金 #6E542B / #3B2B14，使用 fill-rule="evenodd" 挖空正中透明洞） -->
+    <g id="empty_gold_frame" transform="rotate(-4 60 126)">
+      <!-- 外框环（外圈 22..98 x 62..182，内洞 38..82 x 78..166 完全透明） -->
+      <path fill-rule="evenodd" d="M22,62 H98 V182 H22 Z M38,78 V166 H82 V78 Z" fill="#6E542B" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+      <!-- 右侧与下侧压暗背光面 -->
+      <polygon points="98,62 98,182 22,182 38,166 82,166 82,78" fill="#3B2B14" opacity="0.82"/>
+      <!-- 内框台阶双线 -->
+      <path fill-rule="evenodd" d="M33,73 H87 V171 H33 Z M38,78 V166 H82 V78 Z" fill="#3B2B14" stroke="#1C1412" stroke-width="2"/>
+      <!-- 左上微弱冷旧金受光边（不发光，压暗） -->
+      <polyline points="25,174 25,65 92,65" fill="none" stroke="#9A7B46" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- 四角哥特折线旧金角花与破损裂痕 -->
+      <polygon points="20,60 38,60 32,68 28,68 28,74 20,78" fill="#9A7B46" stroke="#1C1412" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="100,60 82,60 88,68 92,68 92,74 100,78" fill="#6E542B" stroke="#1C1412" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="20,184 38,184 32,176 28,176 28,170 20,166" fill="#6E542B" stroke="#1C1412" stroke-width="2" stroke-linejoin="round"/>
+      <polygon points="100,184 82,184 88,176 92,176 92,170 100,166" fill="#3B2B14" stroke="#1C1412" stroke-width="2" stroke-linejoin="round"/>
+      <!-- 旧金框上的岁月裂纹与排线 -->
+      <path d="M22,118 L34,122 L38,119 M82,102 L91,98 L98,101 M54,166 L58,175 L55,182" fill="none" stroke="#1C1412" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M84,126 L96,138 M84,138 L96,150 M84,150 L96,162" stroke="#1C1412" stroke-width="1.1" opacity="0.48"/>
+    </g>
+
+    <!-- 矮木架前横托木条（压在画框底沿前） -->
+    <polygon points="14,174 106,178 104,188 16,184" fill="#704122" stroke="#1C1412" stroke-width="2.8" stroke-linejoin="round"/>
+    <polygon points="60,176 106,178 104,188 60,186" fill="#3D2212" opacity="0.8"/>
+    <line x1="18" y1="177" x2="58" y2="179" stroke="#9A8968" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+  </g>
+</g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-relic_blue" viewBox="0 0 96 96" width="96" height="96">
+<title>宝物 · 蓝宝石加倍</title>
+<g id="root">
+  <!-- 旧银双联戒托（与 relic_red、relic_green 100% 同一个银托） -->
+  <g id="silver_twin_mount">
+    <!-- 左戒圈与右戒圈（下部连体双环） -->
+    <path d="M29,44 C13,44 8,56 8,67 C8,79 17,87 29,87 C39,87 46,81 48,72 C50,81 57,87 67,87 C79,87 88,79 88,67 C88,56 83,44 67,44 H29 Z M29,54 C36,54 40,59 40,67 C40,74 35,78 29,78 C22,78 17,74 17,67 C17,59 21,54 29,54 Z M67,54 C75,54 79,59 79,67 C79,74 74,78 67,78 C61,78 56,74 56,67 C56,59 60,54 67,54 Z" fill="#5A7682" fill-rule="evenodd" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <!-- 右半侧背光暗面 -->
+    <path d="M48,44 H67 C83,44 88,56 88,67 C88,79 79,87 67,87 C57,87 50,81 48,72 Z M67,54 C60,54 56,59 56,67 C56,74 61,78 67,78 C74,78 79,74 79,67 C79,59 75,54 67,54 Z" fill="#3B515C" fill-rule="evenodd"/>
+    <!-- 左上冷灰青受光亮边 -->
+    <path d="M12,64 C12,55 17,48 27,47" fill="none" stroke="#8CAAB5" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- 外框重描 -->
+    <path d="M29,44 C13,44 8,56 8,67 C8,79 17,87 29,87 C39,87 46,81 48,72 C50,81 57,87 67,87 C79,87 88,79 88,67 C88,56 83,44 67,44 H29 Z M29,54 C36,54 40,59 40,67 C40,74 35,78 29,78 C22,78 17,74 17,67 C17,59 21,54 29,54 Z M67,54 C75,54 79,59 79,67 C79,74 74,78 67,78 C61,78 56,74 56,67 C56,59 60,54 67,54 Z" fill="none" fill-rule="evenodd" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+
+    <!-- 双戒托顶部两只碗状银爪托底座 -->
+    <polygon points="10,40 46,40 42,50 14,50" fill="#5A7682" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+    <polygon points="28,40 46,40 42,50 28,50" fill="#3B515C"/>
+    <polygon points="50,40 86,40 82,50 54,50" fill="#5A7682" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+    <polygon points="68,40 86,40 82,50 68,50" fill="#1E2C33" opacity="0.8"/>
+
+    <!-- 正中双联银桥锁扣与铆钉（强调“两个戒托连在一起”） -->
+    <rect x="42" y="42" width="12" height="24" rx="3" fill="#8CAAB5" stroke="#1C1412" stroke-width="3"/>
+    <rect x="48" y="42" width="6" height="24" rx="2" fill="#3B515C"/>
+    <rect x="42" y="42" width="12" height="24" rx="3" fill="none" stroke="#1C1412" stroke-width="3"/>
+    <circle cx="48" cy="49" r="2.4" fill="#E2D6BA" stroke="#1C1412" stroke-width="1.4"/>
+    <circle cx="48" cy="59" r="2.4" fill="#E2D6BA" stroke="#1C1412" stroke-width="1.4"/>
+  </g>
+
+  <!-- 托里两颗一模一样的鲜艳蓝色三角宝石（尖顶 28,9 与 68,9，底边 y=42） -->
+  <g id="twin_gems">
+    <!-- 左蓝三角宝石 -->
+    <g id="gem_left">
+      <polygon points="28,9 46,42 10,42" fill="#2E66F0" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+      <polygon points="28,9 46,42 28,42" fill="#193D9E"/>
+      <polygon points="28,19 38,38 18,38" fill="#6B9BFF" stroke="#1C1412" stroke-width="1.6" stroke-linejoin="round"/>
+      <polygon points="27,21 31,30 22,31" fill="#FFFFFF" opacity="0.95"/>
+      <polygon points="28,9 46,42 10,42" fill="none" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    </g>
+    <!-- 右蓝三角宝石（一模一样，平移 x+40） -->
+    <g id="gem_right" transform="translate(40, 0)">
+      <polygon points="28,9 46,42 10,42" fill="#2E66F0" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+      <polygon points="28,9 46,42 28,42" fill="#193D9E"/>
+      <polygon points="28,19 38,38 18,38" fill="#6B9BFF" stroke="#1C1412" stroke-width="1.6" stroke-linejoin="round"/>
+      <polygon points="27,21 31,30 22,31" fill="#FFFFFF" opacity="0.95"/>
+      <polygon points="28,9 46,42 10,42" fill="none" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- 前景银爪尖（一模一样的四只银包爪，扣在宝石下沿） -->
+  <g id="silver_prongs" fill="#8CAAB5" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round">
+    <polygon points="11,42 16,33 21,42"/>
+    <polygon points="35,42 40,33 45,42" fill="#5A7682"/>
+    <polygon points="51,42 56,33 61,42"/>
+    <polygon points="75,42 80,33 85,42" fill="#5A7682"/>
+  </g>
+</g>
+</svg>

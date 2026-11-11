@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-card_art_shadow" viewBox="0 0 176 188" width="176" height="188">
+<title>额外牌原画 · 影子</title>
+<style>
+.svg-card_art_shadow g { transform-box: view-box; }
+.svg-card_art_shadow #root { transform-origin: 102px 110px; }
+.svg-card_art_shadow #ground_shadow { transform-origin: 86px 152px; }
+.svg-card_art_shadow #main_card { transform-origin: 76px 148px; }
+.svg-card_art_shadow #shadow_card { transform-origin: 126px 148px; opacity: 0; }
+
+/* 待机 idle（3000ms 循环）：0ms(0%) -> 1500ms(50%) -> 3000ms(100%)
+   黑影像烛光下那样轻轻晃，主牌微呼吸，所有部件严格共用 0%, 50%, 100% */
+@keyframes svg-card_art_shadow-idle-gshadow {
+  0% { transform: translate(0px, 0px) rotate(0deg) scale(1, 1); }
+  50% { transform: translate(5px, -2px) rotate(-3.5deg) scale(1.06, 0.95); }
+  100% { transform: translate(0px, 0px) rotate(0deg) scale(1, 1); }
+}
+@keyframes svg-card_art_shadow-idle-main {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(0px, -3px) rotate(-1deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+.svg-card_art_shadow:not([data-anim]) #ground_shadow,
+.svg-card_art_shadow[data-anim="idle"] #ground_shadow {
+  animation: svg-card_art_shadow-idle-gshadow 3s ease-in-out infinite;
+}
+.svg-card_art_shadow:not([data-anim]) #main_card,
+.svg-card_art_shadow[data-anim="idle"] #main_card {
+  animation: svg-card_art_shadow-idle-main 3s ease-in-out infinite;
+}
+
+/* play（600ms）：
+   0ms(0%) 静止 -> 100ms(16.6667%) 黑影从地上立起来 -> 250ms(41.6667%) 变成第二张一模一样的牌，和前面那张并排
+   -> 400ms(66.6667%) 停住 -> 600ms(100%) 躺回地上。
+   所有部件严格共用：0%, 16.6667%, 41.6667%, 66.6667%, 100% */
+@keyframes svg-card_art_shadow-play-gshadow {
+  0% { opacity: 1; transform: translate(0px, 0px) rotate(0deg) scale(1, 1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { opacity: 0.85; transform: translate(14px, -24px) rotate(-18deg) scale(0.82, 1.35); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.6667% { opacity: 0.25; transform: translate(24px, -4px) rotate(0deg) scale(0.65, 0.45); animation-timing-function: linear; }
+  66.6667% { opacity: 0.25; transform: translate(24px, -4px) rotate(0deg) scale(0.65, 0.45); animation-timing-function: ease-in-out; }
+  100% { opacity: 1; transform: translate(0px, 0px) rotate(0deg) scale(1, 1); }
+}
+@keyframes svg-card_art_shadow-play-main {
+  0% { transform: translate(0px, 0px) rotate(0deg) scale(1, 1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { transform: translate(-8px, 2px) rotate(-3deg) scale(1.02, 0.98); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.6667% { transform: translate(-12px, -4px) rotate(-2deg) scale(1, 1); animation-timing-function: linear; }
+  66.6667% { transform: translate(-12px, -4px) rotate(-2deg) scale(1, 1); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px, 0px) rotate(0deg) scale(1, 1); }
+}
+@keyframes svg-card_art_shadow-play-scard {
+  0% { opacity: 0; transform: translate(-18px, 28px) rotate(24deg) scale(0.85, 0.35); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.6667% { opacity: 0.75; transform: translate(-6px, 8px) rotate(10deg) scale(0.95, 0.78); animation-timing-function: cubic-bezier(.34,1.56,.64,1); }
+  41.6667% { opacity: 1; transform: translate(0px, -4px) rotate(2deg) scale(1, 1); animation-timing-function: linear; }
+  66.6667% { opacity: 1; transform: translate(0px, -4px) rotate(2deg) scale(1, 1); animation-timing-function: ease-in-out; }
+  100% { opacity: 0; transform: translate(-18px, 28px) rotate(24deg) scale(0.85, 0.35); }
+}
+.svg-card_art_shadow[data-anim="play"] #ground_shadow {
+  animation: svg-card_art_shadow-play-gshadow 0.6s both;
+}
+.svg-card_art_shadow[data-anim="play"] #main_card {
+  animation: svg-card_art_shadow-play-main 0.6s both;
+}
+.svg-card_art_shadow[data-anim="play"] #shadow_card {
+  animation: svg-card_art_shadow-play-scard 0.6s both;
+}
+</style>
+<g id="root">
+  <!-- 左上角 x:0..30, y:0..90 留空 -->
+  <!-- 底部椭圆暗影 -->
+  <ellipse cx="96" cy="158" rx="58" ry="9" fill="#0D111C" opacity="0.6"/>
+
+  <!-- 1. 身后地上拖着的一模一样的黑影 ground_shadow（近黑的冷灰 #1E2C33 / #161E26，绝不用纯黑 纯黑） -->
+  <g id="ground_shadow">
+    <!-- 斜躺在地上的牌背形状黑影（范围 x:72..166, y:108..162） -->
+    <polygon points="62,146 112,106 164,116 116,160" fill="#1E2C33" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+    <polygon points="68,144 113,110 156,118 114,155" fill="#161221" stroke="#3B515C" stroke-width="1.4" stroke-linejoin="round"/>
+    <!-- 影子里隐约可见的同款八角盾与三宝石冷灰剪影 -->
+    <polygon points="113,120 128,125 126,138 111,146 98,139 100,126" fill="#262036" stroke="#3B515C" stroke-width="1.4"/>
+    <circle cx="115" cy="128" r="4" fill="#3B515C"/>
+    <polygon points="104,134 111,135 109,141 102,140" fill="#3B515C"/>
+    <polygon points="119,134 124,141 115,141" fill="#3B515C"/>
+  </g>
+
+  <!-- 2. play 时黑影立起来变成的第二张一模一样的牌 shadow_card（并排在右边，平时 opacity: 0） -->
+  <g id="shadow_card">
+    
+      <rect x="96.0" y="56.0" width="60" height="92" rx="6" fill="#262036" stroke="#1C1412" stroke-width="3"/>
+      <rect x="100.0" y="60.0" width="52" height="84" rx="4" fill="#161221" stroke="#9A7B46" stroke-width="1.8"/>
+      <!-- 四角铜角花 -->
+      <polygon points="100.0,68.0 100.0,60.0 108.0,60.0" fill="#9A7B46"/>
+      <polygon points="152.0,68.0 152.0,60.0 144.0,60.0" fill="#9A7B46"/>
+      <polygon points="100.0,136.0 100.0,144.0 108.0,144.0" fill="#9A7B46"/>
+      <polygon points="152.0,136.0 152.0,144.0 144.0,144.0" fill="#9A7B46"/>
+      <!-- 哥特菱格暗线 -->
+      <polygon points="126.0,66.0 148.0,102.0 126.0,138.0 104.0,102.0" fill="none" stroke="#3A324D" stroke-width="1.2"/>
+      <!-- 八角纹章铜盾 -->
+      <polygon points="126.0,78.0 142.0,90.0 144.0,108.0 126.0,126.0 108.0,108.0 110.0,90.0" fill="#6E542B" stroke="#1C1412" stroke-width="2.2" stroke-linejoin="round"/>
+      <polygon points="126.0,83.0 138.0,93.0 139.0,107.0 126.0,121.0 113.0,107.0 114.0,93.0" fill="#161221" stroke="#1C1412" stroke-width="1.4"/>
+      <!-- 三颗宝石：红圆、绿方、蓝三角 -->
+      <circle cx="126.0" cy="94.0" r="5.5" fill="#E3263A" stroke="#1C1412" stroke-width="1.6"/>
+      <circle cx="124.5" cy="92.5" r="1.6" fill="#FFFFFF"/>
+      <rect x="115.0" y="103.0" width="9.5" height="9.5" rx="1.5" fill="#1DBF5E" stroke="#1C1412" stroke-width="1.6"/>
+      <polygon points="132.0,102.0 138.0,112.5 126.0,112.5" fill="#2E66F0" stroke="#1C1412" stroke-width="1.6" stroke-linejoin="round"/>
+    
+    <!-- 边缘一缕幽冷灰青影气表示由黑影化形 -->
+    <rect x="96" y="56" width="60" height="92" rx="6" fill="none" stroke="#8CAAB5" stroke-width="1.6" opacity="0.65"/>
+  </g>
+
+  <!-- 3. 前方立着的旧牌 main_card（牌背朝外，照 card_back 缩小） -->
+  <g id="main_card">
+    
+      <rect x="46.0" y="56.0" width="60" height="92" rx="6" fill="#262036" stroke="#1C1412" stroke-width="3"/>
+      <rect x="50.0" y="60.0" width="52" height="84" rx="4" fill="#161221" stroke="#9A7B46" stroke-width="1.8"/>
+      <!-- 四角铜角花 -->
+      <polygon points="50.0,68.0 50.0,60.0 58.0,60.0" fill="#9A7B46"/>
+      <polygon points="102.0,68.0 102.0,60.0 94.0,60.0" fill="#9A7B46"/>
+      <polygon points="50.0,136.0 50.0,144.0 58.0,144.0" fill="#9A7B46"/>
+      <polygon points="102.0,136.0 102.0,144.0 94.0,144.0" fill="#9A7B46"/>
+      <!-- 哥特菱格暗线 -->
+      <polygon points="76.0,66.0 98.0,102.0 76.0,138.0 54.0,102.0" fill="none" stroke="#3A324D" stroke-width="1.2"/>
+      <!-- 八角纹章铜盾 -->
+      <polygon points="76.0,78.0 92.0,90.0 94.0,108.0 76.0,126.0 58.0,108.0 60.0,90.0" fill="#6E542B" stroke="#1C1412" stroke-width="2.2" stroke-linejoin="round"/>
+      <polygon points="76.0,83.0 88.0,93.0 89.0,107.0 76.0,121.0 63.0,107.0 64.0,93.0" fill="#161221" stroke="#1C1412" stroke-width="1.4"/>
+      <!-- 三颗宝石：红圆、绿方、蓝三角 -->
+      <circle cx="76.0" cy="94.0" r="5.5" fill="#E3263A" stroke="#1C1412" stroke-width="1.6"/>
+      <circle cx="74.5" cy="92.5" r="1.6" fill="#FFFFFF"/>
+      <rect x="65.0" y="103.0" width="9.5" height="9.5" rx="1.5" fill="#1DBF5E" stroke="#1C1412" stroke-width="1.6"/>
+      <polygon points="82.0,102.0 88.0,112.5 76.0,112.5" fill="#2E66F0" stroke="#1C1412" stroke-width="1.6" stroke-linejoin="round"/>
+    
+  </g>
+</g>
+</svg>

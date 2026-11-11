@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-relic_link" viewBox="0 0 96 96" width="96" height="96">
+<title>宝物 · 凑白也接链</title>
+<g id="root">
+  <!-- 完好无损的旧铜项链环圈（上方弧形链环 + 下方把红、白、蓝、绿牢牢锁成一体的粗链扣） -->
+  <g id="unbroken_chain" stroke="#1C1412" stroke-width="3" stroke-linejoin="round">
+    <!-- 项链上半圈链环（连向顶部绿宝石与两侧红/蓝宝石） -->
+    <ellipse cx="26" cy="24" rx="8" ry="4.5" transform="rotate(-36 26 24)" fill="#9A7B46"/>
+    <ellipse cx="16" cy="36" rx="8" ry="4.5" transform="rotate(-72 16 36)" fill="#6E542B"/>
+    <ellipse cx="70" cy="24" rx="8" ry="4.5" transform="rotate(36 70 24)" fill="#6E542B"/>
+    <ellipse cx="80" cy="36" rx="8" ry="4.5" transform="rotate(72 80 36)" fill="#3B2B14"/>
+
+    <!-- 中间把红、绿、蓝三颗宝石与正中白宝石牢牢接通的三道粗旧银锁链桥（“链子连得好好的”） -->
+    <rect x="24" y="54" width="48" height="10" rx="4" fill="#8CAAB5" stroke-width="3.2"/>
+    <rect x="43" y="28" width="10" height="32" rx="4" fill="#8CAAB5" stroke-width="3.2"/>
+    <line x1="27" y1="57" x2="69" y2="57" stroke="#E2D6BA" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- 上：绿方宝石 (48, 19) -->
+  <g id="gem_green_top">
+    <rect x="38" y="9" width="20" height="20" rx="2.5" fill="#1DBF5E" stroke="#1C1412" stroke-width="3"/>
+    <polygon points="58,9 58,29 38,29 43,24 53,24 53,14" fill="#117A3B"/>
+    <rect x="43" y="14" width="10" height="10" rx="1" fill="#5CE892" stroke="#1C1412" stroke-width="1.4"/>
+    <rect x="44.5" y="15.5" width="4" height="4" fill="#FFFFFF"/>
+    <rect x="38" y="9" width="20" height="20" rx="2.5" fill="none" stroke="#1C1412" stroke-width="3"/>
+  </g>
+
+  <!-- 左：红圆宝石 (18, 58) -->
+  <g id="gem_red_left">
+    <circle cx="18" cy="58" r="11.5" fill="#E3263A" stroke="#1C1412" stroke-width="3"/>
+    <path d="M26,50 A11.5,11.5 0 0,1 10,66 L18,58 Z" fill="#9E1424"/>
+    <circle cx="18" cy="58" r="6.5" fill="#FF5C6E" stroke="#1C1412" stroke-width="1.4"/>
+    <circle cx="15.5" cy="55.5" r="2.4" fill="#FFFFFF"/>
+    <circle cx="18" cy="58" r="11.5" fill="none" stroke="#1C1412" stroke-width="3"/>
+  </g>
+
+  <!-- 右：蓝三角宝石 (78, 58) -->
+  <g id="gem_blue_right">
+    <polygon points="78,43 91,68 65,68" fill="#2E66F0" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+    <polygon points="78,43 91,68 78,68" fill="#193D9E"/>
+    <polygon points="78,51 85,64 71,64" fill="#6B9BFF" stroke="#1C1412" stroke-width="1.4" stroke-linejoin="round"/>
+    <polygon points="77,53 80,59 75,60" fill="#FFFFFF"/>
+    <polygon points="78,43 91,68 65,68" fill="none" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 正中：夹在红、绿、蓝三颗宝石正中间的大号闪亮白宝石（#F4F1FF / #FFFFFF，带坚固金爪扣环） -->
+  <g id="gem_white_center">
+    <!-- 白宝石外圈旧金接链圆环托 -->
+    <circle cx="48" cy="60" r="22" fill="#9A7B46" stroke="#1C1412" stroke-width="3.2"/>
+    <path d="M64,44 A22,22 0 0,1 32,76 L48,60 Z" fill="#6E542B"/>
+    <!-- 菱形八角切面大白宝石 -->
+    <polygon points="48,41 62,47 67,60 62,73 48,79 34,73 29,60 34,47" fill="#F4F1FF" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+    <!-- 切面微透三色折射边 -->
+    <polygon points="29,60 34,47 40,53 37,60" fill="#FF5C6E" opacity="0.8"/>
+    <polygon points="34,47 48,41 62,47 55,52 41,52" fill="#5CE892" opacity="0.8"/>
+    <polygon points="62,47 67,60 59,60 55,52" fill="#6B9BFF" opacity="0.8"/>
+    <!-- 中央纯白亮台面与十字白星 -->
+    <polygon points="48,47 58,52 60,60 58,68 48,73 38,68 36,60 38,52" fill="#FFFFFF" stroke="#1C1412" stroke-width="1.6" stroke-linejoin="round"/>
+    <polygon points="48,49 51,57 59,60 51,63 48,71 45,63 37,60 45,57" fill="#F4F1FF"/>
+    <polygon points="48,41 62,47 67,60 62,73 48,79 34,73 29,60 34,47" fill="none" stroke="#1C1412" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+</g>
+</svg>
