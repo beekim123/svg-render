@@ -29,7 +29,9 @@ docs/        设计文档、试验脚本、测试图需求（只读）
 参考/        现有卡牌游戏的几份文件，只当参考（只读）
 ```
 
-代码和工具照 `docs/阶段0-需求.md` 第 2 节的目录建。`out/` 是生成物，不进版本管理；要人看的汇总放 `报告/`。下载的 Chrome、Skia 源码、测试集放在 `~/Library/Caches/svg-render/`，也不进仓库。
+代码和工具照 `docs/阶段0-需求.md` 第 2 节的目录建。`out/` 是生成物，不进版本管理；要人看的汇总放 `报告/`。下载的 Chrome、Skia 源码、测试集放在仓库外的缓存目录（Linux 上 `~/.cache/svg-render/`，Mac 上 `~/Library/Caches/svg-render/`），也不进仓库。
+
+开发在 Linux 上做；正式参照和验收在用户的 Mac 上跑 `npm run mac`，见 `docs/阶段0-需求.md` 2.1。
 
 ## 分工
 
