@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" style="color: #b83a3a">
+  <defs>
+    <filter id="vintage_grain_filter" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.78" numOctaves="3" seed="19" result="grain_noise"/>
+      <feColorMatrix in="grain_noise" type="matrix" values="0.35 0 0 0 0.68  0 0.35 0 0 0.65  0 0 0.35 0 0.62  0 0 0 1 0" result="grain_toned"/>
+      <feComposite in="SourceGraphic" in2="grain_toned" operator="arithmetic" k1="0.55" k2="0.52" k3="-0.06" k4="0" result="grained_rgb"/>
+      <feComposite in="grained_rgb" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <g id="tint_shaded_potion_root" filter="url(#vintage_grain_filter)">
+    <circle cx="64" cy="64" r="58" fill="#0f0a14" stroke="#2b1d38" stroke-width="3"/>
+    <circle cx="64" cy="64" r="53" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 3" stroke-opacity="0.75"/>
+    <circle cx="64" cy="64" r="47" fill="#000000" fill-opacity="0.38" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1"/>
+    <circle cx="119.5" cy="64.0" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="120.1" cy="64.6" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="116.8" cy="81.2" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="117.4" cy="81.8" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="108.9" cy="96.6" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="109.5" cy="97.2" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="96.6" cy="108.9" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="97.2" cy="109.5" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="81.2" cy="116.8" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="81.8" cy="117.4" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="64.0" cy="119.5" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="64.6" cy="120.1" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="46.8" cy="116.8" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="47.4" cy="117.4" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="31.4" cy="108.9" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="32.0" cy="109.5" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="19.1" cy="96.6" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="19.7" cy="97.2" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="11.2" cy="81.2" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="11.8" cy="81.8" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="8.5" cy="64.0" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="9.1" cy="64.6" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="11.2" cy="46.8" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="11.8" cy="47.4" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="19.1" cy="31.4" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="19.7" cy="32.0" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="31.4" cy="19.1" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="32.0" cy="19.7" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="46.8" cy="11.2" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="47.4" cy="11.8" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="64.0" cy="8.5" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="64.6" cy="9.1" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="81.2" cy="11.2" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="81.8" cy="11.8" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="96.6" cy="19.1" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="97.2" cy="19.7" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="108.9" cy="31.4" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="109.5" cy="32.0" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <circle cx="116.8" cy="46.8" r="1.7" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="117.4" cy="47.4" r="1.2" fill="#000000" fill-opacity="0.55"/>
+    <polygon points="56,14 72,14 69,25 59,25" fill="#7c5836" stroke="#241509" stroke-width="1.8"/>
+    <polygon points="56,14 62,14 61,25 59,25" fill="#ffffff" fill-opacity="0.22"/>
+    <polygon points="66,14 72,14 69,25 65,25" fill="#000000" fill-opacity="0.35"/>
+    <path d="M 52 24 L 76 24 L 74 33 L 54 33 Z" fill="currentColor" stroke="#1a0d18" stroke-width="1.8"/>
+    <path d="M 73 28 C 84 26 92 32 95 42 C 89 40 84 42 82 46 C 80 37 76 33 72 31 Z" fill="currentColor"/>
+    <path d="M 73 28 C 84 26 92 32 95 42 L 91 41 C 87 34 80 30 73 30 Z" fill="#000000" fill-opacity="0.35"/>
+    <rect x="55" y="32" width="18" height="14" rx="2" fill="#1c1626" stroke="#ffffff" stroke-opacity="0.38" stroke-width="1.6"/>
+    <path id="potion_flask_body" d="M 55 44 C 36 50 26 67 28 86 C 30 103 44 114 64 114 C 84 114 98 103 100 86 C 102 67 92 50 73 44 Z" fill="currentColor" stroke="#160b1c" stroke-width="2.4"/>
+    <path d="M 55 44 C 36 50 26 67 28 86 C 30 92 33 97 38 102 C 33 84 40 62 58 50 Z" fill="#000000" fill-opacity="0.24"/>
+    <path d="M 73 44 C 92 50 102 67 100 86 C 98 103 84 114 64 114 C 52 114 42 109 36 101 C 54 109 78 102 86 84 C 92 70 86 54 70 46 Z" fill="#000000" fill-opacity="0.42"/>
+    <path d="M 30 72 C 46 77 82 67 98 73 C 99 88 86 112 64 112 C 42 112 29 90 30 72 Z" fill="#000000" fill-opacity="0.22"/>
+    <ellipse cx="64" cy="107" rx="24" ry="4.5" fill="#000000" fill-opacity="0.38"/>
+    <ellipse cx="64" cy="71" rx="32" ry="5.5" fill="#ffffff" fill-opacity="0.22" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1"/>
+    <path d="M 36 62 C 32 73 33 87 41 97 C 44 99 47 97 45 93 C 39 84 39 73 43 64 C 44 60 39 58 36 62 Z" fill="#ffffff" fill-opacity="0.52"/>
+    <ellipse cx="44" cy="55" rx="4.5" ry="2.6" transform="rotate(-32 44 55)" fill="#ffffff" fill-opacity="0.65"/>
+    <path d="M 86 58 C 92 67 93 80 88 91" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 31 69 Q 64 78 97 69 L 96 74 Q 64 83 32 74 Z" fill="#2a2136" stroke="#120b18" stroke-width="1.4"/>
+    <path d="M 31 69 Q 64 78 97 69" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.2"/>
+    <polygon points="64,64 73,73 64,84 55,73" fill="currentColor" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.5"/>
+    <polygon points="64,64 73,73 64,74" fill="#ffffff" fill-opacity="0.38"/>
+    <polygon points="64,74 73,73 64,84" fill="#000000" fill-opacity="0.42"/>
+    <circle cx="48" cy="96" r="3.8" fill="#ffffff" fill-opacity="0.32"/>
+    <circle cx="48.7" cy="96.7" r="2.5" fill="#000000" fill-opacity="0.24"/>
+    <circle cx="55" cy="88" r="2.8" fill="#ffffff" fill-opacity="0.38"/>
+    <circle cx="55.7" cy="88.7" r="1.8" fill="#000000" fill-opacity="0.29"/>
+    <circle cx="62" cy="99" r="3.2" fill="#ffffff" fill-opacity="0.28"/>
+    <circle cx="62.7" cy="99.7" r="2.1" fill="#000000" fill-opacity="0.21"/>
+    <circle cx="71" cy="93" r="3.6" fill="#ffffff" fill-opacity="0.25"/>
+    <circle cx="71.7" cy="93.7" r="2.3" fill="#000000" fill-opacity="0.19"/>
+    <circle cx="79" cy="86" r="2.4" fill="#ffffff" fill-opacity="0.3"/>
+    <circle cx="79.7" cy="86.7" r="1.6" fill="#000000" fill-opacity="0.22"/>
+    <circle cx="67" cy="79" r="2.1" fill="#ffffff" fill-opacity="0.45"/>
+    <circle cx="67.7" cy="79.7" r="1.4" fill="#000000" fill-opacity="0.34"/>
+    <circle cx="56" cy="76" r="1.9" fill="#ffffff" fill-opacity="0.48"/>
+    <circle cx="56.7" cy="76.7" r="1.2" fill="#000000" fill-opacity="0.36"/>
+    <circle cx="45" cy="81" r="2.5" fill="#ffffff" fill-opacity="0.35"/>
+    <circle cx="45.7" cy="81.7" r="1.6" fill="#000000" fill-opacity="0.26"/>
+    <circle cx="59" cy="68" r="1.6" fill="#ffffff" fill-opacity="0.52"/>
+    <circle cx="59.7" cy="68.7" r="1.0" fill="#000000" fill-opacity="0.39"/>
+    <circle cx="73" cy="69" r="1.7" fill="#ffffff" fill-opacity="0.42"/>
+    <circle cx="73.7" cy="69.7" r="1.1" fill="#000000" fill-opacity="0.32"/>
+    <circle cx="52" cy="103" r="2.2" fill="#ffffff" fill-opacity="0.26"/>
+    <circle cx="52.7" cy="103.7" r="1.4" fill="#000000" fill-opacity="0.20"/>
+    <circle cx="68" cy="104" r="2.0" fill="#ffffff" fill-opacity="0.24"/>
+    <circle cx="68.7" cy="104.7" r="1.3" fill="#000000" fill-opacity="0.18"/>
+    <circle cx="83" cy="94" r="1.8" fill="#ffffff" fill-opacity="0.22"/>
+    <circle cx="83.7" cy="94.7" r="1.2" fill="#000000" fill-opacity="0.17"/>
+    <circle cx="42" cy="89" r="1.9" fill="#ffffff" fill-opacity="0.3"/>
+    <circle cx="42.7" cy="89.7" r="1.2" fill="#000000" fill-opacity="0.22"/>
+    <circle cx="64" cy="88" r="2.6" fill="#ffffff" fill-opacity="0.34"/>
+    <circle cx="64.7" cy="88.7" r="1.7" fill="#000000" fill-opacity="0.26"/>
+    <circle cx="75" cy="78" r="1.5" fill="#ffffff" fill-opacity="0.38"/>
+    <circle cx="75.7" cy="78.7" r="1.0" fill="#000000" fill-opacity="0.29"/>
+  </g>
+</svg>

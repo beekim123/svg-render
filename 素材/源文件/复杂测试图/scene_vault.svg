@@ -77,6 +77,22 @@
       <ellipse cx="24" cy="56" rx="15" ry="5" fill="url(#shared_gold_grad)" stroke="#6e4700" stroke-width="1.5"/>
       <circle cx="24" cy="20" r="4.5" fill="url(#shared_gem_ruby)"/>
     </symbol>
+
+    <symbol id="sym_gem_inherit_fill" viewBox="0 0 40 40">
+      <polygon points="20,2 33,8 38,20 33,32 20,38 7,32 2,20 7,8" stroke="#241204" stroke-width="1.6" stroke-linejoin="round"/>
+      <polygon points="20,7 29,12 33,20 29,28 20,33 11,28 7,20 11,12" fill-opacity="0.78" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1"/>
+      <polygon points="20,7 29,12 20,20 11,12" fill="#ffffff" fill-opacity="0.48"/>
+      <polygon points="11,12 20,20 7,20" fill="#ffffff" fill-opacity="0.28"/>
+      <circle cx="15" cy="13" r="2.2" fill="#ffffff" fill-opacity="0.88"/>
+    </symbol>
+
+    <symbol id="sym_gem_current_color" viewBox="0 0 44 36">
+      <polygon points="22,2 37,9 42,18 35,30 22,34 9,30 2,18 7,9" fill="currentColor" stroke="#1f0e02" stroke-width="1.6" stroke-linejoin="round"/>
+      <polygon points="22,7 32,12 35,18 29,26 22,29 15,26 9,18 12,12" fill="currentColor" fill-opacity="0.82" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1"/>
+      <polygon points="22,7 32,12 22,18 12,12" fill="#ffffff" fill-opacity="0.52"/>
+      <polygon points="12,12 22,18 9,18" fill="#ffffff" fill-opacity="0.30"/>
+      <circle cx="17" cy="12" r="2.3" fill="#ffffff" fill-opacity="0.90"/>
+    </symbol>
   </defs>
   <rect width="1920" height="1080" fill="url(#vault_bg_grad)"/>
   <path d="M 40 920 L 40 340 C 40 130, 200 45, 320 25 C 440 45, 600 130, 600 340 L 600 920 Z" fill="#120a06" stroke="#3d2714" stroke-width="12"/>
@@ -3642,6 +3658,20 @@
       <circle cx="57.5" cy="-37.0" r="8" fill="url(#shared_gem_emerald)" stroke="url(#shared_gold_grad)" stroke-width="1.2"/>
       <rect x="-16" y="-52" width="32" height="28" rx="4" fill="url(#shared_gold_grad)" stroke="#4a2c00" stroke-width="2"/>
     </g>
+  </g>
+  <g id="vault_use_color_gems">
+    <!-- 甲种：symbol 内不写 fill，由每个 <use> 上的 fill 给颜色（5 颗不同颜色） -->
+    <use href="#sym_gem_inherit_fill" x="485" y="845" width="42" height="42" fill="#ff2a55" transform="rotate(-14 506 866)"/>
+    <use href="#sym_gem_inherit_fill" x="780" y="790" width="46" height="46" fill="#00b4d8" transform="rotate(18 803 813)"/>
+    <use href="#sym_gem_inherit_fill" x="985" y="745" width="44" height="44" fill="#2ec4b6" transform="rotate(-8 1007 767)"/>
+    <use href="#sym_gem_inherit_fill" x="1195" y="815" width="40" height="40" fill="#9b5de5" transform="rotate(22 1215 835)"/>
+    <use href="#sym_gem_inherit_fill" x="1440" y="860" width="44" height="44" fill="#ff9f1c" transform="rotate(-19 1462 882)"/>
+    <!-- 乙种：symbol 内用 fill="currentColor"，由每个 <use> 上的 color / style="color: ..." 给颜色（5 颗不同颜色） -->
+    <use href="#sym_gem_current_color" x="565" y="885" width="46" height="38" color="#ff007f" style="color: #ff007f" transform="rotate(12 588 904)"/>
+    <use href="#sym_gem_current_color" x="865" y="835" width="50" height="41" color="#3a86ff" style="color: #3a86ff" transform="rotate(-16 890 855)"/>
+    <use href="#sym_gem_current_color" x="1065" y="785" width="48" height="40" color="#38b000" style="color: #38b000" transform="rotate(15 1089 805)"/>
+    <use href="#sym_gem_current_color" x="1290" y="850" width="46" height="38" color="#ffbe0b" style="color: #ffbe0b" transform="rotate(-11 1313 869)"/>
+    <use href="#sym_gem_current_color" x="1535" y="900" width="48" height="40" color="#8338ec" style="color: #8338ec" transform="rotate(20 1559 920)"/>
   </g>
   <g id="vault_star_sparkles" style="mix-blend-mode: screen;">
     <g class="star-sparkle" style="animation-duration: 2.60s; animation-delay: -1.28s;" transform="translate(1074.6, 670.2)">

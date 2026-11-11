@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" style="color: #b83a3a">
+  <defs>
+    <radialGradient id="gem_tint_radial" cx="0.42" cy="0.36" r="0.65" fx="0.35" fy="0.30">
+      <stop offset="0%" stop-color="currentColor"/>
+      <stop offset="62%" stop-color="currentColor" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#12071c"/>
+    </radialGradient>
+    <linearGradient id="gem_facet_lit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="currentColor"/>
+      <stop offset="100%" stop-color="#1a0926"/>
+    </linearGradient>
+    <linearGradient id="gem_facet_deep" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0b0312"/>
+      <stop offset="100%" stop-color="currentColor"/>
+    </linearGradient>
+    <linearGradient id="gem_overlay_sheen" x1="0.15" y1="0.1" x2="0.85" y2="0.9">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92"/>
+      <stop offset="38%" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="65%" stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.65"/>
+    </linearGradient>
+  </defs>
+  <g id="tint_gradient_gem_root">
+    <circle cx="64" cy="64" r="58" fill="#0d0714" stroke="#2d1f3d" stroke-width="3"/>
+    <circle cx="64" cy="64" r="52" fill="none" stroke="url(#gem_facet_lit)" stroke-width="1.6" stroke-dasharray="6 4"/>
+    <circle cx="119.0" cy="64.0" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="112.1" cy="70.3" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="117.1" cy="78.2" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="108.8" cy="82.6" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="111.6" cy="91.5" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="102.5" cy="93.5" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="102.9" cy="102.9" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="93.5" cy="102.5" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="91.5" cy="111.6" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="82.6" cy="108.8" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="78.2" cy="117.1" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="70.3" cy="112.1" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="64.0" cy="119.0" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="57.7" cy="112.1" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="49.8" cy="117.1" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="45.4" cy="108.8" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="36.5" cy="111.6" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="34.5" cy="102.5" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="25.1" cy="102.9" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="25.5" cy="93.5" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="16.4" cy="91.5" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="19.2" cy="82.6" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="10.9" cy="78.2" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="15.9" cy="70.3" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="9.0" cy="64.0" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="15.9" cy="57.7" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="10.9" cy="49.8" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="19.2" cy="45.4" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="16.4" cy="36.5" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="25.5" cy="34.5" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="25.1" cy="25.1" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="34.5" cy="25.5" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="36.5" cy="16.4" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="45.4" cy="19.2" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="49.8" cy="10.9" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="57.7" cy="15.9" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="64.0" cy="9.0" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="70.3" cy="15.9" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="78.2" cy="10.9" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="82.6" cy="19.2" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="91.5" cy="16.4" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="93.5" cy="25.5" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="102.9" cy="25.1" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="102.5" cy="34.5" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="111.6" cy="36.5" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="108.8" cy="45.4" r="1.2" fill="url(#gem_facet_deep)"/>
+    <circle cx="117.1" cy="49.8" r="1.9" fill="url(#gem_facet_lit)"/>
+    <circle cx="112.1" cy="57.7" r="1.2" fill="url(#gem_facet_deep)"/>
+    <polygon points="64,14 96,30 108,64 96,98 64,114 32,98 20,64 32,30" fill="url(#gem_tint_radial)" stroke="#12071c" stroke-width="2.4" stroke-linejoin="round"/>
+    <polygon points="64,14 96,30 82,42 64,32" fill="url(#gem_facet_lit)" stroke="#180924" stroke-width="1.1"/>
+    <polygon points="64,14 64,32 46,42 32,30" fill="url(#gem_facet_lit)" stroke="#180924" stroke-width="1.1"/>
+    <polygon points="32,30 46,42 38,64 20,64" fill="url(#gem_facet_lit)" stroke="#180924" stroke-width="1.1"/>
+    <polygon points="96,30 108,64 90,64 82,42" fill="url(#gem_facet_deep)" stroke="#180924" stroke-width="1.1"/>
+    <polygon points="108,64 96,98 82,86 90,64" fill="url(#gem_facet_deep)" stroke="#180924" stroke-width="1.1"/>
+    <polygon points="96,98 64,114 64,96 82,86" fill="url(#gem_facet_deep)" stroke="#180924" stroke-width="1.1"/>
+    <polygon points="64,114 32,98 46,86 64,96" fill="url(#gem_facet_deep)" stroke="#180924" stroke-width="1.1"/>
+    <polygon points="32,98 20,64 38,64 46,86" fill="url(#gem_facet_lit)" stroke="#180924" stroke-width="1.1"/>
+    <polygon points="64,32 82,42 90,64 82,86 64,96 46,86 38,64 46,42" fill="url(#gem_tint_radial)" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.2"/>
+    <polygon points="64,40 76,48 82,64 76,80 64,88 52,80 46,64 52,48" fill="none" stroke="url(#gem_facet_lit)" stroke-width="1" stroke-dasharray="3 2"/>
+    <g id="gem_overlay_reflection" style="mix-blend-mode: overlay;">
+      <polygon points="64,14 96,30 108,64 96,98 64,114 32,98 20,64 32,30" fill="url(#gem_overlay_sheen)"/>
+      <polygon points="64,32 82,42 64,64 46,42" fill="#ffffff" fill-opacity="0.68"/>
+      <polygon points="46,42 64,64 38,64" fill="#ffffff" fill-opacity="0.48"/>
+      <polygon points="82,42 90,64 64,64" fill="#ffffff" fill-opacity="0.22"/>
+      <polygon points="64,64 90,64 82,86 64,96" fill="#000000" fill-opacity="0.42"/>
+      <polygon points="64,64 64,96 46,86 38,64" fill="#000000" fill-opacity="0.24"/>
+      <polygon points="34,34 62,20 56,36 38,48" fill="#ffffff" fill-opacity="0.75"/>
+      <path d="M 44 46 L 74 46 L 54 78 Z" fill="#ffffff" fill-opacity="0.35"/>
+      <path d="M 52 52 L 80 56 L 66 84 Z" fill="#ffffff" fill-opacity="0.22"/>
+    </g>
+    <polygon points="46,38 50,28 54,38 64,42 54,46 50,56 46,46 36,42" fill="#ffffff" fill-opacity="0.88"/>
+    <polygon points="78,48 80,42 82,48 88,50 82,52 80,58 78,52 72,50" fill="#ffffff" fill-opacity="0.78"/>
+    <circle cx="56" cy="74" r="2.0" fill="#ffffff" fill-opacity="0.65"/>
+  </g>
+</svg>

@@ -2,25 +2,26 @@
 
 ## 全局环境与基准说明
 
-- **基准浏览器版本**：`Google Chrome 149.0.7827.55`（稳定内核 / Google Chrome for Testing `149.0.7827.55` arm64）
-- **配套字体**：`Noto Sans CJK SC`（使用包内 `字体/NotoSansCJKsc-Regular.otf` 与 `字体/NotoSansCJKsc-Bold.otf`；按照规范，仅 `card_foil`、`fx_circle`、`ui_hud` 三个文件使用文字元素，其余文件完全不含 `<text>`）
-- **自包含规范**：全部 40 个 SVG 文件均无任何外链资源、无 `<script>`、无 `<foreignObject>`、无内嵌位图 `<image>`，根节点均声明匹配的 `viewBox`、`width` 与 `height`。
+- **基准浏览器版本**：`Google Chrome 157.0.8103.50`（稳定内核 / Google Chrome for Testing `157.0.8103.50` arm64）
+- **配套字体**：`Noto Sans CJK SC`（使用包内 `字体/NotoSansCJKsc-Regular.otf` 与 `字体/NotoSansCJKsc-Bold.otf`；按照规范，仅 `card_foil`、`fx_circle`、`ui_hud`、`ui_hud_slot` 四个文件使用文字元素（其中 `ui_hud_slot` 额外预留空文字槽 `<g id="slot_text"></g>`），其余文件完全不含 `<text>`）
+- **自包含规范**：全部 44 个 SVG 文件（原 40 个 + 新增 `ui_hud_slot.svg` 与 3 个 `currentColor` 染色图标）均无任何外链资源、无 `<script>`、无 `<foreignObject>`、无内嵌位图 `<image>`，根节点均声明匹配的 `viewBox`、`width` 与 `height`。
 - **动画体系**：同时覆盖 **CSS `@keyframes`** 与 **SMIL（`<animate>`、`<animateTransform>`、`<animateMotion>`）** 两种机制；所有循环动画首尾平滑衔接；所有一次性动作（施法、受击、爆炸、闪电）均同时支持 **CSS 根元素类名触发** 与 **SMIL `begin="indefinite"` 脚本触发**。
 
 ## 一、10 张核心测试图汇总表
 
 | 文件 ID | 画框尺寸 | 元素总数 | SVG 文件大小 | 动画机制 | 一次性动作触发方式 |
 |---|---|---:|---:|---|---|
-| `char_lich.svg` | `512×640` | **1254** | 132,978 字节（129.9 KB） | CSS `@keyframes` + SMIL (`animate`, `animateMotion`) | 根元素加 `class="act-cast"` 或触发 `#cast_std_anim.beginElement()` |
-| `char_golem.svg` | `512×640` | **905** | 109,761 字节（107.2 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 根元素加 `class="act-hit"` 或触发 `#golem_hit_shake_smil` / `#debris_smil_0..31.beginElement()` |
+| `char_lich.svg` | `512×640` | **1272** | 137,161 字节（133.9 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`, `animateMotion`) | 施法：`class="act-cast"` / `#cast_std_anim`；眩晕（进场后循环）：`class="act-daze"` / `#daze_in_anim` |
+| `char_golem.svg` | `512×640` | **909** | 110,964 字节（108.4 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 受击：`class="act-hit"` / `#golem_hit_shake_smil` + `#debris_smil_0..31`；倒下（播完停住）：`class="act-down"` / `#golem_down_smil` |
 | `char_swarm.svg` | `640×480` | **2108** | 258,468 字节（252.4 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 纯循环动画（220 只独立周期与负延迟） |
 | `scene_hall.svg` | `1920×1080` | **11022** | 1,440,246 字节（1406.5 KB / 1.37 MB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 纯循环动画（光柱呼吸、多层雾平移、烛火湍流摇曳、250 个灰尘粒子） |
-| `scene_vault.svg` | `1920×1080` | **3824** | 411,528 字节（401.9 KB） | CSS `@keyframes` + SMIL (`animate`) | 纯循环动画（55 处星芒闪烁 + 全屏 `overlay` 色调渐变） |
-| `fx_explosion.svg` | `512×512` | **463** | 50,571 字节（49.4 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 根元素加 `class="act-explode"` 或触发 `#exp_blur_anim` / `#fireball_morph_0..2.beginElement()` |
-| `fx_lightning.svg` | `768×256` | **231** | 41,899 字节（40.9 KB） | CSS `@keyframes` + SMIL (`animate calcMode="discrete"`) | 根元素加 `class="act-strike"` 或触发 `#bolt_outer_d_0..2` / `#bolt_flash_smil.beginElement()` |
-| `fx_circle.svg` | `512×512` | **533** | 49,801 字节（48.6 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 纯循环动画（3s 正反转环、中心向外扩张 `mask`、`<textPath>` 滚动） |
-| `card_foil.svg` | `400×600` | **966** | 88,414 字节（86.3 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 纯循环动画（2.5s 反光带平移 `gradientTransform` + 宝石插槽缩放发光） |
+| `scene_vault.svg` | `1920×1080` | **3847** | 414,420 字节（404.7 KB） | CSS `@keyframes` + SMIL (`animate`) | 纯循环动画（55 处星芒闪烁 + 全屏 `overlay` 色调渐变） |
+| `fx_explosion.svg` | `512×512` | **463** | 50,602 字节（49.4 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 根元素加 `class="act-explode"` 或触发 `#exp_blur_anim` / `#fireball_morph_0..2.beginElement()` |
+| `fx_lightning.svg` | `768×256` | **231** | 43,288 字节（42.3 KB） | CSS `@keyframes` + SMIL (`animate calcMode="discrete"`) | 根元素加 `class="act-strike"` 或触发 `#bolt_outer_d_0..2` / `#bolt_flash_smil.beginElement()` |
+| `fx_circle.svg` | `512×512` | **533** | 49,832 字节（48.7 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 纯循环动画（3s 正反转环、中心向外扩张 `mask`、`<textPath>` 滚动） |
+| `card_foil.svg` | `400×600` | **970** | 88,983 字节（86.9 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 纯循环动画（2.5s 反光带平移 `gradientTransform` + 宝石插槽缩放发光） |
 | `ui_hud.svg` | `1280×240` | **686** | 69,923 字节（68.3 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 纯循环动画（血瓶/血条液面路径形变 + 数字跳动 `transform`） |
+| `ui_hud_slot.svg` | `1280×240` | **707** | 72,558 字节（70.9 KB） | CSS `@keyframes` + SMIL (`animate`, `animateTransform`) | 纯循环动画（含 ±4° 2.4s 摆动铭牌、内置空槽 `#slot_text` 与前景遮挡锁扣） |
 
 ## 二、10 张核心测试图逐项详解
 
@@ -51,6 +52,18 @@
 
 - **最难画对的地方**：
   **整组滤镜叠加动态变形子元素（2.1 核心难点）**：`#lich_character_filtered_group` 挂载了包含 `feGaussianBlur` + `feColorMatrix` + `feMerge` 的整体外发光滤镜 `#lich_outer_glow`（施法时 `stdDeviation` 本身也在动态变化），而组内的披风、肋骨、骨片、符文以及带 `mask-type="luminance"` 和 `mask-type="alpha"` 的遮罩子树每帧都在发生几何形变。渲染器必须在每帧正确重算动态包围盒并重跑整组离屏滤镜与遮罩合成，极易出现包围盒裁剪闪烁或缓存失效问题。
+- **补充（新增「眩晕」进场后循环动作）**：
+  - **改动内容**：更新后元素总数为 **1272**（137,161 字节）。新增种类为「进场后循环」的**眩晕**动作：前 `0.5s`（500 毫秒）为进场阶段，巫妖头冠 (`#lich_head_and_crown`) 与死灵法杖 (`#lich_necrostaff`) 向右侧歪斜倾倒、双眼魂火 (`#lich_eyes_group`) 变暗至 `opacity: 0.22`、头顶眩晕环 (`#lich_daze_halo`) 显现；随后无缝衔接进入 `1.2s` 一圈的无限循环阶段：角色身体 (`#lich_character_filtered_group`) 左右摇晃，同时头顶一圈小骨片与四芒星光 (`#lich_daze_halo_spinner`) 以 `1.2s` 周期持续旋转，直至外部取消该状态。
+  - **新增动作动画清单**：
+
+    | 目标元素 | 动画属性 | 实现方式 | 时长 | 循环 | 触发方式 |
+    |---|---|---|---|---|---|
+    | 头冠与颅骨 (`#lich_head_and_crown` / `#daze_in_anim`) | `transform: rotate(0deg -> 15deg)` | CSS `svg.act-daze` (`forwards`) + SMIL `<animateTransform id="daze_in_anim" begin="indefinite" fill="freeze">` | `0.5s` | 进场单次 (`freeze`) | 给 `<svg>` 加 `class="act-daze"` 或调用 `#daze_in_anim.beginElement()` |
+    | 死灵法杖 (`#lich_necrostaff` / `#daze_staff_in_anim`) | `transform: rotate(0deg -> 16deg)` | CSS `svg.act-daze` (`forwards`) + SMIL `<animateTransform begin="daze_in_anim.begin" fill="freeze">` | `0.5s` | 进场单次 (`freeze`) | 随 `act-daze` 或 `daze_in_anim.begin` 自动同步触发 |
+    | 双眼魂火组 (`#lich_eyes_group` / `#daze_eyes_dim_anim`) | `opacity` (`1 -> 0.22`)、`filter: brightness(0.35)` | CSS `svg.act-daze` (`forwards`) + SMIL `<animate begin="daze_in_anim.begin" fill="freeze">` | `0.5s` | 进场单次 (`freeze`) | 随 `act-daze` 或 `daze_in_anim.begin` 自动同步触发 |
+    | 头顶骨片星光环容器 (`#lich_daze_halo` / `#daze_halo_show_anim`) | `opacity` (`0 -> 1`) | CSS `svg.act-daze` (`forwards`) + SMIL `<animate begin="daze_in_anim.begin" fill="freeze">` | `0.5s` | 进场单次 (`freeze`) | 随 `act-daze` 或 `daze_in_anim.begin` 自动同步触发 |
+    | 角色整体左右摇晃 (`#lich_character_filtered_group` / `#daze_body_sway_anim`) | `transform: rotate(0 -> 4.5deg -> 0 -> -4.5deg -> 0)` | CSS `svg.act-daze` (`delay: 0.5s`, `infinite`) + SMIL `<animateTransform begin="daze_in_anim.end" repeatCount="indefinite">` | `1.2s` | 进场后无限循环 (`indefinite`) | `daze_in_anim.end`（或 CSS `0.5s` 延迟后）自动接续循环 |
+    | 头顶小骨片与星光转圈 (`#lich_daze_halo_spinner` / `#daze_halo_spin_anim`) | `transform: rotate(0deg -> 360deg)` | CSS `svg.act-daze` (`delay: 0.5s`, `infinite`) + SMIL `<animateTransform begin="daze_in_anim.end" repeatCount="indefinite">` | `1.2s` | 进场后无限循环 (`indefinite`) | `daze_in_anim.end`（或 CSS `0.5s` 延迟后）自动接续循环 |
 
 ### 2. `char_golem.svg` — 石像魔像（角色）
 
@@ -73,6 +86,14 @@
 
 - **最难画对的地方**：
   **动态 `gradientTransform` 与光照/置换滤镜叠加**：岩浆裂缝内部引用的线性渐变 `#flowing_magma_grad` 持续执行 `gradientTransform` 平移且配置了 `spreadMethod="repeat"`，同时外层挂有高斯模糊和 `mix-blend-mode: screen`，紧邻其下的是带 `feDiffuseLighting` + `feSpecularLighting` 浮雕滤镜的石甲层；受击瞬间主体抖动并同时迸发 32 个独立运动矩阵的碎石块。
+- **补充（新增「倒下」播完停住动作 & 受击/倒下期间局部动画独立性确认）**：
+  - **Chrome 157 实测确认**：已在 Chrome 157（`157.0.8103.50`）中确认，`char_golem` 触发受击（`act-hit`）时，只有身体在抖动并迸发碎石，全身裂缝的闪烁（`.magma-crack`）和岩浆流动（`#flowing_magma_grad`）照常进行，**不会停，也不会从头开始**；新增的「倒下」（`act-down`）动作通过外层姿态容器 `#golem_down_pose` 作用，同样完整保持了这一点（倒下过程中及倒下停住后，裂缝闪烁与岩浆流动均不中断、不重置）。
+  - **改动内容**：更新后元素总数为 **909**（110,964 字节）。新增种类为「播完停住」的**倒下**动作：时长 `0.8s`（800 毫秒），整个魔像向右侧倾倒（旋转 `12°`，同时缩放到 `0.9` 倍并下沉），动画结束后停留在最后一帧姿势不回退（CSS 使用 `class="act-down"` 加 `forwards`；SMIL 使用 `begin="indefinite"` 加 `fill="freeze"`）。
+  - **新增动作动画清单**：
+
+    | 目标元素 | 动画属性 | 实现方式 | 时长 | 循环 | 触发方式 |
+    |---|---|---|---|---|---|
+    | 魔像整体倾倒姿态组 (`#golem_down_pose` / `#golem_down_smil`, `#golem_down_rot_smil`, `#golem_down_scale_smil`) | `transform`（向一侧倾倒旋转 `12°`、整体缩放到 `0.9` 倍并下沉位移，停留在末帧） | CSS `svg.act-down #golem_down_pose` (`forwards`) + SMIL `<animateTransform id="golem_down_smil" begin="indefinite" fill="freeze">`（配合 `begin="golem_down_smil.begin"` 叠加旋转与缩放） | `0.8s` | 播完停住 (`forwards` / `freeze`) | 给 `<svg>` 加 `class="act-down"` 或调用 `#golem_down_smil.beginElement()` |
 
 ### 3. `char_swarm.svg` — 一群蝙蝠与幽魂（220 只集群）
 
@@ -137,6 +158,11 @@
 
 - **最难画对的地方**：
   **3,800+ 元素高密度共享同一线性渐变 `#shared_gold_grad` 与 `<use>` 实例展开**：每个元素拥有不同的包围盒（`objectBoundingBox` 渐变空间），渲染引擎在批量合批（Batching）时必须为每个金币正确计算各自的局部渐变矩阵，不能因共享同一个渐变 ID 而错误复用同一组世界坐标 UV。
+- **补充（新增两种 `<symbol>` + `<use>` 颜色继承测试宝石）**：
+  - **改动内容**：更新后元素总数为 **3847**（414,420 字节）。在 `<defs>` 中新增两个宝石 `<symbol>` 并在金币堆上方 `#vault_use_color_gems` 组中各放置 5 颗不同颜色的 `<use>` 实例：
+    1. **甲种宝石 (`#sym_gem_inherit_fill`)**：`<symbol>` 内部的主体多边形**不写 `fill` 属性**（仅保留固定颜色的 `#ffffff` 半透明高光面），5 颗宝石的颜色分别由各自 `<use>` 上的 `fill` 属性（`#ff2a55`、`#00b4d8`、`#2ec4b6`、`#9b5de5`、`#ff9f1c`）提供；
+    2. **乙种宝石 (`#sym_gem_current_color`)**：`<symbol>` 内部的主体多边形声明 `fill="currentColor"`（同样带固定颜色的 `#ffffff` 半透明高光面），5 颗宝石的颜色分别由各自 `<use>` 上的 `color` 与 `style="color: ..."`（`#ff007f`、`#3a86ff`、`#38b000`、`#ffbe0b`、`#8338ec`）提供。
+  - **新增动画清单**：无新增动画（沿用原有 55 处十字星芒闪烁与全屏 `overlay` 色调渐变循环动画）。
 
 ### 6. `fx_explosion.svg` — 爆炸特效
 
@@ -159,6 +185,8 @@
 
 - **最难画对的地方**：
   **`feMorphology` 动态膨胀半径 + 动态 `feGaussianBlur` + 32 顶点火球路径形变 + 渐变色标同时在 1 秒内演进**：烟雾团的边缘通过 `dilate` 与 `erode` 的差集计算轮廓，且 `radius` 参数在动画中实时增长，对滤镜链实时重算要求极高。
+- **补充（根元素混合模式声明）**：
+  - **改动内容**：更新后元素总数为 **463**（50,602 字节）。在根元素 `<svg>` 上新增 `style="mix-blend-mode: screen"`，同时完整保留内部 `#explosion_root` 等子元素原有的混合模式声明，使整张爆炸特效图在叠加到外部场景时以滤色（`screen`）模式合成。动作清单 `fx_explosion.json` 中记录 `"混合": "screen"`，并完整列出全部 12 个 `begin="indefinite"` 的 SMIL 动画 ID。
 
 ### 7. `fx_lightning.svg` — 闪电链特效
 
@@ -179,6 +207,8 @@
 
 - **最难画对的地方**：
   **`calcMode="discrete"` 离散路径跳变与三层大半径高斯模糊的同步刷新**：闪电链每隔约 0.1 秒瞬间切换一整套 24 段折线顶点而不做插值，三层 `feGaussianBlur` 必须立即根据新折线几何重新生成辉光，不能残留上一帧的模糊残影。
+- **补充（根元素混合模式声明 & 分叉电弧 SMIL ID 补全）**：
+  - **改动内容**：更新后元素总数为 **231**（43,288 字节）。在根元素 `<svg>` 上新增 `style="mix-blend-mode: screen"`（保留内部元素原有混合模式），并为 38 条分叉支路电弧的离散路径动画逐一赋予显式 ID `#bolt_branch_d_0` 至 `#bolt_branch_d_37`（连同 `#bolt_flash_smil`、`#bolt_outer_d_0..2`、`#bolt_core_d_0..2` 共 45 个 SMIL ID 全部列入 `fx_lightning.json`），确保单独使用 SMIL 触发时主电弧与全部分叉支路完整同步播放。
 
 ### 8. `fx_circle.svg` — 魔法阵
 
@@ -200,6 +230,8 @@
 
 - **最难画对的地方**：
   **遮罩在动，被遮住的多层旋转几何与沿圆弧滚动的 `<textPath>` 文字也在动（2.1 核心难点）**：渲染引擎需要在每一帧同时计算圆弧路径切线上的中文字形排版矩阵（隨 `startOffset` 实时改变每个字的位置和法向角）、三组正反转子树的变换矩阵，再与动态改变半径的径向渐变 `<mask>` 进行逐像素亮度裁剪合成。
+- **补充（根元素混合模式声明）**：
+  - **改动内容**：更新后元素总数为 **533**（49,832 字节）。在根元素 `<svg>` 上新增 `style="mix-blend-mode: screen"`，保留内部元素原有混合模式，并在 `fx_circle.json` 中记录 `"混合": "screen"`。
 
 ### 9. `card_foil.svg` — 闪卡（卡牌正面）
 
@@ -219,6 +251,8 @@
 
 - **最难画对的地方**：
   **`mix-blend-mode: color-dodge` 动态渐变扫光叠在光照浮雕边框与多层 `<tspan>` 中文排版之上**：`color-dodge`（颜色减淡）对底色极为敏感，当 `#foil_sheen_grad` 的 `gradientTransform` 斜向扫过经过 `feSpecularLighting` 浮雕处理的边框和带描边的中文文字时，稍有颜色空间（sRGB vs linearRGB）或预乘 Alpha 偏差就会导致高光过曝或发灰。
+- **补充（新增 15 度倾斜小字标签）**：
+  - **改动内容**：更新后元素总数为 **970**（88,983 字节）。在卡面右上角新增旋转 `15°` 的斜贴角标底座 `#card_limited_corner_badge`（`transform="rotate(15 316 96)"`）以及一行 `13px` 的 `Noto Sans CJK SC` 粗体中文加数字斜向小字 `<text x="316" y="99" transform="rotate(15 316 96)" font-size="13" ...>限定 0137/500</text>`，原有 `12.5px` 正向规则描述文字保持不变，专门用于检验文字转曲后小字号斜向字形与 Chrome 157 的栅格化一致性。
 
 ### 10. `ui_hud.svg` — 战斗界面装饰面板
 
@@ -239,6 +273,27 @@
 
 - **最难画对的地方**：
   **`vector-effect="non-scaling-stroke"` 在非等比缩放组与嵌套 `<svg preserveAspectRatio="...">` 中的矩阵逆变换计算，以及 `paint-order: stroke fill` 的中文字形轮廓渲染**：渲染器在绘制嵌套 `<svg>` 内部带 `non-scaling-stroke` 的多边形时，必须剥离父级 `G` 变换和内嵌 `viewBox` 缩放矩阵来保持屏幕空间线宽一致。
+
+### 11. `ui_hud_slot.svg` — 带动态文字槽的战斗界面装饰面板（新增主图）
+
+- **画框尺寸**：`1280×240`
+- **元素个数**：**707 个元素**（在 `ui_hud.svg` 的 686 个元素基础上新增悬挂锁链、晃动铭牌底座、空文字槽 `#slot_text` 与前景遮挡锁扣 `#plaque_foreground_clasp`）
+- **文件大小**：**72,558 字节（70.9 KB）**
+- **用到的特性**：
+  - **完整保留 `ui_hud.svg` 全部特性**：包含 90 组非均匀缩放 `vector-effect="non-scaling-stroke"` 哥特铁艺花饰、`paint-order: stroke fill` 中文描边文字、`<marker>` 箭头刻度轨与 6 个嵌套 `<svg preserveAspectRatio="...">` 技能槽。
+  - **周期摆动的悬挂铭牌 (`#hud_swinging_plaque`)**：通过双侧铁链悬挂于魔力条下方（旋转轴心 `(430, 156)`），牌面字框尺寸为 `220×44`（范围 `x=320..540, y=174..218`），以 `2.4s` 为一个完整来回周期左右摆动 `±4°`（待机第 `0ms` 时处于 `0°` 水平基准位置）。
+  - **内部空槽与前景遮挡关系 (`#slot_text` + `#plaque_foreground_clasp`)**：空的 `<g id="slot_text"></g>` 位于 `#hud_swinging_plaque` 组内部，随铭牌同步摆动；紧随 `#slot_text` 之后声明了前景铁链与红宝石锁扣组 `#plaque_foreground_clasp`（斜跨 `x=476..516, y=172..218`），因此在渲染顺序上会自然压在动态插入文字的右下角上方。
+  - **槽位参数（已写入 `ui_hud_slot.json`）**：待机第 `0ms` 时字框中心点坐标为 `(430, 196)`，推荐字号为 `28`，即 `"槽": { "slot_text": [430, 196, 28] }`。
+- **动画清单**：
+
+  | 目标元素 | 动画属性 | 实现方式 | 时长 | 循环 | 触发方式 |
+  |---|---|---|---|---|---|
+  | 左侧血瓶液面与横向血条双层液面 (`#hud_blood_orb_and_hp_bar path`) | `d`（三次贝塞尔波浪液面起伏形变） | SMIL `<animate attributeName="d">` | `1.8s / 2.0s / 2.2s` | 无限循环 | 自动开始 |
+  | 血魂值、生命值、魔力值数字组 (`.hud-num-bounce`) | `transform`（位移与缩放弹跳） | CSS `@keyframes numJump` + SMIL `<animateTransform type="translate">` | `1.6s` | 无限循环 | 自动开始 |
+  | 悬挂铭牌整体组 (`#hud_swinging_plaque` / `#plaque_swing_smil`) | `transform: rotate(0deg -> 4deg -> 0deg -> -4deg -> 0deg)`（绕 `(430, 156)` 左右摆动 `±4°`） | CSS `.plaque-swing-css` (`@keyframes plaqueSwing`) + SMIL `<animateTransform id="plaque_swing_smil" type="rotate">` | `2.4s` | 无限循环 | 自动开始 |
+
+- **最难画对的地方**：
+  **动态宿主变换继承与画家算法层级遮挡（Slot Interleaving）**：运行时注入 `#slot_text` 的动态文字（如 `伤害 +128`）既要继承父组 `#hud_swinging_plaque` 的实时 `±4°` 旋转矩阵，又必须严格处于铭牌底板之上、前景锁链锁扣 `#plaque_foreground_clasp` 之下，任何将文字层简单提升到顶层 Canvas Overlay 的做法都会破坏前景锁扣压住文字一角的遮挡关系。
 
 ## 三、`icons/` 30 个小图标逐项说明（宝物、宝石、状态）
 
@@ -281,3 +336,14 @@
 
 - **图标组最难画对的地方**：
   当同屏同时渲染数百个不同图标实例时，每个图标各自拥有独立的 `<filter id="glow_...">`（`feGaussianBlur` + `feMerge`）与焦点偏移径向渐变，且其中三分之一的图标持续执行 CSS `transform-box: fill-box` 缩放/旋转或 SMIL `d` 路径形变；非常考验渲染器的纹理图集管理（Atlas Eviction）、小尺寸离屏 FBO 复用以及 `transform-box: fill-box` 局部中心点计算的准确性。
+
+## 四、新增 3 个 `currentColor` 染色测试图标逐项说明（`128×128`）
+
+- **共同规格**：画框尺寸均为 `128×128`（`viewBox="0 0 128 128" width="128" height="128"`），根节点统一声明默认颜色 `style="color: #b83a3a"`，无动画、无 `<text>` 文字元素。测试时仅修改根元素 `<svg>` 的 `color`（默认红 `#b83a3a`、蓝色 `#3a6fd8`、金色 `#e0b030`），内部节点不做任何改动。
+
+| 序号 | 文件名 | 类别与名称 | 元素个数 | 文件大小 | 染色规则与特性实现 |
+|---:|---|---|---:|---:|---|
+| 1 | `icons/icon_tint_flat.svg` | 阵营纹章旗帜（纯 `currentColor` 剪影） | **107** | 10,493 字节（10.2 KB） | **仅用 `currentColor`**：所有形状的 `fill` 与 `stroke` 均为 `currentColor`（或 `none`），不含任何其他颜色字面量、不含渐变、不含滤镜，明暗层次完全通过 `opacity`、`fill-opacity` 与 `stroke-opacity`（`0.08`–`1.0`）表现。 |
+| 2 | `icons/icon_tint_shaded.svg` | 炼金药水瓶（`currentColor` 瓶身 + 固定明暗 + 做旧颗粒滤镜） | **104** | 9,098 字节（8.9 KB） | **纯色染色叠固定明暗与滤镜**：瓶身、封蜡与绶带使用 `fill="currentColor"` 纯色；上方叠加固定颜色的半透明白色高光（`#ffffff` + `fill-opacity`/`stroke-opacity`）与半透明黑色阴影（`#000000` + `fill-opacity`）；最外层 `#tint_shaded_potion_root` 挂载做旧颗粒滤镜 `#vintage_grain_filter`（`feTurbulence type="fractalNoise"` + `feColorMatrix` + 双步 `feComposite`）。 |
+| 3 | `icons/icon_tint_gradient.svg` | 棱光秘仪宝石（渐变停靠点 `currentColor` + `overlay` 反光） | **92** | 7,289 字节（7.1 KB） | **渐变色标染色叠混合模式**：径向渐变 `#gem_tint_radial` 与切面线性渐变 `#gem_facet_lit`、`#gem_facet_deep` 的亮部停靠点使用 `stop-color="currentColor"`，暗部停靠点使用固定深色（`#12071c`、`#1a0926`、`#0b0312`）；宝石切面上方再压一层声明 `style="mix-blend-mode: overlay"` 的高光反射组 `#gem_overlay_reflection`。 |
+
