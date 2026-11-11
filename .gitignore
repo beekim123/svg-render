@@ -10,3 +10,8 @@ node_modules/
 # 系统
 .DS_Store
 *.log
+
+# Python运行缓存
+__pycache__/
+*.pyc
+.venv/

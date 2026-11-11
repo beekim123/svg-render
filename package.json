@@ -1,0 +1,32 @@
+{
+  "name": "svg-render-stage-zero",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "compare": "node tools/compare/cli.mjs",
+    "check:compare": "node tools/compare/self-test.mjs",
+    "setup": "node tools/setup/install.mjs",
+    "register": "python3 tools/scan/register.py",
+    "scan": "node tools/scan/cli.mjs",
+    "check:scan": "node tools/scan/self-test.mjs",
+    "ref": "node tools/ref/batch.mjs",
+    "ref:noise": "node tools/ref/audit.mjs noise",
+    "ref:repeat": "node tools/ref/audit.mjs repeat",
+    "check:ref": "node tools/ref/check.mjs && node tools/ref/check-batch.mjs && node tools/ref/check-timeline.mjs",
+    "build:skia": "node 实验/skia/build.mjs",
+    "link:skia": "node 实验/skia/link.mjs",
+    "experiment:5": "node 实验/micro/run.mjs",
+    "experiment:6": "node 实验/text/run.mjs",
+    "check": "node tools/check/index.mjs",
+    "check:readonly": "node tools/setup/readonly.mjs",
+    "mac": "node tools/mac.mjs"
+  },
+  "dependencies": {
+    "fontkit": "2.0.4",
+    "pngjs": "7.0.0"
+  }
+}

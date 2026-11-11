@@ -1,0 +1,150 @@
+{
+  "说明": "参数草案，不是 gn args --list 的执行结果。替换绝对头路径占位符；合并平台字段，extra_cflags/extra_ldflags 追加而非覆盖。库和调用方均用同一头文件。禁止把元数据字段传入 GN。",
+  "chromium": "157.0.8103.50",
+  "skia": "ca84ce0a6f1659748188469a89361ccea71e3a64",
+  "验证状态": "Linux x64 与 WASM 已实际构建/链接，相同能力探针28模式均冒烟通过；Linux仅导出svg_render_probe，WASM包含malloc/free与Emscripten引导辅助。Mac未验证，Chrome像素比较未完成。",
+  "common": {
+    "is_official_build": true,
+    "is_debug": false,
+    "is_component_build": false,
+    "is_trivial_abi": true,
+    "cc": "clang",
+    "cxx": "clang++",
+    "skia_enable_optimize_size": false,
+    "skia_disable_tracing": true,
+    "skia_enable_ganesh": false,
+    "skia_enable_graphite": false,
+    "skia_use_gl": false,
+    "skia_use_vulkan": false,
+    "skia_use_metal": false,
+    "skia_use_dawn": false,
+    "skia_use_direct3d": false,
+    "skia_use_angle": false,
+    "skia_use_webgl": false,
+    "skia_use_webgpu": false,
+    "skia_enable_pdf": false,
+    "skia_enable_skottie": false,
+    "skia_enable_svg": false,
+    "skia_enable_tools": false,
+    "skia_enable_precompile": false,
+    "skia_enable_fontmgr_empty": false,
+    "skia_enable_fontmgr_win": false,
+    "skia_enable_fontmgr_win_gdi": false,
+    "skia_enable_fontmgr_android": false,
+    "skia_enable_fontmgr_android_ndk": false,
+    "skia_enable_fontmgr_custom_directory": false,
+    "skia_enable_fontmgr_custom_embedded": false,
+    "skia_enable_fontmgr_custom_empty": false,
+    "skia_enable_fontmgr_fontations_empty": false,
+    "skia_enable_fontmgr_fontconfig": false,
+    "skia_enable_fontmgr_FontConfigInterface": false,
+    "skia_use_freetype": false,
+    "skia_use_fonthost_mac": false,
+    "skia_use_fontconfig": false,
+    "skia_use_fontations": false,
+    "skia_use_harfbuzz": false,
+    "skia_pdf_subset_harfbuzz": false,
+    "skia_use_icu": false,
+    "skia_use_client_icu": false,
+    "skia_use_bidi": false,
+    "skia_use_icu4x": false,
+    "skia_use_libgrapheme": false,
+    "skia_use_apple_unicode": false,
+    "skia_enable_skunicode": false,
+    "skia_use_libjpeg_turbo_decode": false,
+    "skia_use_libjpeg_turbo_encode": false,
+    "skia_use_libpng_decode": false,
+    "skia_use_libpng_encode": false,
+    "skia_use_libwebp_decode": false,
+    "skia_use_libwebp_encode": false,
+    "skia_use_libjxl_decode": false,
+    "skia_use_libavif": false,
+    "skia_use_crabbyavif": false,
+    "skia_use_wuffs": false,
+    "skia_use_dng_sdk": false,
+    "skia_use_piex": false,
+    "skia_use_ndk_images": false,
+    "skia_use_ffmpeg": false,
+    "skia_use_jpeg_gainmaps": false,
+    "skia_use_rust_exif": false,
+    "skia_use_rust_icc": false,
+    "skia_use_rust_png_decode": false,
+    "skia_use_rust_png_encode": false,
+    "skia_use_rust_png_for_android": false,
+    "skia_use_rust_bmp_decode": false,
+    "skia_use_rust_ico_decode": false,
+    "skia_use_rust_jpeg_decode": false,
+    "skia_use_rust_jpeg_encode": false,
+    "skia_use_expat": false,
+    "skia_use_zlib": false,
+    "skia_use_xps": false,
+    "skia_use_perfetto": false,
+    "skia_use_partition_alloc": false,
+    "skia_build_rust_targets": false,
+    "skia_use_lua": false,
+    "skia_use_x11": false,
+    "skia_enable_android_utils": false,
+    "skia_use_no_jpeg_encode": true,
+    "skia_use_no_png_encode": true,
+    "skia_use_no_webp_encode": true,
+    "extra_cflags": [
+      "-DSK_USER_CONFIG_HEADER=\"${CHROMIUM_CONFIG_HEADER}\"",
+      "-O3",
+      "-ffp-contract=off",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-flto=thin"
+    ],
+    "extra_ldflags": [
+      "-flto=thin"
+    ]
+  },
+  "platforms": {
+    "linux-x64": {
+      "target_os": "linux",
+      "target_cpu": "x64",
+      "extra_cflags": [
+        "-fPIC"
+      ],
+      "extra_ldflags": [
+        "-fuse-ld=lld",
+        "-Wl,--gc-sections"
+      ]
+    },
+    "mac-arm64": {
+      "target_os": "mac",
+      "target_cpu": "arm64",
+      "extra_cflags": [
+        "-fPIC"
+      ],
+      "extra_ldflags": [
+        "-Wl,-dead_strip"
+      ]
+    },
+    "mac-x64": {
+      "target_os": "mac",
+      "target_cpu": "x64",
+      "extra_cflags": [
+        "-fPIC"
+      ],
+      "extra_ldflags": [
+        "-Wl,-dead_strip"
+      ]
+    },
+    "wasm": {
+      "target_os": "wasm",
+      "target_cpu": "wasm",
+      "skia_emsdk_dir": "${EMSDK}",
+      "extra_cflags": [],
+      "extra_ldflags": []
+    }
+  },
+  "必须单独处理": [
+    "缓存构建副本的 BUILD.gn 删除 skia_public 中 SK_CODEC_DECODES_BMP / SK_CODEC_DECODES_WBMP 及 :skia 中 sources += skia_codec_decode_bmp；严格核对唯一匹配，保留原始源码和补丁指纹。没有对应 GN 开关。",
+    "SK_USE_DISCARDABLE_SCALEDIMAGECACHE 用上游 SkDiscardableMemory_none.cpp + SkDiscardableMemoryPool.cpp 的本地可丢弃内存池替代 Chromium 跨进程池，二者需要参与链接。",
+    "不要定义 SK_ENABLE_OPTIMIZE_SIZE、SK_DISABLE_SKSL、SK_DISABLE_EFFECT_DESERIALIZATION 或 SK_RASTER_PIPELINE_BLITTER。前两者会裁减所需能力，后两者会改变路径或可用性。",
+    "保留所有 imagefilter/colorfilter/effect、pathops、SkSL 和 skcms 源文件组。只链接 :skia，独立包装动态库只导出一个函数。",
+    "必须保存各目标 gn args --list、compile_commands 和最终链接命令；Linux 与 Mac 不能只改 target_cpu 就声称验证通过。",
+    "WASM 沿用上游 SKVX_DISABLE_SIMD / SK_FORCE_8_BYTE_ALIGNMENT；不要混入 CanvasKit 对效果的裁减宏。Emscripten 的 LTO 和最终导出参数须编译脚本验证。"
+  ]
+}

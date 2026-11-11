@@ -1,0 +1,250 @@
+{
+  "target": "wasm",
+  "Skia": "ca84ce0a6f1659748188469a89361ccea71e3a64",
+  "compiler": "/workspace/shared/svg-render-cache/emsdk/7.0.0/install/emscripten/em++",
+  "link_and_smoke_seconds": 8.138,
+  "bytes": 2127408,
+  "sha256": "c4a44cf7709c6bb04c883f09cc69b098ac9af6004904a3626f129491984e326c",
+  "exports": [
+    {
+      "name": "m",
+      "kind": "memory"
+    },
+    {
+      "name": "n",
+      "kind": "function"
+    },
+    {
+      "name": "o",
+      "kind": "function"
+    },
+    {
+      "name": "p",
+      "kind": "function"
+    },
+    {
+      "name": "q",
+      "kind": "function"
+    },
+    {
+      "name": "r",
+      "kind": "table"
+    },
+    {
+      "name": "s",
+      "kind": "function"
+    }
+  ],
+  "build_pass": true,
+  "runtime_validation": "28模式全部通过",
+  "modes": [
+    {
+      "mode": 0,
+      "return_code": 0,
+      "nonzero_alpha": 10055,
+      "sha256": "df44aa4c92a248f7bffe95df3d248c6521138376616c704b556b0958695f4246"
+    },
+    {
+      "mode": 1,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "d815c534bd1ac6e390ffc89dbab271d83e95e0a2cab1c2dcd295cb9ca5f1023c"
+    },
+    {
+      "mode": 2,
+      "return_code": 0,
+      "nonzero_alpha": 16381,
+      "sha256": "3257df80751028aabd0bb61f337f29509d56f8c9f83a27d3ae8624f523aac114"
+    },
+    {
+      "mode": 3,
+      "return_code": 0,
+      "nonzero_alpha": 11776,
+      "sha256": "6b65f5376d3c0a793e089d965c7717fe6922f3bcee35040c7d0372cea4acf5ae"
+    },
+    {
+      "mode": 4,
+      "return_code": 0,
+      "nonzero_alpha": 7100,
+      "sha256": "f831a04913f1aebbd974e9f8b4eeb119d99b198821e0a7dd4b23dcaff3b5211d"
+    },
+    {
+      "mode": 5,
+      "return_code": 0,
+      "nonzero_alpha": 7809,
+      "sha256": "eec2ec7543f0f3e1c3e02d27302d05a79b89ee330603bc02b2f4015f75009c36"
+    },
+    {
+      "mode": 6,
+      "return_code": 0,
+      "nonzero_alpha": 9355,
+      "sha256": "2d5863dc63470fd1e4b0cbd1d423a54b1d447ecb33f6405904b05d26c622e23f"
+    },
+    {
+      "mode": 7,
+      "return_code": 0,
+      "nonzero_alpha": 8739,
+      "sha256": "39bd6f96d7b2211cc3a654f1941a3b19a786a5c9c36fb26218ee87af807279dc"
+    },
+    {
+      "mode": 8,
+      "return_code": 0,
+      "nonzero_alpha": 6179,
+      "sha256": "af70fbb62340bf0ed4b369a9a59a12996d9a1be2e99a28a6cab4544a6e1ebf8e"
+    },
+    {
+      "mode": 9,
+      "return_code": 0,
+      "nonzero_alpha": 7832,
+      "sha256": "be5826ff12af9d8b506b0971e58468c3e03ff959594ebd127607b66665831b7f"
+    },
+    {
+      "mode": 10,
+      "return_code": 0,
+      "nonzero_alpha": 6179,
+      "sha256": "afe6745a876dfcf2853e8301746f7195f3b2db3cbca4c7fdb141b617422b90ef"
+    },
+    {
+      "mode": 11,
+      "return_code": 0,
+      "nonzero_alpha": 7795,
+      "sha256": "d18b830427aa0af8def1a965dc5f07eff4e32f20dc0b1f5b3f6cab730ecd77c6"
+    },
+    {
+      "mode": 12,
+      "return_code": 0,
+      "nonzero_alpha": 6789,
+      "sha256": "ef74c2159949d9890db526679f316f5c692734d5ee3af6cf44823f431838e25a"
+    },
+    {
+      "mode": 13,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "48a7e4a1ec6fa7291e7809e3a8027e0570ef1589ba231338dad2e8293bde6677"
+    },
+    {
+      "mode": 14,
+      "return_code": 0,
+      "nonzero_alpha": 6172,
+      "sha256": "2cfb9dcf543e575f873ff9266f62fd9fe4de1b2694c5c75e70d24f89d475c842"
+    },
+    {
+      "mode": 15,
+      "return_code": 0,
+      "nonzero_alpha": 7131,
+      "sha256": "61404a966532a07d84b7be7b8ed6f38de8db6581789de1d9a4c03749c4403333"
+    },
+    {
+      "mode": 16,
+      "return_code": 0,
+      "nonzero_alpha": 5248,
+      "sha256": "09e49ef7054ad70b31abee5824e89501b6b8c7088f3a0f0d6069a2808bbdc102"
+    },
+    {
+      "mode": 17,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "06594186c66ced16169507b8a553cab628ac1d4f1ad5e2a2eaacbb95fddcf275"
+    },
+    {
+      "mode": 18,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "ba0b0addf0d5fc2e5f6029797892bb808a12ab98a8c9c191508c4fe020b8bd76"
+    },
+    {
+      "mode": 19,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "4da10c180272b5a182a28bc70cd4df2303268c16947c27c3a5c15c4fa743679a"
+    },
+    {
+      "mode": 20,
+      "return_code": 0,
+      "nonzero_alpha": 15944,
+      "sha256": "e4cb4c040548a745492de17275fcf4975ca40a6c8f1b0e2de44b8133d88f8643"
+    },
+    {
+      "mode": 21,
+      "return_code": 0,
+      "nonzero_alpha": 15931,
+      "sha256": "9705db8e148a4a730e4bc95e6d9f21c0050491fc61b1ac43f46b0a16526af7c5"
+    },
+    {
+      "mode": 22,
+      "return_code": 0,
+      "nonzero_alpha": 15707,
+      "sha256": "c0c2772e3b0064bd18f34cfde45ddea6ef65b1ea52f3325f9f780ccab0e4ddeb"
+    },
+    {
+      "mode": 23,
+      "return_code": 0,
+      "nonzero_alpha": 6083,
+      "sha256": "0a801f5f2ccb692f6186bf041562ce36447247133fab901ea862535b65135e02"
+    },
+    {
+      "mode": 24,
+      "return_code": 0,
+      "nonzero_alpha": 12427,
+      "sha256": "c8ae4238062fd5ad392455e21c5c4082f31a9993ce5109fee72488bce78e5d1d"
+    },
+    {
+      "mode": 25,
+      "return_code": 0,
+      "nonzero_alpha": 6180,
+      "sha256": "18c1a2abfb41d3cdf8f9a43ae53806df25ad8c6afcb18b386ae5e794647e2c65"
+    },
+    {
+      "mode": 26,
+      "return_code": 0,
+      "nonzero_alpha": 8706,
+      "sha256": "4846800c03c3db3de40e275436577d6015b844cb2fbee2f929b2fafe3d049c73"
+    },
+    {
+      "mode": 27,
+      "return_code": 0,
+      "nonzero_alpha": 4543,
+      "sha256": "52d3a51392c8d04f58c744dc1bf548e281b1c81bd33c7949f33dab4428718cdb"
+    }
+  ],
+  "commands": [
+    {
+      "command": "/workspace/shared/svg-render-cache/emsdk/7.0.0/install/emscripten/em++",
+      "args": [
+        "-std=c++20",
+        "-DNDEBUG",
+        "-DSK_USER_CONFIG_HEADER=\"/workspace/scratch/e4cad742399c/svg-render/实验/skia/chromium-config.h\"",
+        "-I/workspace/shared/svg-render-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64",
+        "-O3",
+        "-ffp-contract=off",
+        "-flto=thin",
+        "-DSKVX_DISABLE_SIMD",
+        "-DSK_FORCE_8_BYTE_ALIGNMENT",
+        "-DSK_DISABLE_TRACING",
+        "/workspace/scratch/e4cad742399c/svg-render/实验/skia/capabilities.cpp",
+        "/workspace/shared/svg-render-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-wasm/libskia.wasm.a",
+        "/workspace/shared/svg-render-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-wasm/libskcms.wasm.a",
+        "--no-entry",
+        "-sMODULARIZE=1",
+        "-sEXPORT_ES6=0",
+        "-sENVIRONMENT=node",
+        "-sALLOW_MEMORY_GROWTH=1",
+        "-sINITIAL_MEMORY=33554432",
+        "-sMAXIMUM_MEMORY=536870912",
+        "-sEXPORTED_FUNCTIONS=[\"_svg_render_probe\",\"_malloc\",\"_free\"]",
+        "-sEXPORTED_RUNTIME_METHODS=[\"HEAPU8\"]",
+        "-sFILESYSTEM=0",
+        "-sERROR_ON_UNDEFINED_SYMBOLS=1",
+        "-o",
+        "/workspace/scratch/e4cad742399c/svg-render/out/linux/skia/wasm/svg-render-probe.cjs"
+      ],
+      "cwd": "/workspace/scratch/e4cad742399c/svg-render"
+    }
+  ],
+  "scope": "28模式运行冒烟与体积；不是Chrome像素一致性验收。Mac分支未在Linux执行。",
+  "gzip_bytes": 779632,
+  "brotli_bytes": 568679,
+  "js_glue_bytes": 11214,
+  "brotli_limit_decimal_bytes": 1500000,
+  "brotli_pass": true
+}

@@ -1,0 +1,12 @@
+{
+  "id": "复杂测试图/icons/icon_relic_bell",
+  "动作": [
+    {
+      "名字": "待机",
+      "种类": "循环",
+      "动画验证": "待Chrome验证"
+    }
+  ],
+  "染色": false,
+  "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+}

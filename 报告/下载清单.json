@@ -1,0 +1,22 @@
+{
+  "已下载": [
+    {
+      "文件": "emscripten-7.0.0-linux.tar.xz",
+      "字节": 322310412,
+      "sha256": "6e7c6d26cf8bde31e6cf6a377c113f913cb2d30f4c2d671c1042e1c4bcd16495",
+      "缓存路径": "/workspace/shared/svg-render-cache/downloads/emscripten-7.0.0-linux.tar.xz"
+    },
+    {
+      "文件": "chrome-linux64.zip",
+      "字节": 203527334,
+      "sha256": "d17167bc092eb495a3b768c7467f27e35f625aa03834233a1663af67dcb668c9",
+      "缓存路径": "/workspace/shared/svg-render-cache/downloads/chrome-linux64.zip"
+    }
+  ],
+  "Skia提交": "ca84ce0a6f1659748188469a89361ccea71e3a64",
+  "额外已批准工具": {
+    "GN": "b2afae122eeb6ce09c52d63f67dc53fc517dbdc8",
+    "Ninja": "1.12.1.chromium.4"
+  },
+  "Mac": "尚未下载；用户机器使用~/Library/Caches/svg-render/"
+}
