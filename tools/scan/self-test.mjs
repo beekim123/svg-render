@@ -10,7 +10,7 @@ const root=path.resolve(import.meta.dirname,'../..');
 const read=async p=>JSON.parse(await fs.readFile(path.join(root,p),'utf8'));
 const items=await read('素材/清单.json'),scope=await read('支持范围.json');
 assert.equal(new Set(items.map(a=>a.id)).size,items.length);
-for(const [batch,n] of Object.entries({现有游戏:82,待接入:35,复杂测试图:40,试验图:1}))assert.equal(items.filter(a=>a.批===batch).length,n);
+for(const [batch,n] of Object.entries({现有游戏:82,待接入:35,复杂测试图:44,试验图:1}))assert.equal(items.filter(a=>a.批===batch).length,n);
 for(const a of items){assert(a.id.startsWith(a.批+'/'));await fs.access(path.join(root,a.文件));for(const x of a.动作){assert(x.名字);assert(['循环','播一次','播完停住','进场后循环'].includes(x.种类)||x.分类状态==='待验证');if(x.分类状态==='待验证')assert.equal(x.种类,null);}}
 assert.equal(classify('元素/path',scope),'支持');assert.equal(classify('SMIL/calcMode/paced',scope),'采样兜底');assert.equal(classify('禁止/外部资源',scope),'不支持');assert.equal(classify('从未登记',scope),'没登记');
 assert.equal(items.filter(a=>a.批==='公开测试集').length,0);
@@ -46,3 +46,17 @@ assert.equal(classify('其他/CSS变量',scope),'支持');
 assert.equal(classify('任意类别/opacity',scope,['opacity']),'没登记');
 assert.equal(classify('CSS属性/opacity',{特性:{}},['opacity']),'没登记');
 console.log('显式CSS通配规则、Chrome验证门槛与自定义/禁用属性排除检查通过。');
+
+assert.equal(items.length,162);
+assert.equal(items.filter(a=>a.染色).length,10);
+const get=id=>items.find(a=>a.id===id);
+for(const name of ['flat','gradient','shaded']){
+ const a=get('复杂测试图/icons/icon_tint_'+name);assert.equal(a.动作.length,1);assert.equal(a.动作[0].名字,'待机');assert.equal(a.动作[0].静态,true);assert.equal(a.动作[0].毫秒,0);assert.equal(a.染色,true);
+}
+assert.deepEqual(get('复杂测试图/ui_hud_slot').槽,{slot_text:[430,196,28]});
+assert.equal(get('复杂测试图/char_golem').动作.find(a=>a.名字==='倒下').毫秒,800);
+assert.equal(get('复杂测试图/char_lich').动作.find(a=>a.名字==='眩晕').种类,'进场后循环');
+for(const name of ['fx_explosion','fx_lightning'])assert.equal(get('复杂测试图/'+name).动作.length,1);
+assert.equal(items.filter(a=>a.批==='复杂测试图'&&a.id.includes('/icons/')&&!a.染色).length,30);
+assert(items.filter(a=>a.批==='复杂测试图').every(a=>'混合' in a&&'槽' in a));
+console.log('新版44复杂素材、静态染色、混合/槽与新增动作检查通过。');

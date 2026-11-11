@@ -770,6 +770,10 @@
         </circle>
         <polygon points="348,42.4 357.6,52 348,61.6 338.4,52" fill="#ffffff" fill-opacity="0.45"/>
       </g>
+      <g id="card_limited_corner_badge" transform="rotate(15 316 96)">
+        <rect x="262" y="84" width="108" height="22" rx="5" fill="#240838" fill-opacity="0.9" stroke="url(#card_frame_gold)" stroke-width="1.6"/>
+        <line x1="266" y1="88" x2="366" y2="88" stroke="#ffd166" stroke-width="0.7" stroke-opacity="0.65"/>
+      </g>
     </g>
     <g id="card_chinese_typography" font-family="Noto Sans CJK SC">
       <text x="200" y="60" text-anchor="middle" font-size="22" font-weight="bold" letter-spacing="3" fill="#fff6d6" stroke="#2a0845" stroke-width="3" paint-order="stroke fill">
@@ -785,6 +789,7 @@
         <tspan x="200" dy="22" font-weight="normal" font-size="12.5" letter-spacing="1" fill="#f8edeb">则本回合释放的暗影法术消耗减少（2）点。</tspan>
         <tspan x="200" dy="26" font-size="11" letter-spacing="2" fill="#ffd166">“钟声敲响十二下，古堡的盛宴才刚刚开始。”</tspan>
       </text>
+      <text x="316" y="99" transform="rotate(15 316 96)" text-anchor="middle" font-size="13" font-weight="bold" letter-spacing="0.8" fill="#ffe66d" stroke="#1e0530" stroke-width="2.5" paint-order="stroke fill">限定 0137/500</text>
     </g>
     <rect x="10" y="10" width="380" height="580" rx="22" fill="url(#holo_prism_overlay)" style="mix-blend-mode: overlay; pointer-events: none;"/>
     <rect x="10" y="10" width="380" height="580" rx="22" fill="url(#foil_sheen_grad)" style="mix-blend-mode: color-dodge; pointer-events: none;"/>

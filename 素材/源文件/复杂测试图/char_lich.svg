@@ -33,6 +33,53 @@
       45% { transform: scale(1.38); opacity: 1; }
       100% { transform: scale(1); opacity: 0.75; }
     }
+    svg.act-daze #lich_head_and_crown {
+      transform-origin: 256px 186px;
+      animation: dazeHeadTiltCss 0.5s ease-out 1 forwards;
+    }
+    @keyframes dazeHeadTiltCss {
+      0% { transform: rotate(0deg) translate(0px, 0px); }
+      100% { transform: rotate(15deg) translate(6px, 8px); }
+    }
+    svg.act-daze #lich_necrostaff {
+      transform-origin: 388px 540px;
+      animation: dazeStaffTiltCss 0.5s ease-out 1 forwards;
+    }
+    @keyframes dazeStaffTiltCss {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(16deg); }
+    }
+    svg.act-daze #lich_eyes_group {
+      animation: dazeEyesDimCss 0.5s ease-out 1 forwards;
+    }
+    @keyframes dazeEyesDimCss {
+      0% { opacity: 1; filter: brightness(1); }
+      100% { opacity: 0.22; filter: brightness(0.35); }
+    }
+    svg.act-daze #lich_daze_halo {
+      animation: dazeHaloInCss 0.5s ease-out 1 forwards;
+    }
+    @keyframes dazeHaloInCss {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    svg.act-daze #lich_daze_halo_spinner {
+      transform-origin: 0px 0px;
+      animation: dazeHaloSpinCss 1.2s linear 0.5s infinite;
+    }
+    @keyframes dazeHaloSpinCss {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    svg.act-daze #lich_character_filtered_group {
+      transform-origin: 256px 560px;
+      animation: dazeBodySwayCss 1.2s ease-in-out 0.5s infinite;
+    }
+    @keyframes dazeBodySwayCss {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(4.5deg); }
+      75% { transform: rotate(-4.5deg); }
+    }
   </style>
   <defs>
     <!-- Multi-layer linear & radial gradients with focal offset fx/fy and reflect/repeat -->
@@ -493,6 +540,7 @@
     <polygon points="156.6,-26.8 161.6,-20.8 156.6,-14.8 151.6,-20.8" fill="#00ffaa" opacity="0.75"/>
   </g>
   <g id="lich_character_filtered_group" filter="url(#lich_outer_glow)">
+    <animateTransform id="daze_body_sway_anim" attributeName="transform" type="rotate" values="0 256 560; 4.5 256 560; 0 256 560; -4.5 256 560; 0 256 560" dur="1.2s" begin="daze_in_anim.end" repeatCount="indefinite"/>
     <g id="lich_cast_halo" style="transform-origin: 256px 260px; mix-blend-mode: screen;">
       <circle cx="256" cy="260" r="142" fill="none" stroke="#00ffcc" stroke-width="3.5" stroke-dasharray="12 6 3 6" opacity="0.75"/>
       <circle cx="256" cy="260" r="126" fill="none" stroke="#d4af37" stroke-width="1.8" stroke-dasharray="4 8" opacity="0.65"/>
@@ -678,6 +726,7 @@
       <circle cx="361" cy="207" r="3.5" fill="#00ffcc" stroke="#d4af37" stroke-width="1.2"/>
     </g>
     <g id="lich_head_and_crown">
+      <animateTransform id="daze_in_anim" attributeName="transform" type="rotate" from="0 256 186" to="15 256 186" dur="0.5s" begin="indefinite" fill="freeze"/>
       <path d="M 182 192 L 154 118 L 208 148 L 256 105 L 304 148 L 358 118 L 330 192 Z" fill="#18082b" stroke="url(#dark_gold_grad)" stroke-width="2.4"/>
       <path d="M 218 118 C 218 82, 294 82, 294 118 C 298 138, 292 155, 282 166 L 274 186 L 238 186 L 230 166 C 220 155, 214 138, 218 118 Z" fill="url(#bone_armor_grad)" stroke="#3e2f1d" stroke-width="2"/>
       <path d="M 232 168 L 240 196 L 272 196 L 280 168 L 270 176 L 242 176 Z" fill="#cbb793" stroke="#3e2f1d" stroke-width="1.6"/>
@@ -690,15 +739,18 @@
       <rect x="272.0" y="172" width="4.2" height="10" rx="1" fill="#efe4ce" stroke="#4a3b28" stroke-width="0.9"/>
       <polygon points="256,144 249,162 263,162" fill="#14081f" stroke="#3e2f1d" stroke-width="1.2"/>
       <ellipse cx="239" cy="138" rx="11" ry="8.5" fill="#0d0417" stroke="#3e2f1d" stroke-width="1.6"/>
-      <circle cx="239" cy="138" r="7.5" fill="url(#eye_socket_grad)" style="mix-blend-mode: screen;"/>
-      <circle class="eye-glow-css" cx="239" cy="138" r="3.8" fill="#00ffaa">
-        <animate attributeName="r" values="3.4;5.2;3.4" dur="4s" repeatCount="indefinite"/>
-      </circle>
       <ellipse cx="273" cy="138" rx="11" ry="8.5" fill="#0d0417" stroke="#3e2f1d" stroke-width="1.6"/>
-      <circle cx="273" cy="138" r="7.5" fill="url(#eye_socket_grad)" style="mix-blend-mode: screen;"/>
-      <circle class="eye-glow-css" cx="273" cy="138" r="3.8" fill="#00ffaa">
-        <animate attributeName="r" values="3.4;5.2;3.4" dur="4s" repeatCount="indefinite"/>
-      </circle>
+      <g id="lich_eyes_group">
+        <animate id="daze_eyes_dim_anim" attributeName="opacity" from="1" to="0.22" dur="0.5s" begin="daze_in_anim.begin" fill="freeze"/>
+        <circle cx="239" cy="138" r="7.5" fill="url(#eye_socket_grad)" style="mix-blend-mode: screen;"/>
+        <circle class="eye-glow-css" cx="239" cy="138" r="3.8" fill="#00ffaa">
+          <animate attributeName="r" values="3.4;5.2;3.4" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="273" cy="138" r="7.5" fill="url(#eye_socket_grad)" style="mix-blend-mode: screen;"/>
+        <circle class="eye-glow-css" cx="273" cy="138" r="3.8" fill="#00ffaa">
+          <animate attributeName="r" values="3.4;5.2;3.4" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </g>
       <polygon points="214,108 202,62 224,104" fill="url(#dark_gold_grad)" stroke="#2c1805" stroke-width="1.5"/>
       <circle cx="202" cy="76" r="3.2" fill="#00ffcc" stroke="#1a0b2e" stroke-width="1"/>
       <polygon points="225,104 220,48 236,100" fill="url(#dark_gold_grad)" stroke="#2c1805" stroke-width="1.5"/>
@@ -716,6 +768,7 @@
       <path d="M 212 108 Q 256 94 300 108 L 296 120 Q 256 108 216 120 Z" fill="url(#dark_gold_grad)" stroke="#2c1805" stroke-width="1.8"/>
     </g>
     <g id="lich_necrostaff">
+      <animateTransform id="daze_staff_in_anim" attributeName="transform" type="rotate" from="0 388 540" to="16 388 540" dur="0.5s" begin="daze_in_anim.begin" fill="freeze"/>
       <path d="M 392 88 L 382 595 L 392 595 L 402 88 Z" fill="url(#dark_gold_grad)" stroke="#241404" stroke-width="1.8"/>
       <path d="M 362 96 C 368 52, 422 52, 428 96 L 444 114 L 414 118 L 396 146 L 378 118 L 348 114 Z" fill="url(#bone_armor_grad)" stroke="#3e2f1d" stroke-width="2"/>
       <circle cx="396" cy="88" r="22" fill="url(#soul_core_grad)" filter="url(#soul_fire_glow)" style="mix-blend-mode: screen;"/>
@@ -919,6 +972,21 @@
         <animateMotion dur="4s" begin="-3.83s" repeatCount="indefinite" rotate="auto">
           <mpath href="#orbit_path_3"/>
         </animateMotion>
+      </g>
+    </g>
+    <g id="lich_daze_halo" opacity="0" transform="translate(268, 42) scale(1, 0.38)">
+      <animate id="daze_halo_show_anim" attributeName="opacity" from="0" to="1" dur="0.5s" begin="daze_in_anim.begin" fill="freeze"/>
+      <g id="lich_daze_halo_spinner">
+        <animateTransform id="daze_halo_spin_anim" attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="1.2s" begin="daze_in_anim.end" repeatCount="indefinite"/>
+        <circle cx="0" cy="0" r="64" fill="none" stroke="#ffe66d" stroke-width="2" stroke-dasharray="8 6" stroke-opacity="0.75"/>
+        <polygon points="64.0,-12.0 67.5,-3.5 76.0,0.0 67.5,3.5 64.0,12.0 60.5,3.5 52.0,0.0 60.5,-3.5" fill="#fff3b0" stroke="#d4af37" stroke-width="1.2"/>
+        <polygon points="37.3,41.3 53.3,43.3 50.3,50.3 39.3,48.3" fill="#efe4ce" stroke="#4a3b28" stroke-width="1.2" transform="rotate(45 45.3 45.3)"/>
+        <polygon points="0.0,52.0 3.5,60.5 12.0,64.0 3.5,67.5 0.0,76.0 -3.5,67.5 -12.0,64.0 -3.5,60.5" fill="#fff3b0" stroke="#d4af37" stroke-width="1.2"/>
+        <polygon points="-53.3,41.3 -37.3,43.3 -40.3,50.3 -51.3,48.3" fill="#efe4ce" stroke="#4a3b28" stroke-width="1.2" transform="rotate(135 -45.3 45.3)"/>
+        <polygon points="-64.0,-12.0 -60.5,-3.5 -52.0,0.0 -60.5,3.5 -64.0,12.0 -67.5,3.5 -76.0,0.0 -67.5,-3.5" fill="#fff3b0" stroke="#d4af37" stroke-width="1.2"/>
+        <polygon points="-53.3,-49.3 -37.3,-47.3 -40.3,-40.3 -51.3,-42.3" fill="#efe4ce" stroke="#4a3b28" stroke-width="1.2" transform="rotate(225 -45.3 -45.3)"/>
+        <polygon points="-0.0,-76.0 3.5,-67.5 12.0,-64.0 3.5,-60.5 -0.0,-52.0 -3.5,-60.5 -12.0,-64.0 -3.5,-67.5" fill="#fff3b0" stroke="#d4af37" stroke-width="1.2"/>
+        <polygon points="37.3,-49.3 53.3,-47.3 50.3,-40.3 39.3,-42.3" fill="#efe4ce" stroke="#4a3b28" stroke-width="1.2" transform="rotate(315 45.3 -45.3)"/>
       </g>
     </g>
   </g>

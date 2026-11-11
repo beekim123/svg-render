@@ -38,7 +38,7 @@ npm run mac
 
 ## 日常命令
 
-- `npm run register`：登记本地158素材与动作；尚未由Chrome分类的stay动作保留待验证。
+- `npm run register`：登记本地162素材与动作；尚未由Chrome分类的stay动作保留待验证。
 - `npm run scan`：用固定Chrome DOM/CSSOM扫描；公开集筛选见tools/scan/说明。
 - `npm run ref`：全清单冻结图、活图、20ms值表、指令、冻结复核，输出out/linux或out/mac。
 - `npm run ref:repeat -- --全部`：新进程重出两遍逐字节比对。
@@ -54,7 +54,7 @@ Linux/Mac像素差用`node tools/ref/audit.mjs cross --linux <Linux参照目录>
 
 ## 规矩和目录
 
-- docs/、素材/源文件/、素材/字体/、素材/试验图/、参考/保持原样；235个文件SHA256校验通过。用户仅另外许可写素材/清单.json和素材/清单补充/。
+- docs/、素材/源文件/、素材/字体/、素材/试验图/、参考/保持原样；266个文件SHA256校验通过。用户已许可同步main补充并更新素材/清单.json；新版直接读取SVG旁的动作JSON，不再生成清单补充。
 - 报告/放可读汇总（当前远少于20MB），out/放生成物不提交。
 - 所有工作仅stage-0；不得合并main。
 - 设计和验收依据：docs/阶段0-需求.md、docs/设计.md、docs/阶段计划.md。

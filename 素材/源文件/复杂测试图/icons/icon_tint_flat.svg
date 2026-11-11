@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" style="color: #b83a3a">
+  <g id="tint_flat_banner_crest">
+    <circle cx="64" cy="64" r="60" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="2" stroke-opacity="0.45"/>
+    <circle cx="64" cy="64" r="54" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" stroke-opacity="0.65"/>
+    <circle cx="64" cy="64" r="48" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="1" stroke-opacity="0.35"/>
+    <circle cx="64" cy="64" r="42" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" stroke-opacity="0.4"/>
+    <polygon points="117.9,60.2 125.0,64.0 117.9,67.8" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="114.0" cy="64.0" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="116.4,77.1 122.0,82.9 114.1,84.2" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="111.6" cy="79.5" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="109.8,92.6 113.4,99.9 105.4,98.7" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="104.5" cy="93.4" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="98.7,105.4 99.9,113.4 92.6,109.8" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="93.4" cy="104.5" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="84.2,114.1 82.9,122.0 77.1,116.4" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="79.5" cy="111.6" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="67.8,117.9 64.0,125.0 60.2,117.9" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="64.0" cy="114.0" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="50.9,116.4 45.1,122.0 43.8,114.1" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="48.5" cy="111.6" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="35.4,109.8 28.1,113.4 29.3,105.4" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="34.6" cy="104.5" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="22.6,98.7 14.6,99.9 18.2,92.6" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="23.5" cy="93.4" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="13.9,84.2 6.0,82.9 11.6,77.1" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="16.4" cy="79.5" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="10.1,67.8 3.0,64.0 10.1,60.2" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="14.0" cy="64.0" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="11.6,50.9 6.0,45.1 13.9,43.8" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="16.4" cy="48.5" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="18.2,35.4 14.6,28.1 22.6,29.3" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="23.5" cy="34.6" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="29.3,22.6 28.1,14.6 35.4,18.2" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="34.6" cy="23.5" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="43.8,13.9 45.1,6.0 50.9,11.6" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="48.5" cy="16.4" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="60.2,10.1 64.0,3.0 67.8,10.1" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="64.0" cy="14.0" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="77.1,11.6 82.9,6.0 84.2,13.9" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="79.5" cy="16.4" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="92.6,18.2 99.9,14.6 98.7,22.6" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="93.4" cy="23.5" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="105.4,29.3 113.4,28.1 109.8,35.4" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="104.5" cy="34.6" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="114.1,43.8 122.0,45.1 116.4,50.9" fill="currentColor" fill-opacity="0.75"/>
+    <circle cx="111.6" cy="48.5" r="1.7" fill="currentColor" fill-opacity="0.85"/>
+    <line x1="20" y1="108" x2="108" y2="20" stroke="currentColor" stroke-width="3.2" stroke-opacity="0.55" stroke-linecap="round"/>
+    <line x1="108" y1="108" x2="20" y2="20" stroke="currentColor" stroke-width="3.2" stroke-opacity="0.55" stroke-linecap="round"/>
+    <polygon points="108,20 96,23 102,26 105,32" fill="currentColor" fill-opacity="0.9"/>
+    <polygon points="20,20 32,23 26,26 23,32" fill="currentColor" fill-opacity="0.9"/>
+    <rect x="24" y="24" width="80" height="5" rx="2.5" fill="currentColor" fill-opacity="0.92"/>
+    <polygon points="16,26.5 26,21 26,32" fill="currentColor" fill-opacity="1"/>
+    <polygon points="112,26.5 102,21 102,32" fill="currentColor" fill-opacity="1"/>
+    <rect x="34" y="22" width="4" height="9" rx="1" fill="currentColor" fill-opacity="1"/>
+    <rect x="52" y="22" width="4" height="9" rx="1" fill="currentColor" fill-opacity="1"/>
+    <rect x="72" y="22" width="4" height="9" rx="1" fill="currentColor" fill-opacity="1"/>
+    <rect x="90" y="22" width="4" height="9" rx="1" fill="currentColor" fill-opacity="1"/>
+    <path d="M 28 29 L 100 29 L 104 86 L 84 74 L 64 114 L 44 74 L 24 86 Z" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="2" stroke-opacity="0.85" stroke-linejoin="round"/>
+    <path d="M 33 29 L 95 29 L 98 81 L 82 70 L 64 106 L 46 70 L 30 81 Z" fill="currentColor" fill-opacity="0.52" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.95"/>
+    <path d="M 33 29 L 64 29 L 64 106 L 46 70 L 30 81 Z" fill="currentColor" fill-opacity="0.35"/>
+    <path d="M 44 38 L 84 38 L 84 64 C 84 78 64 90 64 90 C 64 90 44 78 44 64 Z" fill="currentColor" fill-opacity="0.78" stroke="currentColor" stroke-width="2" stroke-opacity="1"/>
+    <path d="M 48 42 L 80 42 L 80 63 C 80 74 64 84 64 84 C 64 84 48 74 48 63 Z" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2" stroke-opacity="0.55"/>
+    <polygon points="64,41 67,49 66,76 64,81 62,76 61,49" fill="currentColor" fill-opacity="1"/>
+    <polygon points="53,51 75,51 72,55 56,55" fill="currentColor" fill-opacity="1"/>
+    <path d="M 61 55 C 52 48 46 52 47 62 C 51 59 56 60 60 64 Z" fill="currentColor" fill-opacity="0.95"/>
+    <path d="M 67 55 C 76 48 82 52 81 62 C 77 59 72 60 68 64 Z" fill="currentColor" fill-opacity="0.95"/>
+    <path d="M 60 63 C 53 61 49 65 51 72 C 54 69 58 69 61 72 Z" fill="currentColor" fill-opacity="0.85"/>
+    <path d="M 68 63 C 75 61 79 65 77 72 C 74 69 70 69 67 72 Z" fill="currentColor" fill-opacity="0.85"/>
+    <polygon points="55,46 58,40 61,45 64,38 67,45 70,40 73,46 71,49 57,49" fill="currentColor" fill-opacity="1"/>
+    <line x1="29" y1="82" x2="29" y2="88" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="29" cy="89.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="36" y1="74" x2="36" y2="80" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="36" cy="81.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="43" y1="85" x2="43" y2="91" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="43" cy="92.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="50" y1="92" x2="50" y2="98" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="50" cy="99.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="57" y1="100" x2="57" y2="106" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="57" cy="107.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="64" y1="108" x2="64" y2="114" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="64" cy="115.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="71" y1="100" x2="71" y2="106" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="71" cy="107.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="78" y1="92" x2="78" y2="98" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="78" cy="99.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="85" y1="85" x2="85" y2="91" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="85" cy="92.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="92" y1="74" x2="92" y2="80" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="92" cy="81.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <line x1="99" y1="82" x2="99" y2="88" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.8" stroke-linecap="round"/>
+    <circle cx="99" cy="89.5" r="1.5" fill="currentColor" fill-opacity="0.95"/>
+    <circle cx="107.2" cy="72.6" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="100.6" cy="88.4" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="88.4" cy="100.6" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="72.6" cy="107.2" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="55.4" cy="107.2" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="39.6" cy="100.6" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="27.4" cy="88.4" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="20.8" cy="72.6" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="20.8" cy="55.4" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="27.4" cy="39.6" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="39.6" cy="27.4" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="55.4" cy="20.8" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="72.6" cy="20.8" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="88.4" cy="27.4" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="100.6" cy="39.6" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+    <circle cx="107.2" cy="55.4" r="1.3" fill="currentColor" fill-opacity="0.6"/>
+  </g>
+</svg>

@@ -2,29 +2,41 @@
 """按磁盘上的 SVG 登记，不把上游清单里的占位素材误算成已交付素材。"""
 import json
 import pathlib
-import xml.etree.ElementTree as ET
+import os
+import sys
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 def read(p): return json.loads((ROOT / p).read_text())
 def write(p, v):
     target = ROOT / p
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(v, ensure_ascii=False, indent=2) + '\n')
-def svg_info(p):
-    doc = ET.parse(ROOT / p).getroot()
-    indefinite = [e for e in doc.iter() if e.get('begin') == 'indefinite']
-    # 无 id 的动画使用结构选择器，不修改只读原件。
-    selectors = []
-    for e in indefinite:
-        if e.get('id'): selectors.append('#' + e.get('id'))
-        else:
-            parent = next(n for n in doc.iter() if e in list(n))
-            chain = [f':nth-child({list(parent).index(e)+1})']
-            while parent is not doc:
-                grand = next(n for n in doc.iter() if parent in list(n))
-                chain.insert(0, f':nth-child({list(grand).index(parent)+1})')
-                parent = grand
-            selectors.append('svg > ' + ' > '.join(chain))
-    return doc, selectors
+def complex_asset(p, folder):
+    relative = p.relative_to(folder).with_suffix('').as_posix()
+    sibling = p.with_suffix('.json')
+    if sibling.exists():
+        data = json.loads(sibling.read_text())
+        if not isinstance(data, dict) or data.get('id') != p.stem:
+            raise ValueError(f'{sibling.name} 的id必须和SVG文件名一致')
+        actions = data.get('动作')
+        if not isinstance(actions, list):
+            raise ValueError(f'{sibling.name} 缺少动作数组')
+        if not actions:
+            actions = [{'名字':'待机','种类':'循环','静态':True,'毫秒':0,'动画验证':'来源JSON声明静态，待Chrome复核'}]
+        for action in actions:
+            if not isinstance(action, dict) or not action.get('名字') or action.get('种类') not in ['循环','播一次','播完停住','进场后循环']:
+                raise ValueError(f'{sibling.name} 的动作结构不合法')
+            if action['种类'] != '循环' and not isinstance(action.get('毫秒'), (int, float)):
+                raise ValueError(f'{sibling.name} 的非循环动作缺少毫秒')
+        source = sibling.relative_to(ROOT).as_posix()
+        extra = {key:data[key] for key in ['染色','混合','槽']}
+    else:
+        # 新版约定只有30个普通图标没有动作JSON，主图与染色图标不能回退旧说明。
+        if p.parent != folder / 'icons' or p.stem.startswith('icon_tint_'):
+            raise ValueError(f'{p.name} 缺少同目录动作JSON，停止登记')
+        actions = [{'名字':'待机','种类':'循环','动画验证':'待Chrome验证'}]
+        source = 'docs/阶段0-需求.md 第3节：普通30图标只有待机循环'
+        extra = {'染色':False,'混合':'normal','槽':{}}
+    return {'id':f'复杂测试图/{relative}','批':'复杂测试图','文件':p.relative_to(ROOT).as_posix(),'动作':actions,**extra,'来源':source}
 
 def main():
     assets = []
@@ -48,29 +60,16 @@ def main():
                 actions.append(action)
             assets.append({'id':f'{batch}/{p.stem}', '批':batch, '文件':p.relative_to(ROOT).as_posix(), '动作':actions, '染色':a.get('tint',False), '来源':(folder / manifest).as_posix()})
     assets.append({'id':'试验图/试验图','批':'试验图','文件':'素材/试验图/试验图.svg','动作':[{'名字':'待机','种类':'循环'},{'名字':'施法','种类':'播一次','毫秒':1200,'触发':{'class':'act-cast'},'smil':['#smilBlur']}],'染色':False})
-    fallback = {'char_lich':('施法','act-cast',1200),'char_golem':('受击','act-hit',400),'fx_explosion':('爆炸','act-explode',1000),'fx_lightning':('闪电','act-strike',600)}
     folder = ROOT / '素材/源文件/复杂测试图'
     for p in sorted(folder.rglob('*.svg')):
-        relative = p.relative_to(folder).with_suffix('').as_posix()
-        sibling = p.with_suffix('.json')
-        if sibling.exists():
-            supplement = json.loads(sibling.read_text())
-            actions = supplement if isinstance(supplement,list) else supplement['动作']
-            source = sibling.relative_to(ROOT).as_posix()
-            tint = False if isinstance(supplement,list) else supplement.get('染色',False)
-        else:
-            doc, selectors = svg_info(p.relative_to(ROOT))
-            actions = [{'名字':'待机','种类':'循环','动画验证':'待Chrome验证'}]
-            if p.stem in fallback:
-                name, cls, duration = fallback[p.stem]
-                styles = '\n'.join(e.text or '' for e in doc.iter() if e.tag.endswith('}style'))
-                if 'svg.' + cls not in styles or not selectors: raise ValueError(f'{p.name} 动作约定不符，需人工复核')
-                actions.append({'名字':name,'种类':'播一次','毫秒':duration,'触发':{'class':cls},'smil':selectors})
-            source = '素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器'
-            tint = False
-        write(f'素材/清单补充/{relative}.json', {'id':f'复杂测试图/{relative}','动作':actions,'染色':tint,'来源':source})
-        assets.append({'id':f'复杂测试图/{relative}','批':'复杂测试图','文件':p.relative_to(ROOT).as_posix(),'动作':actions,'染色':tint,'来源':source})
+        assets.append(complex_asset(p, folder))
+    # 只登记已交付的本地素材；公开集必须另经Chrome筛选，下载不等于通过。
+    commit = '500d8605a28ac092c1b146c06ec65c0e70e99ec4'
+    cache = pathlib.Path(os.environ.get('SVG_RENDER_CACHE') or (pathlib.Path.home() / ('Library/Caches/svg-render' if sys.platform == 'darwin' else '.cache/svg-render')))
+    tests = cache / 'tests/resvg' / commit / 'crates/resvg/tests'
+    public = {'状态':'待Chrome筛选' if tests.is_dir() else '未登记','提交':commit,'缓存相对路径':f'tests/resvg/{commit}','登记数':0,'原因':'已下载固定提交，必须Chrome确认静态且全部特性支持后才登记' if tests.is_dir() else '未在当前平台缓存找到公开测试集，不能伪造覆盖'}
+    if tests.is_dir(): public['候选数'] = len(list(tests.rglob('*.svg')))
     write('素材/清单.json',assets)
-    write('报告/素材登记.json',{'状态':'待验证','数量':len(assets),'分批数量':{b:sum(a['批']==b for a in assets) for b in ['现有游戏','待接入','试验图','复杂测试图','公开测试集']},'上游清单未交付的id':omitted,'stay待Chrome分类':pending,'静态及周期判断':'待Chrome；待机种类沿用循环槽位，不表示已确认有动画；无动画时应只出0毫秒','公开测试集':{'状态':'未登记','原因':'resvg测试集尚未下载和固定提交，不能伪造覆盖'},'Chrome验证':'尚未运行；运行 node tools/scan/cli.mjs 后更新'})
+    write('报告/素材登记.json',{'状态':'待验证','数量':len(assets),'分批数量':{b:sum(a['批']==b for a in assets) for b in ['现有游戏','待接入','试验图','复杂测试图','公开测试集']},'上游清单未交付的id':omitted,'stay待Chrome分类':pending,'静态及周期判断':'待Chrome；待机种类沿用循环槽位，不表示已确认有动画；无动画时应只出0毫秒','公开测试集':public,'Chrome验证':'尚未运行；运行 node tools/scan/cli.mjs 后更新'})
     print(f'已登记 {len(assets)} 个SVG；{len(pending)} 个stay动作待Chrome判断；公开测试集未登记')
 if __name__ == '__main__': main()

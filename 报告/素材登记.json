@@ -1,11 +1,11 @@
 {
   "状态": "待验证",
-  "数量": 158,
+  "数量": 162,
   "分批数量": {
     "现有游戏": 82,
     "待接入": 35,
     "试验图": 1,
-    "复杂测试图": 40,
+    "复杂测试图": 44,
     "公开测试集": 0
   },
   "上游清单未交付的id": {
@@ -125,14 +125,13 @@
   "公开测试集": {
     "状态": "待Chrome筛选",
     "提交": "500d8605a28ac092c1b146c06ec65c0e70e99ec4",
-    "候选数": 1798,
-    "目录": "/workspace/shared/svg-render-cache/tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4",
-    "条件": "仅静态且每项特性均为支持才登记；不确定的路径语法另列待验证"
+    "缓存相对路径": "tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4",
+    "登记数": 0,
+    "原因": "已下载固定提交，必须Chrome确认静态且全部特性支持后才登记",
+    "候选数": 1798
   },
   "Chrome验证": {
-    "状态": "阻塞",
-    "版本": "157.0.8103.50",
-    "原因": "Chrome 启动失败：[17:17:1110/231845.644281:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/google-chrome-for-testing/Crash Reports/settings.dat: Read-only file system (30)\n[17:17:1110/231845.652167:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/google-chrome-for-testing/Crash Reports/settings.dat: Read-only file system (30)\n[17:17:1110/231845.669507:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)\n[1110/231845.669987:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)\nReceived signal 6\n#0 0x55b739e50da3 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6e2fda2)\n#1 0x55b73f4f1414 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0xc4d0413)\n#2 0x7f9ca084dd70 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x3fd6f)\n#3 0x55b73f4a998d (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0xc48898c)\n#4 0x55b73f4a98dd (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0xc4888dc)\n#5 0x55b736c90225 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x3c6f224)\n#6 0x55b7368ef8e9 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x38ce8e8)\n#7 0x55b73f4a9b00 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0xc488aff)\n#8 0x55b737eb7a19 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x4e96a18)\n#9 0x55b739b6e49a (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6b4d499)\n#10 0x55b739b6e997 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6b4d996)\n#11 0x55b739b6e7a1 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6b4d7a0)\n#12 0x55b739b6e744 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6b4d743)\n#13 0x55b73a4e4e19 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x74c3e18)\n#14 0x55b73a4e3e23 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x74c2e22)\n#15 0x55b738bcdeb0 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x5baceaf)\n#16 0x55b738bd32b9 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x5bb22b8)\n#17 0x55b738bd38da (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x5bb28d9)\n#18 0x7f9ca0837ca8 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x29ca7)\n  r8: 000024800007050b  r9: 0000000000000001 r10: 000024800007050b r11: 0000000000000246\n r12: 00007ffcb20dc328 r13: 0000000000000006 r14: 000000000000008b r15: 00002480000b0640\n  di: 0000000000000011  si: 0000000000000011  bp: 00007ffcb20dc2c0  bx: 0000000000000011\n  dx: 0000000000000006  ax: 0000000000000000  cx: 00007f9ca08a269c  sp: 00007ffcb20dc1b0\n  ip: 00007f9ca08a269c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000\n trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000\n[end of stack trace]\n[1:1:0100/000000.706980:ERROR:content/zygote/zygote_main_linux.cc:197] Failed sending zygote boot message: Broken pipe (32)\n[25:25:0100/000000.706999:ERROR:content/zygote/zygote_linux.cc:662] write: Broken pipe (32)\n",
-    "已扫描数量": 0
+    "状态": "待运行",
+    "说明": "新版162项尚未运行Chrome；上一轮Chrome socket EPERM阻塞，本轮未重试、不代表已解除。"
   }
 }

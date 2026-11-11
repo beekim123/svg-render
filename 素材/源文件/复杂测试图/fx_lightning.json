@@ -1,0 +1,63 @@
+{
+  "id": "fx_lightning",
+  "动作": [
+    {
+      "名字": "闪电",
+      "种类": "播一次",
+      "毫秒": 600,
+      "触发": {
+        "class": "act-strike"
+      },
+      "smil": [
+        "#bolt_flash_smil",
+        "#bolt_outer_d_0",
+        "#bolt_core_d_0",
+        "#bolt_outer_d_1",
+        "#bolt_core_d_1",
+        "#bolt_outer_d_2",
+        "#bolt_core_d_2",
+        "#bolt_branch_d_0",
+        "#bolt_branch_d_1",
+        "#bolt_branch_d_2",
+        "#bolt_branch_d_3",
+        "#bolt_branch_d_4",
+        "#bolt_branch_d_5",
+        "#bolt_branch_d_6",
+        "#bolt_branch_d_7",
+        "#bolt_branch_d_8",
+        "#bolt_branch_d_9",
+        "#bolt_branch_d_10",
+        "#bolt_branch_d_11",
+        "#bolt_branch_d_12",
+        "#bolt_branch_d_13",
+        "#bolt_branch_d_14",
+        "#bolt_branch_d_15",
+        "#bolt_branch_d_16",
+        "#bolt_branch_d_17",
+        "#bolt_branch_d_18",
+        "#bolt_branch_d_19",
+        "#bolt_branch_d_20",
+        "#bolt_branch_d_21",
+        "#bolt_branch_d_22",
+        "#bolt_branch_d_23",
+        "#bolt_branch_d_24",
+        "#bolt_branch_d_25",
+        "#bolt_branch_d_26",
+        "#bolt_branch_d_27",
+        "#bolt_branch_d_28",
+        "#bolt_branch_d_29",
+        "#bolt_branch_d_30",
+        "#bolt_branch_d_31",
+        "#bolt_branch_d_32",
+        "#bolt_branch_d_33",
+        "#bolt_branch_d_34",
+        "#bolt_branch_d_35",
+        "#bolt_branch_d_36",
+        "#bolt_branch_d_37"
+      ]
+    }
+  ],
+  "混合": "screen",
+  "染色": false,
+  "槽": {}
+}

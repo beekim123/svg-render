@@ -1,9 +1,9 @@
 {
-  "提交": "f4d19582b0a831b62b9faf124dd549cec1698f90",
+  "提交": "503c5ef48906da7bacda7018e2cc65bd343f9f13",
   "测试时工作区有修改": true,
   "平台": "linux",
   "架构": "x64",
-  "时间": "2026-11-11T07:30:31.023Z",
+  "时间": "2026-11-11T07:43:14.008Z",
   "全部通过": false,
   "检查": [
     {
@@ -19,14 +19,14 @@
       "状态": "通过",
       "通过": true,
       "退出码": 0,
-      "日志": "通过：完全相同与全透明隐藏 RGB\n通过：抗锯齿圆平移一像素\n通过：抹掉10×10方块\n通过：抹掉1×60线\n通过：整体加3与有符号通道偏色\n通过：白色半透明块128对168\n通过：文字区域独立阈值\n通过：文字和非文字分别选择最差底且内容不重计\n通过：小图镜像边界、透明外扩、平方倍率和GPU基准\n报告：/tmp/svg-compare-zVkO1W/report/index.html\n未通过 a.png (3 毫秒)\n报告：/tmp/svg-compare-zVkO1W/report/index.html\n通过 a.png (1 毫秒)\n报告：/tmp/svg-compare-zVkO1W/report/index.html\n通过：CLI退出码、配对、元数据与独立HTML\n通过：五对真实素材对照Python试验版\n4K不透明读取、计算、差异编码及HTML/JSON：3141.1 毫秒，峰值内存 415.3 MiB\n通过：3840×2160不透明非相同图端到端五秒内\n4K半透明双底读取、计算、差异编码及HTML/JSON：3339.3 毫秒，峰值内存 438.7 MiB\n通过：3840×2160半透明双底非相同图端到端五秒内\n完成：16 项检查。\n对照出错：--倍率 必须为正数\n"
+      "日志": "通过：完全相同与全透明隐藏 RGB\n通过：抗锯齿圆平移一像素\n通过：抹掉10×10方块\n通过：抹掉1×60线\n通过：整体加3与有符号通道偏色\n通过：白色半透明块128对168\n通过：文字区域独立阈值\n通过：文字和非文字分别选择最差底且内容不重计\n通过：小图镜像边界、透明外扩、平方倍率和GPU基准\n报告：/tmp/svg-compare-IODCQa/report/index.html\n未通过 a.png (3 毫秒)\n报告：/tmp/svg-compare-IODCQa/report/index.html\n通过 a.png (1 毫秒)\n报告：/tmp/svg-compare-IODCQa/report/index.html\n通过：CLI退出码、配对、元数据与独立HTML\n通过：五对真实素材对照Python试验版\n4K不透明读取、计算、差异编码及HTML/JSON：3134.2 毫秒，峰值内存 351.3 MiB\n通过：3840×2160不透明非相同图端到端五秒内\n4K半透明双底读取、计算、差异编码及HTML/JSON：3595.4 毫秒，峰值内存 438.0 MiB\n通过：3840×2160半透明双底非相同图端到端五秒内\n完成：16 项检查。\n对照出错：--倍率 必须为正数\n"
     },
     {
       "序号": 3,
       "检查": "覆盖",
       "状态": "未通过",
       "通过": false,
-      "素材数": 158,
+      "素材数": 162,
       "动作数": 0,
       "帧数": 0,
       "错误": [
@@ -54,12 +54,12 @@
       "通过": false,
       "详情": {
         "状态": "待验证",
-        "数量": 158,
+        "数量": 162,
         "分批数量": {
           "现有游戏": 82,
           "待接入": 35,
           "试验图": 1,
-          "复杂测试图": 40,
+          "复杂测试图": 44,
           "公开测试集": 0
         },
         "上游清单未交付的id": {
@@ -179,15 +179,14 @@
         "公开测试集": {
           "状态": "待Chrome筛选",
           "提交": "500d8605a28ac092c1b146c06ec65c0e70e99ec4",
-          "候选数": 1798,
-          "目录": "/workspace/shared/svg-render-cache/tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4",
-          "条件": "仅静态且每项特性均为支持才登记；不确定的路径语法另列待验证"
+          "缓存相对路径": "tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4",
+          "登记数": 0,
+          "原因": "已下载固定提交，必须Chrome确认静态且全部特性支持后才登记",
+          "候选数": 1798
         },
         "Chrome验证": {
-          "状态": "阻塞",
-          "版本": "157.0.8103.50",
-          "原因": "Chrome 启动失败：[17:17:1110/231845.644281:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/google-chrome-for-testing/Crash Reports/settings.dat: Read-only file system (30)\n[17:17:1110/231845.652167:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:208] open /home/agent/.config/google-chrome-for-testing/Crash Reports/settings.dat: Read-only file system (30)\n[17:17:1110/231845.669507:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)\n[1110/231845.669987:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)\nReceived signal 6\n#0 0x55b739e50da3 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6e2fda2)\n#1 0x55b73f4f1414 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0xc4d0413)\n#2 0x7f9ca084dd70 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x3fd6f)\n#3 0x55b73f4a998d (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0xc48898c)\n#4 0x55b73f4a98dd (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0xc4888dc)\n#5 0x55b736c90225 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x3c6f224)\n#6 0x55b7368ef8e9 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x38ce8e8)\n#7 0x55b73f4a9b00 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0xc488aff)\n#8 0x55b737eb7a19 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x4e96a18)\n#9 0x55b739b6e49a (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6b4d499)\n#10 0x55b739b6e997 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6b4d996)\n#11 0x55b739b6e7a1 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6b4d7a0)\n#12 0x55b739b6e744 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x6b4d743)\n#13 0x55b73a4e4e19 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x74c3e18)\n#14 0x55b73a4e3e23 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x74c2e22)\n#15 0x55b738bcdeb0 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x5baceaf)\n#16 0x55b738bd32b9 (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x5bb22b8)\n#17 0x55b738bd38da (/workspace/shared/svg-render-cache/chrome/157.0.8103.50/chrome-linux64/chrome+0x5bb28d9)\n#18 0x7f9ca0837ca8 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x29ca7)\n  r8: 000024800007050b  r9: 0000000000000001 r10: 000024800007050b r11: 0000000000000246\n r12: 00007ffcb20dc328 r13: 0000000000000006 r14: 000000000000008b r15: 00002480000b0640\n  di: 0000000000000011  si: 0000000000000011  bp: 00007ffcb20dc2c0  bx: 0000000000000011\n  dx: 0000000000000006  ax: 0000000000000000  cx: 00007f9ca08a269c  sp: 00007ffcb20dc1b0\n  ip: 00007f9ca08a269c efl: 0000000000000246 cgf: 002b000000000033 erf: 0000000000000000\n trp: 0000000000000000 msk: 0000000000000000 cr2: 0000000000000000\n[end of stack trace]\n[1:1:0100/000000.706980:ERROR:content/zygote/zygote_main_linux.cc:197] Failed sending zygote boot message: Broken pipe (32)\n[25:25:0100/000000.706999:ERROR:content/zygote/zygote_linux.cc:662] write: Broken pipe (32)\n",
-          "已扫描数量": 0
+          "状态": "待运行",
+          "说明": "新版162项尚未运行Chrome；上一轮Chrome socket EPERM阻塞，本轮未重试、不代表已解除。"
         }
       }
     },
@@ -359,9 +358,16 @@
         "复杂测试图/icons/icon_status_silence",
         "复杂测试图/icons/icon_status_stun",
         "复杂测试图/icons/icon_status_vampiric",
+        "复杂测试图/icons/icon_tint_flat@E3263A",
+        "复杂测试图/icons/icon_tint_flat@3FE3F0",
+        "复杂测试图/icons/icon_tint_gradient@E3263A",
+        "复杂测试图/icons/icon_tint_gradient@3FE3F0",
+        "复杂测试图/icons/icon_tint_shaded@E3263A",
+        "复杂测试图/icons/icon_tint_shaded@3FE3F0",
         "复杂测试图/scene_hall",
         "复杂测试图/scene_vault",
-        "复杂测试图/ui_hud"
+        "复杂测试图/ui_hud",
+        "复杂测试图/ui_hud_slot"
       ]
     },
     {
@@ -876,7 +882,7 @@
         "实验": 5,
         "平台": "linux",
         "架构": "x64",
-        "时间": "2026-11-11T07:25:13.580Z",
+        "时间": "2026-11-11T07:33:47.738Z",
         "及格": false,
         "像素及格": false,
         "指令已校准": false,
@@ -1208,7 +1214,9 @@
           "编译器": "/workspace/shared/svg-render-cache/emsdk/7.0.0/install/bin/clang++",
           "参数": [
             "-std=c++20",
-            "-O2",
+            "-DNDEBUG",
+            "-O3",
+            "-ffp-contract=off",
             "-flto=thin",
             "-I/workspace/shared/svg-render-cache/skia/ca84ce0a6f1659748188469a89361ccea71e3a64",
             "-DSK_USER_CONFIG_HEADER=\"/workspace/scratch/e4cad742399c/svg-render/实验/skia/chromium-config.h\"",
@@ -1225,7 +1233,7 @@
           "Skia提交": "ca84ce0a6f1659748188469a89361ccea71e3a64",
           "静态库": "/workspace/shared/svg-render-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-linux-x64/libskia.a",
           "编译设置": "is_official_build = true\nis_debug = false\nis_component_build = false\nis_trivial_abi = true\ncc = \"/workspace/shared/svg-render-cache/emsdk/7.0.0/install/bin/clang\"\ncxx = \"/workspace/shared/svg-render-cache/emsdk/7.0.0/install/bin/clang++\"\nskia_enable_optimize_size = false\nskia_disable_tracing = true\nskia_enable_ganesh = false\nskia_enable_graphite = false\nskia_use_gl = false\nskia_use_vulkan = false\nskia_use_metal = false\nskia_use_dawn = false\nskia_use_direct3d = false\nskia_use_angle = false\nskia_use_webgl = false\nskia_use_webgpu = false\nskia_enable_pdf = false\nskia_enable_skottie = false\nskia_enable_svg = false\nskia_enable_tools = false\nskia_enable_precompile = false\nskia_enable_fontmgr_empty = false\nskia_enable_fontmgr_win = false\nskia_enable_fontmgr_win_gdi = false\nskia_enable_fontmgr_android = false\nskia_enable_fontmgr_android_ndk = false\nskia_enable_fontmgr_custom_directory = false\nskia_enable_fontmgr_custom_embedded = false\nskia_enable_fontmgr_custom_empty = false\nskia_enable_fontmgr_fontations_empty = false\nskia_enable_fontmgr_fontconfig = false\nskia_enable_fontmgr_FontConfigInterface = false\nskia_use_freetype = false\nskia_use_fonthost_mac = false\nskia_use_fontconfig = false\nskia_use_fontations = false\nskia_use_harfbuzz = false\nskia_pdf_subset_harfbuzz = false\nskia_use_icu = false\nskia_use_client_icu = false\nskia_use_bidi = false\nskia_use_icu4x = false\nskia_use_libgrapheme = false\nskia_use_apple_unicode = false\nskia_enable_skunicode = false\nskia_use_libjpeg_turbo_decode = false\nskia_use_libjpeg_turbo_encode = false\nskia_use_libpng_decode = false\nskia_use_libpng_encode = false\nskia_use_libwebp_decode = false\nskia_use_libwebp_encode = false\nskia_use_libjxl_decode = false\nskia_use_libavif = false\nskia_use_crabbyavif = false\nskia_use_wuffs = false\nskia_use_dng_sdk = false\nskia_use_piex = false\nskia_use_ndk_images = false\nskia_use_ffmpeg = false\nskia_use_jpeg_gainmaps = false\nskia_use_rust_exif = false\nskia_use_rust_icc = false\nskia_use_rust_png_decode = false\nskia_use_rust_png_encode = false\nskia_use_rust_png_for_android = false\nskia_use_rust_bmp_decode = false\nskia_use_rust_ico_decode = false\nskia_use_rust_jpeg_decode = false\nskia_use_rust_jpeg_encode = false\nskia_use_expat = false\nskia_use_zlib = false\nskia_use_xps = false\nskia_use_perfetto = false\nskia_use_partition_alloc = false\nskia_build_rust_targets = false\nskia_use_lua = false\nskia_use_x11 = false\nskia_enable_android_utils = false\nskia_use_no_jpeg_encode = true\nskia_use_no_png_encode = true\nskia_use_no_webp_encode = true\nextra_cflags = [\"-DSK_USER_CONFIG_HEADER=\\\"/workspace/scratch/e4cad742399c/svg-render/实验/skia/chromium-config.h\\\"\",\"-O3\",\"-ffp-contract=off\",\"-ffunction-sections\",\"-fdata-sections\",\"-flto=thin\",\"-fPIC\"]\nextra_ldflags = [\"-flto=thin\",\"-fuse-ld=lld\",\"-Wl,--gc-sections\"]\ntarget_os = \"linux\"\ntarget_cpu = \"x64\"\nar = \"/workspace/shared/svg-render-cache/emsdk/7.0.0/install/bin/llvm-ar\"\n",
-          "耗时毫秒": 4888,
+          "耗时毫秒": 5103,
           "退出码": 0,
           "标准输出": "",
           "标准错误": ""
@@ -1249,7 +1257,7 @@
       "检查": "只读目录",
       "状态": "通过",
       "通过": true,
-      "文件数": 235,
+      "文件数": 266,
       "变化": []
     },
     {

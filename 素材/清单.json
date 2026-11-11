@@ -2720,12 +2720,13 @@
     "动作": [
       {
         "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
+        "种类": "循环"
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/card_foil.json"
   },
   {
     "id": "复杂测试图/char_golem",
@@ -2734,8 +2735,7 @@
     "动作": [
       {
         "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
+        "种类": "循环"
       },
       {
         "名字": "受击",
@@ -2779,10 +2779,23 @@
           "#debris_smil_30",
           "#debris_smil_31"
         ]
+      },
+      {
+        "名字": "倒下",
+        "种类": "播完停住",
+        "毫秒": 800,
+        "触发": {
+          "class": "act-down"
+        },
+        "smil": [
+          "#golem_down_smil"
+        ]
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/char_golem.json"
   },
   {
     "id": "复杂测试图/char_lich",
@@ -2791,8 +2804,7 @@
     "动作": [
       {
         "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
+        "种类": "循环"
       },
       {
         "名字": "施法",
@@ -2804,10 +2816,23 @@
         "smil": [
           "#cast_std_anim"
         ]
+      },
+      {
+        "名字": "眩晕",
+        "种类": "进场后循环",
+        "毫秒": 500,
+        "触发": {
+          "class": "act-daze"
+        },
+        "smil": [
+          "#daze_in_anim"
+        ]
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/char_lich.json"
   },
   {
     "id": "复杂测试图/char_swarm",
@@ -2816,12 +2841,13 @@
     "动作": [
       {
         "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
+        "种类": "循环"
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/char_swarm.json"
   },
   {
     "id": "复杂测试图/fx_circle",
@@ -2830,23 +2856,19 @@
     "动作": [
       {
         "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
+        "种类": "循环"
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "screen",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/fx_circle.json"
   },
   {
     "id": "复杂测试图/fx_explosion",
     "批": "复杂测试图",
     "文件": "素材/源文件/复杂测试图/fx_explosion.svg",
     "动作": [
-      {
-        "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
-      },
       {
         "名字": "爆炸",
         "种类": "播一次",
@@ -2871,18 +2893,15 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "screen",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/fx_explosion.json"
   },
   {
     "id": "复杂测试图/fx_lightning",
     "批": "复杂测试图",
     "文件": "素材/源文件/复杂测试图/fx_lightning.svg",
     "动作": [
-      {
-        "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
-      },
       {
         "名字": "闪电",
         "种类": "播一次",
@@ -2898,49 +2917,51 @@
           "#bolt_core_d_1",
           "#bolt_outer_d_2",
           "#bolt_core_d_2",
-          "svg > :nth-child(4) > :nth-child(17) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(18) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(19) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(20) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(21) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(22) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(23) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(24) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(25) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(26) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(27) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(28) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(29) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(30) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(31) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(32) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(33) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(34) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(35) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(36) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(37) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(38) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(39) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(40) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(41) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(42) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(43) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(44) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(45) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(46) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(47) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(48) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(49) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(50) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(51) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(52) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(53) > :nth-child(1)",
-          "svg > :nth-child(4) > :nth-child(54) > :nth-child(1)"
+          "#bolt_branch_d_0",
+          "#bolt_branch_d_1",
+          "#bolt_branch_d_2",
+          "#bolt_branch_d_3",
+          "#bolt_branch_d_4",
+          "#bolt_branch_d_5",
+          "#bolt_branch_d_6",
+          "#bolt_branch_d_7",
+          "#bolt_branch_d_8",
+          "#bolt_branch_d_9",
+          "#bolt_branch_d_10",
+          "#bolt_branch_d_11",
+          "#bolt_branch_d_12",
+          "#bolt_branch_d_13",
+          "#bolt_branch_d_14",
+          "#bolt_branch_d_15",
+          "#bolt_branch_d_16",
+          "#bolt_branch_d_17",
+          "#bolt_branch_d_18",
+          "#bolt_branch_d_19",
+          "#bolt_branch_d_20",
+          "#bolt_branch_d_21",
+          "#bolt_branch_d_22",
+          "#bolt_branch_d_23",
+          "#bolt_branch_d_24",
+          "#bolt_branch_d_25",
+          "#bolt_branch_d_26",
+          "#bolt_branch_d_27",
+          "#bolt_branch_d_28",
+          "#bolt_branch_d_29",
+          "#bolt_branch_d_30",
+          "#bolt_branch_d_31",
+          "#bolt_branch_d_32",
+          "#bolt_branch_d_33",
+          "#bolt_branch_d_34",
+          "#bolt_branch_d_35",
+          "#bolt_branch_d_36",
+          "#bolt_branch_d_37"
         ]
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "screen",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/fx_lightning.json"
   },
   {
     "id": "复杂测试图/icons/icon_gem_amber",
@@ -2954,7 +2975,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_amethyst",
@@ -2968,7 +2991,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_diamond",
@@ -2982,7 +3007,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_emerald",
@@ -2996,7 +3023,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_obsidian",
@@ -3010,7 +3039,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_opal",
@@ -3024,7 +3055,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_ruby",
@@ -3038,7 +3071,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_sapphire",
@@ -3052,7 +3087,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_soulstone",
@@ -3066,7 +3103,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_gem_topaz",
@@ -3080,7 +3119,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_bell",
@@ -3094,7 +3135,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_chalice",
@@ -3108,7 +3151,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_crown",
@@ -3122,7 +3167,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_dagger",
@@ -3136,7 +3183,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_grimoire",
@@ -3150,7 +3199,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_hourglass",
@@ -3164,7 +3215,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_key",
@@ -3178,7 +3231,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_lantern",
@@ -3192,7 +3247,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_mirror",
@@ -3206,7 +3263,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_relic_ring",
@@ -3220,7 +3279,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_bleed",
@@ -3234,7 +3295,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_burn",
@@ -3248,7 +3311,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_curse",
@@ -3262,7 +3327,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_freeze",
@@ -3276,7 +3343,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_haste",
@@ -3290,7 +3359,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_poison",
@@ -3304,7 +3375,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_shield",
@@ -3318,7 +3391,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_silence",
@@ -3332,7 +3407,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_stun",
@@ -3346,7 +3423,9 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
   },
   {
     "id": "复杂测试图/icons/icon_status_vampiric",
@@ -3360,7 +3439,63 @@
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "docs/阶段0-需求.md 第3节：普通30图标只有待机循环"
+  },
+  {
+    "id": "复杂测试图/icons/icon_tint_flat",
+    "批": "复杂测试图",
+    "文件": "素材/源文件/复杂测试图/icons/icon_tint_flat.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true,
+        "毫秒": 0,
+        "动画验证": "来源JSON声明静态，待Chrome复核"
+      }
+    ],
+    "染色": true,
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/icons/icon_tint_flat.json"
+  },
+  {
+    "id": "复杂测试图/icons/icon_tint_gradient",
+    "批": "复杂测试图",
+    "文件": "素材/源文件/复杂测试图/icons/icon_tint_gradient.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true,
+        "毫秒": 0,
+        "动画验证": "来源JSON声明静态，待Chrome复核"
+      }
+    ],
+    "染色": true,
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/icons/icon_tint_gradient.json"
+  },
+  {
+    "id": "复杂测试图/icons/icon_tint_shaded",
+    "批": "复杂测试图",
+    "文件": "素材/源文件/复杂测试图/icons/icon_tint_shaded.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true,
+        "毫秒": 0,
+        "动画验证": "来源JSON声明静态，待Chrome复核"
+      }
+    ],
+    "染色": true,
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/icons/icon_tint_shaded.json"
   },
   {
     "id": "复杂测试图/scene_hall",
@@ -3369,12 +3504,13 @@
     "动作": [
       {
         "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
+        "种类": "循环"
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/scene_hall.json"
   },
   {
     "id": "复杂测试图/scene_vault",
@@ -3383,12 +3519,13 @@
     "动作": [
       {
         "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
+        "种类": "循环"
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/scene_vault.json"
   },
   {
     "id": "复杂测试图/ui_hud",
@@ -3397,11 +3534,33 @@
     "动作": [
       {
         "名字": "待机",
-        "种类": "循环",
-        "动画验证": "待Chrome验证"
+        "种类": "循环"
       }
     ],
     "染色": false,
-    "来源": "素材/源文件/复杂测试图/notes.md；已用XML核对SVG的class和indefinite动画选择器"
+    "混合": "normal",
+    "槽": {},
+    "来源": "素材/源文件/复杂测试图/ui_hud.json"
+  },
+  {
+    "id": "复杂测试图/ui_hud_slot",
+    "批": "复杂测试图",
+    "文件": "素材/源文件/复杂测试图/ui_hud_slot.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环"
+      }
+    ],
+    "染色": false,
+    "混合": "normal",
+    "槽": {
+      "slot_text": [
+        430,
+        196,
+        28
+      ]
+    },
+    "来源": "素材/源文件/复杂测试图/ui_hud_slot.json"
   }
 ]
