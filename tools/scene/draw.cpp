@@ -3,6 +3,7 @@
 #include "include/core/SkColorSpace.h"
 #include "include/core/SkPaint.h"
 #include "include/core/SkPath.h"
+#include "include/core/SkPathMeasure.h"
 #include "include/core/SkPicture.h"
 #include "include/core/SkPictureRecorder.h"
 #include "include/core/SkShader.h"
@@ -194,7 +195,20 @@ void drawNode(SkCanvas& canvas, const Value& node) {
                         const auto repeated = intervals;
                         intervals.insert(intervals.end(), repeated.begin(), repeated.end());
                     }
-                    stroke.setPathEffect(SkDashPathEffect::Make(intervals, number(node["strokeDashoffset"], 0)));
+                    float dashScale = 1;
+                    const float declaredLength = number(node["pathLength"], 0);
+                    if (declaredLength > 0) {
+                        SkPathMeasure measure(shape, false);
+                        float totalLength = 0;
+                        do {
+                            totalLength += measure.getLength();
+                        } while (measure.nextContour());
+                        dashScale = totalLength / declaredLength;
+                    }
+                    for (auto& interval : intervals) {
+                        interval *= dashScale;
+                    }
+                    stroke.setPathEffect(SkDashPathEffect::Make(intervals, number(node["strokeDashoffset"], 0) * dashScale));
                 }
                 canvas.drawPath(shape, stroke);
             }

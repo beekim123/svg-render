@@ -30,6 +30,7 @@ try {
   assert.deepEqual(rect.stroke.color, [36 / 255, 104 / 255, 172 / 255, 1]);
   assert.deepEqual(rect.strokeDasharray, [3, 2, 1, 3, 2, 1]);
   assert.equal(rect.strokeDashoffset, 2);
+  assert.equal(rect.pathLength, null);
   assert.match(ellipse.path, /^M/);
   assert.deepEqual(ellipse.fill.points, [12, 13, 0, 12, 13, 7]);
   assert.equal(patterned.fill.type, 'pattern');
@@ -43,17 +44,14 @@ try {
       <circle id="circle" cx="40" cy="40" r="12" pathLength="15" stroke-dasharray=".04 .96" stroke-dashoffset=".1"/>
       <rect id="rect" x="14.3" y="14.3" width="171.4" height="183.4" rx="5.8" pathLength="112" stroke-dasharray=".02 .98" stroke-dashoffset=".1"/>
       <ellipse id="ellipse" cx="60" cy="60" rx="10.5" ry="7.8" pathLength="12" stroke-dasharray=".05 .95" stroke-dashoffset=".1"/>
+      <path id="mirror" d="M60.5 70A31.5 39.5 0 1 1 123.5 70A31.5 39.5 0 1 1 60.5 70Z" pathLength="44" stroke-dasharray=".02 .98" stroke-dashoffset=".1"/>
     </g>
   </svg>`});
-  assert.deepEqual(calibrated.nodes[0].strokeDasharray, [2, 8]);
-  assert.equal(calibrated.nodes[0].strokeDashoffset, 1);
-  const lengths = await session.browser.evaluate('Array.from(document.querySelectorAll("line,circle,rect,ellipse"), element => element.getTotalLength())');
-  for (const [index, pathLength, firstDash] of [[1, 15, .04], [2, 112, .02], [3, 12, .05]]) {
-    const ratio = lengths[index] / pathLength;
+  for (const [index, pathLength, firstDash] of [[0, 1, .2], [1, 15, .04], [2, 112, .02], [3, 12, .05], [4, 44, .02]]) {
     const node = calibrated.nodes[index];
-    assert.ok(Math.abs(node.strokeDasharray[0] - firstDash * ratio) < 1e-9);
-    assert.ok(Math.abs(node.strokeDasharray[1] - (1 - firstDash) * ratio) < 1e-9);
-    assert.ok(Math.abs(node.strokeDashoffset - .1 * ratio) < 1e-9);
+    assert.equal(node.pathLength, pathLength);
+    assert.deepEqual(node.strokeDasharray, [firstDash, 1 - firstDash]);
+    assert.equal(node.strokeDashoffset, .1);
   }
   await assert.rejects(session.export({svg: '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><text>bad</text></svg>'}), /<text>/);
   console.log('场景导出：尺寸、变换、组合透明度、裁剪、渐变、pattern、虚线、pathLength 和不支持元素通过');

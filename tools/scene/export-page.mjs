@@ -239,9 +239,8 @@ export function exportScene(root = document.querySelector('svg')) {
       return [{type: 'group', opacity, clips: ownClips, children}];
     }
     if (style.visibility !== 'visible') return [];
-    const pathLength = element.pathLength.baseVal;
-    const dashScale = pathLength > 0 ? element.getTotalLength() / pathLength : 1;
-    const dashLength = value => value.endsWith('%') ? parseFloat(value) * diagonal / 100 : parseFloat(value) * dashScale;
+    const pathLength = element.hasAttribute('pathLength') ? element.pathLength.baseVal : null;
+    const dashLength = value => value.endsWith('%') ? parseFloat(value) * diagonal / 100 : parseFloat(value);
     const dash = style.strokeDasharray === 'none' ? [] : style.strokeDasharray.split(/[\s,]+/).filter(Boolean).map(dashLength);
     if (dash.length % 2) dash.push(...dash);
     const path = geometry(element);
@@ -249,6 +248,7 @@ export function exportScene(root = document.querySelector('svg')) {
     return [{
       type: 'path',
       path,
+      pathLength,
       matrix: matrix(base),
       fill: paint(style.fill, Number(style.fillOpacity), element, base),
       stroke: paint(style.stroke, Number(style.strokeOpacity), element, base),
