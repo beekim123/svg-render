@@ -9,9 +9,9 @@
 - A0 收素材已完成：118 SVG、218 个动作、8 件染色素材。
 - 来源 gemcard-demo 提交 a66b9ce1f524a17a669c78afc64523192a0a7289 的工作区，含未提交新画法。
 - 第 08 包 14 件、第 09 包 3 件返修已包含，来源记在 素材/新画法/来源.json。
-- A0 参照生成中；下一步由当前代理单 worker 完成，再做 A。当前无需你操作。
+- A0 参照生成中；下一步由当前代理完成剩余参照和 A 全量对照。当前无需你操作。
 - A1 场景导出已完成：tools/scene/export.mjs；定向夹具通过，实际样本已导出并贯通 376 帧。
-- C++ 与批处理实现已验证 376 帧全部过静止线；下一步由当前代理推送绘制步骤，再完成全量对照。
+- A2 C++ 与批处理完成：3 件、4 变体的 376 帧全部过静止线，最低 SSIM 0.99783045。
 - 原 main 未跟踪报告备份在 /private/tmp/svg-render-preserved-reports-20261112；非冲突文件已恢复，2 件不同文件留在备份。
 
 ## A0
@@ -30,6 +30,8 @@
 4. 对照网页放 报告/阶段1A/，最差 20 帧在前；118 件全部过线，未过帧带原因交 Claude。
 5. 支持形状、描边/虚线、纯色、线性/径向渐变、clipPath、pattern、fill-rule、变换和透明度；其他元素直接报名称。
 6. 不做二进制格式、量化、包体、速度基准、Blink 对照表、动画求值。
+7. 编译：node tools/scene/build.mjs out/mac/scene；实际绘制 CLI：out/mac/scene/scene-draw 场景.json 倍率 输出.png。
+8. 全量依次运行 node tools/scene/batch.mjs export、draw、compare；可加 --id 新画法/素材名。
 
 ## 后续
 
