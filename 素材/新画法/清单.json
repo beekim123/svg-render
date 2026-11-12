@@ -1,0 +1,2784 @@
+[
+  {
+    "id": "新画法/card_frame",
+    "批": "新画法",
+    "文件": "素材/新画法/card_frame.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_bg",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_bg.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_empty",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_empty.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_gem_bar",
+    "批": "新画法",
+    "文件": "素材/新画法/card_gem_bar.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_red_rough",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_red_rough.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_red_cut",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_red_cut.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_red_shine",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_red_shine.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_green_rough",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_green_rough.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_green_cut",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_green_cut.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_green_shine",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_green_shine.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_blue_rough",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_blue_rough.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_blue_cut",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_blue_cut.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_blue_shine",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_blue_shine.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_icon_red",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_icon_red.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_icon_green",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_icon_green.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/gem_icon_blue",
+    "批": "新画法",
+    "文件": "素材/新画法/gem_icon_blue.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/dummy",
+    "批": "新画法",
+    "文件": "素材/新画法/dummy.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/table_cloth",
+    "批": "新画法",
+    "文件": "素材/新画法/table_cloth.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/bg_tile",
+    "批": "新画法",
+    "文件": "素材/新画法/bg_tile.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/prop_rack",
+    "批": "新画法",
+    "文件": "素材/新画法/prop_rack.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_panel",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_panel.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_btn",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_btn.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_btn_primary",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_btn_primary.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_mult_badge",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_mult_badge.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "up",
+        "种类": "播一次",
+        "毫秒": 300,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "up"
+          ]
+        }
+      },
+      {
+        "名字": "double",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "double"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_icon_rules",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_icon_rules.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_icon_settings",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_icon_settings.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_icon_undo",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_icon_undo.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_icon_deck",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_icon_deck.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_hit",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_hit.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": true,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_same",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_same.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": true,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_shun",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_shun.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": true,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_white",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_white.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_rainbow",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_rainbow.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_grow",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_grow.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": true,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_chest",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_chest.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "bite",
+        "种类": "播一次",
+        "毫秒": 300,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "bite"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_soldier",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_soldier.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "unwind",
+        "种类": "播一次",
+        "毫秒": 300,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "unwind"
+          ]
+        }
+      },
+      {
+        "名字": "wound_down",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "wound_down"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_bear",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_bear.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_clock",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_clock.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "tick",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "tick"
+          ]
+        }
+      },
+      {
+        "名字": "ring",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "ring"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_dragon",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_dragon.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "layer",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "layer"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_bag",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_bag.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_lens",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_lens.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_hammer",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_hammer.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_mirror",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_mirror.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": true,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_stone",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_stone.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_frame_tool",
+    "批": "新画法",
+    "文件": "素材/新画法/card_frame_tool.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_bg_tool",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_bg_tool.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_back",
+    "批": "新画法",
+    "文件": "素材/新画法/card_back.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_heart",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_heart.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "lose",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "lose"
+          ]
+        }
+      },
+      {
+        "名字": "gain",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "gain"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_heart_empty",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_heart_empty.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_countdown",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_countdown.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "tick",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "tick"
+          ]
+        }
+      },
+      {
+        "名字": "warn",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "warn"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_hp_frame",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_hp_frame.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_node_fight",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_node_fight.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_node_elite",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_node_elite.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_node_boss",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_node_boss.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_banner",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_banner.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/loot_chest",
+    "批": "新画法",
+    "文件": "素材/新画法/loot_chest.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "drop",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "drop"
+          ]
+        }
+      },
+      {
+        "名字": "open",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "open"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/title_emblem",
+    "批": "新画法",
+    "文件": "素材/新画法/title_emblem.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/prop_pillar",
+    "批": "新画法",
+    "文件": "素材/新画法/prop_pillar.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_attack",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_attack.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_kill",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_kill.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 900,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_overkill",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_overkill.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_slam",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_slam.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": true,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/fx_heal",
+    "批": "新画法",
+    "文件": "素材/新画法/fx_heal.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": true
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_rule_sign",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_rule_sign.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "flip",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "flip"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_bite",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_bite.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_hug",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_hug.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_wind",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_wind.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_bell",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_bell.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_same",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_same.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_once",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_once.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_white",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_white.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_rainbow",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_rainbow.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_heart",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_heart.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_grow",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_grow.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_rainbow_slot",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_rainbow_slot.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "light",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 300,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "light"
+          ]
+        }
+      },
+      {
+        "名字": "out",
+        "种类": "播一次",
+        "毫秒": 300,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "out"
+          ]
+        }
+      }
+    ],
+    "染色": true,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_door",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_door.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "open",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "open"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_reward_card",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_reward_card.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_reward_shop",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_reward_shop.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_reward_heal",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_reward_heal.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/npc_knocker",
+    "批": "新画法",
+    "文件": "素材/新画法/npc_knocker.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "talk",
+        "种类": "播一次",
+        "毫秒": 1200,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "talk"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_hourglass",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_hourglass.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_seal",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_seal.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_shadow",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_shadow.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_whistle",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_whistle.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_start2",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_start2.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_slow",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_slow.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_first2",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_first2.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_twice",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_twice.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/ui_node_door",
+    "批": "新画法",
+    "文件": "素材/新画法/ui_node_door.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_palette",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_palette.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": true,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_potion",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_potion.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/card_art_diamond",
+    "批": "新画法",
+    "文件": "素材/新画法/card_art_diamond.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "play",
+        "种类": "播一次",
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "play"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_box",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_box.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "duck",
+        "种类": "播一次",
+        "毫秒": 300,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "duck"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_portrait",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_portrait.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "refuse",
+        "种类": "播一次",
+        "毫秒": 300,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "refuse"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_lock",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_lock.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "click",
+        "种类": "播一次",
+        "毫秒": 250,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "click"
+          ]
+        }
+      },
+      {
+        "名字": "shut",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "shut"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_duck",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_duck.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_picky",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_picky.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_six",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_six.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/bg_tile_hall",
+    "批": "新画法",
+    "文件": "素材/新画法/bg_tile_hall.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/prop_frame",
+    "批": "新画法",
+    "文件": "素材/新画法/prop_frame.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/prop_curtain",
+    "批": "新画法",
+    "文件": "素材/新画法/prop_curtain.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_tree",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_tree.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "regrow",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "regrow"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/mon_armor",
+    "批": "新画法",
+    "文件": "素材/新画法/mon_armor.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      },
+      {
+        "名字": "hit",
+        "种类": "播一次",
+        "毫秒": 400,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit"
+          ]
+        }
+      },
+      {
+        "名字": "hit_big",
+        "种类": "播一次",
+        "毫秒": 700,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "hit_big"
+          ]
+        }
+      },
+      {
+        "名字": "attack",
+        "种类": "播一次",
+        "毫秒": 800,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "attack"
+          ]
+        }
+      },
+      {
+        "名字": "daze",
+        "种类": null,
+        "分类状态": "待验证",
+        "stay": true,
+        "毫秒": 600,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "daze"
+          ]
+        }
+      },
+      {
+        "名字": "die",
+        "种类": "播一次",
+        "毫秒": 1000,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "die"
+          ]
+        }
+      },
+      {
+        "名字": "cap",
+        "种类": "播一次",
+        "毫秒": 500,
+        "触发": {
+          "attr": [
+            "data-anim",
+            "cap"
+          ]
+        }
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_regrow",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_regrow.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/rule_cap",
+    "批": "新画法",
+    "文件": "素材/新画法/rule_cap.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_red",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_red.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_green",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_green.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_blue",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_blue.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_shun",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_shun.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_same4",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_same4.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_link",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_link.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_shine",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_shine.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_guard",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_guard.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_rbheal",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_rbheal.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/relic_biggem",
+    "批": "新画法",
+    "文件": "素材/新画法/relic_biggem.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/bg_tile_vault",
+    "批": "新画法",
+    "文件": "素材/新画法/bg_tile_vault.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/prop_coins",
+    "批": "新画法",
+    "文件": "素材/新画法/prop_coins.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  },
+  {
+    "id": "新画法/prop_urn",
+    "批": "新画法",
+    "文件": "素材/新画法/prop_urn.svg",
+    "动作": [
+      {
+        "名字": "待机",
+        "种类": "循环",
+        "静态": false
+      }
+    ],
+    "染色": false,
+    "来源": "gemcard-demo/art/art-manifest.json"
+  }
+]

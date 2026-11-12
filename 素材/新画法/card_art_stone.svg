@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-card_art_stone" viewBox="0 0 176 188" width="176" height="188">
+<title>额外牌原画 · 磨石</title>
+<style>
+.svg-card_art_stone g { transform-box: view-box; }
+.svg-card_art_stone #shadow { transform-origin: 96px 168px; }
+.svg-card_art_stone #stand { transform-origin: 96px 146px; }
+.svg-card_art_stone #wheel { transform-origin: 92px 86px; }
+.svg-card_art_stone #gem_grinding { transform-origin: 118px 54px; }
+.svg-card_art_stone #grind_spark { transform-origin: 108px 60px; opacity: 0.8; }
+.svg-card_art_stone #gem_red { transform-origin: 60px 144px; }
+.svg-card_art_stone #gem_green { transform-origin: 96px 144px; }
+.svg-card_art_stone #gem_blue { transform-origin: 132px 144px; }
+
+/* 待机 3000ms：0(0%) 静止/低位 → 1500(50%) 轻变化最大/高位 → 3000(100%) 与0帧一致 */
+@keyframes svg-card_art_stone-idle-wheel {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: linear; }
+  50% { transform: translate(0px,0px) rotate(180deg) scale(1,1); animation-timing-function: linear; }
+  100% { transform: translate(0px,0px) rotate(360deg) scale(1,1); }
+}
+@keyframes svg-card_art_stone-idle-grind {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: ease-in-out; }
+  50% { transform: translate(-1.5px,1.5px) rotate(-2deg) scale(1.04,1.04); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); }
+}
+@keyframes svg-card_art_stone-idle-spark {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.8; animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,0px) rotate(8deg) scale(1.18,1.18); opacity: 1; animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.8; }
+}
+.svg-card_art_stone:not([data-anim]) #wheel,
+.svg-card_art_stone[data-anim="idle"] #wheel { animation: svg-card_art_stone-idle-wheel 3s infinite; }
+.svg-card_art_stone:not([data-anim]) #gem_grinding,
+.svg-card_art_stone[data-anim="idle"] #gem_grinding { animation: svg-card_art_stone-idle-grind 3s infinite; }
+.svg-card_art_stone:not([data-anim]) #grind_spark,
+.svg-card_art_stone[data-anim="idle"] #grind_spark { animation: svg-card_art_stone-idle-spark 3s infinite; }
+
+/* play 600ms：0(0%) 静止 → 100(16.67%) 磨轮加速，红宝石亮且稍大 → 200(33.33%) 绿宝石亮且稍大 → 300(50%) 蓝宝石亮且稍大 → 400(66.67%) 三颗完成打磨保持 → 600(100%) 恢复静止 */
+@keyframes svg-card_art_stone-play-wheel {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.67% { transform: translate(0px,0px) rotate(140deg) scale(1.03,1.03); animation-timing-function: linear; }
+  33.33% { transform: translate(0px,0px) rotate(280deg) scale(1.03,1.03); animation-timing-function: linear; }
+  50% { transform: translate(0px,0px) rotate(420deg) scale(1.03,1.03); animation-timing-function: linear; }
+  66.67% { transform: translate(0px,0px) rotate(560deg) scale(1.02,1.02); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(720deg) scale(1,1); }
+}
+@keyframes svg-card_art_stone-play-stand {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.67% { transform: translate(0px,2px) rotate(0deg) scale(1.02,0.98); animation-timing-function: ease-in-out; }
+  33.33% { transform: translate(0px,-1px) rotate(0deg) scale(0.99,1.01); animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,2px) rotate(0deg) scale(1.02,0.98); animation-timing-function: ease-in-out; }
+  66.67% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); }
+}
+@keyframes svg-card_art_stone-play-grind {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.67% { transform: translate(-3px,3px) rotate(-3deg) scale(1.06,1.06); animation-timing-function: ease-in-out; }
+  33.33% { transform: translate(-2px,2px) rotate(-1deg) scale(1.04,1.04); animation-timing-function: ease-in-out; }
+  50% { transform: translate(-3px,3px) rotate(-3deg) scale(1.06,1.06); animation-timing-function: ease-in-out; }
+  66.67% { transform: translate(-2px,2px) rotate(-2deg) scale(1.04,1.04); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); }
+}
+@keyframes svg-card_art_stone-play-spark {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.8; animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.67% { transform: translate(0px,0px) rotate(12deg) scale(1.36,1.36); opacity: 1; animation-timing-function: ease-in-out; }
+  33.33% { transform: translate(0px,0px) rotate(-8deg) scale(1.28,1.28); opacity: 0.96; animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,0px) rotate(10deg) scale(1.36,1.36); opacity: 1; animation-timing-function: ease-in-out; }
+  66.67% { transform: translate(0px,0px) rotate(4deg) scale(1.25,1.25); opacity: 0.95; animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.8; }
+}
+@keyframes svg-card_art_stone-play-red {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: cubic-bezier(.34,1.56,.64,1); }
+  16.67% { transform: translate(0px,-7px) rotate(0deg) scale(1.34,1.34); animation-timing-function: ease-in-out; }
+  33.33% { transform: translate(0px,-5px) rotate(0deg) scale(1.24,1.24); animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,-5px) rotate(0deg) scale(1.24,1.24); animation-timing-function: linear; }
+  66.67% { transform: translate(0px,-5px) rotate(0deg) scale(1.24,1.24); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); }
+}
+@keyframes svg-card_art_stone-play-green {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.67% { transform: translate(0px,1px) rotate(0deg) scale(0.95,0.95); animation-timing-function: cubic-bezier(.34,1.56,.64,1); }
+  33.33% { transform: translate(0px,-7px) rotate(0deg) scale(1.34,1.34); animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,-5px) rotate(0deg) scale(1.24,1.24); animation-timing-function: linear; }
+  66.67% { transform: translate(0px,-5px) rotate(0deg) scale(1.24,1.24); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); }
+}
+@keyframes svg-card_art_stone-play-blue {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.67% { transform: translate(0px,1px) rotate(0deg) scale(0.96,0.96); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  33.33% { transform: translate(0px,1.5px) rotate(0deg) scale(0.94,0.94); animation-timing-function: cubic-bezier(.34,1.56,.64,1); }
+  50% { transform: translate(0px,-7px) rotate(0deg) scale(1.34,1.34); animation-timing-function: linear; }
+  66.67% { transform: translate(0px,-5px) rotate(0deg) scale(1.24,1.24); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); }
+}
+.svg-card_art_stone[data-anim="play"] #wheel { animation: svg-card_art_stone-play-wheel 0.6s both; }
+.svg-card_art_stone[data-anim="play"] #stand { animation: svg-card_art_stone-play-stand 0.6s both; }
+.svg-card_art_stone[data-anim="play"] #gem_grinding { animation: svg-card_art_stone-play-grind 0.6s both; }
+.svg-card_art_stone[data-anim="play"] #grind_spark { animation: svg-card_art_stone-play-spark 0.6s both; }
+.svg-card_art_stone[data-anim="play"] #gem_red { animation: svg-card_art_stone-play-red 0.6s both; }
+.svg-card_art_stone[data-anim="play"] #gem_green { animation: svg-card_art_stone-play-green 0.6s both; }
+.svg-card_art_stone[data-anim="play"] #gem_blue { animation: svg-card_art_stone-play-blue 0.6s both; }
+</style>
+<defs>
+  <clipPath id="card_art_stone-cwheel">
+    <circle cx="92" cy="86" r="35"/>
+  </clipPath>
+</defs>
+
+<g id="root">
+  <!-- 左上角 x:0..30, y:0..90 严格留空 -->
+  <g id="shadow">
+    <ellipse cx="96" cy="168" rx="54" ry="8" fill="#0D111C" opacity="0.6"/>
+  </g>
+
+  <g id="stand">
+    <!-- 后侧木架支腿 -->
+    <polygon points="60,84 72,84 62,162 48,162" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.6" stroke-linejoin="round"/>
+    <polygon points="60,84 72,84 62,162 48,162" fill="#3D2212"/>
+    <polygon points="114,84 126,84 138,162 124,162" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.6" stroke-linejoin="round"/>
+    <polygon points="114,84 126,84 138,162 124,162" fill="#3D2212"/>
+
+    <!-- 圆磨石轮 wheel（七层石材画法，中心 92,86，r=35，左缘 x=57 > 30） -->
+    <g id="wheel">
+      <circle cx="92.5" cy="86.8" r="35" fill="#1C1412" stroke="#1C1412" stroke-width="5.4"/>
+      <circle cx="92" cy="86" r="35" fill="#4A4742"/>
+      <g clip-path="url(#card_art_stone-cwheel)">
+        <circle cx="88" cy="82" r="35" fill="#6E6A63"/>
+        <path d="M117,61 A35,35 0 0 1 67,111 L92,86 Z" fill="#4A4742" opacity="0.85"/>
+        <path d="M127,86 A35,35 0 0 1 82,120 L92,86 Z" fill="#2E2C28" opacity="0.78"/>
+        <path d="M59,92 A33,33 0 0 1 102,53.5 A34,34 0 0 0 61,92 Z" fill="#948F86"/>
+        <path d="M124.5,92 A33,33 0 0 1 100,118.5 A34,34 0 0 0 122.5,91.5 Z" fill="#8CAAB5" opacity="0.78"/>
+        <!-- 同心磨痕与石纹 -->
+        <circle cx="92" cy="86" r="26" fill="none" stroke="#948F86" stroke-width="1.5" stroke-dasharray="12 7"/>
+        <circle cx="92" cy="86" r="18" fill="none" stroke="#2E2C28" stroke-width="1.4" stroke-dasharray="7 5"/>
+        <path d="M64,70 L74,77 M120,102 L110,95 M108,58 L101,68 M76,114 L83,104" stroke="#1C1412" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
+      </g>
+      <!-- 中央铁轴座与旧铜摇把（控制在 r<=28 内，旋转永不出磨轮） -->
+      <circle cx="92" cy="86" r="9.5" fill="#3B515C" stroke="#1C1412" stroke-width="2.4"/>
+      <path d="M92,86 L109,75 L114,84" fill="none" stroke="#1C1412" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M92,86 L109,75 L114,84" fill="none" stroke="#9A7B46" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="92" cy="86" r="3.8" fill="#C2A670" stroke="#1C1412" stroke-width="1.4"/>
+      <ellipse cx="115" cy="85" rx="5.5" ry="3.8" fill="#704122" stroke="#1C1412" stroke-width="1.8"/>
+    </g>
+
+    <!-- 前侧木架水槽横梁与前支腿（七层木头画法：带木纹收尖线、木节、裂缝与铁铆钉） -->
+    <polygon points="42,104 150,106 144,132 48,130" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="5" stroke-linejoin="round"/>
+    <polygon points="42,104 150,106 144,132 48,130" fill="#704122"/>
+    <polygon points="42,104 146,106 142,118 45,116" fill="#9E6238"/>
+    <polygon points="96,105 150,106 144,132 96,131" fill="#3D2212" opacity="0.72"/>
+    <path d="M45,107.5 L144,109.5" stroke="#C48A5C" stroke-width="2" stroke-linecap="round"/>
+    <!-- 木纹收尖线与木节 -->
+    <path d="M56,118 Q74,116 92,119 Q74,118 56,118 Z M104,122 Q120,120 136,123 Q120,122 104,122 Z" fill="#3D2212"/>
+    <ellipse cx="82" cy="123" rx="4.2" ry="2.2" fill="#3D2212"/><ellipse cx="82" cy="123" rx="2" ry="1" fill="#1C1412"/>
+
+    <!-- 前支腿与承石木台 -->
+    <polygon points="48,102 60,102 54,166 40,166" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.6" stroke-linejoin="round"/>
+    <polygon points="48,102 60,102 54,166 40,166" fill="#704122"/>
+    <polygon points="48,102 55,102 49,166 40,166" fill="#9E6238"/>
+    <polygon points="132,102 144,102 152,166 138,166" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.6" stroke-linejoin="round"/>
+    <polygon points="132,102 144,102 152,166 138,166" fill="#3D2212"/>
+    <polygon points="132,102 139,102 146,166 138,166" fill="#704122"/>
+    <circle cx="54" cy="116" r="2.2" fill="#948F86" stroke="#1C1412" stroke-width="1.2"/>
+    <circle cx="138" cy="116" r="2.2" fill="#6E6A63" stroke="#1C1412" stroke-width="1.2"/>
+
+    <!-- 下方承托三颗宝石的横木托板 -->
+    <polygon points="44,144 148,144 152,156 40,156" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.6" stroke-linejoin="round"/>
+    <polygon points="44,144 148,144 152,156 40,156" fill="#704122"/>
+    <polygon points="44,144 148,144 149,149 43,149" fill="#9E6238"/>
+    <path d="M46,146.5 H146" stroke="#C48A5C" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+
+  <!-- 轮上正压着打磨的宝石与铜夹具 gem_grinding -->
+  <g id="gem_grinding">
+    <polygon points="118,36 136,44 128,58 112,50" fill="#6E542B" stroke="#1C1412" stroke-width="2.6" stroke-linejoin="round"/>
+    <polygon points="118,36 130,41 124,52 114,47" fill="#C2A670"/>
+    <polygon points="106,48 124,44 128,60 110,66 102,58" fill="#1C1412" stroke="#1C1412" stroke-width="2.4" stroke-linejoin="round"/>
+    <polygon points="107,49 123,45.5 126.5,59 110.5,64.5 103.5,57.5" fill="#E3263A"/>
+    <polygon points="107,49 123,45.5 117,55 103.5,57.5" fill="#FFA3AB"/>
+    <polygon points="117,55 126.5,59 110.5,64.5 103.5,57.5" fill="#A8172A"/>
+    <circle cx="112" cy="51" r="1.8" fill="#F4F1FF"/>
+  </g>
+
+  <!-- 磨宝石处迸出的星火与光芒 grind_spark -->
+  <g id="grind_spark" opacity="0.8">
+    <path d="M104,62 L88,48 M106,64 L86,60 M110,66 L98,78 M112,62 L126,70" stroke="#FFD84A" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M106,50 Q108,58 116,60 Q108,62 106,70 Q104,62 96,60 Q104,58 106,50 Z" fill="#F4F1FF" stroke="#1C1412" stroke-width="1.2" stroke-linejoin="round"/>
+    <circle cx="106" cy="60" r="2.5" fill="#FFD84A"/>
+  </g>
+
+  <!-- 旁边摆着磨亮了的红、绿、蓝三颗小宝石（play 时依次亮起放大） -->
+  <g id="gem_red">
+    <circle cx="60.4" cy="142.6" r="11.5" fill="#1C1412"/>
+    <circle cx="60" cy="142" r="9.8" fill="#E3263A"/>
+    <path d="M60,132.2 A9.8,9.8 0 0 0 50.2,142 L55,142 L56,136 Z" fill="#FFA3AB"/>
+    <path d="M69.8,142 A9.8,9.8 0 0 1 50.2,142 L60,146 Z" fill="#6B0E1C"/>
+    <circle cx="60" cy="142" r="5.2" fill="#F4566A"/>
+    <circle cx="56.5" cy="138.5" r="1.8" fill="#F4F1FF"/>
+  </g>
+
+  <g id="gem_green">
+    <polygon points="88,132 104,132 106,134 106,150 104,152 88,152 86,150 86,134" transform="translate(.4 .6)" fill="#1C1412" stroke="#1C1412" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="88,132 104,132 106,134 106,150 104,152 88,152 86,150 86,134" fill="#1DBF5E"/>
+    <polygon points="88,132 104,132 100,137 91,137 91,147 86,150 86,134" fill="#A6F5C6"/>
+    <polygon points="104,132 106,134 106,150 104,152 88,152 91,147 100,147 100,137" fill="#0A5A2B"/>
+    <rect x="91" y="137" width="9" height="10" rx="1" fill="#4FDB85"/>
+    <circle cx="92.5" cy="138.5" r="1.7" fill="#F4F1FF"/>
+  </g>
+
+  <g id="gem_blue">
+    <polygon points="132,130 144,151 120,151" transform="translate(.4 .6)" fill="#1C1412" stroke="#1C1412" stroke-width="3.2" stroke-linejoin="round"/>
+    <polygon points="132,130 144,151 120,151" fill="#2E66F0"/>
+    <polygon points="132,130 132,141 125,149 120,151" fill="#B4C8FF"/>
+    <polygon points="132,130 144,151 138,149 132,141" fill="#1D45B8"/>
+    <polygon points="120,151 125,149 138,149 144,151" fill="#122A78"/>
+    <polygon points="132,138 138,149 126,149" fill="#6A93F8"/>
+    <circle cx="130" cy="141" r="1.6" fill="#F4F1FF"/>
+  </g>
+</g>
+</svg>

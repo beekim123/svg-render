@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-card_art_hammer" viewBox="0 0 176 188" width="176" height="188">
+<title>额外牌原画 · 锤子</title>
+<style>
+.svg-card_art_hammer g { transform-box: view-box; }
+.svg-card_art_hammer #hammer { transform-origin: 116px 138px; }
+.svg-card_art_hammer #gem_glint { transform-origin: 94px 68px; opacity: 0.85; }
+.svg-card_art_hammer #impact_lines { transform-origin: 54px 124px; opacity: 0; }
+
+/* 待机 3000ms：0 静止/低位 → 1500 轻变化最大/高位 → 3000 与0帧一致 */
+@keyframes svg-card_art_hammer-idle-sway {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,-2px) rotate(-2.5deg) scale(1,1); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); }
+}
+@keyframes svg-card_art_hammer-idle-glint {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.85; animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,0px) rotate(0deg) scale(1.06,1.06); opacity: 1; animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.85; }
+}
+.svg-card_art_hammer:not([data-anim]) #hammer,
+.svg-card_art_hammer[data-anim="idle"] #hammer { animation: svg-card_art_hammer-idle-sway 3s infinite; }
+.svg-card_art_hammer:not([data-anim]) #gem_glint,
+.svg-card_art_hammer[data-anim="idle"] #gem_glint { animation: svg-card_art_hammer-idle-glint 3s infinite; }
+
+/* play 600ms：0(0%) 静止 → 100(16.67%) 往后一扬 → 250(41.67%) 重重砸下，迸出冲击线 → 400(66.67%) 停住 → 600(100%) 回到静止 */
+@keyframes svg-card_art_hammer-play-swing {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.67% { transform: translate(6px,-4px) rotate(18deg) scale(1,1); animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.67% { transform: translate(2px,10px) rotate(-15deg) scale(1.03,0.97); animation-timing-function: linear; }
+  66.67% { transform: translate(2px,10px) rotate(-15deg) scale(1.03,0.97); animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); }
+}
+@keyframes svg-card_art_hammer-play-glint {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.85; animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  16.67% { transform: translate(0px,0px) rotate(0deg) scale(1.05,1.05); opacity: 0.9; animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.67% { transform: translate(0px,0px) rotate(0deg) scale(1.18,1.18); opacity: 1; animation-timing-function: linear; }
+  66.67% { transform: translate(0px,0px) rotate(0deg) scale(1.14,1.14); opacity: 0.95; animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.85; }
+}
+@keyframes svg-card_art_hammer-play-impact {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; animation-timing-function: linear; }
+  16.67% { transform: translate(0px,0px) rotate(0deg) scale(0.7,0.7); opacity: 0; animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+  41.67% { transform: translate(0px,0px) rotate(0deg) scale(1.08,1.08); opacity: 1; animation-timing-function: linear; }
+  66.67% { transform: translate(0px,0px) rotate(0deg) scale(1.04,1.04); opacity: 0.88; animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; }
+}
+.svg-card_art_hammer[data-anim="play"] #hammer { animation: svg-card_art_hammer-play-swing 0.6s both; }
+.svg-card_art_hammer[data-anim="play"] #gem_glint { animation: svg-card_art_hammer-play-glint 0.6s both; }
+.svg-card_art_hammer[data-anim="play"] #impact_lines { animation: svg-card_art_hammer-play-impact 0.6s both; }
+</style>
+<defs>
+  <!-- 锤头与顶冠写成同一条轮廓，从锤头里自然长出来 -->
+  <clipPath id="card_art_hammer-chead">
+    <path d="M52,66 L76,52 C78,49 77,44 76,40 C75,35 86,30 89,34 C91,38 93,42 97,42 L114,34 C122,30 132,33 137,41 C141,49 136,59 126,65 L108,76 L72,96 L62,100 L46,74 Z"/>
+  </clipPath>
+  <clipPath id="card_art_hammer-cshaft">
+    <path d="M90,74 L102,68 C115,95 128,122 140,149 L126,155 C114,128 102,101 90,74 Z"/>
+  </clipPath>
+  <clipPath id="card_art_hammer-cw1">
+    <path d="M108.5,115 Q117.5,113.5 123.5,107.8 C124.8,109.8 125.8,111.8 126.5,113.8 Q119.5,119.8 111,120.8 C110,119 109.2,117 108.5,115 Z"/>
+  </clipPath>
+  <clipPath id="card_art_hammer-cw2">
+    <path d="M113,124.5 Q122,123 128,117.3 C129.3,119.3 130.3,121.3 131,123.3 Q124,129.3 115.5,130.3 C114.5,128.5 113.7,126.5 113,124.5 Z"/>
+  </clipPath>
+  <clipPath id="card_art_hammer-cw3">
+    <path d="M117.5,134 Q126.5,132.5 132.5,126.8 C133.8,128.8 134.8,130.8 135.5,132.8 Q128.5,138.8 120,139.8 C119,138 118.2,136 117.5,134 Z"/>
+  </clipPath>
+  <clipPath id="card_art_hammer-cpommel">
+    <path d="M124.5,153 C130,149 136.5,146 142.5,144 C146.8,150.5 147.8,157.8 143.2,163 C138.2,167.2 130.5,167.2 126.2,162.5 C124,159.5 123.6,156 124.5,153 Z"/>
+  </clipPath>
+  <clipPath id="card_art_hammer-cphoop">
+    <path d="M122.6,150.2 Q133.2,148.8 141.6,141.4 C143.2,143.6 144.2,146 143.8,148.2 Q134.5,155.8 124.2,156.2 C122.8,154.2 122.2,152.2 122.6,150.2 Z"/>
+  </clipPath>
+  <radialGradient id="card_art_hammer-gem-glow" cx="94" cy="68" r="26" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#F4566A" stop-opacity="0.55"/>
+    <stop offset="0.65" stop-color="#E3263A" stop-opacity="0.2"/>
+    <stop offset="1" stop-color="#6B0E1C" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+
+<g id="root">
+  <!-- 左上角 x:0..30, y:0..90 严格留空 -->
+  <ellipse cx="102" cy="170" rx="46" ry="7.5" fill="#0D111C" opacity="0.58"/>
+
+  <g id="hammer">
+    <circle cx="94" cy="68" r="26" fill="url(#card_art_hammer-gem-glow)"/>
+
+    <!-- 1. 主木柄（圆管错位法做左亮右暗，不用直边半透明块，上端藏入锤头，下端藏入柄尾箍） -->
+    <path d="M90,74 L102,68 C115,95 128,122 140,149 L126,155 C114,128 102,101 90,74 Z" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M90,74 L102,68 C115,95 128,122 140,149 L126,155 C114,128 102,101 90,74 Z" fill="#3D2212"/>
+    <g clip-path="url(#card_art_hammer-cshaft)">
+      <path d="M90,74 L102,68 C115,95 128,122 140,149 L126,155 C114,128 102,101 90,74 Z" transform="translate(-3.6 -2)" fill="#704122"/>
+      <path d="M90,74 L97,70.5 L133,151.5 L126,155 Z" transform="translate(-1.2 -0.8)" fill="#9E6238"/>
+      <!-- 锤头底下的木柄接触加深 -->
+      <path d="M88,72 L104,66 L108,78 Q98,82 91,82 Z" fill="#3D2212" opacity="0.82"/>
+      <path d="M92.5,77 L125.5,147" stroke="#C48A5C" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- 2. 握把三圈缠皮带（照 3.9 节示范代码③：上下沿往下弓，两头比木柄宽出一点，每圈错位左亮右暗，圈间缝用最暗） -->
+    <!-- 第 1 圈 -->
+    <path d="M108.5,115 Q117.5,113.5 123.5,107.8 C124.8,109.8 125.8,111.8 126.5,113.8 Q119.5,119.8 111,120.8 C110,119 109.2,117 108.5,115 Z" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.2" stroke-linejoin="round"/>
+    <path d="M108.5,115 Q117.5,113.5 123.5,107.8 C124.8,109.8 125.8,111.8 126.5,113.8 Q119.5,119.8 111,120.8 C110,119 109.2,117 108.5,115 Z" fill="#524531"/>
+    <g clip-path="url(#card_art_hammer-cw1)">
+      <path d="M108.5,115 Q117.5,113.5 123.5,107.8 C124.8,109.8 125.8,111.8 126.5,113.8 Q119.5,119.8 111,120.8 C110,119 109.2,117 108.5,115 Z" transform="translate(-2.6 -1.6)" fill="#9A8968"/>
+      <path d="M108.5,115 Q114.5,114 118.5,111 L121,116 Q116,119.5 111,120.8 Z" transform="translate(-1 -0.6)" fill="#C8B894"/>
+    </g>
+    <path d="M110.5,116.2 Q115,115.4 118.5,113.2" fill="none" stroke="#E2D6BA" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- 第 2 圈 -->
+    <path d="M113,124.5 Q122,123 128,117.3 C129.3,119.3 130.3,121.3 131,123.3 Q124,129.3 115.5,130.3 C114.5,128.5 113.7,126.5 113,124.5 Z" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.2" stroke-linejoin="round"/>
+    <path d="M113,124.5 Q122,123 128,117.3 C129.3,119.3 130.3,121.3 131,123.3 Q124,129.3 115.5,130.3 C114.5,128.5 113.7,126.5 113,124.5 Z" fill="#524531"/>
+    <g clip-path="url(#card_art_hammer-cw2)">
+      <path d="M113,124.5 Q122,123 128,117.3 C129.3,119.3 130.3,121.3 131,123.3 Q124,129.3 115.5,130.3 C114.5,128.5 113.7,126.5 113,124.5 Z" transform="translate(-2.6 -1.6)" fill="#9A8968"/>
+      <path d="M113,124.5 Q119,123.5 123,120.5 L125.5,125.5 Q120.5,129 115.5,130.3 Z" transform="translate(-1 -0.6)" fill="#C8B894"/>
+    </g>
+    <path d="M115,125.7 Q119.5,124.9 123,122.7" fill="none" stroke="#E2D6BA" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- 第 3 圈 -->
+    <path d="M117.5,134 Q126.5,132.5 132.5,126.8 C133.8,128.8 134.8,130.8 135.5,132.8 Q128.5,138.8 120,139.8 C119,138 118.2,136 117.5,134 Z" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.2" stroke-linejoin="round"/>
+    <path d="M117.5,134 Q126.5,132.5 132.5,126.8 C133.8,128.8 134.8,130.8 135.5,132.8 Q128.5,138.8 120,139.8 C119,138 118.2,136 117.5,134 Z" fill="#524531"/>
+    <g clip-path="url(#card_art_hammer-cw3)">
+      <path d="M117.5,134 Q126.5,132.5 132.5,126.8 C133.8,128.8 134.8,130.8 135.5,132.8 Q128.5,138.8 120,139.8 C119,138 118.2,136 117.5,134 Z" transform="translate(-2.6 -1.6)" fill="#9A8968"/>
+      <path d="M117.5,134 Q123.5,133 127.5,130 L130,135 Q125,138.5 120,139.8 Z" transform="translate(-1 -0.6)" fill="#C8B894"/>
+    </g>
+    <path d="M119.5,135.2 Q124,134.4 127.5,132.2" fill="none" stroke="#E2D6BA" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- 3. 柄尾：带一道箍的旧铜圆帽（先画圆头，再画往下弓的箍盖住接口，均用错位法明暗） -->
+    <path d="M124.5,153 C130,149 136.5,146 142.5,144 C146.8,150.5 147.8,157.8 143.2,163 C138.2,167.2 130.5,167.2 126.2,162.5 C124,159.5 123.6,156 124.5,153 Z" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.6" stroke-linejoin="round"/>
+    <path d="M124.5,153 C130,149 136.5,146 142.5,144 C146.8,150.5 147.8,157.8 143.2,163 C138.2,167.2 130.5,167.2 126.2,162.5 C124,159.5 123.6,156 124.5,153 Z" fill="#6E542B"/>
+    <g clip-path="url(#card_art_hammer-cpommel)">
+      <path d="M124.5,153 C130,149 136.5,146 142.5,144 C146.8,150.5 147.8,157.8 143.2,163 C138.2,167.2 130.5,167.2 126.2,162.5 C124,159.5 123.6,156 124.5,153 Z" transform="translate(-3 -2)" fill="#9A7B46"/>
+      <path d="M142.5,144 C146.8,150.5 147.8,157.8 143.2,163 L134,166 C139,161 140.5,153 139,146 Z" fill="#3B2B14" opacity="0.78"/>
+      <path d="M126.5,155.5 Q126.2,160.2 130.5,163.5 Q128.5,159.5 128.2,155 Z" fill="#C2A670"/>
+      <circle cx="129.5" cy="158.5" r="1.3" fill="#DDCB9A"/>
+    </g>
+
+    <!-- 柄尾圆帽与木柄之间的弧形箍 -->
+    <path d="M122.6,150.2 Q133.2,148.8 141.6,141.4 C143.2,143.6 144.2,146 143.8,148.2 Q134.5,155.8 124.2,156.2 C122.8,154.2 122.2,152.2 122.6,150.2 Z" transform="translate(.5 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="4.4" stroke-linejoin="round"/>
+    <path d="M122.6,150.2 Q133.2,148.8 141.6,141.4 C143.2,143.6 144.2,146 143.8,148.2 Q134.5,155.8 124.2,156.2 C122.8,154.2 122.2,152.2 122.6,150.2 Z" fill="#6E542B"/>
+    <g clip-path="url(#card_art_hammer-cphoop)">
+      <path d="M122.6,150.2 Q133.2,148.8 141.6,141.4 C143.2,143.6 144.2,146 143.8,148.2 Q134.5,155.8 124.2,156.2 C122.8,154.2 122.2,152.2 122.6,150.2 Z" transform="translate(-2.6 -1.6)" fill="#9A7B46"/>
+      <path d="M136.5,144 L143.8,148.2 L135,154 C137,150.5 137.2,147 136.5,144 Z" fill="#3B2B14" opacity="0.75"/>
+    </g>
+    <path d="M124.8,151.6 Q129.8,150.8 134.2,148.2" fill="none" stroke="#C2A670" stroke-width="1.3" stroke-linecap="round"/>
+
+    <!-- 4. 战锤重铁锤头（顶上凸起与锤头写成同一条连续轮廓，从锤头里自然长出来，夹角圆润并带收尖折线，底部不露直边切口） -->
+    <path d="M52,66 L76,52 C78,49 77,44 76,40 C75,35 86,30 89,34 C91,38 93,42 97,42 L114,34 C122,30 132,33 137,41 C141,49 136,59 126,65 L108,76 L72,96 L62,100 L46,74 Z" transform="translate(.6 .9)" fill="#1C1412" stroke="#1C1412" stroke-width="5.6" stroke-linejoin="round"/>
+    <path d="M52,66 L76,52 C78,49 77,44 76,40 C75,35 86,30 89,34 C91,38 93,42 97,42 L114,34 C122,30 132,33 137,41 C141,49 136,59 126,65 L108,76 L72,96 L62,100 L46,74 Z" fill="#4A4742"/>
+    <g clip-path="url(#card_art_hammer-chead)">
+      <path d="M52,66 L76,52 C78,49 77,44 76,40 C75,35 86,30 89,34 C91,38 93,42 97,42 L114,34 C122,30 132,33 137,41 C141,49 136,59 126,65 L108,76 L72,96 L62,100 L46,74 Z" transform="translate(-4 -4)" fill="#6E6A63"/>
+      <!-- 锤顶凸起旧铜包头（裁在一体轮廓内，下沿带弧形过渡与夹角加深） -->
+      <path d="M73,38 C75,33 87,28 91,34 L95,43 Q86,49 76,49 Z" fill="#6E542B"/>
+      <path d="M73,38 C75,33 84,30 87,34 L89,42 Q82,46 75,46 Z" fill="#9A7B46"/>
+      <path d="M76.5,40.5 Q81,35.5 85.5,35" fill="none" stroke="#C2A670" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- 凸起与锤头交界夹角处的弧形加深（3.9 节代码②） -->
+      <path d="M76,48 Q86,52 96,43 C93,48 85,53 76,52 Z" fill="#2E2C28" opacity="0.78"/>
+      <!-- 右下背光加深暗面（弧形过渡） -->
+      <path d="M137,41 C141,49 136,59 126,65 L108,76 L72,96 L62,100 L56,88 C82,76 108,60 128,44 Z" fill="#2E2C28" opacity="0.85"/>
+      <!-- 左上受光亮边与右下冷轮廓光 -->
+      <path d="M48.5,73 L53,67 L76,53.5 Q79,55 83,53 L115,35.5 Q123,32.5 129,35 Q122,35.5 115.5,38 L82.5,55.5 L55,69 L50.5,74.5 Z" fill="#948F86"/>
+      <path d="M134.5,52 Q131,59 124,63.5 L108,73.5 L106.8,71.8 L122.8,61.8 Q129.5,57.5 133,51 Z M94,81.5 L72,94 L63,97.5 L62.2,95.8 L71,92.2 L93,79.8 Z" fill="#8CAAB5" opacity="0.82"/>
+      <!-- 铁锈污渍（#7A4A2E，凹处与边缘） -->
+      <path d="M68,86 C73,83 78,85 76,90 C73,93 67,91 68,86 Z M116,54 C121,52 125,55 123,59 C120,62 115,59 116,54 Z" fill="#7A4A2E" opacity="0.58"/>
+      <!-- 锤面旧铜包箍（内沿改为弧线，错位明暗） -->
+      <path d="M46,74 L56,64 C63,73 69,83 74,94 L62,100 Z" fill="#6E542B"/>
+      <path d="M46,74 L56,64 C60,69 63,75 66,81 C61,84 56,86 52,85 Z" fill="#9A7B46"/>
+      <path d="M48.5,74.5 L56,66.5 C58.5,69.5 60.5,73 62,76.5 C58,79 54.5,80.5 51.5,80 Z" fill="#C2A670"/>
+      <path d="M56,64 Q66,78 74,94 Q64,79 56,64 Z" fill="#1C1412"/>
+    </g>
+    <!-- 凸起夹角收尖结构线（外轮廓在夹角处往里拐一小截收尖，照 3.9 节代码②） -->
+    <path d="M76,51.5 Q82,50.5 87,47.5 Q81.5,48.5 76,51.5 Z M96.5,42 Q91.5,46 86,48 Q92,44 96.5,42 Z" fill="#1C1412"/>
+
+    <!-- 锤头铆钉与旧磕痕 -->
+    <circle cx="66" cy="66" r="2.2" fill="#1C1412"/><circle cx="65.6" cy="65.6" r="1.7" fill="#948F86"/>
+    <circle cx="118" cy="44" r="2.2" fill="#1C1412"/><circle cx="117.6" cy="43.6" r="1.7" fill="#948F86"/>
+    <path d="M58,98 L60.5,94.5 L62.5,99 Z M102,40 L104,43.5 L106,38.5 Z M70,62 Q82,56 94,50 Q82,58 70,62 Z" fill="#1C1412"/>
+
+    <!-- 锤头正中镶嵌的红色圆宝石（中心 94,68, r=14） -->
+    <circle cx="94" cy="68" r="17" fill="#3B2B14" stroke="#1C1412" stroke-width="2.4"/>
+    <circle cx="94" cy="68" r="14" fill="#E3263A" stroke="#1C1412" stroke-width="2.2"/>
+    <path d="M94,54 A14,14 0 0 0 80,68 L86,68 L88,60 Z" fill="#FFA3AB"/>
+    <path d="M94,54 A14,14 0 0 1 108,68 L102,68 L100,60 Z" fill="#F4566A"/>
+    <path d="M108,68 A14,14 0 0 1 80,68 L86,68 L94,76 L102,68 Z" fill="#6B0E1C"/>
+    <polygon points="94,81 104,76 100,72 94,75" fill="#F4566A" opacity="0.72"/>
+    <polygon points="88,60 100,60 103,68 100,75 88,75 85,68" fill="#E3263A"/>
+    <polygon points="88,60 100,60 94,68 85,68" fill="#FFA3AB" opacity="0.68"/>
+    <path d="M88,60 L100,60 L103,68 L100,75 L88,75 L85,68 Z M94,54 L94,60 M80,68 L85,68 M108,68 L103,68 M94,82 L94,75" fill="none" stroke="#FFA3AB" stroke-width="0.55" opacity="0.68"/>
+    <g id="gem_glint" opacity="0.85">
+      <circle cx="89" cy="62" r="2.2" fill="#F4F1FF"/>
+      <circle cx="86.5" cy="65.5" r="1" fill="#F4F1FF" opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- play 重重砸下时的冲击线 impact_lines -->
+  <g id="impact_lines" opacity="0">
+    <path d="M52,110 L35,102 M48,120 L33,122 M54,130 L38,142 M64,134 L56,150" stroke="#1C1412" stroke-width="5.2" stroke-linecap="round"/>
+    <path d="M52,110 L35,102 M48,120 L33,122 M54,130 L38,142 M64,134 L56,150" stroke="#F4566A" stroke-width="2.4" stroke-linecap="round"/>
+    <polygon points="44,108 58,100 52,114 66,116 50,124 58,136 44,128" fill="#F4F1FF" stroke="#1C1412" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+</g>
+</svg>

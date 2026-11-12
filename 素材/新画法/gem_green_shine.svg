@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-gem_green_shine" viewBox="0 0 100 100" width="100" height="100">
+<title>绿宝石 · 闪光</title>
+<style>
+.svg-gem_green_shine g { transform-box: view-box; }
+.svg-gem_green_shine #halo { transform-origin: 50px 50px; opacity: 0.62; }
+.svg-gem_green_shine #star_1 { transform-origin: 22px 22px; opacity: 0; }
+.svg-gem_green_shine #star_2 { transform-origin: 80px 26px; opacity: 0; }
+.svg-gem_green_shine #star_3 { transform-origin: 24px 80px; opacity: 0; }
+
+/* 待机 3000ms：0 基础姿势 → 500 第一处星芒峰值 → 1000 全部额外星芒隐藏 → 1500 第二处峰值 → 2000 全部隐藏 → 2500 第三处峰值 → 3000 与0帧一致 */
+@keyframes svg-gem_green_shine-idle-halo {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.62; animation-timing-function: ease-in-out; }
+  16.67% { transform: translate(0px,0px) rotate(0deg) scale(0.99,0.99); opacity: 0.78; animation-timing-function: ease-in-out; }
+  33.33% { transform: translate(0px,0px) rotate(0deg) scale(1.01,1.01); opacity: 0.88; animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,0px) rotate(0deg) scale(1.03,1.03); opacity: 1; animation-timing-function: ease-in-out; }
+  66.67% { transform: translate(0px,0px) rotate(0deg) scale(1.01,1.01); opacity: 0.86; animation-timing-function: ease-in-out; }
+  83.33% { transform: translate(0px,0px) rotate(0deg) scale(0.98,0.98); opacity: 0.74; animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0.62; }
+}
+@keyframes svg-gem_green_shine-idle-s1 {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; animation-timing-function: ease-in-out; }
+  16.67% { transform: translate(0px,0px) rotate(12deg) scale(1.12,1.12); opacity: 1; animation-timing-function: ease-in-out; }
+  33.33% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: linear; }
+  50% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; animation-timing-function: linear; }
+  66.67% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: linear; }
+  83.33% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: linear; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; }
+}
+@keyframes svg-gem_green_shine-idle-s2 {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; animation-timing-function: linear; }
+  16.67% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: linear; }
+  33.33% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: ease-in-out; }
+  50% { transform: translate(0px,0px) rotate(12deg) scale(1.12,1.12); opacity: 1; animation-timing-function: ease-in-out; }
+  66.67% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: linear; }
+  83.33% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: linear; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; }
+}
+@keyframes svg-gem_green_shine-idle-s3 {
+  0% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; animation-timing-function: linear; }
+  16.67% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: linear; }
+  33.33% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: linear; }
+  50% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; animation-timing-function: linear; }
+  66.67% { transform: translate(0px,0px) rotate(0deg) scale(0.6,0.6); opacity: 0; animation-timing-function: ease-in-out; }
+  83.33% { transform: translate(0px,0px) rotate(12deg) scale(1.12,1.12); opacity: 1; animation-timing-function: ease-in-out; }
+  100% { transform: translate(0px,0px) rotate(0deg) scale(1,1); opacity: 0; }
+}
+.svg-gem_green_shine:not([data-anim]) #halo,
+.svg-gem_green_shine[data-anim="idle"] #halo { animation: svg-gem_green_shine-idle-halo 3s infinite; }
+.svg-gem_green_shine:not([data-anim]) #star_1,
+.svg-gem_green_shine[data-anim="idle"] #star_1 { animation: svg-gem_green_shine-idle-s1 3s infinite; }
+.svg-gem_green_shine:not([data-anim]) #star_2,
+.svg-gem_green_shine[data-anim="idle"] #star_2 { animation: svg-gem_green_shine-idle-s2 3s infinite; }
+.svg-gem_green_shine:not([data-anim]) #star_3,
+.svg-gem_green_shine[data-anim="idle"] #star_3 { animation: svg-gem_green_shine-idle-s3 3s infinite; }
+</style>
+<defs>
+  <radialGradient id="gem_green_shine-halo" cx="50" cy="50" r="46" gradientUnits="userSpaceOnUse">
+    <stop offset="0.55" stop-color="#4FDB85" stop-opacity="0"/>
+    <stop offset="0.72" stop-color="#4FDB85" stop-opacity="0.82"/>
+    <stop offset="1" stop-color="#1DBF5E" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="gem_green_shine-inner" cx="44" cy="42" r="24" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#F4F1FF" stop-opacity="0.75"/>
+    <stop offset="0.5" stop-color="#A6F5C6" stop-opacity="0.45"/>
+    <stop offset="1" stop-color="#1DBF5E" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="gem_green_shine-sg" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+    <stop offset="0" stop-color="#A6F5C6" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#4FDB85" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="gem_green_shine-clip">
+    <path d="M26,16 H74 L84,26 V74 L74,84 H26 L16,74 V26 Z"/>
+  </clipPath>
+</defs>
+
+<g id="root">
+  <!-- 外圈呼吸淡光环（闪光级专属） -->
+  <g id="halo" opacity="0.62">
+    <circle cx="50" cy="50" r="46" fill="url(#gem_green_shine-halo)"/>
+  </g>
+
+  <!-- 绿宝石切角方主体 -->
+  <g id="gem">
+    <path d="M26,16 H74 L84,26 V74 L74,84 H26 L16,74 V26 Z" transform="translate(.6 .8)" fill="#1C1412" stroke="#1C1412" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M26,16 H74 L84,26 V74 L74,84 H26 L16,74 V26 Z" fill="#1DBF5E"/>
+
+    <g clip-path="url(#gem_green_shine-clip)">
+      <!-- 丰富阶梯与切角星面（比切好级多一圈斜角星面与明亮内反光） -->
+      <polygon points="26,16 74,16 68,24 32,24" fill="#A6F5C6"/>
+      <polygon points="16,26 26,16 32,24 24,32" fill="#A6F5C6"/>
+      <polygon points="16,26 24,32 24,68 16,74" fill="#4FDB85"/>
+      <polygon points="74,16 84,26 76,32 68,24" fill="#4FDB85"/>
+      <polygon points="84,26 84,74 76,68 76,32" fill="#128A43"/>
+      <polygon points="16,74 24,68 32,76 26,84" fill="#1DBF5E"/>
+      <polygon points="84,74 74,84 68,76 76,68" fill="#0A5A2B"/>
+      <polygon points="26,84 32,76 68,76 74,84" fill="#0A5A2B"/>
+
+      <!-- 二层阶梯与对角折面 -->
+      <polygon points="32,24 50,22 68,24 62,33 38,33" fill="#A6F5C6"/>
+      <polygon points="24,32 32,24 38,33 33,38" fill="#A6F5C6"/>
+      <polygon points="24,32 33,38 33,62 24,68" fill="#4FDB85"/>
+      <polygon points="68,24 76,32 67,38 62,33" fill="#1DBF5E"/>
+      <polygon points="76,32 76,68 67,62 67,38" fill="#128A43"/>
+      <polygon points="24,68 33,62 38,67 32,76" fill="#128A43"/>
+      <polygon points="76,68 68,76 62,67 67,62" fill="#0A5A2B"/>
+      <polygon points="32,76 38,67 62,67 68,76" fill="#128A43"/>
+      <polygon points="46,67 62,67 68,76 50,76" fill="#A6F5C6" opacity="0.72"/>
+      <polygon points="67,46 76,50 76,68 67,62" fill="#4FDB85" opacity="0.62"/>
+
+      <!-- 中央台面及内部星芒折射 -->
+      <polygon points="38,33 62,33 67,38 67,62 62,67 38,67 33,62 33,38" fill="#1DBF5E"/>
+      <polygon points="50,50 62,67 38,67 33,62" fill="#128A43" opacity="0.6"/>
+      <polygon points="50,50 67,38 67,62 62,67" fill="#128A43" opacity="0.6"/>
+      <polygon points="38,33 62,33 67,38 67,62 62,67 38,67 33,62 33,38" fill="url(#gem_green_shine-inner)"/>
+      <polygon points="33,62 33,38 38,33 58,33 46,45 37,54" fill="#A6F5C6" opacity="0.72"/>
+
+      <!-- 刻面高光棱线 -->
+      <path d="M32,24 L68,24 L76,32 L76,68 L68,76 L32,76 L24,68 L24,32 Z M38,33 L62,33 L67,38 L67,62 L62,67 L38,67 L33,62 L33,38 Z M26,16 L38,33 M74,16 L62,33 M84,26 L67,38 M84,74 L67,62 M74,84 L62,67 M26,84 L38,67 M16,74 L33,62 M16,26 L33,38 M38,33 L62,67 M62,33 L38,67" fill="none" stroke="#A6F5C6" stroke-width="0.6" stroke-linejoin="round" opacity="0.68"/>
+
+      <!-- 左上白亮边与右下冷轮廓光 -->
+      <path d="M17.8,62 V26.8 L26.8,17.8 H62 L59,19.8 H28 L19.8,28 V59 Z" fill="#F4F1FF" opacity="0.95"/>
+      <path d="M82.2,44 V72.5 L75.5,79.2 L74.2,77.8 L80.4,71.6 V44.5 Z M67,82.2 H46 L47.5,80.4 H66.2 Z" fill="#8CAAB5" opacity="0.8"/>
+
+      <!-- 静态内置小闪光点（保证0帧关闭动画时仍明显亮于切好级） -->
+      <circle cx="36" cy="29" r="3" fill="#F4F1FF"/>
+      <circle cx="31.5" cy="34" r="1.4" fill="#F4F1FF" opacity="0.92"/>
+      <path d="M29,21 Q30,25.5 34.5,26.5 Q30,27.5 29,32 Q28,27.5 23.5,26.5 Q28,25.5 29,21 Z" fill="#F4F1FF" opacity="0.92"/>
+      <path d="M64,61 Q64.7,64.3 68,65 Q64.7,65.7 64,69 Q63.3,65.7 60,65 Q63.3,64.3 64,61 Z" fill="#F4F1FF" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- 轮流闪烁的三颗四角星（0, 1000, 2000, 3000 隐藏；500, 1500, 2500 依次峰值） -->
+  <g id="star_1" class="st1" opacity="0">
+    <circle cx="22" cy="22" r="11" fill="url(#gem_green_shine-sg)"/>
+    <path d="M22,10 Q23.4,20.6 34,22 Q23.4,23.4 22,34 Q20.6,23.4 10,22 Q20.6,20.6 22,10 Z" fill="#F4F1FF"/>
+    <circle cx="22" cy="22" r="2.2" fill="#F4F1FF"/>
+  </g>
+  <g id="star_2" class="st2" opacity="0">
+    <circle cx="80" cy="26" r="10" fill="url(#gem_green_shine-sg)"/>
+    <path d="M80,15 Q81.2,24.8 91,26 Q81.2,27.2 80,37 Q78.8,27.2 69,26 Q78.8,24.8 80,15 Z" fill="#F4F1FF"/>
+    <circle cx="80" cy="26" r="2" fill="#F4F1FF"/>
+  </g>
+  <g id="star_3" class="st3" opacity="0">
+    <circle cx="24" cy="80" r="9.5" fill="url(#gem_green_shine-sg)"/>
+    <path d="M24,70 Q25.1,78.9 34,80 Q25.1,81.1 24,90 Q22.9,81.1 14,80 Q22.9,78.9 24,70 Z" fill="#F4F1FF"/>
+    <circle cx="24" cy="80" r="1.9" fill="#F4F1FF"/>
+  </g>
+</g>
+</svg>
