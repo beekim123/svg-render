@@ -1,11 +1,23 @@
 // Runs inside Chrome; keep all helpers in this function for CDP serialization.
-export function exportScene(root = document.querySelector('svg')) {
+export function exportScene(root = document.querySelector('svg'), options = {}) {
   if (!root) throw new Error('场景导出：没有 <svg>');
   const namespace = 'http://www.w3.org/2000/svg';
   const shapes = new Set(['path', 'rect', 'circle', 'ellipse', 'line', 'polygon', 'polyline']);
   const definitions = new Set(['defs', 'clipPath', 'linearGradient', 'radialGradient', 'pattern', 'stop', 'style', 'title', 'desc', 'metadata']);
   const matrix = value => [value.a, value.b, value.c, value.d, value.e, value.f];
   const identity = () => new DOMMatrix();
+  const animated = new Map();
+  for (const track of options.tracks || []) {
+    if (!animated.has(track.node)) animated.set(track.node, new Set());
+    animated.get(track.node).add(track.property);
+  }
+  const nodeNumber = element => Number(element.getAttribute('data-svg-render-node'));
+  const bounds = element => {
+    const box = element.getBBox();
+    const style = getComputedStyle(element);
+    const padding = style.stroke === 'none' ? 0 : parseFloat(style.strokeWidth) / 2 * (style.strokeLinejoin === 'miter' ? Number(style.strokeMiterlimit) : Math.SQRT2);
+    return [box.x - padding, box.y - padding, box.width + padding * 2, box.height + padding * 2];
+  };
   const fail = (element, reason = '不支持的元素') => {
     throw new Error(`场景导出：${reason} <${element.localName}>${element.id ? `#${element.id}` : ''}`);
   };
@@ -129,7 +141,12 @@ export function exportScene(root = document.querySelector('svg')) {
         for (const nested of child.children) visit(nested, current);
       } else {
         if (!shapes.has(child.localName)) fail(child);
-        paths.push({path: geometry(child), matrix: matrix(current), fillRule: style.clipRule});
+        const item = {path: geometry(child), matrix: matrix(current), fillRule: style.clipRule};
+        if (options.layers) {
+          const box = child.getBBox();
+          item.bounds = [box.x, box.y, box.width, box.height];
+        }
+        paths.push(item);
       }
     };
     for (const child of clip.children) visit(child, clipBase);
@@ -213,7 +230,7 @@ export function exportScene(root = document.querySelector('svg')) {
         const viewBoxSource = sources.find(source => source.hasAttribute('viewBox'));
         const contentUnits = attribute(sources, 'patternContentUnits', 'userSpaceOnUse') === 'objectBoundingBox' ? bboxMatrix(element) : identity();
         const contentMatrix = viewBoxSource ? viewBoxMatrix(viewBoxSource.viewBox.baseVal, tile, attribute(sources, 'preserveAspectRatio', 'xMidYMid meet')) : units.inverse().multiply(contentUnits);
-        const nodes = [...(contentSource?.children || [])].flatMap(child => visit(child, contentMatrix));
+        const nodes = [...(contentSource?.children || [])].flatMap(child => visit(child, contentMatrix, false));
         return {type: 'pattern', matrix: matrix(paintMatrix), tile, nodes, opacity};
       }
       fail(definition, '不支持的画笔');
@@ -221,7 +238,7 @@ export function exportScene(root = document.querySelector('svg')) {
       resolving.delete(definition);
     }
   };
-  const visit = (element, parent = null) => {
+  const visit = (element, parent = null, layered = Boolean(options.layers)) => {
     if (definitions.has(element.localName)) return [];
     const style = getComputedStyle(element);
     if (style.display === 'none') return [];
@@ -230,11 +247,15 @@ export function exportScene(root = document.querySelector('svg')) {
       if (value && value !== 'none') fail(element, `不支持 ${property}=${value}`);
     }
     if (style.mixBlendMode !== 'normal' || style.vectorEffect !== 'none' || style.paintOrder !== 'normal') fail(element, '不支持的混合、描边变换或绘制顺序');
-    const base = parent ? parent.multiply(localTransform(element)) : new DOMMatrix(matrix(element.getCTM()));
-    const opacity = Number(style.opacity);
-    const ownClips = clips(element, base);
+    const properties = layered ? animated.get(nodeNumber(element)) : null;
+    const wrapped = layered && shapes.has(element.localName) && properties;
+    let base = parent ? parent.multiply(localTransform(element)) : new DOMMatrix(matrix(element.getCTM()));
+    if (properties?.has('transform')) base = element === root ? base.multiply(localTransform(element).inverse()) : identity();
+    const opacity = properties?.has('opacity') ? 1 : Number(style.opacity);
+    const ownClips = clips(element, layered && (wrapped || element.localName === 'g' || element === root) ? identity() : base);
     if (element.localName === 'g' || element === root) {
-      const children = [...element.children].flatMap(child => visit(child, parent ? base : null));
+      const children = [...element.children].flatMap(child => visit(child, layered ? identity() : parent ? base : null, layered));
+      if (layered) return [{type: 'layer', node: nodeNumber(element), matrix: matrix(base), opacity, clips: ownClips, children}];
       if (opacity === 1 && !ownClips.length) return children;
       return [{type: 'group', opacity, clips: ownClips, children}];
     }
@@ -245,13 +266,14 @@ export function exportScene(root = document.querySelector('svg')) {
     if (dash.length % 2) dash.push(...dash);
     const path = geometry(element);
     if (!path) return [];
-    return [{
+    const pathBase = wrapped ? identity() : base;
+    const result = {
       type: 'path',
       path,
       pathLength,
-      matrix: matrix(base),
-      fill: paint(style.fill, Number(style.fillOpacity), element, base),
-      stroke: paint(style.stroke, Number(style.strokeOpacity), element, base),
+      matrix: matrix(pathBase),
+      fill: paint(style.fill, Number(style.fillOpacity), element, pathBase),
+      stroke: paint(style.stroke, Number(style.strokeOpacity), element, pathBase),
       fillRule: style.fillRule,
       strokeWidth: parseFloat(style.strokeWidth),
       strokeCap: style.strokeLinecap,
@@ -259,9 +281,12 @@ export function exportScene(root = document.querySelector('svg')) {
       strokeMiter: Number(style.strokeMiterlimit),
       strokeDasharray: dash,
       strokeDashoffset: dashLength(style.strokeDashoffset),
-      opacity,
-      clips: ownClips
-    }];
+      opacity: wrapped ? 1 : opacity,
+      clips: wrapped ? [] : ownClips,
+      ...(layered ? {bounds: bounds(element)} : {})
+    };
+    if (wrapped) return [{type: 'layer', node: nodeNumber(element), matrix: matrix(base), opacity, clips: ownClips, children: [result]}];
+    return [result];
   };
   return {width, height, nodes: visit(root)};
 }

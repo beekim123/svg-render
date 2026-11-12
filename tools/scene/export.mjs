@@ -7,18 +7,18 @@ import {exportScene} from './export-page.mjs';
 
 const html = () => '<!doctype html><meta charset="utf-8"><style>html,body{margin:0;background:transparent}svg{display:block}</style>';
 
-export async function exportFrozenSvg(page, svg, {source = '冻结SVG'} = {}) {
+export async function exportFrozenSvg(page, svg, {source = '冻结SVG', layers = false, tracks = []} = {}) {
   await setSvgContent(page, svg, html, source);
   const size = await page.evaluate('(()=>{const svg=document.querySelector("svg");return {width:svg.width.baseVal.value,height:svg.height.baseVal.value};})()');
   await page.viewport(size.width, size.height);
-  return page.evaluate(`(${exportScene.toString()})()`);
+  return page.evaluate(`(${exportScene.toString()})(document.querySelector('svg'), ${JSON.stringify({layers, tracks})})`);
 }
 
 export async function createSceneExportSession({browser: suppliedBrowser, ...options} = {}) {
   const browser = suppliedBrowser || await openChrome(options);
   return {
     browser,
-    export: ({svg, source}) => exportFrozenSvg(browser, svg, {source}),
+    export: ({svg, ...settings}) => exportFrozenSvg(browser, svg, settings),
     close: () => suppliedBrowser ? Promise.resolve() : browser.close()
   };
 }
