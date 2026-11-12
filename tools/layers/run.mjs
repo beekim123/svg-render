@@ -1,0 +1,25 @@
+import path from 'node:path';
+import {spawnSync} from 'node:child_process';
+
+const project = path.resolve('godot');
+const executable = process.env.SVG_RENDER_GODOT || path.resolve('../gemcard-demo/Godot.app/Contents/MacOS/Godot');
+const env = {...process.env, OMP_NUM_THREADS: '1', OPENBLAS_NUM_THREADS: '1', MKL_NUM_THREADS: '1', VECLIB_MAXIMUM_THREADS: '1'};
+const run = args => spawnSync(executable, args, {encoding: 'utf8', env});
+const displays = spawnSync('system_profiler', ['SPDisplaysDataType', '-json'], {encoding: 'utf8'});
+if (displays.status !== 0) throw new Error(displays.error?.message || displays.stderr);
+const native = JSON.parse(displays.stdout).SPDisplaysDataType.flatMap(device => device.spdisplays_ndrvs || []);
+const builtIn = native.filter(display => display.spdisplays_connection_type === 'spdisplays_internal');
+if (builtIn.length !== 1) throw new Error(`内置屏幕识别失败：${JSON.stringify(native)}`);
+const query = run(['--path', project, '--script', 'res://screens.gd', '--log-file', path.resolve('out/mac/godot-screens.log')]);
+if (query.status !== 0) throw new Error(query.error?.message || query.stderr);
+const screens = query.stdout.split('\n').filter(line => line.startsWith('{')).map(line => JSON.parse(line));
+const pixels = builtIn[0]._spdisplays_pixels.split(' x ').map(Number);
+const matching = screens.filter(screen => screen.size[0] === pixels[0] && screen.size[1] === pixels[1]);
+const target = screens.length === 1 && native.length === 1 ? screens[0] : matching.length === 1 ? matching[0] : null;
+if (!target) throw new Error(`Godot 内屏编号无法确定：内屏 ${JSON.stringify(pixels)}，Godot ${JSON.stringify(screens)}`);
+console.log(`Godot 内屏：${target.screen}，原点 ${target.position}，尺寸 ${target.size}`);
+const args = process.argv.slice(2);
+if (args[0] === '--') args.shift();
+const result = spawnSync(executable, ['--path', project, '--screen', String(target.screen), '--max-fps', '60', '--log-file', path.resolve('out/mac/godot-demo.log'), '--', ...args], {stdio: 'inherit', env});
+if (result.error) throw result.error;
+process.exitCode = result.status ?? 1;

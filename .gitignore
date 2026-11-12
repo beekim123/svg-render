@@ -15,3 +15,6 @@ node_modules/
 __pycache__/
 *.pyc
 .venv/
+
+# Godot 导入缓存
+godot/.godot/
