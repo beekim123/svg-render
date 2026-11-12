@@ -4,7 +4,23 @@ export function installTimeline({freezePolicy='value-only'}={}){
  const svg=document.querySelector('svg');if(!svg)throw new Error('页面没有 SVG');
  const nodes=[svg,...svg.querySelectorAll('*')],kept=new Map();let now=0,previousClass=null;
  const fullMatrix=m=>m?[m.a,m.b,m.c,m.d,m.e,m.f]:null;
- const local=e=>{const self=e.getCTM?.(),parent=e.parentNode.getCTM?.();return self?(parent?parent.inverse().multiply(self):self):null;};
+ const local=e=>{
+  const self=e.getCTM?.(),parent=e.parentNode.getCTM?.();
+  if(!self)return null;
+  if(!parent)return self;
+  if(parent.a*parent.d-parent.b*parent.c!==0)return parent.inverse().multiply(self);
+  // scale(0) 丢失了子节点的 CTM 信息，改从它自己的变换和枢轴重建。
+  const value=cssTransform(e).值;
+  if(value==='none')return new DOMMatrix();
+  const transform=new DOMMatrix(value),style=getComputedStyle(e);
+  let [x,y]=style.transformOrigin.split(/\s+/).map(parseFloat);
+  if(style.transformBox==='fill-box'){
+   const box=e.getBBox();
+   x+=box.x;
+   y+=box.y;
+  }
+  return new DOMMatrix().translate(x,y).multiply(transform).translate(-x,-y);
+ };
  const collect=()=>{for(const a of document.getAnimations()){if(!kept.has(a)){kept.set(a,now);a.pause();}}};
  const cssName=s=>s.replace(/[A-Z]/g,c=>'-'+c.toLowerCase());
  const cssTransform=e=>{
@@ -41,6 +57,8 @@ export function installTimeline({freezePolicy='value-only'}={}){
  // 只在冻结副本保留CSS动画目标的内容分层；不恢复动画，不改变原来的来源/值。
  const hintTargets=new Map();if(freezePolicy==='preserve-layers')for(const value of values)if(value.来自==='css'&&['transform','opacity'].includes(value.属性)){if(!hintTargets.has(value.节点号))hintTargets.set(value.节点号,new Set());hintTargets.get(value.节点号).add(value.属性);}
  const compositeHints=[];for(const [node,properties]of hintTargets){const original=getComputedStyle(nodes[node]).willChange,existing=original==='auto'?[]:original.split(',').map(value=>value.trim()).filter(Boolean),merged=[...new Set([...existing,...properties])].join(', '),element=clones[node];element.setAttribute('style',(element.getAttribute('style')||'')+`;will-change:${merged} !important;`);compositeHints.push({节点号:node,元素id:nodes[node].id,来自:'css',动画属性:[...properties],原提示:original,冻结提示:merged});}
+ // 奇异变换本应整棵不绘制，显式隐藏以消除冻结后残留的细线；保留几何供矩阵复核。
+ for(const {e,v}of transforms){if(v==='none')continue;const m=new DOMMatrix(v);if(m.a*m.d-m.b*m.c===0)for(const child of [e,...e.querySelectorAll('*')])child.style.setProperty('visibility','hidden','important');}
  // style.setProperty会再次舍入matrix系数；所有提示完成后最后写原始transform属性文本。
  for(const {e,v}of transforms)e.setAttribute('style',(e.getAttribute('style')||'')+`;transform:${v} !important;`);
  return {svg:new XMLSerializer().serializeToString(copy),values,compositeHints,freezePolicy};},period(){let duration=0;for(const [a] of kept){if(a.playState==='idle')continue;const t=a.effect.getTiming();if(t.iterations===Infinity&&typeof t.duration==='number')duration=Math.max(duration,t.duration);}for(const a of svg.querySelectorAll('[repeatCount="indefinite"]')){try{if(a.getStartTime()>now/1000)continue;}catch{continue;}const d=a.getAttribute('dur')||'';if(/^\d*\.?\d+(ms|s)$/.test(d))duration=Math.max(duration,parseFloat(d)*(d.endsWith('ms')?1:1000));}return Math.min(duration,8000);},textBoxes(){return [...svg.querySelectorAll('text')].map(e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height};});}};
