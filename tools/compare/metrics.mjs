@@ -182,11 +182,14 @@ export function thresholdFor(line, scale = 1, thresholds = DEFAULT_THRESHOLDS, b
   if (result['ssim_2倍'] !== undefined && (!Number.isFinite(result['ssim_2倍']) || result['ssim_2倍'] < 0 || result['ssim_2倍'] > 1)) throw new Error('运动.ssim_2倍 必须在0到1之间');
   if (line === '运动' && scale >= 2) result.ssim = result['ssim_2倍'] ?? 0.985;
   result.最大差异块 *= scale * scale;
-  if (line === 'GPU') {
+  if (line === 'GPU' || (line === '运动' && baseline)) {
     if (!baseline) throw new Error('GPU 线需要这张图的 Chrome 自差基准，不能用别的图代替');
-    for (const key of ['ssim', '大差比例_不算边', '最大差异块', '平均偏色']) if (!Number.isFinite(baseline[key]) || baseline[key] < 0 || (key === 'ssim' && baseline[key] > 1)) throw new Error(`GPU 基准缺少 ${key}`);
-    result.ssim = Math.max(result.ssim, 1 - (1 - baseline.ssim) * 1.2);
-    for (const key of ['大差比例_不算边', '最大差异块', '平均偏色']) result[key] = Math.min(result[key], baseline[key] * 1.2);
+    for (const key of ['ssim', '大差比例_不算边', '最大差异块', '平均偏色']) if (!Number.isFinite(baseline[key]) || baseline[key] < 0 || (key === 'ssim' && baseline[key] > 1)) throw new Error(`${line} 基准缺少 ${key}`);
+    const ssimLimit = line === 'GPU' ? Math.max : Math.min;
+    const errorLimit = line === 'GPU' ? Math.min : Math.max;
+    result.ssim = ssimLimit(result.ssim, 1 - (1 - baseline.ssim) * 1.2);
+    if (line === '运动') result.ssim = Math.max(0.95, result.ssim);
+    for (const key of ['大差比例_不算边', '最大差异块', '平均偏色']) result[key] = errorLimit(result[key], baseline[key] * 1.2);
   }
   return result;
 }

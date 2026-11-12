@@ -40,11 +40,11 @@ export async function compareFiles(a, b, options = {}) {
   const [ia, ib] = await Promise.all([loadPng(a), loadPng(b)]);
   const result = compareImages(ia, ib, { ...options, scale, textBoxes: boxes.map(box => box.bbox ?? box) });
   const diff = encodePng(result.差异图); delete result.差异图;
-  return { ...result, 耗时毫秒: performance.now() - start, 图片: { 甲: `data:image/png;base64,${(await readFile(a)).toString('base64')}`, 乙: `data:image/png;base64,${(await readFile(b)).toString('base64')}`, 差异: `data:image/png;base64,${diff.toString('base64')}` } };
+  return { ...result, ...(options.line === '运动' && options.baseline ? { 运动基准: options.baseline } : {}), 耗时毫秒: performance.now() - start, 图片: { 甲: `data:image/png;base64,${(await readFile(a)).toString('base64')}`, 乙: `data:image/png;base64,${(await readFile(b)).toString('base64')}`, 差异: `data:image/png;base64,${diff.toString('base64')}` } };
 }
 export function parseArgs(argv) {
   const options = { line: '静止', report: 'out/报告/对照' }, positional = [];
-  const flags = { '--线': 'line', '--报告': 'report', '--阈值': 'thresholdPath', '--GPU基准': 'baselinePath', '--倍率': 'scale' };
+  const flags = { '--线': 'line', '--报告': 'report', '--阈值': 'thresholdPath', '--GPU基准': 'baselinePath', '--运动基准': 'motionBaselinePath', '--倍率': 'scale' };
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--帮助' || argv[i] === '--help') return { help: true };
     if (flags[argv[i]]) { if (!argv[i + 1] || argv[i + 1].startsWith('--')) throw new Error(`${argv[i]} 缺少值`); options[flags[argv[i]]] = argv[++i]; }
@@ -60,15 +60,18 @@ export async function main(argv = process.argv.slice(2)) {
   let options;
   try {
     options = parseArgs(argv);
-    if (options.help) { console.log('用法：npm run compare -- <甲.png|甲目录> <乙.png|乙目录> --线 静止|运动|GPU --报告 <目录> [--倍率 2] [--阈值 阈值.json] [--GPU基准 自身差.json]'); return 0; }
+    if (options.help) { console.log('用法：npm run compare -- <甲.png|甲目录> <乙.png|乙目录> --线 静止|运动|GPU --报告 <目录> [--倍率 2] [--阈值 阈值.json] [--GPU基准 自身差.json] [--运动基准 自身差.json]'); return 0; }
     const start = performance.now();
     const configured = options.thresholdPath ? await json(options.thresholdPath) : await optionalJson('阈值.json');
     const thresholds = configured ? { ...DEFAULT_THRESHOLDS, ...configured } : DEFAULT_THRESHOLDS;
-    const baselines = options.baselinePath ? await json(options.baselinePath) : null;
+    const baselinePath = options.line === '运动' ? options.motionBaselinePath : options.baselinePath;
+    const baselines = baselinePath ? await json(baselinePath) : null;
     const pairs = await pairPaths(options.a, options.b), rows = [];
     for (const pair of pairs) {
       try {
-        const baseline = baselines?.帧?.[pair.key] ?? baselines?.[pair.key];
+        const baselineKey = options.line === '运动' && baselines?.参照目录 ? relative(baselines.参照目录, pair.a).replaceAll('\\', '/') : pair.key;
+        const baseline = baselines?.帧?.[baselineKey] ?? baselines?.[baselineKey];
+        if (options.line === '运动' && options.motionBaselinePath && !baseline) throw new Error(`运动基准缺少帧：${baselineKey}`);
         const result = await compareFiles(pair.a, pair.b, { ...options, thresholds, baseline });
         rows.push({ 路径: pair.key, 甲: pair.a, 乙: pair.b, ...result });
         console.log(`${result.通过 ? '通过' : '未通过'} ${pair.key} (${result.耗时毫秒.toFixed(0)} 毫秒)`);
