@@ -1,0 +1,7412 @@
+[
+  {
+    "layerId": "5",
+    "width": 320,
+    "height": 320,
+    "commands": [
+      {
+        "method": "drawPaint",
+        "params": {
+          "paint": {
+            "color": "#00000000",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "none",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill",
+            "blendMode": "Src"
+          }
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "clipRect",
+        "params": {
+          "rect": {
+            "left": 0,
+            "top": 0,
+            "right": 320,
+            "bottom": 320
+          },
+          "SkRegion::Op": "kIntersect_Op",
+          "softClipEdgeStyle": true
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            1.08645784854889,
+            0.0678110048174858,
+            0,
+            0,
+            -0.0678110048174858,
+            1.08645784854889,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -2.98349952697754,
+            -24.6830215454102,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "saveLayer",
+        "params": {
+          "bounds": {
+            "left": 39,
+            "top": 39,
+            "right": 281,
+            "bottom": 281
+          },
+          "paint": {
+            "color": "#76000000",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "none",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          },
+          "saveFlags": 0
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": 0.600000023841858,
+          "dy": 0.800000011920929
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": false,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 52
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 178,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 244,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 198,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 268,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 198,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 244,
+                    "y": 236
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 178,
+                    "y": 200
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 268
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 200
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 76,
+                    "y": 236
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 52,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 76,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 52,
+              "top": 52,
+              "right": 268,
+              "bottom": 268
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": false,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 52
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 178,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 244,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 198,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 268,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 198,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 244,
+                    "y": 236
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 178,
+                    "y": 200
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 268
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 200
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 76,
+                    "y": 236
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 52,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 76,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 52,
+              "top": 52,
+              "right": 268,
+              "bottom": 268
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 4.40000009536743,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": false,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 52
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 178,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 244,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 198,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 268,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 198,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 244,
+                    "y": 236
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 178,
+                    "y": 200
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 268
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 200
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 76,
+                    "y": 236
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 52,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 76,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 52,
+              "top": 52,
+              "right": 268,
+              "bottom": 268
+            }
+          },
+          "paint": {
+            "color": "#FF161221",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": false,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 52
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 178,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 244,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 198,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 268,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 198,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 244,
+                    "y": 236
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 178,
+                    "y": 200
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 268
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 200
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 76,
+                    "y": 236
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 52,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 76,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 52,
+              "top": 52,
+              "right": 268,
+              "bottom": 268
+            }
+          },
+          "paint": {
+            "color": "#FFE2D6BA",
+            "strokeWidth": 2,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": false,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 42
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 204,
+                    "y": 60
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 246,
+                    "y": 52
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 254,
+                    "y": 100
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 278,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 252,
+                    "y": 212
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 240,
+                    "y": 260
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 196,
+                    "y": 256
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 278
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 254
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 74,
+                    "y": 258
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 66,
+                    "y": 208
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 42,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 68,
+                    "y": 108
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 58
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 122,
+                    "y": 62
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 42,
+              "top": 42,
+              "right": 278,
+              "bottom": 278
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 4.19999980926514,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": false,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 46
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 202,
+                    "y": 64
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 242,
+                    "y": 56
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 250,
+                    "y": 102
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 274,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 248,
+                    "y": 210
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 236,
+                    "y": 256
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 194,
+                    "y": 252
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 274
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 120,
+                    "y": 250
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 254
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 70,
+                    "y": 206
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 46,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 72,
+                    "y": 110
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 62
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 124,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 46,
+              "top": 46,
+              "right": 274,
+              "bottom": 274
+            }
+          },
+          "paint": {
+            "color": "#FFE6DEC8",
+            "strokeWidth": 1.79999995231628,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "restore"
+      }
+    ]
+  },
+  {
+    "layerId": "6",
+    "width": 163,
+    "height": 81,
+    "commands": [
+      {
+        "method": "drawPaint",
+        "params": {
+          "paint": {
+            "color": "#00000000",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "none",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill",
+            "blendMode": "Src"
+          }
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": -73,
+          "dy": -64
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": 0.5,
+          "dy": 0.699999988079071
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 146,
+                    "y": 72
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 166,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 176,
+                    "y": 82
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 162,
+                    "y": 96
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 88
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 142,
+              "top": 66,
+              "right": 176,
+              "bottom": 96
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 146,
+                    "y": 72
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 166,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 176,
+                    "y": 82
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 162,
+                    "y": 96
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 88
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 142,
+              "top": 66,
+              "right": 176,
+              "bottom": 96
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 3.59999990463257,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 146,
+                    "y": 72
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 166,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 176,
+                    "y": 82
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 162,
+                    "y": 96
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 88
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 142,
+              "top": 66,
+              "right": 176,
+              "bottom": 96
+            }
+          },
+          "paint": {
+            "color": "#FFE3263A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 146,
+                    "y": 72
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 166,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 81
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 142,
+                    "y": 88
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 142,
+              "top": 66,
+              "right": 166,
+              "bottom": 88
+            }
+          },
+          "paint": {
+            "color": "#FFF4566A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 166,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 176,
+                    "y": 82
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 162,
+                    "y": 96
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 81
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 160,
+              "top": 66,
+              "right": 176,
+              "bottom": 96
+            }
+          },
+          "paint": {
+            "color": "#FFA8172A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 146,
+                    "y": 72
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 81
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 166,
+                    "y": 66
+                  }
+                ]
+              }
+            ],
+            "bounds": {
+              "left": 146,
+              "top": 66,
+              "right": 166,
+              "bottom": 81
+            }
+          },
+          "paint": {
+            "color": "#FFFFA3AB",
+            "strokeWidth": 0.899999976158142,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 151.199996948242,
+            "top": 72.1999969482422,
+            "right": 154.800003051758,
+            "bottom": 75.7999954223633
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            0.927183866500855,
+            0.37460657954216,
+            0,
+            0,
+            -0.37460657954216,
+            0.927183866500855,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            58.6348075866699,
+            -71.7776489257813,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 205,
+                    "y": 101
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 225,
+                    "y": 101
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 229,
+                    "y": 105
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 229,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 225,
+                    "y": 129
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 205,
+                    "y": 129
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 105
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 201,
+              "top": 101,
+              "right": 229,
+              "bottom": 129
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 205,
+                    "y": 101
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 225,
+                    "y": 101
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 229,
+                    "y": 105
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 229,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 225,
+                    "y": 129
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 205,
+                    "y": 129
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 105
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 201,
+              "top": 101,
+              "right": 229,
+              "bottom": 129
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 3.59999990463257,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            0.927183866500855,
+            0.37460657954216,
+            0,
+            0,
+            -0.37460657954216,
+            0.927183866500855,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            58.4334373474121,
+            -72.6139831542969,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 205,
+                    "y": 101
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 225,
+                    "y": 101
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 229,
+                    "y": 105
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 229,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 225,
+                    "y": 129
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 205,
+                    "y": 129
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 105
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 201,
+              "top": 101,
+              "right": 229,
+              "bottom": 129
+            }
+          },
+          "paint": {
+            "color": "#FF1DBF5E",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 205,
+                    "y": 101
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 225,
+                    "y": 101
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 220,
+                    "y": 110
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 208,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 105
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 201,
+              "top": 101,
+              "right": 225,
+              "bottom": 125
+            }
+          },
+          "paint": {
+            "color": "#FF4FDB85",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 229,
+                    "y": 105
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 229,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 225,
+                    "y": 129
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 205,
+                    "y": 129
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 210,
+                    "y": 120
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 222,
+                    "y": 110
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 205,
+              "top": 105,
+              "right": 229,
+              "bottom": 129
+            }
+          },
+          "paint": {
+            "color": "#FF0A5A2B",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawRect",
+        "params": {
+          "rect": {
+            "left": 209,
+            "top": 109,
+            "right": 221,
+            "bottom": 121
+          },
+          "paint": {
+            "color": "#FF1DBF5E",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawRect",
+        "params": {
+          "rect": {
+            "left": 209,
+            "top": 109,
+            "right": 221,
+            "bottom": 121
+          },
+          "paint": {
+            "color": "#FFA6F5C6",
+            "strokeWidth": 0.800000011920929,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 206.199996948242,
+            "top": 105.199996948242,
+            "right": 209.800003051758,
+            "bottom": 108.799995422363
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            0.95105654001236,
+            -0.30901700258255,
+            0,
+            0,
+            0.30901700258255,
+            0.95105654001236,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -33.1234664916992,
+            35.0097846984863,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 112
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 112
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 116
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 134
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 138
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 138
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 134
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 116
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 78,
+              "top": 112,
+              "right": 104,
+              "bottom": 138
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 112
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 112
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 116
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 134
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 138
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 138
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 134
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 116
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 78,
+              "top": 112,
+              "right": 104,
+              "bottom": 138
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 3.40000009536743,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            0.95105654001236,
+            -0.30901700258255,
+            0,
+            0,
+            0.30901700258255,
+            0.95105654001236,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -33.8153076171875,
+            34.4985542297363,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 112
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 112
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 116
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 134
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 138
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 138
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 134
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 116
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 78,
+              "top": 112,
+              "right": 104,
+              "bottom": 138
+            }
+          },
+          "paint": {
+            "color": "#FF1DBF5E",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 112
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 112
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 94,
+                    "y": 122
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 134
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 78,
+                    "y": 116
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 78,
+              "top": 112,
+              "right": 100,
+              "bottom": 134
+            }
+          },
+          "paint": {
+            "color": "#FF4FDB85",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 116
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 134
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 138
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 82,
+                    "y": 138
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 94,
+                    "y": 122
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 82,
+              "top": 116,
+              "right": 104,
+              "bottom": 138
+            }
+          },
+          "paint": {
+            "color": "#FF128A43",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 83.1999969482422,
+            "top": 116.199996948242,
+            "right": 86.7999954223633,
+            "bottom": 119.799995422363
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": 0.5,
+          "dy": 0.699999988079071
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 74
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 136,
+                    "y": 102
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 102,
+                    "y": 98
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 102,
+              "top": 74,
+              "right": 136,
+              "bottom": 102
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 74
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 136,
+                    "y": 102
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 102,
+                    "y": 98
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 102,
+              "top": 74,
+              "right": 136,
+              "bottom": 102
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 3.59999990463257,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 74
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 136,
+                    "y": 102
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 102,
+                    "y": 98
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 102,
+              "top": 74,
+              "right": 136,
+              "bottom": 102
+            }
+          },
+          "paint": {
+            "color": "#FF2E66F0",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 74
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 121,
+                    "y": 92
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 102,
+                    "y": 98
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 102,
+              "top": 74,
+              "right": 121,
+              "bottom": 98
+            }
+          },
+          "paint": {
+            "color": "#FF6A93F8",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 74
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 136,
+                    "y": 102
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 121,
+                    "y": 92
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 118,
+              "top": 74,
+              "right": 136,
+              "bottom": 102
+            }
+          },
+          "paint": {
+            "color": "#FF1D45B8",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 102,
+                    "y": 98
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 121,
+                    "y": 92
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 136,
+                    "y": 102
+                  }
+                ]
+              }
+            ],
+            "bounds": {
+              "left": 102,
+              "top": 92,
+              "right": 136,
+              "bottom": 102
+            }
+          },
+          "paint": {
+            "color": "#FFB4C8FF",
+            "strokeWidth": 0.899999976158142,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 114.199996948242,
+            "top": 81.1999969482422,
+            "right": 117.799995422363,
+            "bottom": 84.7999954223633
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      }
+    ]
+  },
+  {
+    "layerId": "7",
+    "width": 171,
+    "height": 97,
+    "commands": [
+      {
+        "method": "drawPaint",
+        "params": {
+          "paint": {
+            "color": "#00000000",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "none",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill",
+            "blendMode": "Src"
+          }
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": -86,
+          "dy": -148
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": 0.5,
+          "dy": 0.699999988079071
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 92,
+                    "y": 194
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 110,
+                    "y": 188
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 204
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 216
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 88,
+                    "y": 208
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 88,
+              "top": 188,
+              "right": 118,
+              "bottom": 216
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 92,
+                    "y": 194
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 110,
+                    "y": 188
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 204
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 216
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 88,
+                    "y": 208
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 88,
+              "top": 188,
+              "right": 118,
+              "bottom": 216
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 3.59999990463257,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 92,
+                    "y": 194
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 110,
+                    "y": 188
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 204
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 216
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 88,
+                    "y": 208
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 88,
+              "top": 188,
+              "right": 118,
+              "bottom": 216
+            }
+          },
+          "paint": {
+            "color": "#FFE3263A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 92,
+                    "y": 194
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 110,
+                    "y": 188
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 103,
+                    "y": 202
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 88,
+                    "y": 208
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 88,
+              "top": 188,
+              "right": 110,
+              "bottom": 208
+            }
+          },
+          "paint": {
+            "color": "#FFF4566A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 110,
+                    "y": 188
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 118,
+                    "y": 204
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 104,
+                    "y": 216
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 103,
+                    "y": 202
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 103,
+              "top": 188,
+              "right": 118,
+              "bottom": 216
+            }
+          },
+          "paint": {
+            "color": "#FF6B0E1C",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 96.1999969482422,
+            "top": 194.199996948242,
+            "right": 99.7999954223633,
+            "bottom": 197.800003051758
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 200.5,
+            "top": 184.699996948242,
+            "right": 224.5,
+            "bottom": 208.699996948242
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 202,
+            "top": 186,
+            "right": 222,
+            "bottom": 206
+          },
+          "paint": {
+            "color": "#FFE3263A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 204,
+                    "y": 191
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 209.031234741211,
+                    "y": 180.312423706055
+                  },
+                  {
+                    "x": 218,
+                    "y": 188
+                  }
+                ],
+                "conicWeight": 0.606039524078369
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 212,
+                    "y": 196
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 204,
+              "top": 180.312423706055,
+              "right": 218,
+              "bottom": 196
+            }
+          },
+          "paint": {
+            "color": "#FFF4566A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 220,
+                    "y": 191
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 225.988983154297,
+                    "y": 197.999160766602
+                  },
+                  {
+                    "x": 218.994918823242,
+                    "y": 203.994079589844
+                  }
+                ],
+                "conicWeight": 0.707406103610992
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 212.000839233398,
+                    "y": 209.988998413086
+                  },
+                  {
+                    "x": 206,
+                    "y": 203
+                  }
+                ],
+                "conicWeight": 0.707406103610992
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 212,
+                    "y": 196
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 206,
+              "top": 191,
+              "right": 225.988983154297,
+              "bottom": 209.988998413086
+            }
+          },
+          "paint": {
+            "color": "#FFA8172A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 206,
+            "top": 190,
+            "right": 210,
+            "bottom": 194
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            0.990268051624298,
+            0.139173105359077,
+            0,
+            0,
+            -0.139173105359077,
+            0.990268051624298,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            32.8613243103027,
+            -19.9388389587402,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 151,
+                    "y": 215
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 167,
+                    "y": 215
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 215
+                  },
+                  {
+                    "x": 169,
+                    "y": 217
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 233
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 235
+                  },
+                  {
+                    "x": 167,
+                    "y": 235
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 151,
+                    "y": 235
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 235
+                  },
+                  {
+                    "x": 149,
+                    "y": 233
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 217
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 215
+                  },
+                  {
+                    "x": 151,
+                    "y": 215
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 149,
+              "top": 215,
+              "right": 169,
+              "bottom": 235
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 151,
+                    "y": 215
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 167,
+                    "y": 215
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 215
+                  },
+                  {
+                    "x": 169,
+                    "y": 217
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 233
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 235
+                  },
+                  {
+                    "x": 167,
+                    "y": 235
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 151,
+                    "y": 235
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 235
+                  },
+                  {
+                    "x": 149,
+                    "y": 233
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 217
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 215
+                  },
+                  {
+                    "x": 151,
+                    "y": 215
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 149,
+              "top": 215,
+              "right": 169,
+              "bottom": 235
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 3.20000004768372,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 151,
+                    "y": 215
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 167,
+                    "y": 215
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 215
+                  },
+                  {
+                    "x": 169,
+                    "y": 217
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 233
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 235
+                  },
+                  {
+                    "x": 167,
+                    "y": 235
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 151,
+                    "y": 235
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 235
+                  },
+                  {
+                    "x": 149,
+                    "y": 233
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 217
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 215
+                  },
+                  {
+                    "x": 151,
+                    "y": 215
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 149,
+              "top": 215,
+              "right": 169,
+              "bottom": 235
+            }
+          },
+          "paint": {
+            "color": "#FF128A43",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 215
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 169,
+                    "y": 215
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 159,
+                    "y": 225
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 235
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 149,
+              "top": 215,
+              "right": 169,
+              "bottom": 235
+            }
+          },
+          "paint": {
+            "color": "#FF4FDB85",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 152.399993896484,
+            "top": 218.399993896484,
+            "right": 155.599990844727,
+            "bottom": 221.599990844727
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": 0.5,
+          "dy": 0.699999988079071
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 236,
+                    "y": 150
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 254,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 220,
+                    "y": 176
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 220,
+              "top": 150,
+              "right": 254,
+              "bottom": 178
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 236,
+                    "y": 150
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 254,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 220,
+                    "y": 176
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 220,
+              "top": 150,
+              "right": 254,
+              "bottom": 178
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 3.59999990463257,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 236,
+                    "y": 150
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 254,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 220,
+                    "y": 176
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 220,
+              "top": 150,
+              "right": 254,
+              "bottom": 178
+            }
+          },
+          "paint": {
+            "color": "#FF2E66F0",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 236,
+                    "y": 150
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 238,
+                    "y": 169
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 220,
+                    "y": 176
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 220,
+              "top": 150,
+              "right": 238,
+              "bottom": 176
+            }
+          },
+          "paint": {
+            "color": "#FF6A93F8",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 236,
+                    "y": 150
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 254,
+                    "y": 178
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 238,
+                    "y": 169
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 236,
+              "top": 150,
+              "right": 254,
+              "bottom": 178
+            }
+          },
+          "paint": {
+            "color": "#FF122A78",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 232.199996948242,
+            "top": 157.199996948242,
+            "right": 235.800003051758,
+            "bottom": 160.800003051758
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": 0.5,
+          "dy": 0.699999988079071
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 186,
+                    "y": 216
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 204,
+                    "y": 242
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 172,
+                    "y": 240
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 172,
+              "top": 216,
+              "right": 204,
+              "bottom": 242
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 186,
+                    "y": 216
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 204,
+                    "y": 242
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 172,
+                    "y": 240
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 172,
+              "top": 216,
+              "right": 204,
+              "bottom": 242
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 3.40000009536743,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 186,
+                    "y": 216
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 204,
+                    "y": 242
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 172,
+                    "y": 240
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 172,
+              "top": 216,
+              "right": 204,
+              "bottom": 242
+            }
+          },
+          "paint": {
+            "color": "#FF1D45B8",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 186,
+                    "y": 216
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 189,
+                    "y": 233
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 172,
+                    "y": 240
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 172,
+              "top": 216,
+              "right": 189,
+              "bottom": 240
+            }
+          },
+          "paint": {
+            "color": "#FF6A93F8",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 182.399993896484,
+            "top": 223.399993896484,
+            "right": 185.599990844727,
+            "bottom": 226.599990844727
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      }
+    ]
+  },
+  {
+    "layerId": "8",
+    "width": 222,
+    "height": 211,
+    "commands": [
+      {
+        "method": "drawPaint",
+        "params": {
+          "paint": {
+            "color": "#00000000",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "none",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill",
+            "blendMode": "Src"
+          }
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "translate",
+        "params": {
+          "dx": -51,
+          "dy": -49
+        }
+      },
+      {
+        "method": "saveLayer",
+        "params": {
+          "bounds": {
+            "left": 51,
+            "top": 49,
+            "right": 273,
+            "bottom": 260
+          },
+          "paint": {
+            "color": "#87000000",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "none",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          },
+          "saveFlags": 0
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 65.5,
+            "top": 75.5,
+            "right": 82.5,
+            "bottom": 92.5
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 67.1999969482422,
+            "top": 77.1999969482422,
+            "right": 80.7999954223633,
+            "bottom": 90.7999954223633
+          },
+          "paint": {
+            "color": "#FFE3263A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 69,
+                    "y": 80
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 72.9249801635742,
+                    "y": 74.324836730957
+                  },
+                  {
+                    "x": 78,
+                    "y": 79
+                  }
+                ],
+                "conicWeight": 0.656167089939117
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 74,
+                    "y": 84
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 69,
+              "top": 74.324836730957,
+              "right": 78,
+              "bottom": 84
+            }
+          },
+          "paint": {
+            "color": "#FFFFA3AB",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 240,
+            "top": 86,
+            "right": 256,
+            "bottom": 102
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 241.600006103516,
+            "top": 87.5999984741211,
+            "right": 254.400009155273,
+            "bottom": 100.400001525879
+          },
+          "paint": {
+            "color": "#FFE3263A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 243,
+                    "y": 90
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 246.775009155273,
+                    "y": 82.9749145507813
+                  },
+                  {
+                    "x": 252,
+                    "y": 89
+                  }
+                ],
+                "conicWeight": 0.567727506160736
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 248,
+                    "y": 94
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 243,
+              "top": 82.9749145507813,
+              "right": 252,
+              "bottom": 94
+            }
+          },
+          "paint": {
+            "color": "#FFF4566A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 114.199996948242,
+            "top": 244.199996948242,
+            "right": 129.800003051758,
+            "bottom": 259.799987792969
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 115.800003051758,
+            "top": 245.800003051758,
+            "right": 128.199996948242,
+            "bottom": 258.200012207031
+          },
+          "paint": {
+            "color": "#FFA8172A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawOval",
+        "params": {
+          "oval": {
+            "left": 117.5,
+            "top": 247.5,
+            "right": 122.5,
+            "bottom": 252.5
+          },
+          "paint": {
+            "color": "#FFF4566A",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            0.866025388240814,
+            0.5,
+            0,
+            0,
+            -0.5,
+            0.866025388240814,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            57.1250457763672,
+            -89.1935729980469,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 189,
+                    "y": 54
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 54
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 203,
+                    "y": 54
+                  },
+                  {
+                    "x": 203,
+                    "y": 56
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 203,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 203,
+                    "y": 70
+                  },
+                  {
+                    "x": 201,
+                    "y": 70
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 189,
+                    "y": 70
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 187,
+                    "y": 70
+                  },
+                  {
+                    "x": 187,
+                    "y": 68
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 187,
+                    "y": 56
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 187,
+                    "y": 54
+                  },
+                  {
+                    "x": 189,
+                    "y": 54
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 187,
+              "top": 54,
+              "right": 203,
+              "bottom": 70
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 190.5,
+                    "y": 56
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 199.5,
+                    "y": 56
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 56
+                  },
+                  {
+                    "x": 201,
+                    "y": 57.5
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 66.5
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 68
+                  },
+                  {
+                    "x": 199.5,
+                    "y": 68
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 190.5,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 189,
+                    "y": 68
+                  },
+                  {
+                    "x": 189,
+                    "y": 66.5
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 189,
+                    "y": 57.5
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 189,
+                    "y": 56
+                  },
+                  {
+                    "x": 190.5,
+                    "y": 56
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 189,
+              "top": 56,
+              "right": 201,
+              "bottom": 68
+            }
+          },
+          "paint": {
+            "color": "#FF1DBF5E",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 189,
+                    "y": 56
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 201,
+                    "y": 56
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 189,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 189,
+              "top": 56,
+              "right": 201,
+              "bottom": 68
+            }
+          },
+          "paint": {
+            "color": "#FF4FDB85",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            0.913545429706574,
+            -0.406736642122269,
+            0,
+            0,
+            0.406736642122269,
+            0.913545429706574,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -61.3446273803711,
+            39.3962173461914,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 56,
+                    "y": 156
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 68,
+                    "y": 156
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 70,
+                    "y": 156
+                  },
+                  {
+                    "x": 70,
+                    "y": 158
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 70,
+                    "y": 170
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 70,
+                    "y": 172
+                  },
+                  {
+                    "x": 68,
+                    "y": 172
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 56,
+                    "y": 172
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 54,
+                    "y": 172
+                  },
+                  {
+                    "x": 54,
+                    "y": 170
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 54,
+                    "y": 158
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 54,
+                    "y": 156
+                  },
+                  {
+                    "x": 56,
+                    "y": 156
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 54,
+              "top": 156,
+              "right": 70,
+              "bottom": 172
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 57.5,
+                    "y": 158
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 66.5,
+                    "y": 158
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 68,
+                    "y": 158
+                  },
+                  {
+                    "x": 68,
+                    "y": 159.5
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 68,
+                    "y": 168.5
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 68,
+                    "y": 170
+                  },
+                  {
+                    "x": 66.5,
+                    "y": 170
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 57.5,
+                    "y": 170
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 56,
+                    "y": 170
+                  },
+                  {
+                    "x": 56,
+                    "y": 168.5
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 56,
+                    "y": 159.5
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 56,
+                    "y": 158
+                  },
+                  {
+                    "x": 57.5,
+                    "y": 158
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 56,
+              "top": 158,
+              "right": 68,
+              "bottom": 170
+            }
+          },
+          "paint": {
+            "color": "#FF1DBF5E",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 56,
+                    "y": 158
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 68,
+                    "y": 158
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 56,
+                    "y": 170
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 56,
+              "top": 158,
+              "right": 68,
+              "bottom": 170
+            }
+          },
+          "paint": {
+            "color": "#FFA6F5C6",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "save"
+      },
+      {
+        "method": "concat44",
+        "params": {
+          "matrix44": [
+            0.965925812721252,
+            0.258819043636322,
+            0,
+            0,
+            -0.258819043636322,
+            0.965925812721252,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            66.446159362793,
+            -54.7087020874023,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 235,
+                    "y": 217
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 247,
+                    "y": 217
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 249,
+                    "y": 217
+                  },
+                  {
+                    "x": 249,
+                    "y": 219
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 249,
+                    "y": 231
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 249,
+                    "y": 233
+                  },
+                  {
+                    "x": 247,
+                    "y": 233
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 235,
+                    "y": 233
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 233,
+                    "y": 233
+                  },
+                  {
+                    "x": 233,
+                    "y": 231
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 233,
+                    "y": 219
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 233,
+                    "y": 217
+                  },
+                  {
+                    "x": 235,
+                    "y": 217
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 233,
+              "top": 217,
+              "right": 249,
+              "bottom": 233
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 236.5,
+                    "y": 219
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 245.5,
+                    "y": 219
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 247,
+                    "y": 219
+                  },
+                  {
+                    "x": 247,
+                    "y": 220.5
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 247,
+                    "y": 229.5
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 247,
+                    "y": 231
+                  },
+                  {
+                    "x": 245.5,
+                    "y": 231
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 236.5,
+                    "y": 231
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 235,
+                    "y": 231
+                  },
+                  {
+                    "x": 235,
+                    "y": 229.5
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 235,
+                    "y": 220.5
+                  }
+                ]
+              },
+              {
+                "verb": "Conic",
+                "points": [
+                  {
+                    "x": 235,
+                    "y": 219
+                  },
+                  {
+                    "x": 236.5,
+                    "y": 219
+                  }
+                ],
+                "conicWeight": 0.70710676908493
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 235,
+              "top": 219,
+              "right": 247,
+              "bottom": 231
+            }
+          },
+          "paint": {
+            "color": "#FF128A43",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 235,
+                    "y": 219
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 247,
+                    "y": 219
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 235,
+                    "y": 231
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 235,
+              "top": 219,
+              "right": 247,
+              "bottom": 231
+            }
+          },
+          "paint": {
+            "color": "#FF4FDB85",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 84,
+                    "y": 230
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 252
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 72,
+                    "y": 250
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 72,
+              "top": 230,
+              "right": 100,
+              "bottom": 252
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 84,
+                    "y": 230
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 100,
+                    "y": 252
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 72,
+                    "y": 250
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 72,
+              "top": 230,
+              "right": 100,
+              "bottom": 252
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 2,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 84,
+                    "y": 232
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 97,
+                    "y": 250
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 75,
+                    "y": 248
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 75,
+              "top": 232,
+              "right": 97,
+              "bottom": 250
+            }
+          },
+          "paint": {
+            "color": "#FF2E66F0",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 84,
+                    "y": 232
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 86,
+                    "y": 246
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 75,
+                    "y": 248
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 75,
+              "top": 232,
+              "right": 86,
+              "bottom": 248
+            }
+          },
+          "paint": {
+            "color": "#FFB4C8FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 260,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 272,
+                    "y": 162
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 248,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 248,
+              "top": 142,
+              "right": 272,
+              "bottom": 162
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 260,
+                    "y": 142
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 272,
+                    "y": 162
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 248,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 248,
+              "top": 142,
+              "right": 272,
+              "bottom": 162
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 2,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 260,
+                    "y": 144
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 269,
+                    "y": 160
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 251,
+                    "y": 158
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 251,
+              "top": 144,
+              "right": 269,
+              "bottom": 160
+            }
+          },
+          "paint": {
+            "color": "#FF2E66F0",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 260,
+                    "y": 144
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 261,
+                    "y": 156
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 251,
+                    "y": 158
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 251,
+              "top": 144,
+              "right": 261,
+              "bottom": 158
+            }
+          },
+          "paint": {
+            "color": "#FF6A93F8",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 134,
+                    "y": 50
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 148,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 124,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 124,
+              "top": 50,
+              "right": 148,
+              "bottom": 68
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 134,
+                    "y": 50
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 148,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 124,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 124,
+              "top": 50,
+              "right": 148,
+              "bottom": 68
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 2,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": true,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 134,
+                    "y": 52
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 145,
+                    "y": 66
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 127,
+                    "y": 64
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 127,
+              "top": 52,
+              "right": 145,
+              "bottom": 66
+            }
+          },
+          "paint": {
+            "color": "#FF6A93F8",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": false,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 54
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 163,
+                    "y": 62
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 171,
+                    "y": 65
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 163,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 76
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 157,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 65
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 157,
+                    "y": 62
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              },
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 62,
+                    "y": 118
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 64.5,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 71.5,
+                    "y": 127.5
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 64.5,
+                    "y": 130
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 62,
+                    "y": 137
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 59.5,
+                    "y": 130
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 52.5,
+                    "y": 127.5
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 59.5,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              },
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 258,
+                    "y": 194
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 260.5,
+                    "y": 201
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 267.5,
+                    "y": 203.5
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 260.5,
+                    "y": 206
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 258,
+                    "y": 213
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 255.5,
+                    "y": 206
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 248.5,
+                    "y": 203.5
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 255.5,
+                    "y": 201
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 52.5,
+              "top": 54,
+              "right": 267.5,
+              "bottom": 213
+            }
+          },
+          "paint": {
+            "color": "#FFF4F1FF",
+            "strokeWidth": 0,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Miter",
+            "styleName": "Fill"
+          }
+        }
+      },
+      {
+        "method": "drawPath",
+        "params": {
+          "path": {
+            "fillType": "Winding",
+            "convex": false,
+            "isRect": false,
+            "pathPoints": [
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 54
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 163,
+                    "y": 62
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 171,
+                    "y": 65
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 163,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 160,
+                    "y": 76
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 157,
+                    "y": 68
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 149,
+                    "y": 65
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 157,
+                    "y": 62
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              },
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 62,
+                    "y": 118
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 64.5,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 71.5,
+                    "y": 127.5
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 64.5,
+                    "y": 130
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 62,
+                    "y": 137
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 59.5,
+                    "y": 130
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 52.5,
+                    "y": 127.5
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 59.5,
+                    "y": 125
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              },
+              {
+                "verb": "Move",
+                "points": [
+                  {
+                    "x": 258,
+                    "y": 194
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 260.5,
+                    "y": 201
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 267.5,
+                    "y": 203.5
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 260.5,
+                    "y": 206
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 258,
+                    "y": 213
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 255.5,
+                    "y": 206
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 248.5,
+                    "y": 203.5
+                  }
+                ]
+              },
+              {
+                "verb": "Line",
+                "points": [
+                  {
+                    "x": 255.5,
+                    "y": 201
+                  }
+                ]
+              },
+              {
+                "verb": "Close",
+                "points": []
+              }
+            ],
+            "bounds": {
+              "left": 52.5,
+              "top": 54,
+              "right": 267.5,
+              "bottom": 213
+            }
+          },
+          "paint": {
+            "color": "#FF1C1412",
+            "strokeWidth": 1.79999995231628,
+            "strokeMiter": 4,
+            "flags": "AntiAlias",
+            "strokeCap": "Butt",
+            "strokeJoin": "Round",
+            "styleName": "Stroke"
+          }
+        }
+      },
+      {
+        "method": "restore"
+      },
+      {
+        "method": "restore"
+      }
+    ]
+  }
+]

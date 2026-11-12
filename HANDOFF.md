@@ -10,9 +10,12 @@
 - 来源 gemcard-demo 提交 a66b9ce1f524a17a669c78afc64523192a0a7289 的工作区，含未提交新画法。
 - 第 08 包 14 件、第 09 包 3 件返修已包含，来源记在 素材/新画法/来源.json。
 - A0 完成：118 件、126 个染色变体、241 个参照动作、7522 帧及值表，全部通过；结果在 报告/阶段1A0/参照.json。
-- 下一步由当前代理执行 7522 帧静止线对照并交付网页。当前无需你操作。
+- A3 全量对照完成：111/118 件、7439/7522 帧过静止线；7 件 83 帧未过，全部为 1 倍，阈值未改。
+- 当前为 A 技术候选；A 过线门槛未达，用户验收未进行，main 未合并。
 - A1 场景导出完成：7522/7522 帧，结果在 out/mac/新画法/scene/；导出器定向夹具通过。
 - A2 全量绘制完成：7522/7522 帧透明 PNG，结果在 out/mac/新画法/skia/。
+- 报告：报告/阶段1A/index.html；最差 20 帧在前，可筛选全部帧；报告/阶段1A/未过线.json 含全部失败帧、原因、命令与代表两图。
+- 未过素材：fx_kill、mon_portrait、mon_dragon、mon_box、mon_chest、mon_lock、mon_tree；原生合成例证在 报告/阶段1A/原生合成/。
 - 原 main 未跟踪报告备份在 /private/tmp/svg-render-preserved-reports-20261112；非冲突文件已恢复，2 件不同文件留在备份。
 
 ## A0
@@ -33,6 +36,7 @@
 6. 不做二进制格式、量化、包体、速度基准、Blink 对照表、动画求值。
 7. 编译：node tools/scene/build.mjs out/mac/scene；实际绘制 CLI：out/mac/scene/scene-draw 场景.json 倍率 输出.png。
 8. 全量依次运行 node tools/scene/batch.mjs export、draw、compare；可加 --id 新画法/素材名。
+9. 未过线交接：node tools/scene/handoff.mjs；不重复运行无改动的全部比较。
 
 ## 后续
 
@@ -43,4 +47,7 @@
 
 ## 要 Claude 定的事
 
-- 暂无。
+- fx_kill 的 Chrome 原生层已确认先栅格为独立位图再变换；当前直接矢量场景未复现此采样，其他 6 件的半透明组疑似同类。
+- 请 Claude 确定原生 compositor 分块、栅格网格及采样如何进入 JSON 场景与 Skia 绘制；维持原阈值。
+- 下一步由用户在 Claude 的 svg-render 项目聊天发送：`读 stage-1 的 AGENTS.md、HANDOFF.md 和 报告/阶段1A/未过线.json，确定 7 件半透明 SVG 组的 compositor 分块与采样方案；阈值不改。`
+- Claude 定方案后，用户将结论贴回本 Codex 聊天；由当前代理继续修这 7 件并跑对应帧，更新报告及 stage-1。

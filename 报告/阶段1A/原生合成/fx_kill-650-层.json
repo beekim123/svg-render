@@ -1,0 +1,224 @@
+[
+  {
+    "layerId": "5",
+    "parentLayerId": "2",
+    "backendNodeId": 1,
+    "offsetX": 0,
+    "offsetY": 0,
+    "width": 320,
+    "height": 320,
+    "paintCount": 1,
+    "drawsContent": true,
+    "node": {
+      "nodeId": 0,
+      "backendNodeId": 1,
+      "nodeType": 9,
+      "nodeName": "#document",
+      "localName": "",
+      "nodeValue": "",
+      "childNodeCount": 1,
+      "documentURL": "about:blank",
+      "baseURL": "about:blank",
+      "xmlVersion": "",
+      "compatibilityMode": "QuirksMode"
+    },
+    "reasons": {
+      "compositingReasons": [
+        "Is the document.rootScroller.",
+        "Is a scrollable overflow element using accelerated scrolling."
+      ],
+      "compositingReasonIds": [
+        "RootScroller",
+        "OverflowScrolling"
+      ]
+    }
+  },
+  {
+    "layerId": "6",
+    "parentLayerId": "2",
+    "backendNodeId": 20,
+    "offsetX": 0,
+    "offsetY": 0,
+    "width": 163,
+    "height": 81,
+    "transform": [
+      1.0891407518289606,
+      0.3064392051054295,
+      0,
+      0,
+      -0.3064392051054295,
+      1.0891407518289606,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      94.66291828100167,
+      28.782276980247417,
+      0,
+      1
+    ],
+    "anchorX": 0,
+    "anchorY": 0,
+    "anchorZ": 0,
+    "paintCount": 1,
+    "drawsContent": true,
+    "node": {
+      "nodeId": 0,
+      "backendNodeId": 20,
+      "nodeType": 1,
+      "nodeName": "polygon",
+      "localName": "polygon",
+      "nodeValue": "",
+      "childNodeCount": 0,
+      "attributes": [
+        "points",
+        "146,72 166,66 176,82 162,96 142,88",
+        "transform",
+        "translate(.5 .7)",
+        "fill",
+        "#1C1412",
+        "stroke",
+        "#1C1412",
+        "stroke-width",
+        "3.6",
+        "stroke-linejoin",
+        "round",
+        "data-svg-render-node",
+        "11"
+      ],
+      "isSVG": true
+    },
+    "reasons": {
+      "compositingReasons": [
+        "Is the document.rootScroller.",
+        "Is a scrollable overflow element using accelerated scrolling."
+      ],
+      "compositingReasonIds": [
+        "RootScroller",
+        "OverflowScrolling"
+      ]
+    }
+  },
+  {
+    "layerId": "7",
+    "parentLayerId": "2",
+    "backendNodeId": 26,
+    "offsetX": 0,
+    "offsetY": 0,
+    "width": 171,
+    "height": 97,
+    "transform": [
+      1.0891407518289606,
+      0.3064392051054295,
+      0,
+      0,
+      -0.3064392051054295,
+      1.0891407518289606,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      83.08085482592207,
+      124.2538098002507,
+      0,
+      1
+    ],
+    "anchorX": 0,
+    "anchorY": 0,
+    "anchorZ": 0,
+    "paintCount": 1,
+    "drawsContent": true,
+    "node": {
+      "nodeId": 0,
+      "backendNodeId": 26,
+      "nodeType": 1,
+      "nodeName": "polygon",
+      "localName": "polygon",
+      "nodeValue": "",
+      "childNodeCount": 0,
+      "attributes": [
+        "points",
+        "92,194 110,188 118,204 104,216 88,208",
+        "transform",
+        "translate(.5 .7)",
+        "fill",
+        "#1C1412",
+        "stroke",
+        "#1C1412",
+        "stroke-width",
+        "3.6",
+        "stroke-linejoin",
+        "round",
+        "data-svg-render-node",
+        "18"
+      ],
+      "isSVG": true
+    },
+    "reasons": {
+      "compositingReasons": [],
+      "compositingReasonIds": []
+    }
+  },
+  {
+    "layerId": "8",
+    "parentLayerId": "2",
+    "backendNodeId": 12,
+    "offsetX": 0,
+    "offsetY": 0,
+    "width": 222,
+    "height": 211,
+    "transform": [
+      1.0763732785921774,
+      -0.27693993737320516,
+      0,
+      0,
+      0.27693993737320516,
+      1.0763732785921774,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      11.934979585026909,
+      70.70901924994769,
+      0,
+      1
+    ],
+    "anchorX": 0,
+    "anchorY": 0,
+    "anchorZ": 0,
+    "paintCount": 1,
+    "drawsContent": true,
+    "node": {
+      "nodeId": 0,
+      "backendNodeId": 12,
+      "nodeType": 1,
+      "nodeName": "g",
+      "localName": "g",
+      "nodeValue": "",
+      "childNodeCount": 25,
+      "attributes": [
+        "id",
+        "shards_outer",
+        "data-svg-render-node",
+        "65",
+        "style",
+        "opacity: 0.528556 !important;;transform:matrix(1.0763732785921774, -0.27693993737320516, 0.27693993737320516, 1.0763732785921774, 0, 0) !important;"
+      ],
+      "isSVG": true
+    },
+    "reasons": {
+      "compositingReasons": [
+        "Overlaps other composited content."
+      ],
+      "compositingReasonIds": [
+        "Overlap"
+      ]
+    }
+  }
+]

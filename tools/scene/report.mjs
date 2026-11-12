@@ -38,7 +38,66 @@ export async function writeStageReport(directory, {rows, worst}) {
   }
   const failed = rows.filter(row => !row.通过).map(row => ({帧: row.路径, 原因: reason(row)}));
   await fs.writeFile(path.join(directory, '结果.json'), JSON.stringify({线: '静止', 汇总: summary, 素材: [...assets.values()], 未过线: failed, 帧: rows}, null, 2) + '\n');
-  const html = `<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>新画法 · Skia 对 Chrome</title><style>body{margin:24px;font:15px system-ui;background:#f4f5f7;color:#17202a}article{background:white;padding:20px;margin:20px 0}.pictures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}figure{margin:0}img{max-width:100%;background:repeating-conic-gradient(#ddd 0% 25%,#fff 0% 50%) 0/16px 16px}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:8px;border-bottom:1px solid #ccc}pre{white-space:pre-wrap}@media(max-width:700px){.pictures{grid-template-columns:1fr}}</style><h1>新画法 · Skia 对 Chrome</h1><p>静止线，1 倍与 2 倍。素材 ${summary.素材通过数}/${summary.素材数} 过线，帧 ${summary.通过帧数}/${summary.帧数} 过线，最低 SSIM ${summary.最低相似度.toFixed(8)}。阈值沿用阈值.json。</p><h2>最差的 20 帧</h2>${cards.join('\n')}<h2>全部素材</h2><table><thead><tr><th>素材</th><th>通过 / 帧数</th><th>最低 SSIM</th></tr></thead><tbody>${[...assets.values()].sort((a,b)=>a.最低相似度-b.最低相似度).map(asset=>`<tr><td>${escape(asset.素材)}</td><td>${asset.通过帧数} / ${asset.帧数}</td><td>${asset.最低相似度.toFixed(8)}</td></tr>`).join('')}</tbody></table><h2>未过线帧</h2><pre>${escape(JSON.stringify(failed, null, 2))}</pre><p><a href="结果.json">全部逐帧指标</a></p></html>`;
+  const imageUrl = filename => path.relative(directory, filename).split(path.sep).map(encodeURIComponent).join('/');
+  const viewerRows = rows.map(row => ({key: row.路径, a: imageUrl(row.甲), b: imageUrl(row.乙), ssim: score(row), passed: row.通过}));
+  const viewer = `<h2>全部帧</h2><p>全部帧图像来自本机 out/mac/新画法，最差20帧随报告保存。</p>
+<div class="viewer-controls"><label for="frame-filter">筛选帧 <input id="frame-filter" type="search" placeholder="素材、动作或时刻"></label><label for="frame-select">选择帧 <select id="frame-select"></select></label><button id="frame-prev" type="button">上一帧</button><button id="frame-next" type="button">下一帧</button></div>
+<p id="frame-count" role="status"></p><article id="frame-viewer"><h3 id="frame-name"></h3><p id="frame-stats"></p><div class="pictures pair"><figure><img id="frame-chrome" alt="Chrome"><figcaption>Chrome</figcaption></figure><figure><img id="frame-skia" alt="Skia"><figcaption>Skia</figcaption></figure></div></article>
+<script id="frame-data" type="application/json">${JSON.stringify(viewerRows).replace(/</g, '\\u003c')}</script>
+<script>
+(() => {
+const frames = JSON.parse(document.getElementById('frame-data').textContent);
+const filter = document.getElementById('frame-filter');
+const select = document.getElementById('frame-select');
+const previous = document.getElementById('frame-prev');
+const next = document.getElementById('frame-next');
+const viewer = document.getElementById('frame-viewer');
+const count = document.getElementById('frame-count');
+const chrome = document.getElementById('frame-chrome');
+const skia = document.getElementById('frame-skia');
+let matching = [];
+function showFrame() {
+  const index = select.selectedIndex;
+  const row = frames[matching[index]];
+  viewer.hidden = !row;
+  previous.disabled = index <= 0;
+  next.disabled = index < 0 || index >= matching.length - 1;
+  if (!row) {
+    chrome.removeAttribute('src');
+    skia.removeAttribute('src');
+    document.getElementById('frame-name').textContent = '';
+    document.getElementById('frame-stats').textContent = '';
+    return;
+  }
+  document.getElementById('frame-name').textContent = row.key;
+  document.getElementById('frame-stats').textContent = 'SSIM ' + row.ssim.toFixed(8) + ' · ' + (row.passed ? '通过' : '未过线');
+  chrome.src = row.a;
+  skia.src = row.b;
+}
+function filterFrames() {
+  const selected = select.value;
+  const query = filter.value.trim().toLocaleLowerCase();
+  matching = [];
+  const options = document.createDocumentFragment();
+  frames.forEach((row, index) => {
+    if (!row.key.toLocaleLowerCase().includes(query)) return;
+    matching.push(index);
+    options.appendChild(new Option(row.key, String(index)));
+  });
+  select.replaceChildren(options);
+  select.disabled = !matching.length;
+  if (selected !== '' && matching.includes(Number(selected))) select.value = selected;
+  count.textContent = matching.length ? '显示 ' + matching.length + ' / ' + frames.length + ' 帧' : '没有匹配的帧。共 ' + frames.length + ' 帧。';
+  showFrame();
+}
+filter.addEventListener('input', filterFrames);
+select.addEventListener('change', showFrame);
+previous.addEventListener('click', () => { select.selectedIndex--; showFrame(); });
+next.addEventListener('click', () => { select.selectedIndex++; showFrame(); });
+filterFrames();
+})();
+</script>`;
+  const html = `<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>新画法 · Skia 对 Chrome</title><style>body{margin:24px;font:15px system-ui;background:#f4f5f7;color:#17202a}article{background:white;padding:20px;margin:20px 0}.pictures{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.pictures.pair{grid-template-columns:repeat(2,minmax(0,1fr))}.viewer-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.viewer-controls label{max-width:100%}input,select,button{font:inherit;padding:6px;max-width:100%}figure{margin:0}img{max-width:100%;background:repeating-conic-gradient(#ddd 0% 25%,#fff 0% 50%) 0/16px 16px}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:8px;border-bottom:1px solid #ccc}pre{white-space:pre-wrap}@media(max-width:700px){.pictures,.pictures.pair{grid-template-columns:1fr}}</style><h1>新画法 · Skia 对 Chrome</h1><p>静止线，1 倍与 2 倍。素材 ${summary.素材通过数}/${summary.素材数} 过线，帧 ${summary.通过帧数}/${summary.帧数} 过线，最低 SSIM ${summary.最低相似度.toFixed(8)}。阈值沿用阈值.json。</p><h2>最差的 20 帧</h2>${cards.join('\n')}${viewer}<h2>全部素材</h2><table><thead><tr><th>素材</th><th>通过 / 帧数</th><th>最低 SSIM</th></tr></thead><tbody>${[...assets.values()].sort((a,b)=>a.最低相似度-b.最低相似度).map(asset=>`<tr><td>${escape(asset.素材)}</td><td>${asset.通过帧数} / ${asset.帧数}</td><td>${asset.最低相似度.toFixed(8)}</td></tr>`).join('')}</tbody></table><h2>未过线帧</h2><pre>${escape(JSON.stringify(failed, null, 2))}</pre><p><a href="结果.json">全部逐帧指标</a></p></html>`;
   await fs.writeFile(path.join(directory, 'index.html'), html);
   return summary;
 }
