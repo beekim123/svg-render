@@ -1,4 +1,4 @@
-// DOM替身仅验证systemLanguage检测、命名空间边界及已授权分类；不冒充真实Chrome验证。
+// DOM替身仅验证systemLanguage检测、命名空间边界及已授权分类。
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import vm from 'node:vm';

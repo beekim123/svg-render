@@ -1,4 +1,4 @@
-// 无浏览器单元检查只验证登记与分类结构，不冒充Chrome扫描验收。
+// 无浏览器单元检查只验证登记与分类结构。
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';

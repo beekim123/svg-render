@@ -63,7 +63,7 @@ def main():
     folder = ROOT / '素材/源文件/复杂测试图'
     for p in sorted(folder.rglob('*.svg')):
         assets.append(complex_asset(p, folder))
-    # 只登记已交付的本地素材；公开集必须另经Chrome筛选，下载不等于通过。
+    # 只登记已交付的本地素材；公开集还要经Chrome筛选。
     commit = '500d8605a28ac092c1b146c06ec65c0e70e99ec4'
     cache = pathlib.Path(os.environ.get('SVG_RENDER_CACHE') or (pathlib.Path.home() / ('Library/Caches/svg-render' if sys.platform == 'darwin' else '.cache/svg-render')))
     tests = cache / 'tests/resvg' / commit / 'crates/resvg/tests'

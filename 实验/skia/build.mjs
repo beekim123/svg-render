@@ -55,6 +55,6 @@ await fs.writeFile(path.join(output,'gn-args-list.txt'),listed.stdout);
 if (process.argv.includes('--只生成')) process.exit(0);
 run(path.join(bin,'ninja'),['-C',output,'-j',process.env.SVG_RENDER_JOBS || '4','skia']);
 const lib=path.join(output,target==='wasm'?'libskia.wasm.a':'libskia.a');
-const info={目标:target,Skia:skiaRevision,本次构建秒:(Date.now()-start)/1000,计时说明:'本次调用含增量复用，不代表首次完整构建时长',静态库字节:(await fs.stat(lib)).size,静态库:lib,说明:'这只是静态库构建记录，尚非动态库体积、实验5或Mac验收通过。'};
+const info={目标:target,Skia:skiaRevision,本次构建秒:(Date.now()-start)/1000,计时说明:'本次调用含增量复用，比首次完整构建短',静态库字节:(await fs.stat(lib)).size,静态库:lib,说明:'这只是静态库构建记录，尚非动态库体积、实验5或Mac验收通过。'};
 const report=path.join(root,'报告',process.platform === 'darwin'?'mac':'linux');
 await fs.mkdir(report,{recursive:true});await fs.writeFile(path.join(report,`skia-${target}.json`),JSON.stringify(info,null,2)+'\n');

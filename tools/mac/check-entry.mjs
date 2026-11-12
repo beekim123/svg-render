@@ -37,5 +37,5 @@ try{
  assert.equal(await fs.readFile(path.join(old,'旧记录.txt'),'utf8'),'必须保留');
  assert.equal(JSON.parse(await fs.readFile(path.join(old,'验收.json'))).全部通过,true);
  assert.equal(JSON.parse(await fs.readFile(path.join(temp,'out/mac/text/result.json'))).旧记录,true);
- console.log('通过：真实mac入口在退出2后停止；旧报告完整归档，未运行摘要不借用旧out，验收未冒充通过。');
+ console.log('通过：真实mac入口在退出2后停止；旧报告已归档，未运行的步骤没有摘要。');
 }finally{await fs.rm(temp,{recursive:true,force:true});}

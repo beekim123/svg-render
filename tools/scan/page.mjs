@@ -25,7 +25,7 @@ export function scanPage(countPathSegments) {
   for(const attr of el.attributes){if(attr.value.toLowerCase().includes('currentcolor'))hit('颜色/currentColor');if(attr.name.startsWith('on'))hit('禁止/脚本');if(['href','xlink:href','src'].includes(attr.name)&&external(attr.value))hit('禁止/外部资源');}
   if(['script','foreignObject','image'].includes(tag))hit('禁止/'+tag);
   if(tag==='path'){
-   // 优先使用浏览器路径解析 API；缺失时明确报告，不用文本正则冒充段数。
+   // 优先使用浏览器路径解析 API；缺失时报错，不用文本正则估段数。
    if(typeof el.getPathData==='function')segments+=el.getPathData().length;
    else {try{segments+=countPathSegments(el.getAttribute('d')||'');}catch(e){pathUnavailable++;unknown.push(`路径${el.id||'(无id)'}：${e.message}`);}}
   }

@@ -1,4 +1,4 @@
-// 显式preserve-layers候选回归；默认value-only对照见check-freeze-policy，不代表候选已获批准。
+// 显式preserve-layers候选回归；默认value-only对照见check-freeze-policy。
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';

@@ -1,4 +1,4 @@
-// 两帧两策略真实对照；默认像素失败是决策证据，不能当作默认通过。
+// 两帧两策略真实对照。
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';

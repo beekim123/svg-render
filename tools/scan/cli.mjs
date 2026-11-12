@@ -94,7 +94,7 @@ async function main(){
   report.静态及周期判断='静态已检查；循环周期由参照工具量取';
   // 公开集缺失、未分类动作或未登记特性都不能记成通过。
   const bad=assessment.状态!=='完成';
-  // 公开候选按要求仅登记全支持项；被排除候选的未知保留在排除理由，不冒充已定档。
+  // 公开候选按要求仅登记全支持项；被排除候选的未知项记在排除理由里。
   report.待人工决定=assessment.待人工决定;
   report.候选未知排除数=excluded.filter(x=>x.原因.some(s=>s.endsWith('：没登记'))).length;
   report.清单未知待决数=report.待人工决定.length;

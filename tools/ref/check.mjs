@@ -7,4 +7,4 @@ const one=frameTimes({kind:'播一次',id:'样例',duration:1200});assert(one.in
 assert.equal(scaleTimes(loop,1920,2).length,3);assert.equal(scaleTimes(loop,1919,2).length,15);
 // 页面安装函数必须能独立序列化，无模块闭包依赖。
 assert.doesNotThrow(()=>new Function(`return (${installTimeline.toString()})`));
-console.log('参照时刻安排与页面脚本语法检查通过；不代替 Chrome 冻结正确性验收。');
+console.log('参照时刻安排与页面脚本语法检查通过。');

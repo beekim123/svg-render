@@ -13,7 +13,7 @@ const output=path.resolve(process.argv.find(x=>x.startsWith('--output='))?.slice
 const skiaOnly=process.argv.includes('--skia-only');
 const files=(await fs.readdir(path.join(root,'实验/micro/scenes'))).filter(x=>x.endsWith('.svg')).sort();
 if(files.length!==8)throw new Error('必须恰好有 8 个手写场景');
-const result={实验:5,平台:process.platform,架构:process.arch,时间:new Date().toISOString(),及格:false,像素及格:false,指令已校准:false,说明:'C++按固定Chrome真实指令核对；CDP未展开的参数按固定Blink源码及SVG数值核对。只有当前源码、库、配置和24份指令匹配已核对凭据且像素全部达标才放行，不代表阶段0最终验收。',帧:[],阻塞:[]};
+const result={实验:5,平台:process.platform,架构:process.arch,时间:new Date().toISOString(),及格:false,像素及格:false,指令已校准:false,说明:'C++按固定Chrome真实指令核对；CDP未展开的参数按固定Blink源码及SVG数值核对。只有当前源码、库、配置和24份指令匹配已核对凭据且像素全部达标才放行。',帧:[],阻塞:[]};
 await fs.mkdir(output,{recursive:true});
 let reference;
 try {

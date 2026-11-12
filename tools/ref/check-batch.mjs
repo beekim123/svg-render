@@ -30,5 +30,5 @@ try{
  const changedDuration=structuredClone(withCast);changedDuration[0].动作[1].毫秒=200;assert(!(await checkCoverage({manifest:changedDuration,out:tintedOut})).通过);const changedTrigger=structuredClone(withCast);changedTrigger[0].动作[1].触发.class='other';assert(!(await checkCoverage({manifest:changedTrigger,out:tintedOut})).通过);
  const blocked=await runBatch({manifest,out:path.join(tmp,'blocked'),sessionFactory:async()=>{throw new Error('测试启动失败');}});assert(!blocked.通过);assert.equal(blocked.错误.length,1);
  await fs.writeFile(source,'<svg viewBox="0 0 5 5"/>');assert(!(await checkCoverage({manifest,out})).通过);
- console.log('离线模拟测试通过：清单校验、路径限制、switch1234、值容差、缓存命中/损坏、覆盖、两进程编排、GPU基准直接消费、跨平台无画质线、染色首帧指令、无待机首动作回退、同名动作时长/触发变更、失败传播。不是Chrome截图验收。');
+ console.log('离线模拟测试通过：清单校验、路径限制、switch1234、值容差、缓存命中/损坏、覆盖、两进程编排、GPU基准直接消费、跨平台无画质线、染色首帧指令、无待机首动作回退、同名动作时长/触发变更、失败传播。');
 }finally{await fs.rm(tmp,{recursive:true,force:true});}

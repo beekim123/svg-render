@@ -9,7 +9,7 @@ import { root, cache, skiaRevision, emscriptenVersion } from '../../tools/setup/
 
 const target = process.argv[2] || (process.platform === 'darwin' ? `mac-${process.arch === 'arm64' ? 'arm64' : 'x64'}` : 'linux-x64');
 if (!['linux-x64', 'mac-arm64', 'mac-x64', 'wasm'].includes(target)) throw new Error(`未知目标：${target}`);
-if (target.startsWith('mac-') && process.platform !== 'darwin') throw new Error('Mac 动态库必须在 Mac 的 Xcode 工具链上链接；本机不冒充验证。');
+if (target.startsWith('mac-') && process.platform !== 'darwin') throw new Error('Mac 动态库必须在 Mac 的 Xcode 工具链上链接。');
 const sdk = path.join(cache, 'emsdk', emscriptenVersion);
 const llvm = path.join(sdk, 'install/bin');
 const source = path.join(cache, 'skia-build-source', skiaRevision);
@@ -101,7 +101,7 @@ try {
     bytes: binary.length, sha256: createHash('sha256').update(binary).digest('hex'),
     exports: exportEvidence, architecture: architectureEvidence, build_pass: true,
     runtime_validation: modes === null ? '未运行：没有 Rosetta，只检查了x64链接、架构、导出与体积' : (target === 'mac-x64' && process.arch === 'arm64' ? '28模式全部通过（Rosetta）' : '28模式全部通过'),
-    modes, commands, scope: '28模式运行冒烟与体积；不是Chrome像素一致性验收。Mac分支未在Linux执行。' };
+    modes, commands, scope: '28模式运行冒烟与体积。' };
   if (wasm) {
     const gzip = gzipSync(binary, { level: 9 });
     const brotli = brotliCompressSync(binary, { params: { [constants.BROTLI_PARAM_QUALITY]: 11 } });

@@ -1,4 +1,4 @@
-// 真实Chrome数值平面精度回归：is2D容器标志不能代替16项数值判定。
+// 真实Chrome数值平面精度回归：按16项数值判定是否平面，不看is2D标志。
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';

@@ -1,4 +1,4 @@
-// 真Chrome扫描原始公开fixture：其他XML namespace的rect不能冒充SVG rect，也不能崩整批。
+// 真Chrome扫描原始公开fixture：其他XML namespace的rect不算SVG rect，也不能让整批崩掉。
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';

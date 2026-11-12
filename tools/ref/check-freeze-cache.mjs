@@ -1,4 +1,4 @@
-// 离线缓存/覆盖隔离单元回归；受控PNG不代表真实Chrome像素验收。
+// 离线缓存/覆盖隔离单元回归（用受控PNG，不开Chrome）。
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
@@ -45,7 +45,7 @@ try{
  await test('工厂实际策略缺失或与请求不一致时拒绝，不能重新贴标签',async()=>{for(const policy of [undefined,'preserve-layers']){const result=await runBatch({manifest,out:path.join(temp,policy?'mismatch':'missing'),sessionFactory:async()=>{const result=session('value-only');result.freezePolicy=policy;return result;},sessionOptions:{freezePolicy:'value-only'}});assert.equal(result.通过,false);assert(result.错误.some(error=>String(error.错误).includes('策略')));}});
  await test('帧元数据实际策略与会话不符也不能写为当前缓存',async()=>{const result=await runBatch({manifest,out:path.join(temp,'frame-mismatch'),sessionFactory:async()=>{const result=session('value-only'),render=result.render;result.render=async args=>{const frame=await render(args);frame.metadata.冻结策略='preserve-layers';return frame;};return result;},sessionOptions:{freezePolicy:'value-only'}});assert.equal(result.通过,false);assert(result.错误.some(error=>String(error.错误).includes('帧元数据冻结策略')));});
 }finally{
- if(reportFile){const target=path.resolve(root,reportFile);await fs.mkdir(path.dirname(target),{recursive:true});await fs.writeFile(target,JSON.stringify({类型:'离线缓存/覆盖隔离单元测试，不是Chrome像素验收',通过:rows.every(row=>row.通过),测试:rows},null,2)+'\n');}
+ if(reportFile){const target=path.resolve(root,reportFile);await fs.mkdir(path.dirname(target),{recursive:true});await fs.writeFile(target,JSON.stringify({类型:'离线缓存/覆盖隔离单元测试',通过:rows.every(row=>row.通过),测试:rows},null,2)+'\n');}
  await fs.rm(temp,{recursive:true,force:true});
 }
 process.exitCode=rows.every(row=>row.通过)?0:1;

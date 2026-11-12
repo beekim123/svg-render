@@ -23,7 +23,8 @@
     "experiment:6": "node 实验/text/run.mjs",
     "check": "node tools/check/index.mjs",
     "check:readonly": "node tools/setup/readonly.mjs",
-    "mac": "node tools/mac.mjs"
+    "mac": "node tools/mac.mjs",
+    "check:wording": "node tools/check/wording.mjs"
   },
   "dependencies": {
     "fontkit": "2.0.4",

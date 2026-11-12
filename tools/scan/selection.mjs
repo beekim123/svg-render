@@ -38,7 +38,7 @@ export function assessRegistered(registered,results){
   if(!r||r.状态!=='完成')incomplete.push(asset.id);
   for(const [feature,status] of Object.entries(r?.分类||{})){
    if(status==='没登记')unknown.push({id:asset.id,特性:feature,原因:'支持范围中没有登记，须人工决定，不自动扩范围'});
-   if(status==='不支持')unsupported.push({id:asset.id,特性:feature,原因:'已按支持范围分类为不支持；扫描完成不代表素材可被渲染器接受'});
+   if(status==='不支持')unsupported.push({id:asset.id,特性:feature,原因:'已按支持范围分类为不支持'});
   }
  }
  return {状态:incomplete.length||unknown.length?'待验证':'完成',未完成:incomplete,待人工决定:unknown,不支持:unsupported};
