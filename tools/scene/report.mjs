@@ -44,7 +44,9 @@ export async function writeStageReport(directory, {rows, worst, detailsFile, ref
   await fs.writeFile(detailsFile, JSON.stringify({线: '静止', 汇总: summary, 帧: rows}) + '\n');
   await fs.writeFile(path.join(directory, '结果.json'), JSON.stringify({线: '静止', 汇总: summary, 素材: [...assets.values()], 未过线: failed, 未过帧: rows.filter(row => !row.通过)}, null, 2) + '\n');
   const imageUrl = filename => path.relative(directory, filename).split(path.sep).map(encodeURIComponent).join('/');
-  const viewerRows = rows.map(row => [row.路径, score(row), Number(row.通过)]);
+  const firstPrefix = rows[0].路径.split('/')[0] + '/';
+  const framePrefix = rows.every(row => row.路径.startsWith(firstPrefix)) ? firstPrefix : '';
+  const viewerRows = rows.map(row => [row.路径.slice(framePrefix.length), Number(score(row).toFixed(8)), Number(row.通过)]);
   const viewer = `<h2>全部帧</h2><p>全部帧图像来自本机 out/mac/新画法，最差20帧随报告保存。</p>
 <div class="viewer-controls"><label for="frame-filter">筛选帧 <input id="frame-filter" type="search" placeholder="素材、动作或时刻"></label><label for="frame-select">选择帧 <select id="frame-select"></select></label><button id="frame-prev" type="button">上一帧</button><button id="frame-next" type="button">下一帧</button></div>
 <p id="frame-count" role="status"></p><article id="frame-viewer"><h3 id="frame-name"></h3><p id="frame-stats"></p><div class="pictures pair"><figure><img id="frame-chrome" alt="Chrome"><figcaption>Chrome</figcaption></figure><figure><img id="frame-skia" alt="Skia"><figcaption>Skia</figcaption></figure></div></article>
@@ -52,6 +54,8 @@ export async function writeStageReport(directory, {rows, worst, detailsFile, ref
 <script>
 (() => {
 const frames = JSON.parse(document.getElementById('frame-data').textContent);
+const framePrefix = ${JSON.stringify(framePrefix).replace(/</g, '\\u003c')};
+for (const row of frames) row[0] = framePrefix + row[0];
 const chromeDirectory = ${JSON.stringify(imageUrl(referenceDirectory))};
 const skiaDirectory = ${JSON.stringify(imageUrl(skiaDirectory))};
 const filter = document.getElementById('frame-filter');

@@ -1,58 +1,43 @@
 # 交接
 
-> 2026-11-12。方向、判法、阈值由 Claude 定，先读 AGENTS.md。
+> 2026-11-12。方向、判法、阈值由 Claude 定，先读 AGENTS.md。进度只写本文件。
 
 ## 当前
 
-- 分支 stage-1，起点 stage-0 的 309f309；每完成一步提交并推送 stage-1。
-- A0 完成：118 件、126 染色变体、241 个参照动作、7522 帧及值表。来源 gemcard-demo a66b9ce 工作区，含 08、09 包 17 件返修，记在 素材/新画法/来源.json。
-- A1 导出 7522/7522，A2 绘制 7522/7522。
-- A3 对原参照：111/118 件、7439/7522 帧过静止线；7 件 83 帧未过，全是 1 倍。
+- 分支 stage-1；本轮提交在本地。自动审批拒绝推送 origin/stage-1，需用户明确授权远程目标及本轮提交后再推。
+- A0：118 件、126 染色变体、241 个动作、7522 帧及 20 毫秒值表；来源 gemcard-demo a66b9ce 工作区。
+- A1、A2：场景导出与 Skia 绘制各 7522/7522。
+- A3 完成：整图参照 7522/7522；静止线 118/118 件、7522/7522 帧通过，出错 0，最低 SSIM 0.9956843486887914。
+- 报告：`报告/阶段1A/index.html`；完整逐帧指标在 `out/mac/新画法/compare/结果.json`。
+- 版本库内报告合计 19,925,701 字节；结果 JSON 17,289 字节。已删旧原生合成诊断和 `docs/v2/status.md`。
+- 当前阶段 B：A 技术验证完成；用户验收未进行；B 分层导出与 Godot 播放器正在实现。
 
 ## Claude 复核结论（2026-11-12）
 
-**Skia 画对了，83 帧的差别来自 Chrome 页面的合成层，不是 SVG 本身。**
-
-- 证据：同一张冻结 SVG，放进 `<img>` 让 Chrome 整张一次栅格（不拆合成层），和我们的 Skia 图比：7 件代表帧 SSIM 0.999–1.000，不算边大差 0；fx_kill 逐像素相同。
-- 同一张 `<img>` 图和原参照比：0.981–0.997，正好就是 A3 的那个差。
-- 删掉冻结 SVG 里的动画规则，合成层数不变，差也不变，所以和动画无关。
+- Skia 画对了，原参照的 83 帧差别来自 Chrome 页面合成层；同一冻结 SVG 用 `<img>` 整张栅格后，7 件代表帧 SSIM 0.999–1.000，不算边大差 0。
+- A 静止线比 Chrome 整图参照 `ref-img/`；阈值保持原值。不把 compositor 分块、栅格网格和采样写入 JSON 场景或 Skia。
+- 对原参照 7439/7522，差别来自 Chrome 合成层；原页面参照 `ref/` 留给 B 的运动线。
 - 复现脚本：`实验/capture/img-ref-probe.mjs`。
+- `tools/ref/page.mjs` 变动导致实验 5 校准凭据和工具指纹失效；下次全量验收一起重签。
 
-**判法（Claude 定）：**
+## 现在做：B（当前 Codex 执行）
 
-1. A 的静止线改比「整图参照」：Chrome 把冻结 SVG 当 `<img>` 画出来的图。
-2. 不把 compositor 分块、栅格网格、采样写进 JSON 场景或 Skia。
-3. 原参照（页面渲染，带合成层）留给 B 的运动线用。B 本来就是先把层画成纹理再变换，会有同类的软边。
-4. 阈值不改。
-
-## 现在做
-
-1. 出整图参照：照 `实验/capture/img-ref-probe.mjs` 的做法，从 `out/mac/新画法/ref/` 的冻结 SVG 给全部 7522 帧出图，放 `out/mac/新画法/ref-img/`，同名，尺寸和原参照一致。只截图，不开活图页。
-2. 用 `tools/scene/batch.mjs compare` 改比 ref-img（加个选项选参照目录），重出 `报告/阶段1A/`。
-3. 118 件全过：A 完成。报告页写一行「对原参照 7439/7522，差别来自 Chrome 合成层，见 HANDOFF」。
-4. 收尾：
-   - 删 `docs/v2/status.md`。`docs/` 只读，进度只写 HANDOFF。
-   - `报告/` 现在 35.8 MB，超 20 MB。`报告/阶段1A/结果.json`（10 MB）只留汇总和未过帧，逐帧数据留在 `out/`；删 `报告/阶段1A/原生合成/`。
-   - `tools/ref/page.mjs` 改过，实验 5 校准凭据和工具指纹已失效。现在不重签，下次跑全量验收时一起重签。
-5. A 过了直接开始 B，不用等 Claude。有要定的再写到下面。
+1. 每个动画节点保留一层，静态连续内容用 Skia 绘一次成纹理；先用带裁剪扫光的 `gem_red_cut` 跑通。
+2. 保留匿名节点号、嵌套变换、组透明度、父级裁剪。纹理记录本地绘制范围及原点，保留负坐标内容。
+3. Godot 按 `values/` 的 20 毫秒采样插值，只改变换和透明度；完整局部矩阵已含枢轴，不另加转轴。
+4. 241 个动作、1599 轨只含 transform/opacity；按轨属性中性化烘焙，保留其余静态属性。
+5. 演示工程排 118 件网格播待机，点击切动作，记录帧率；图形测试先重新识别内屏。
+6. Godot 离屏截图比原页面参照，用运动线；有判法、方向或阈值问题交 Claude。
+7. C 接 gemcard-demo 并留精灵图开关；开始 C 前问用户。
 
 ## A 的命令
 
-- 收素材：`node tools/art/receive-new.mjs`；刷新单件给 `--id`。
-- 参照：`npm run ref -- --manifest 素材/新画法/清单.json --out out/mac/新画法 --concurrency 1`。
+- 整图参照：`node tools/scene/img-ref.mjs`，可加 `--id 新画法/素材名`。
+- 对照：`node tools/scene/batch.mjs compare --ref out/mac/新画法/ref-img`。
+- 定向检查：`node tools/scene/check-img-ref.mjs`、`node tools/scene/check-report.mjs`。
 - 编译：`node tools/scene/build.mjs out/mac/scene`；绘制：`out/mac/scene/scene-draw 场景.json 倍率 输出.png`。
-- 全量：`node tools/scene/batch.mjs export|draw|compare`，可加 `--id 新画法/素材名`。
-- 缓存：`SVG_RENDER_CACHE=/private/tmp/svg-render-mac-cache`。
-
-## 之后：B
-
-- 每个有动画的元素切成一层；层里不动的内容用 Skia 画一次，变成纹理。
-- Godot 每帧只按值表改每层的变换和透明度，不重画。值表用 `out/mac/新画法/values/`，按 20 毫秒采样插值，先不做时间线求值器。
-- 裁剪路径常包着会动的部件：层合成时要带上裁剪。
-- 演示工程：118 件排成网格播待机，点一下切动作。记录帧率。
-- 对照：Godot 离屏截图和原参照（带合成层的那份）比，用运动线。
-- C 接 gemcard-demo 并留精灵图开关；开始 C 前问用户。
+- 缓存：`SVG_RENDER_CACHE=/private/tmp/svg-render-mac-cache`；计算只开 1 worker，数值库线程为 1。
 
 ## 要 Claude 定的事
 
-（GPT 填，一条一行）
+（暂无）
