@@ -1,7 +1,7 @@
 {
   "状态": "已核对",
-  "时间": "2026-11-11T13:11:03.453Z",
-  "核对者": "本会话Codex技术核对及独立代理只读复核",
+  "时间": "2026-11-12T01:48:23.287675Z",
+  "核对者": "Claude（2026-11-11 修复后重新核对）；原凭据：Codex技术核对及独立代理只读复核",
   "范围": "固定CfT 157.0.8103.50，Mac arm64，8场景1/1.5/2倍；不代表阶段0最终验收或用户验收",
   "记录": "报告/mac-续验-a7c0423-20261111/指令校准.md",
   "平台": "darwin",
@@ -10,8 +10,12 @@
     "实验/micro/draw.cpp": "2dc8165d7bf447b280b68bef6087ca9a7584b969f908d59b779bce39ea85c587",
     "实验/micro/sources.json": "eee3bb775e49291f602a8172db7a82f320d5ac0ae7260bd21c0b13da7cb21436",
     "实验/skia/chromium-config.h": "1011cb837da54ed7ccd9d3c1add5a57441599ad3b64c88907fef9b311fc60a70",
-    "tools/chrome/index.mjs": "1fdadd0870522b3457e5da56a89eefadfaa7d58f48ec52c84166f156b66b18e3",
-    "参照版本.json": "433197fb5a7756b9eb44dbf0cb9b1a91abb0ecbbb3a87c6298e2333f44451d1e",
+    "tools/chrome/index.mjs": "ebfabcc0d87e1a40554d15798d1330e1e08ed3d14a0d4bf184f32f17b5813de1",
+    "tools/chrome/svg.mjs": "1773968794d7b9d8b603422e1b8eb3dc89b152d392c84f88edfdf1e8657ee913",
+    "tools/ref/index.mjs": "5a400525f028855851b4c290fba4405751ac8f52184ec48454a9ee89966e5f88",
+    "tools/ref/page.mjs": "9b526cde33ec757d56bc3cf4166202ebd4d2d1338e1f1e7d31627aee54b0fbb7",
+    "tools/ref/verify.mjs": "9881a9a394f650fca8b175dad034b6dd61e49b485b2ff9da87d16cf1710e2c7d",
+    "参照版本.json": "384a3bbe252df581e8c526d9c759741d130bbad7f49d6aa1b1c0f2dc680649b4",
     "实验/micro/scenes/01-path.svg": "e01b7bce2c0fd804c64a9c9234ce471d156c2e40eacf95ef467080bea2615688",
     "实验/micro/scenes/02-primitives.svg": "4f8a86f822cd772191790d8611fa0ef237b59d63fae2bd2828b6ac7a21264c41",
     "实验/micro/scenes/03-strokes.svg": "3647133634d46bc1f7085610a2b0f78888ddf5aa02402b1c6c333c10dea36afd",
@@ -22,11 +26,7 @@
     "实验/micro/scenes/08-clip-mask-blend.svg": "74ad25ef06c824bf81520ae2ea7c86f2260762ee3d3ec9879dd718d37a7564b4",
     "libskia.a": "a0cf0f75fa0bd41607ef4f4146ec5092ecf0ff563edd23a5443b1da368b7fdaa",
     "libskcms.a": "958819857c61b8a5ef9846daa2e473479714dfad1ee5e2eeddd598b1ec331926",
-    "Skia-args.gn": "c2aa084614b65c902e4befbca6b1f3840e48ae31c3b159bf5f0675b39211b168",
-    "tools/chrome/svg.mjs": "1773968794d7b9d8b603422e1b8eb3dc89b152d392c84f88edfdf1e8657ee913",
-    "tools/ref/index.mjs": "0c1dda06f021e2877e27bd0d5652131cd69d062b2f3071d326764c96243a8611",
-    "tools/ref/page.mjs": "8a3909f76bb4bd62a59aa087534e52478a91145a24d343e216dc6afa802379db",
-    "tools/ref/verify.mjs": "9881a9a394f650fca8b175dad034b6dd61e49b485b2ff9da87d16cf1710e2c7d"
+    "Skia-args.gn": "c2aa084614b65c902e4befbca6b1f3840e48ae31c3b159bf5f0675b39211b168"
   },
   "指令SHA256": {
     "01-path.svg@1": "e44dd2044b134eb825562608f6fef70f789254a1ce46ca821912a3996f4497c6",
@@ -54,6 +54,6 @@
     "08-clip-mask-blend.svg@1.5": "96534bfdf31557ab12ffbbdf7b855d4b42b6eacaaf521a6eac965abb049a483b",
     "08-clip-mask-blend.svg@2": "c4880dbdef27b35313297ac40e05030f8e4386a0893a33132f930a410b29ffe2"
   },
-  "更新说明": "当前默认原规范策略value-only；XML统一加载、来源域/四位与完整值、严格平面读取已回归。保层策略仍为待用户9.7选择的独立候选，不纳入本默认静态微场景验收。",
+  "更新说明": "当前默认原规范策略value-only；XML统一加载、来源域/四位与完整值、严格平面读取已回归。保层策略仍为待用户9.7选择的独立候选，不纳入本默认静态微场景验收。 2026-11-11 Claude 更新：只因参照工具文件变化（截图稳定化、带单位长度写回、空图、断连处理、参照页关字形平滑）重签文件指纹；24 份 Chrome 指令指纹与原凭据逐一相同，24/24 帧像素达标后才更新。",
   "冻结策略": "value-only"
 }
