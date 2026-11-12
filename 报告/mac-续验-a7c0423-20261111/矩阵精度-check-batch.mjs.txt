@@ -1,0 +1,2 @@
+nice: setpriority: Operation not permitted
+离线模拟测试通过：清单校验、路径限制、switch1234、值容差、缓存命中/损坏、覆盖、两进程编排、GPU基准直接消费、跨平台无画质线、染色首帧指令、无待机首动作回退、同名动作时长/触发变更、失败传播。不是Chrome截图验收。

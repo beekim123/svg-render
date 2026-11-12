@@ -1,0 +1,106 @@
+{
+  "退出码": 0,
+  "stdout": "",
+  "stderr": "",
+  "报告": {
+    "公开测试集": {
+      "状态": "已筛选",
+      "提交": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "候选数": 2,
+      "重新筛选已有登记": [
+        "公开测试集/bad"
+      ],
+      "目录": "/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-input-test-clMXMd/rescreen-cache/tests/resvg/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "条件": "仅XML输入有效、静态且每项特性均为支持才登记；不确定的路径语法另列待验证",
+      "登记数": 1,
+      "排除数": 1,
+      "排除明细": [
+        {
+          "id": "公开测试集/bad",
+          "原因": [
+            "SVG加载失败（来源：公开测试集/bad）：XML解析失败；This page contains the following errors:error on line 1 at column 49: Unexpected closing tag: {http://www.w3.org/2000/svg}svg != {http://www.w3.org/2000/svg}gBelow is a rendering of the page up to the first error."
+          ],
+          "输入错误": {
+            "code": "SVG_INPUT_INVALID",
+            "source": "公开测试集/bad",
+            "kind": "XML_PARSE_ERROR",
+            "reason": "XML解析失败",
+            "details": "This page contains the following errors:error on line 1 at column 49: Unexpected closing tag: {http://www.w3.org/2000/svg}svg != {http://www.w3.org/2000/svg}gBelow is a rendering of the page up to the first error.",
+            "message": "SVG加载失败（来源：公开测试集/bad）：XML解析失败；This page contains the following errors:error on line 1 at column 49: Unexpected closing tag: {http://www.w3.org/2000/svg}svg != {http://www.w3.org/2000/svg}gBelow is a rendering of the page up to the first error."
+          }
+        }
+      ]
+    },
+    "分批数量": {
+      "公开测试集": 1
+    },
+    "输入解析排除": [
+      {
+        "id": "公开测试集/bad",
+        "原因": [
+          "SVG加载失败（来源：公开测试集/bad）：XML解析失败；This page contains the following errors:error on line 1 at column 49: Unexpected closing tag: {http://www.w3.org/2000/svg}svg != {http://www.w3.org/2000/svg}gBelow is a rendering of the page up to the first error."
+        ],
+        "输入错误": {
+          "code": "SVG_INPUT_INVALID",
+          "source": "公开测试集/bad",
+          "kind": "XML_PARSE_ERROR",
+          "reason": "XML解析失败",
+          "details": "This page contains the following errors:error on line 1 at column 49: Unexpected closing tag: {http://www.w3.org/2000/svg}svg != {http://www.w3.org/2000/svg}gBelow is a rendering of the page up to the first error.",
+          "message": "SVG加载失败（来源：公开测试集/bad）：XML解析失败；This page contains the following errors:error on line 1 at column 49: Unexpected closing tag: {http://www.w3.org/2000/svg}svg != {http://www.w3.org/2000/svg}gBelow is a rendering of the page up to the first error."
+        }
+      }
+    ],
+    "数量": 2,
+    "Chrome验证": {
+      "状态": "完成",
+      "登记集合检查": {
+        "状态": "完成",
+        "未完成": [],
+        "待人工决定": [],
+        "不支持": []
+      },
+      "版本": "157.0.8103.50",
+      "扫描数量": 3,
+      "报告目录": "out/mac/scan"
+    },
+    "stay待Chrome分类": [],
+    "静态及周期判断": "静态已检查；循环周期由参照工具量取",
+    "待人工决定": [],
+    "候选未知排除数": 0,
+    "清单未知待决数": 0,
+    "状态": "完成"
+  },
+  "清单": [
+    {
+      "id": "ordinary",
+      "文件": "素材/ordinary.svg",
+      "批": "现有游戏",
+      "动作": [
+        {
+          "名字": "待机",
+          "种类": "循环",
+          "动画验证": "已由Chrome检查",
+          "静态": true,
+          "毫秒": 0
+        }
+      ]
+    },
+    {
+      "id": "公开测试集/good",
+      "批": "公开测试集",
+      "文件": "cache:tests/resvg/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/crates/resvg/tests/good.svg",
+      "动作": [
+        {
+          "名字": "待机",
+          "种类": "循环",
+          "动画验证": "已由Chrome检查",
+          "静态": true,
+          "毫秒": 0
+        }
+      ],
+      "染色": false,
+      "来源提交": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "清单未修改": false
+}

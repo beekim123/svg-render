@@ -1,0 +1,19 @@
+通过：1倍真实前缀/普通SVG的活图与冻结PNG逐字节一致；冻结再载入保持namespace/viewBox和HTML字体样式上下文。
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 1倍普通SVG根/带前缀子元素的真实冻结PNG不同
+
+false !== true
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/chrome/check-svg.mjs:32:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

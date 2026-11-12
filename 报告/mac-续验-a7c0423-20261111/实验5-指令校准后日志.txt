@@ -1,0 +1,8 @@
+{
+  "输出": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-指令校准后",
+  "已画帧数": 24,
+  "及格": false,
+  "阻塞": [
+    "指令校准凭据缺失或已失效，保留门槛；详见校准复核原因。"
+  ]
+}

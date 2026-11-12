@@ -1,0 +1,6 @@
+{
+  "输出": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-最终复核",
+  "已画帧数": 24,
+  "及格": true,
+  "阻塞": []
+}

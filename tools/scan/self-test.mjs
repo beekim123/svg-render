@@ -6,14 +6,21 @@ import {classify} from './cli.mjs';
 import {resolveAssetPath} from './path.mjs';
 import {countPathSegments} from './path-data.mjs';
 import {selectRegistered,assessRegistered} from './selection.mjs';
+import {resvgRevision} from '../setup/install.mjs';
 const root=path.resolve(import.meta.dirname,'../..');
 const read=async p=>JSON.parse(await fs.readFile(path.join(root,p),'utf8'));
 const items=await read('素材/清单.json'),scope=await read('支持范围.json');
+const publicItems=items.filter(a=>a.批==='公开测试集');
 assert.equal(new Set(items.map(a=>a.id)).size,items.length);
 for(const [batch,n] of Object.entries({现有游戏:82,待接入:35,复杂测试图:44,试验图:1}))assert.equal(items.filter(a=>a.批===batch).length,n);
-for(const a of items){assert(a.id.startsWith(a.批+'/'));await fs.access(path.join(root,a.文件));for(const x of a.动作){assert(x.名字);assert(['循环','播一次','播完停住','进场后循环'].includes(x.种类)||x.分类状态==='待验证');if(x.分类状态==='待验证')assert.equal(x.种类,null);}}
+for(const a of items){assert(a.id.startsWith(a.批+'/'));await fs.access(resolveAssetPath(a));for(const x of a.动作){assert(x.名字);assert(['循环','播一次','播完停住','进场后循环'].includes(x.种类)||x.分类状态==='待验证');if(x.分类状态==='待验证')assert.equal(x.种类,null);}}
 assert.equal(classify('元素/path',scope),'支持');assert.equal(classify('SMIL/calcMode/paced',scope),'采样兜底');assert.equal(classify('禁止/外部资源',scope),'不支持');assert.equal(classify('从未登记',scope),'没登记');
-assert.equal(items.filter(a=>a.批==='公开测试集').length,0);
+if(publicItems.length){
+ const registration=await read('报告/素材登记.json');
+ assert.equal(registration.公开测试集.状态,'已筛选');
+ assert.equal(publicItems.length,registration.公开测试集.登记数);
+ for(const asset of publicItems){assert(asset.动作.every(a=>a.静态));assert.equal(asset.来源提交,resvgRevision);assert(asset.文件.startsWith('cache:tests/resvg/'+resvgRevision+'/'));}
+}
 console.log('登记结构、批次数量、文件存在、四类特性分类检查通过；不包含Chrome验证。');
 
 const cached={文件:'cache:tests/resvg/abc/crates/resvg/tests/a.svg'};
@@ -47,7 +54,7 @@ assert.equal(classify('任意类别/opacity',scope,['opacity']),'没登记');
 assert.equal(classify('CSS属性/opacity',{特性:{}},['opacity']),'没登记');
 console.log('显式CSS通配规则、Chrome验证门槛与自定义/禁用属性排除检查通过。');
 
-assert.equal(items.length,162);
+assert.equal(items.length,162+publicItems.length);
 assert.equal(items.filter(a=>a.染色).length,10);
 const get=id=>items.find(a=>a.id===id);
 for(const name of ['flat','gradient','shaded']){

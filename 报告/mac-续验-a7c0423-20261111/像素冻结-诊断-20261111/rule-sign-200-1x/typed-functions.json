@@ -1,0 +1,2173 @@
+{
+  "state": {
+    "documentType": "text/html",
+    "visibility": "visible",
+    "nodes": [
+      {
+        "index": 0,
+        "node": "0",
+        "id": "",
+        "tag": "svg",
+        "ctm": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "screenCTM": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "140px 44px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 1,
+        "node": "1",
+        "id": "",
+        "tag": "title",
+        "ctm": null,
+        "screenCTM": null,
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 2,
+        "node": "2",
+        "id": "",
+        "tag": "style",
+        "ctm": null,
+        "screenCTM": null,
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 3,
+        "node": "3",
+        "id": "root",
+        "tag": "g",
+        "ctm": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "screenCTM": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "attributes": {
+          "style": ";transform:none !important;;transform:none !important;",
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "140px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 4,
+        "node": "4",
+        "id": "",
+        "tag": "g",
+        "ctm": [
+          0.9996573249755573,
+          -0.026176948307873153,
+          0.026176948307873153,
+          0.9996573249755573,
+          0.04797450342198317,
+          3.6647727631022415
+        ],
+        "screenCTM": [
+          0.9996573249755573,
+          -0.026176948307873153,
+          0.026176948307873153,
+          0.9996573249755573,
+          0.04797450342198317,
+          3.6647727631022415
+        ],
+        "attributes": {
+          "style": null,
+          "transform": "rotate(-1.5 140 0)"
+        },
+        "style": {
+          "transform": "matrix(0.999657, -0.0261769, 0.0261769, 0.999657, 0.0479745, 3.66477)",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSTransformValue",
+          "text": "matrix(0.999657, -0.0261769, 0.0261769, 0.999657, 0.0479745, 3.66477)",
+          "components": [
+            {
+              "type": "CSSMatrixComponent",
+              "text": "matrix(0.999657, -0.0261769, 0.0261769, 0.999657, 0.0479745, 3.66477)",
+              "matrix": [
+                0.9996573249755573,
+                -0.026176948307873153,
+                0.026176948307873153,
+                0.9996573249755573,
+                0.04797450342198317,
+                3.6647727631022415
+              ],
+              "preciseFunction": "matrix(0.9996573249755573, -0.026176948307873153, 0.026176948307873153, 0.9996573249755573, 0.04797450342198317, 3.6647727631022415)"
+            }
+          ]
+        },
+        "preciseFunction": "matrix(0.9996573249755573, -0.026176948307873153, 0.026176948307873153, 0.9996573249755573, 0.04797450342198317, 3.6647727631022415)"
+      },
+      {
+        "index": 5,
+        "node": "5",
+        "id": "rope",
+        "tag": "g",
+        "ctm": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "screenCTM": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "attributes": {
+          "style": ";transform:matrix(0.07999999821186066, 0, 0, 1, 0, 0) !important;;transform:scale(0.08, 1) !important;",
+          "transform": null
+        },
+        "style": {
+          "transform": "matrix(0.08, 0, 0, 1, 0, 0)",
+          "origin": "140px 44px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSTransformValue",
+          "text": "scale(0.08, 1)",
+          "components": [
+            {
+              "type": "CSSScale",
+              "text": "scale(0.08, 1)",
+              "x": {
+                "value": 0.08,
+                "unit": "number"
+              },
+              "y": {
+                "value": 1,
+                "unit": "number"
+              },
+              "z": {
+                "value": 1,
+                "unit": "number"
+              },
+              "matrix": [
+                0.07999999821186066,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "preciseFunction": "scale(0.08, 1)"
+            }
+          ]
+        },
+        "preciseFunction": "scale(0.08, 1)"
+      },
+      {
+        "index": 6,
+        "node": "6",
+        "id": "",
+        "tag": "line",
+        "ctm": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "screenCTM": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 7,
+        "node": "7",
+        "id": "",
+        "tag": "line",
+        "ctm": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "screenCTM": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "rgb(154, 137, 104)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 8,
+        "node": "8",
+        "id": "",
+        "tag": "line",
+        "ctm": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "screenCTM": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 9,
+        "node": "9",
+        "id": "",
+        "tag": "line",
+        "ctm": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "screenCTM": [
+          0.07997258421051799,
+          -0.002094155817821821,
+          0.026176948307873153,
+          0.9996573249755573,
+          128.80384101098582,
+          0.29318174116247286
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "rgb(154, 137, 104)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 10,
+        "node": "10",
+        "id": "board",
+        "tag": "g",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": ";transform:matrix(0, 0, 0, 1, 0, 0) !important;;transform:scale(0, 1) !important;",
+          "transform": null
+        },
+        "style": {
+          "transform": "matrix(0, 0, 0, 1, 0, 0)",
+          "origin": "140px 48px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSTransformValue",
+          "text": "scale(0, 1)",
+          "components": [
+            {
+              "type": "CSSScale",
+              "text": "scale(0, 1)",
+              "x": {
+                "value": 0,
+                "unit": "number"
+              },
+              "y": {
+                "value": 1,
+                "unit": "number"
+              },
+              "z": {
+                "value": 1,
+                "unit": "number"
+              },
+              "matrix": [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "preciseFunction": "scale(0, 1)"
+            }
+          ]
+        },
+        "preciseFunction": "scale(0, 1)"
+      },
+      {
+        "index": 11,
+        "node": "11",
+        "id": "",
+        "tag": "polygon",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(112, 65, 34)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 12,
+        "node": "12",
+        "id": "",
+        "tag": "polygon",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "0.82",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(61, 34, 18)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 13,
+        "node": "13",
+        "id": "",
+        "tag": "polyline",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "0.88",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "none",
+          "stroke": "rgb(196, 138, 92)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 14,
+        "node": "14",
+        "id": "",
+        "tag": "rect",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(200, 184, 148)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 15,
+        "node": "15",
+        "id": "",
+        "tag": "path",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "none",
+          "stroke": "rgb(154, 137, 104)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 16,
+        "node": "16",
+        "id": "",
+        "tag": "path",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "none",
+          "stroke": "rgb(226, 214, 186)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 17,
+        "node": "17",
+        "id": "",
+        "tag": "rect",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(22, 18, 33)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 18,
+        "node": "18",
+        "id": "",
+        "tag": "path",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "none",
+          "stroke": "rgb(13, 17, 28)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 19,
+        "node": "19",
+        "id": "",
+        "tag": "path",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "0.8",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "none",
+          "stroke": "rgb(110, 84, 43)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 20,
+        "node": "20",
+        "id": "",
+        "tag": "g",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(59, 81, 92)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 21,
+        "node": "21",
+        "id": "",
+        "tag": "polygon",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(59, 81, 92)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 22,
+        "node": "22",
+        "id": "",
+        "tag": "polygon",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(59, 81, 92)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 23,
+        "node": "23",
+        "id": "",
+        "tag": "polygon",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(59, 81, 92)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 24,
+        "node": "24",
+        "id": "",
+        "tag": "polygon",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(59, 81, 92)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 25,
+        "node": "25",
+        "id": "",
+        "tag": "circle",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(154, 123, 70)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 26,
+        "node": "26",
+        "id": "",
+        "tag": "circle",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(154, 123, 70)",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 27,
+        "node": "27",
+        "id": "",
+        "tag": "polygon",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "none",
+          "stroke": "rgb(28, 20, 18)",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 28,
+        "node": "28",
+        "id": "icon_slot",
+        "tag": "g",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 29,
+        "node": "29",
+        "id": "rule_text",
+        "tag": "g",
+        "ctm": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "screenCTM": [
+          0,
+          0,
+          0.026176948307873153,
+          0.9996573249755573,
+          140,
+          0
+        ],
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      },
+      {
+        "index": 30,
+        "node": null,
+        "id": "",
+        "tag": "style",
+        "ctm": null,
+        "screenCTM": null,
+        "attributes": {
+          "style": null,
+          "transform": null
+        },
+        "style": {
+          "transform": "none",
+          "origin": "0px 0px",
+          "box": "view-box",
+          "filter": "none",
+          "opacity": "1",
+          "willChange": "auto",
+          "color": "rgb(0, 0, 0)",
+          "fill": "rgb(0, 0, 0)",
+          "stroke": "none",
+          "isolation": "auto",
+          "blendMode": "normal",
+          "animation": "none"
+        },
+        "typed": {
+          "type": "CSSKeywordValue",
+          "text": "none",
+          "components": null
+        },
+        "preciseFunction": "none"
+      }
+    ]
+  },
+  "values": [
+    {
+      "节点号": 3,
+      "元素id": "root",
+      "属性": "transform",
+      "来自": "css",
+      "值": "none",
+      "变换精度": {
+        "来源": "Typed OM none",
+        "精确矩阵": true
+      },
+      "局部矩阵": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "写回": "style"
+    },
+    {
+      "节点号": 5,
+      "元素id": "rope",
+      "属性": "transform",
+      "来自": "css",
+      "值": "matrix(0.07999999821186066, 0, 0, 1, 0, 0)",
+      "变换精度": {
+        "来源": "CSS Typed OM",
+        "精确矩阵": true
+      },
+      "局部矩阵": [
+        0.07999999821186067,
+        4.336808689942018e-19,
+        -3.469446951953614e-18,
+        1,
+        128.80000305175784,
+        0
+      ],
+      "写回": "style"
+    },
+    {
+      "节点号": 10,
+      "元素id": "board",
+      "属性": "transform",
+      "来自": "css",
+      "值": "matrix(0, 0, 0, 1, 0, 0)",
+      "变换精度": {
+        "来源": "CSS Typed OM",
+        "精确矩阵": true
+      },
+      "局部矩阵": [
+        0,
+        0,
+        -3.469446951953614e-18,
+        1,
+        140.00000000000003,
+        0
+      ],
+      "写回": "style"
+    }
+  ],
+  "result": {
+    "类型": "typed-functions",
+    "ssim": 0.9101903858765885,
+    "原相似度线通过": false,
+    "四指标": [
+      {
+        "区域": "全图",
+        "线": "静止",
+        "指标": {
+          "底": "浅",
+          "内容像素": 1248,
+          "ssim": 0.9101903858765885,
+          "大差比例": 0.060897435897435896,
+          "大差比例_不算边": 0.022435897435897436,
+          "不算边大差像素": 28,
+          "最大差异块": 0,
+          "平均偏色": 0.7118401206636503,
+          "通道平均差": [
+            -0.6396807440925084,
+            -0.686161387631976,
+            -0.7118401206636503
+          ],
+          "最大差": 81.27843137254904,
+          "平均绝对差": 2.6882415786827587
+        },
+        "阈值": {
+          "ssim": 0.995,
+          "大差比例_不算边": 0.001,
+          "最大差异块": 16,
+          "平均偏色": 1
+        },
+        "通过": false,
+        "未通过": [
+          "ssim",
+          "大差比例_不算边"
+        ]
+      }
+    ],
+    "复核": {
+      "通过": true,
+      "轨道数": 3,
+      "容差": 0.001,
+      "错误": []
+    },
+    "CTM": {
+      "max": 0,
+      "nodes": [
+        {
+          "node": 0,
+          "id": "",
+          "max": 0,
+          "live": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "frozen": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "node": 3,
+          "id": "root",
+          "max": 0,
+          "live": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "frozen": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "node": 4,
+          "id": "",
+          "max": 0,
+          "live": [
+            0.9996573249755573,
+            -0.026176948307873153,
+            0.026176948307873153,
+            0.9996573249755573,
+            0.04797450342198317,
+            3.6647727631022415
+          ],
+          "frozen": [
+            0.9996573249755573,
+            -0.026176948307873153,
+            0.026176948307873153,
+            0.9996573249755573,
+            0.04797450342198317,
+            3.6647727631022415
+          ]
+        },
+        {
+          "node": 5,
+          "id": "rope",
+          "max": 0,
+          "live": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ],
+          "frozen": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ]
+        },
+        {
+          "node": 6,
+          "id": "",
+          "max": 0,
+          "live": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ],
+          "frozen": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ]
+        },
+        {
+          "node": 7,
+          "id": "",
+          "max": 0,
+          "live": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ],
+          "frozen": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ]
+        },
+        {
+          "node": 8,
+          "id": "",
+          "max": 0,
+          "live": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ],
+          "frozen": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ]
+        },
+        {
+          "node": 9,
+          "id": "",
+          "max": 0,
+          "live": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ],
+          "frozen": [
+            0.07997258421051799,
+            -0.002094155817821821,
+            0.026176948307873153,
+            0.9996573249755573,
+            128.80384101098582,
+            0.29318174116247286
+          ]
+        },
+        {
+          "node": 10,
+          "id": "board",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 11,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 12,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 13,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 14,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 15,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 16,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 17,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 18,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 19,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 20,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 21,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 22,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 23,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 24,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 25,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 26,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 27,
+          "id": "",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 28,
+          "id": "icon_slot",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        },
+        {
+          "node": 29,
+          "id": "rule_text",
+          "max": 0,
+          "live": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ],
+          "frozen": [
+            0,
+            0,
+            0.026176948307873153,
+            0.9996573249755573,
+            140,
+            0
+          ]
+        }
+      ]
+    },
+    "变换函数": [
+      {
+        "node": 3,
+        "value": "none"
+      },
+      {
+        "node": 5,
+        "value": "scale(0.08, 1)"
+      },
+      {
+        "node": 10,
+        "value": "scale(0, 1)"
+      }
+    ],
+    "按原两项通过": false
+  }
+}

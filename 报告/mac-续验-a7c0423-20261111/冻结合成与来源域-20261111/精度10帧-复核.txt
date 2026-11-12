@@ -1,0 +1,10 @@
+通过：200ms @1x；冻结复核=true；SSIM=1
+通过：550ms @1x；冻结复核=true；SSIM=1
+通过：700ms @1x；冻结复核=true；SSIM=1
+通过：750ms @1x；冻结复核=true；SSIM=1
+通过：850ms @1x；冻结复核=true；SSIM=1
+通过：200ms @2x；冻结复核=true；SSIM=1
+通过：550ms @2x；冻结复核=true；SSIM=1
+通过：700ms @2x；冻结复核=true；SSIM=1
+通过：750ms @2x；冻结复核=true；SSIM=1
+通过：850ms @2x；冻结复核=true；SSIM=1

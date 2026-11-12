@@ -1,0 +1,28 @@
+失败：200ms @1x；冻结复核=false；SSIM=0.599314325156379
+失败：550ms @1x；冻结复核=false；SSIM=0.7309957953298345
+失败：700ms @1x；冻结复核=false；SSIM=0.6263087056487759
+失败：750ms @1x；冻结复核=false；SSIM=0.5663477804831599
+失败：850ms @1x；冻结复核=false；SSIM=0.46533580114037554
+失败：200ms @2x；冻结复核=false；SSIM=0.5725716232999711
+失败：550ms @2x；冻结复核=false；SSIM=0.6885201451936329
+失败：700ms @2x；冻结复核=false；SSIM=0.6258975248947191
+失败：750ms @2x；冻结复核=false；SSIM=0.567685686834748
+失败：850ms @2x；冻结复核=false；SSIM=0.4940841705706593
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 实际fx_overkill/play的10个精度回归帧未全部通过
+
+false !== true
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-precision.mjs:51:40 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

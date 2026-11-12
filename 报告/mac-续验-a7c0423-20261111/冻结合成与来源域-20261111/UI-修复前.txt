@@ -1,0 +1,24 @@
+失败：现有游戏/ui_heart/gain 455.0066ms @1x ；SSIM=0.946127739097909；值复核=true；冻结动画=0/0
+失败：现有游戏/ui_rainbow_slot/light 50ms @2x #3FE3F0；SSIM=0.9457749516779991；值复核=true；冻结动画=0/0
+失败：现有游戏/ui_rainbow_slot/light 100ms @1x #E3263A；SSIM=0.9452977100891061；值复核=true；冻结动画=0/0
+失败：现有游戏/ui_rule_sign/flip 150ms @1x ；SSIM=0.9489152140665856；值复核=true；冻结动画=0/0
+失败：现有游戏/ui_rule_sign/flip 200ms @1x ；SSIM=0.9101903858765885；值复核=true；冻结动画=0/0
+失败：现有游戏/ui_rule_sign/flip 250ms @1x ；SSIM=0.9489152140665856；值复核=true；冻结动画=0/0
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 六个实际UI失败帧尚未全部通过原判据
+
+false !== true
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-composite.mjs:47:38 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

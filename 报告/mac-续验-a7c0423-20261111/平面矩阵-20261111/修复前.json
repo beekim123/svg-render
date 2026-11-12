@@ -1,0 +1,65 @@
+{
+  "通过": false,
+  "帧": [
+    {
+      "时刻": 0,
+      "倍率": 1,
+      "相似度": 1,
+      "冻结复核": {
+        "通过": true,
+        "轨道数": 2,
+        "容差": 0.001,
+        "错误": []
+      },
+      "通过": true
+    },
+    {
+      "时刻": 300,
+      "倍率": 1,
+      "通过": false,
+      "错误": "Error: CSS transform不是支持范围内的2D矩阵：leaf\n    at cssTransform (<anonymous>:14:28)\n    at <anonymous>:31:400\n    at Array.map (<anonymous>)\n    at read (<anonymous>:31:215)\n    at Object.freeze (<anonymous>:32:1205)\n    at <anonymous>:1:7"
+    },
+    {
+      "时刻": 599.5,
+      "倍率": 1,
+      "相似度": 1,
+      "冻结复核": {
+        "通过": true,
+        "轨道数": 2,
+        "容差": 0.001,
+        "错误": []
+      },
+      "通过": true
+    },
+    {
+      "时刻": 0,
+      "倍率": 2,
+      "相似度": 1,
+      "冻结复核": {
+        "通过": true,
+        "轨道数": 2,
+        "容差": 0.001,
+        "错误": []
+      },
+      "通过": true
+    },
+    {
+      "时刻": 300,
+      "倍率": 2,
+      "通过": false,
+      "错误": "Error: CSS transform不是支持范围内的2D矩阵：leaf\n    at cssTransform (<anonymous>:14:28)\n    at <anonymous>:31:400\n    at Array.map (<anonymous>)\n    at read (<anonymous>:31:215)\n    at Object.freeze (<anonymous>:32:1205)\n    at <anonymous>:1:7"
+    },
+    {
+      "时刻": 599.5,
+      "倍率": 2,
+      "相似度": 1,
+      "冻结复核": {
+        "通过": true,
+        "轨道数": 2,
+        "容差": 0.001,
+        "错误": []
+      },
+      "通过": true
+    }
+  ]
+}

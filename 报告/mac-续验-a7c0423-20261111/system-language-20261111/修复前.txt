@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 应计入SVG根与SVG子元素，不计其他namespace的同名属性
+
+undefined !== 2
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/scan/check-system-language.mjs:18:8 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: 2,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

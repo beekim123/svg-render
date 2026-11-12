@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {openChrome,VERSION} from '../chrome/index.mjs';
+import {setSvgContent} from '../chrome/svg.mjs';
 import {scanPage} from './page.mjs';
 import {resolveAssetPath} from './path.mjs';
 import {countPathSegments} from './path-data.mjs';
@@ -9,8 +10,13 @@ const root=path.resolve(import.meta.dirname,'../..');
 const read=async p=>JSON.parse(await fs.readFile(path.join(root,p),'utf8'));
 const write=async(p,v)=>{await fs.mkdir(path.dirname(p),{recursive:true});await fs.writeFile(p,JSON.stringify(v,null,2)+'\n');};
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+export const scanExitCode=report=>report.待人工决定?.length?3:report.状态==='完成'?0:1;
 export function classify(key,scope,verifiedCSS=[]){
  if(Object.hasOwn(scope.特性,key))return scope.特性[key];
+ // CSS关键字不分大小写；保留Chrome原始计数，只映射已经登记的两种色彩空间。
+ const aliases={'滤镜色彩空间/srgb':'滤镜色彩空间/sRGB','滤镜色彩空间/linearrgb':'滤镜色彩空间/linearRGB'};
+ const canonical=aliases[key.toLowerCase()];
+ if(canonical&&Object.hasOwn(scope.特性,canonical))return scope.特性[canonical];
  for(const rule of scope.通配规则||[]){
   if(!key.startsWith(rule.前缀))continue;
   const property=key.slice(rule.前缀.length),standard=property.replace(/[A-Z]/g,c=>'-'+c.toLowerCase());
@@ -19,24 +25,41 @@ export function classify(key,scope,verifiedCSS=[]){
  }
  return '没登记';
 }
+async function readSampleSize(chrome,source){
+ const size=await chrome.evaluate(`(()=>{const s=document.querySelector('svg'),v=s.viewBox.baseVal,w=v.width||s.width.baseVal.value,h=v.height||s.height.baseVal.value;return {valid:Number.isFinite(w)&&Number.isFinite(h)&&w>0&&h>0,width:Number.isFinite(w)?w:String(w),height:Number.isFinite(h)?h:String(h),viewBox:s.getAttribute('viewBox'),widthAttribute:s.getAttribute('width'),heightAttribute:s.getAttribute('height'),formula:'v.width || s.width.baseVal.value；v.height || s.height.baseVal.value'};})()`);
+ if(typeof size?.valid!=='boolean')throw new Error(`Chrome采样尺寸检查返回未知结果：${source}`);
+ if(!size.valid){
+  const error=new Error(`SVG采样尺寸无效（来源：${source}）：当前参照公式得到${size.width}×${size.height}，PNG裁剪要求有限正数。`);
+  error.code='SVG_SAMPLE_SIZE_INVALID';error.sampleSizeError={code:error.code,source,message:error.message,details:size};throw error;
+ }
+ return size;
+}
 async function main(){
  const assets=await read('素材/清单.json'),scope=await read('支持范围.json'),report=await read('报告/素材登记.json');
  const publicIndex=process.argv.indexOf('--register-public');
  const publicRoot=publicIndex>=0?path.resolve(process.argv[publicIndex+1]||''):null;
  if(publicRoot){
   const commit=path.basename(publicRoot);if(!/^[0-9a-f]{40}$/.test(commit))throw new Error('公开集目录末段必须是固定提交哈希');
+  const rescreened=[];for(const asset of assets)if(asset.批==='公开测试集'&&asset.文件.startsWith(`cache:tests/resvg/${commit}/`)){if(!asset.候选)rescreened.push(asset.id);asset.候选=true;}
   const walk=async dir=>{const files=[];for(const entry of await fs.readdir(dir,{withFileTypes:true})){const p=path.join(dir,entry.name);if(entry.isDirectory())files.push(...await walk(p));else if(entry.name.endsWith('.svg'))files.push(p);}return files;};
   for(const file of (await walk(path.join(publicRoot,'crates/resvg/tests'))).sort()){const id='公开测试集/'+path.relative(path.join(publicRoot,'crates/resvg/tests'),file).slice(0,-4);if(!assets.some(a=>a.id===id))assets.push({id,批:'公开测试集',文件:'cache:tests/resvg/'+commit+'/'+path.relative(publicRoot,file).split(path.sep).join('/'),动作:[{名字:'待机',种类:'循环'}],染色:false,候选:true,来源提交:commit});}
-  report.公开测试集={状态:'待Chrome筛选',提交:commit,候选数:assets.filter(a=>a.批==='公开测试集').length,目录:publicRoot,条件:'仅静态且每项特性均为支持才登记；不确定的路径语法另列待验证'};
+  report.公开测试集={状态:'待Chrome筛选',提交:commit,候选数:assets.filter(a=>a.批==='公开测试集'&&a.候选===true).length,重新筛选已有登记:rescreened,目录:publicRoot,条件:'仅XML输入有效、符合当前PNG采样尺寸前提、静态且每项特性均为支持才登记；不确定的路径语法另列待验证'};
  }
  const out=path.join(root,'out',process.platform==='darwin'?'mac':'linux','scan');
- let chrome;const results=[];
+ let chrome,currentAsset;const results=[];
  try{
   chrome=await openChrome();await chrome.send('Network.enable');await chrome.send('Network.setBlockedURLs',{urls:['http://*','https://*','file://*']});
   for(const asset of assets){
+   currentAsset=asset;
    const svg=await fs.readFile(resolveAssetPath(asset),'utf8');const combined={id:asset.id,Chrome版本:VERSION,状态:'完成',特性计数:{},动作:[]};
    for(const action of asset.动作){
-    await chrome.setHtml(`<!doctype html><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:"><style>body{margin:0}</style>${svg}`);
+    try{await setSvgContent(chrome,svg,source=>`<!doctype html><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:"><style>body{margin:0}</style>${source}`,asset.id);combined.采样尺寸=await readSampleSize(chrome,asset.id);}
+    catch(error){
+     if(!['SVG_INPUT_INVALID','SVG_SAMPLE_SIZE_INVALID'].includes(error.code)||asset.批!=='公开测试集'||asset.候选!==true)throw error;
+     if(error.code==='SVG_INPUT_INVALID'){combined.状态='输入无效';combined.输入错误=error.inputError;}
+     else{combined.状态='采样尺寸无效';combined.采样尺寸错误=error.sampleSizeError;}
+     break;
+    }
     await chrome.evaluate(`(()=>{const svg=document.querySelector('svg');svg.pauseAnimations();svg.setCurrentTime(0);const a=${JSON.stringify(action)};if(a.触发?.class)svg.classList.add(a.触发.class);if(a.触发?.attr)svg.setAttribute(...a.触发.attr);svg.getBoundingClientRect();if(a.名字!=='待机'){const nodes=a.smil?a.smil.map(q=>svg.querySelector(q)):[...svg.querySelectorAll('[begin="indefinite"]')];for(const n of nodes){if(!n||typeof n.beginElement!=='function')throw new Error('动作SMIL选择器无效');n.beginElement();}}for(const x of document.getAnimations()){x.pause();x.currentTime=0;}})()`);
     const snapshot=await chrome.evaluate(`(${scanPage.toString()})(${countPathSegments.toString()})`);
     if(action.名字==='待机'){
@@ -56,6 +79,8 @@ async function main(){
   }
   const {registered,excluded}=selectRegistered(assets,results);
   const assessment=assessRegistered(registered,results);
+  report.输入解析排除=excluded.filter(item=>item.输入错误?.code==='SVG_INPUT_INVALID');
+  report.采样尺寸排除=excluded.filter(item=>item.采样尺寸错误?.code==='SVG_SAMPLE_SIZE_INVALID');
   for(const a of registered)delete a.候选;
   await write(path.join(root,'素材/清单.json'),registered);
   if(publicRoot){report.公开测试集.状态='已筛选';report.公开测试集.登记数=registered.filter(a=>a.批==='公开测试集').length;report.公开测试集.排除数=excluded.length;report.公开测试集.排除明细=excluded;}
@@ -69,11 +94,14 @@ async function main(){
   report.静态及周期判断='静态已检查；循环周期由参照工具量取';
   // 公开集缺失、未分类动作或未登记特性都不能记成通过。
   const bad=assessment.状态!=='完成';
-  report.待人工决定=results.flatMap(r=>Object.entries(r.分类).filter(([,v])=>v==='没登记').map(([特性])=>({id:r.id,特性,原因:'未修改支持范围，需按需求第9节请用户决定'})));
-  if(report.待人工决定.length)console.error('发现没登记特性，已列入报告；必须请用户决定，不能自动扩支持范围。');
+  // 公开候选按要求仅登记全支持项；被排除候选的未知保留在排除理由，不冒充已定档。
+  report.待人工决定=assessment.待人工决定;
+  report.候选未知排除数=excluded.filter(x=>x.原因.some(s=>s.endsWith('：没登记'))).length;
+  report.清单未知待决数=report.待人工决定.length;
+  if(report.待人工决定.length)console.error('STOP_RULE_9：发现没登记特性，已列入报告；必须请用户决定，不能自动扩支持范围。');
   report.状态=bad||report.stay待Chrome分类.length||!['已筛选'].includes(report.公开测试集.状态)?'待验证':'完成';
-  await write(path.join(root,'报告/素材登记.json'),report);if(report.状态!=='完成')process.exitCode=1;
- }catch(e){report.Chrome验证={状态:'阻塞',版本:VERSION,原因:e.message,已扫描数量:results.length};report.状态='待验证';await write(path.join(root,'报告/素材登记.json'),report);console.error(e.message);process.exitCode=2;}
- finally{await chrome?.close();}
+  await write(path.join(root,'报告/素材登记.json'),report);process.exitCode=scanExitCode(report);
+ }catch(e){report.Chrome验证={状态:'阻塞',版本:VERSION,素材:currentAsset?.id,原因:e.message,已扫描数量:results.length,...(e.code==='SVG_INPUT_INVALID'?{输入错误:e.inputError}:{}),...(e.code==='SVG_SAMPLE_SIZE_INVALID'?{采样尺寸错误:e.sampleSizeError}:{})};report.状态='待验证';await write(path.join(root,'报告/素材登记.json'),report);console.error(e.message);process.exitCode=2;}
+ finally{try{await chrome?.close();}catch(e){report.Chrome清理错误=e.stack||e.message;report.状态='待验证';await write(path.join(root,'报告/素材登记.json'),report);console.error(`本次扫描Chrome清理失败：${e.message}`);if(process.exitCode!==3)process.exitCode=2;}}
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===import.meta.filename)await main();

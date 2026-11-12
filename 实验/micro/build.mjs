@@ -23,7 +23,7 @@ export async function buildMicro(output, target = process.platform === 'darwin' 
     try{await fs.symlink(expected,linker);}catch(e){if(e.code!=='EEXIST'||await fs.readlink(linker)!==expected)throw e;}
   }
   const args = ['-std=c++20','-DNDEBUG','-O3','-ffp-contract=off','-flto=thin','-I'+source,`-DSK_USER_CONFIG_HEADER="${header}"`,path.join(root,'实验/micro/draw.cpp'),library,path.join(built,'libskcms.a'),'-o',binary];
-  if (process.platform === 'darwin') args.push('-arch', target.endsWith('arm64') ? 'arm64' : 'x86_64', '-Wl,-dead_strip');
+  if (process.platform === 'darwin') args.push('-arch', target.endsWith('arm64') ? 'arm64' : 'x86_64', '-Wl,-dead_strip', '-Wl,-mllvm,-threads=1');
   else args.push('-fuse-ld='+linker,'-pthread','-ldl','-Wl,--gc-sections');
   const fingerprint=async file=>createHash('sha256').update(await fs.readFile(file)).digest('hex');
   const fingerprints=Object.fromEntries(await Promise.all([library,path.join(built,'libskcms.a'),header,path.join(root,'实验/micro/draw.cpp')].map(async file=>[file,await fingerprint(file)])));

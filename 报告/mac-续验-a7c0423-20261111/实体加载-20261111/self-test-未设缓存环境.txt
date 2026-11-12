@@ -1,0 +1,14 @@
+node:internal/fs/promises:607
+  return await PromisePrototypeThen(
+         ^
+
+Error: ENOENT: no such file or directory, access '/Users/key_/Library/Caches/svg-render/tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4/crates/resvg/tests/extra/fill-and-stroke.svg'
+    at async Object.access (node:internal/fs/promises:607:10)
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/scan/self-test.mjs:16:56 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'access',
+  path: '/Users/key_/Library/Caches/svg-render/tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4/crates/resvg/tests/extra/fill-and-stroke.svg'
+}
+
+Node.js v24.18.0

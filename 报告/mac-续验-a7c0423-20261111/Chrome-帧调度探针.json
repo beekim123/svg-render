@@ -1,0 +1,94 @@
+[
+  {
+    "name": "open",
+    "ms": 1885,
+    "value": {
+      "pid": 31755,
+      "gpu": {
+        "browser": "Chrome/157.0.8103.50",
+        "rasterization": "disabled_software",
+        "devices": [
+          {
+            "vendorId": 0,
+            "deviceId": 0,
+            "vendorString": "",
+            "deviceString": "",
+            "driverVendor": "",
+            "driverVersion": ""
+          }
+        ],
+        "featureStatus": {
+          "2d_canvas": "disabled_software",
+          "direct_rendering_display_compositor": "disabled_off_ok",
+          "gpu_compositing": "disabled_software",
+          "multiple_raster_threads": "disabled_off",
+          "opengl": "disabled_off",
+          "rasterization": "disabled_software",
+          "skia_graphite": "disabled_off",
+          "trees_in_viz": "disabled_off",
+          "video_decode": "disabled_software",
+          "video_encode": "disabled_software",
+          "webgl": "disabled_off",
+          "webgpu": "disabled_off",
+          "webnn": "disabled_off"
+        }
+      },
+      "flags": [
+        "--headless=new",
+        "--force-device-scale-factor=1",
+        "--force-color-profile=srgb",
+        "--hide-scrollbars",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--disable-background-networking",
+        "--user-data-dir=/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-chrome-VxtFNZ/profile",
+        "--remote-debugging-address=127.0.0.1",
+        "--remote-debugging-port=0",
+        "--disable-gpu",
+        "--num-raster-threads=1",
+        "about:blank"
+      ]
+    }
+  },
+  {
+    "name": "first-page-visible",
+    "ms": 2,
+    "value": {
+      "hidden": false,
+      "visibility": "visible"
+    }
+  },
+  {
+    "name": "first-page-frames",
+    "ms": 22,
+    "value": "two-frames"
+  },
+  {
+    "name": "after-second-page-first-visibility",
+    "ms": 1,
+    "value": {
+      "hidden": true,
+      "visibility": "hidden"
+    }
+  },
+  {
+    "name": "after-second-page-first-frames",
+    "ms": 2714,
+    "value": "timer-2000"
+  },
+  {
+    "name": "second-page-frames",
+    "ms": 13,
+    "value": "two-frames"
+  },
+  {
+    "name": "after-bring-to-front-first-frames",
+    "ms": 21,
+    "value": "two-frames"
+  },
+  {
+    "name": "after-bring-to-front-second-frames",
+    "ms": 2936,
+    "value": "timer-2000"
+  }
+]

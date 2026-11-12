@@ -1,0 +1,144 @@
+{
+  "基础提交": "a7c042326f4c9f11271d6b5e2a3095e076210ac8",
+  "冻结策略": "value-only",
+  "systemLanguage": "用户已定不支持并排除公开样例",
+  "全部通过": false,
+  "开始": "2026-11-11T15:18:43.514Z",
+  "阶段": "本次Mac首次验证执行与收尾已完成；最终验收未通过",
+  "执行人": "后续独立审核模型，由用户安排",
+  "用户操作": "当前无需你操作；本项已结束",
+  "下一步": "由用户另交的审核模型先读审核入口.md，核对补丁、输入指纹及失败清单；本会话不再继续开发",
+  "步骤": [
+    {
+      "步骤": "排除语言条件样例后复用CPU参照缓存",
+      "参数": [
+        "tools/ref/batch.mjs",
+        "--out",
+        "out/mac",
+        "--concurrency",
+        "1"
+      ],
+      "日志": "正式完整参照-systemLanguage归档后.txt",
+      "状态": "未通过或执行异常",
+      "开始": "2026-11-11T15:18:43.524Z",
+      "PID": 48724,
+      "退出码": 1,
+      "信号": null,
+      "结束": "2026-11-11T15:20:11.835Z"
+    },
+    {
+      "步骤": "Chrome自身差：复用CPU有效缓存并实跑GPU全量",
+      "参数": [
+        "tools/ref/audit.mjs",
+        "noise",
+        "--out",
+        "out/mac/noise"
+      ],
+      "日志": "Chrome自身差-final日志.txt",
+      "状态": "未通过或执行异常",
+      "开始": "2026-11-11T15:20:38.249Z",
+      "PID": 49952,
+      "退出码": 1,
+      "信号": null,
+      "结束": "2026-11-11T16:33:11.122Z"
+    },
+    {
+      "步骤": "Linux对Mac差：如实记录缺失输入",
+      "参数": [
+        "tools/ref/audit.mjs",
+        "cross",
+        "--linux",
+        "out/linux/ref",
+        "--mac",
+        "out/mac/ref",
+        "--out",
+        "out/mac/报告/Linux对Mac"
+      ],
+      "日志": "Linux对Mac-final日志.txt",
+      "状态": "未通过或执行异常",
+      "开始": "2026-11-11T16:33:11.146Z",
+      "PID": 91110,
+      "退出码": 1,
+      "信号": null,
+      "结束": "2026-11-11T16:33:11.207Z"
+    },
+    {
+      "步骤": "完整验收：两遍全部素材重复性及十项汇总",
+      "参数": [
+        "tools/check/index.mjs",
+        "--全部"
+      ],
+      "日志": "完整验收-final日志.txt",
+      "状态": "未通过或执行异常",
+      "开始": "2026-11-11T16:33:11.208Z",
+      "PID": 91111,
+      "退出码": 1,
+      "信号": null,
+      "结束": "2026-11-11T18:29:20.389Z"
+    }
+  ],
+  "时间": "2026-11-11T19:51:12.879Z",
+  "CPU结果": {
+    "完整动作": 1506,
+    "期望动作": 1509,
+    "缓存动作": 1500,
+    "帧数": 8716,
+    "错误": [
+      {
+        "素材": "公开测试集/extra/hidden-element",
+        "动作": "待机",
+        "错误": "Error: 未捕获到绘图层，指令记录不能为空\n    at commandLog (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:17:740)\n    at async Object.render (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:26:880)\n    at async worker (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:36:93)\n    at async Promise.all (index 0)\n    at async runBatch (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:42:2)\n    at async main (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:44:461)\n    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:45:110"
+      },
+      {
+        "素材": "公开测试集/extra/horizontal-line-no-stroke",
+        "动作": "待机",
+        "错误": "Error: 未捕获到绘图层，指令记录不能为空\n    at commandLog (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:17:740)\n    at async Object.render (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:26:880)\n    at async worker (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:36:93)\n    at async Promise.all (index 0)\n    at async runBatch (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:42:2)\n    at async main (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:44:461)\n    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:45:110"
+      },
+      {
+        "素材": "公开测试集/tests/structure/svg/no-children",
+        "动作": "待机",
+        "错误": "Error: 未捕获到绘图层，指令记录不能为空\n    at commandLog (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:17:740)\n    at async Object.render (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:26:880)\n    at async worker (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:36:93)\n    at async Promise.all (index 0)\n    at async runBatch (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:42:2)\n    at async main (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:44:461)\n    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:45:110"
+      }
+    ],
+    "通过": false
+  },
+  "结束": "2026-11-11T18:29:20.393Z",
+  "后续计算": "无",
+  "本次初验执行完成": true,
+  "补充收尾": [
+    {
+      "步骤": "现有PNG160帧补测",
+      "退出码": 0,
+      "错误数": 0
+    },
+    {
+      "步骤": "最差20帧报告生成与指标一致性校验",
+      "退出码": 0
+    },
+    {
+      "步骤": "网页功能核对",
+      "退出码": 0
+    },
+    {
+      "步骤": "四项轻量回归",
+      "退出码": 0
+    }
+  ],
+  "剩余本轮工作": [],
+  "归档校验完成": true,
+  "归档": [
+    {
+      "文件": "/Users/key_/Desktop/CURRGO/game/svg-render/out/mac-原算法完整验证-20261111.tar",
+      "SHA256": "8bb1ab2fef9043c9fca00783fd052fb4691deac462d50a8c40725c0515d09d67"
+    },
+    {
+      "文件": "/Users/key_/Desktop/CURRGO/game/svg-render/out/mac-160帧补测与审核证据-20261111.tar",
+      "SHA256": "20d9825a9de83034b7a9a078e0024ac89f59d43c9d05b36d1d9738bc1b5d9ca8"
+    },
+    {
+      "文件": "/Users/key_/Desktop/CURRGO/game/svg-render/out/stage-0-a7c0423.bundle",
+      "SHA256": "6cce9813ffea2bfa3abda19e45a090b5a04e153a90734230dd15e53aafa0285a"
+    }
+  ],
+  "基线完整保存": true
+}

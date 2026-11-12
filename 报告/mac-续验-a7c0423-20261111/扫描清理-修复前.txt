@@ -1,0 +1,30 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 清理错误覆盖了第9节停止码：STOP_RULE_9：发现没登记特性，已列入报告；必须请用户决定，不能自动扩支持范围。
+file:///private/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-scan-test-HuRT5l/fail-delete.mjs:1
+import fs from 'node:fs/promises';import path from 'node:path';const original=fs.rm.bind(fs);fs.rm=async(t,o)=>{if(path.basename(String(t)).startsWith('svg-render-chrome-')){await fs.writeFile("/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-scan-test-HuRT5l/profile.json",JSON.stringify(String(t)));throw new Error('回归测试：本次扫描profile清理失败');}return original(t,o);};
+                                                                                                                                                                                                                                                                                                                              ^
+
+Error: 回归测试：本次扫描profile清理失败
+    at fs.rm (file:///private/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-scan-test-HuRT5l/fail-delete.mjs:1:319)
+    at async Object.close (file:///private/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-scan-test-HuRT5l/tools/chrome/index.mjs:24:351)
+    at async main (file:///private/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-scan-test-HuRT5l/tools/scan/cli.mjs:78:10)
+    at async file:///private/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-scan-test-HuRT5l/tools/scan/cli.mjs:80:74
+
+Node.js v24.18.0
+
+
+1 !== 3
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/scan/check-cleanup.mjs:23:9 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 3,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

@@ -1,0 +1,87 @@
+{
+  "通过": false,
+  "结果": [
+    {
+      "name": "elements-via-ENTITY-reference-1",
+      "scale": 1,
+      "dom": {
+        "documentType": "text/html",
+        "root": "svg",
+        "namespace": "http://www.w3.org/2000/svg",
+        "rects": 1,
+        "fill": null
+      },
+      "PNG相同": false,
+      "活图相同": false,
+      "冻结复核": {
+        "通过": true,
+        "轨道数": 0,
+        "容差": 0.001,
+        "错误": []
+      },
+      "通过": false
+    },
+    {
+      "name": "elements-via-ENTITY-reference-1",
+      "scale": 2,
+      "dom": {
+        "documentType": "text/html",
+        "root": "svg",
+        "namespace": "http://www.w3.org/2000/svg",
+        "rects": 1,
+        "fill": null
+      },
+      "PNG相同": false,
+      "活图相同": false,
+      "冻结复核": {
+        "通过": true,
+        "轨道数": 0,
+        "容差": 0.001,
+        "错误": []
+      },
+      "通过": false
+    },
+    {
+      "name": "attribute-value-via-ENTITY-reference",
+      "scale": 1,
+      "dom": {
+        "documentType": "text/html",
+        "root": "svg",
+        "namespace": "http://www.w3.org/2000/svg",
+        "rects": 2,
+        "fill": "rgb(0, 0, 0)",
+        "fillAttribute": "&fill_value;"
+      },
+      "PNG相同": false,
+      "活图相同": false,
+      "冻结复核": {
+        "通过": true,
+        "轨道数": 0,
+        "容差": 0.001,
+        "错误": []
+      },
+      "通过": false
+    },
+    {
+      "name": "attribute-value-via-ENTITY-reference",
+      "scale": 2,
+      "dom": {
+        "documentType": "text/html",
+        "root": "svg",
+        "namespace": "http://www.w3.org/2000/svg",
+        "rects": 2,
+        "fill": "rgb(0, 0, 0)",
+        "fillAttribute": "&fill_value;"
+      },
+      "PNG相同": false,
+      "活图相同": false,
+      "冻结复核": {
+        "通过": true,
+        "轨道数": 0,
+        "容差": 0.001,
+        "错误": []
+      },
+      "通过": false
+    }
+  ]
+}

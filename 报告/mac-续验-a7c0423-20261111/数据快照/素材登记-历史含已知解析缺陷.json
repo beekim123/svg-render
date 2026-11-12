@@ -1,0 +1,3672 @@
+{
+  "状态": "完成",
+  "数量": 1395,
+  "分批数量": {
+    "现有游戏": 82,
+    "待接入": 35,
+    "试验图": 1,
+    "复杂测试图": 44,
+    "公开测试集": 1233
+  },
+  "上游清单未交付的id": {
+    "现有游戏": [
+      "card_art_shadow",
+      "card_art_whistle",
+      "relic_first2",
+      "relic_slow",
+      "relic_start2",
+      "relic_twice",
+      "ui_node_door"
+    ],
+    "待接入": [
+      "bg_tile",
+      "card_art_bag",
+      "card_art_bg",
+      "card_art_bg_tool",
+      "card_art_empty",
+      "card_art_hammer",
+      "card_art_hourglass",
+      "card_art_lens",
+      "card_art_mirror",
+      "card_art_palette",
+      "card_art_seal",
+      "card_art_stone",
+      "card_back",
+      "card_frame",
+      "card_frame_tool",
+      "card_gem_bar",
+      "dummy",
+      "fx_attack",
+      "fx_grow",
+      "fx_heal",
+      "fx_hit",
+      "fx_kill",
+      "fx_overkill",
+      "fx_rainbow",
+      "fx_same",
+      "fx_shun",
+      "fx_slam",
+      "fx_white",
+      "gem_blue_cut",
+      "gem_blue_rough",
+      "gem_blue_shine",
+      "gem_green_cut",
+      "gem_green_rough",
+      "gem_green_shine",
+      "gem_icon_blue",
+      "gem_icon_green",
+      "gem_icon_red",
+      "gem_red_cut",
+      "gem_red_rough",
+      "gem_red_shine",
+      "loot_chest",
+      "mon_armor",
+      "mon_box",
+      "mon_chest",
+      "mon_lock",
+      "mon_portrait",
+      "mon_tree",
+      "npc_knocker",
+      "prop_pillar",
+      "prop_rack",
+      "relic_heart",
+      "relic_once",
+      "relic_rainbow",
+      "relic_same",
+      "relic_white",
+      "rule_bell",
+      "rule_hug",
+      "rule_regrow",
+      "rule_wind",
+      "table_cloth",
+      "title_emblem",
+      "ui_banner",
+      "ui_btn",
+      "ui_btn_primary",
+      "ui_countdown",
+      "ui_door",
+      "ui_heart",
+      "ui_heart_empty",
+      "ui_hp_frame",
+      "ui_icon_deck",
+      "ui_icon_rules",
+      "ui_icon_settings",
+      "ui_icon_undo",
+      "ui_mult_badge",
+      "ui_node_boss",
+      "ui_node_elite",
+      "ui_node_fight",
+      "ui_panel",
+      "ui_rainbow_slot",
+      "ui_reward_card",
+      "ui_reward_heal",
+      "ui_reward_shop",
+      "ui_rule_sign"
+    ]
+  },
+  "stay待Chrome分类": [],
+  "静态及周期判断": "静态已检查；循环周期由参照工具量取",
+  "公开测试集": {
+    "状态": "已筛选",
+    "提交": "500d8605a28ac092c1b146c06ec65c0e70e99ec4",
+    "候选数": 1798,
+    "目录": "/private/tmp/svg-render-mac-cache/tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4",
+    "条件": "仅静态且每项特性均为支持才登记；不确定的路径语法另列待验证",
+    "登记数": 1233,
+    "排除数": 565,
+    "排除明细": [
+      {
+        "id": "公开测试集/tests/shapes/path/A",
+        "原因": [
+          "Chrome扫描未完成",
+          "路径path1：路径数据在字符1处无效",
+          "1条路径无法可靠解析，段数待验证"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/shapes/path/invalid-data-in-L",
+        "原因": [
+          "Chrome扫描未完成",
+          "路径path2：路径数据在字符23处无效",
+          "1条路径无法可靠解析，段数待验证"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/shapes/path/missing-coordinate-in-L",
+        "原因": [
+          "Chrome扫描未完成",
+          "路径path2：路径数据在字符23处无效",
+          "1条路径无法可靠解析，段数待验证"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/shapes/path/negative-large-arc-flag-value",
+        "原因": [
+          "Chrome扫描未完成",
+          "路径path2：路径数据在字符26处无效",
+          "1条路径无法可靠解析，段数待验证"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/shapes/path/negative-sweep-flag-value",
+        "原因": [
+          "Chrome扫描未完成",
+          "路径path2：路径数据在字符28处无效",
+          "1条路径无法可靠解析，段数待验证"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/shapes/path/no-commawsp-before-arc-flags",
+        "原因": [
+          "Chrome扫描未完成",
+          "路径path2：路径数据在字符30处无效",
+          "1条路径无法可靠解析，段数待验证"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/shapes/path/out-of-range-large-arc-flag-value",
+        "原因": [
+          "Chrome扫描未完成",
+          "路径path2：路径数据在字符24处无效",
+          "1条路径无法可靠解析，段数待验证"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/shapes/path/out-of-range-sweep-flag-value",
+        "原因": [
+          "Chrome扫描未完成",
+          "路径path2：路径数据在字符27处无效",
+          "1条路径无法可靠解析，段数待验证"
+        ]
+      },
+      {
+        "id": "公开测试集/resources/image-033",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/resources/simple-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/chained-feImage",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/embedded-png",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/empty",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-on-an-element-with-complex-transform",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-on-an-element-with-transform",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-to-an-element-outside-defs-1",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-to-an-element-outside-defs-2",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-to-an-element-with-opacity",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-to-an-element-with-transform",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-to-an-element",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-to-an-invalid-element",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-to-g",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/link-to-use",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/preserveAspectRatio=none",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/recursive-links-1",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/recursive-links-2",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/recursive-links-3",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/self-recursive",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/shared-with-objectBoundingBox-gradient",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/simple-case",
+        "原因": [
+          "元素/feImage：不支持",
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/svg",
+        "原因": [
+          "元素/feImage：不支持",
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/with-subregion-1",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/with-subregion-2",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/with-subregion-3",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/with-subregion-4",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/with-subregion-5",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/with-x-y-and-protruding-subregion-1",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/with-x-y-and-protruding-subregion-2",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/feImage/with-x-y",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-0percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-100percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-200percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-50percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-default-value",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-negative",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter/on-group-with-child-outside-of-canvas",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/filters/filter/with-transform-outside-of-canvas",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/clip/simple-case",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/clipPath/clip-path-with-transform-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/clipPath/clipping-with-complex-text-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/clipPath/clipping-with-complex-text-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/clipPath/clipping-with-complex-text-and-clip-rule",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/clipPath/clipping-with-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/clipPath/image-is-not-a-valid-child",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/clipPath/switch-is-not-a-valid-child",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/mask/with-grayscale-image",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/masking/mask/with-image",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/paint-servers/linearGradient/invalid-spreadMethod",
+        "原因": [
+          "渐变/spreadMethod/invalid：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/paint-servers/pattern/text-child",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/paint-servers/radialGradient/invalid-spreadMethod",
+        "原因": [
+          "渐变/spreadMethod/invalid：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/paint-servers/radialGradient/invalid-xlink-href",
+        "原因": [
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/context/with-gradient-on-text-decoration-in-use",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/context/with-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/display/none-on-tref",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/display/none-on-tspan-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/display/none-on-tspan-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/fill-opacity/on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/fill/linear-gradient-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/fill/pattern-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/fill/radial-gradient-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/image-rendering/high-quality",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/image-rendering/on-feImage",
+        "原因": [
+          "元素/feImage：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/image-rendering/optimizeSpeed-on-SVG",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/image-rendering/optimizeSpeed",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/marker/marker-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/marker/with-a-text-child",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/marker/with-an-image-child",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/mix-blend-mode/plus-lighter",
+        "原因": [
+          "混合/plus-lighter：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/paint-order/on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/paint-order/on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/shape-rendering/optimizeSpeed-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/stroke-opacity/on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/stroke/linear-gradient-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/stroke/pattern-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/stroke/radial-gradient-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/visibility/bbox-impact-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/visibility/collapse-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/painting/visibility/hidden-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/a/inside-text",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/a：不支持",
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/a/inside-tspan",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/a：不支持",
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/a/on-shape",
+        "原因": [
+          "元素/a：不支持",
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/a/on-text",
+        "原因": [
+          "元素/a：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/a/on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/a：不支持",
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/defs/style-inheritance-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-16bit-png",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-gif",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-jpeg-as-image-jpeg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-jpeg-as-image-jpg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-jpeg-luma",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-jpeg-without-mime",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-png-luma",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-png",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-svg-with-text",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-svg-without-mime",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-svgz",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/embedded-webp",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/external-gif",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/external-jpeg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/external-png",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/external-svg-with-transform",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/external-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/external-svgz",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/external-webp",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/float-size",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/image-with-float-size-scaling",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/nested-embedded-png",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/nested-external-png",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/no-height-non-square",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/no-height-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/no-height",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/no-width-and-height-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/no-width-and-height",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/no-width-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/no-width",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/objectBoundingBox-clip-on-sliced-image",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=none-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=none",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-meet-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-meet",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-slice-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-slice",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-meet-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-meet",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-slice-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-slice",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-meet-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-meet",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-slice-on-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-slice",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/raster-image-and-size-with-odd-numbers",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/recursive-1",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/recursive-2",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/url-to-png",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/url-to-svg",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/width-and-height-set-to-auto",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/with-transform",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/with-zero-width-and-height",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/zero-height",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/image/zero-width",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/外部资源：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/svg/mixed-namespaces",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/a：不支持",
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/svg/not-UTF-8-encoding",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/svg/rect-inside-a-non-SVG-element",
+        "原因": [
+          "元素/random：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/svg/xmlns-validation",
+        "原因": [
+          "元素命名空间/http://www.example.org/notsvg/rect：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/comment-as-first-child",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/display-none-on-child",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/non-SVG-child",
+        "原因": [
+          "元素/switch：不支持",
+          "元素/random：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/requiredFeatures",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/simple-case",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/single-child",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/systemLanguage",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/systemLanguage=en-GB",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/systemLanguage=en-US",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/systemLanguage=en",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/systemLanguage=ru-Ru",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/systemLanguage=ru-en",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/switch/with-attributes",
+        "原因": [
+          "元素/switch：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/symbol/with-size-on-use-and-relative-units",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/systemLanguage/on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/transform-origin/on-image",
+        "原因": [
+          "元素/image：不支持",
+          "禁止/image：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/transform-origin/on-text-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/transform-origin/on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/use/nested-recursive-1",
+        "原因": [
+          "描边/vector-effect/：没登记",
+          "裁剪/：没登记",
+          "混合/：没登记",
+          "禁止/backdrop-filter：不支持",
+          "禁止/transition：不支持",
+          "禁止/3D变换：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/use/nested-recursive-2",
+        "原因": [
+          "描边/vector-effect/：没登记",
+          "裁剪/：没登记",
+          "混合/：没登记",
+          "禁止/backdrop-filter：不支持",
+          "禁止/transition：不支持",
+          "禁止/3D变换：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/use/xlink-to-a-child-of-a-non-SVG-element",
+        "原因": [
+          "元素/random：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/use/xlink-to-an-external-file",
+        "原因": [
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/structure/use/xlink-to-an-invalid-element-2",
+        "原因": [
+          "元素/random：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/after-edge",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/alphabetic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/auto",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/baseline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/before-edge",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/central",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/hanging-and-baseline-shift-eq-20-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/hanging-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/hanging-on-vertical",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/hanging-with-underline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/hanging",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/ideographic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/inherit",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/mathematical",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/middle-on-textPath",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/middle",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/text-after-edge",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/text-before-edge",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/alignment-baseline/two-textPath-with-middle-on-first",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/-10",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/-50percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/0",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/10",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/2mm",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/50percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/baseline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/deeply-nested-super",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/inheritance-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/inheritance-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/inheritance-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/inheritance-4",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/inheritance-5",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/invalid-value",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/mixed-nested",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/nested-length",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/nested-super",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/nested-with-baseline-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/nested-with-baseline-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/sub",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/super",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/baseline-shift/with-rotate",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/cbdt",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/colrv0",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/colrv1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/compound-emojis-and-coordinates-list",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/compound-emojis",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/mixed-text-rtl",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/mixed-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/sbix",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/svg",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/color-font/writing-mode=tb",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/direction/rtl-with-vertical-writing-mode",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/direction/rtl",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/alignment-baseline-and-baseline-shift-on-tspans",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/alignment-baseline=baseline-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/alphabetic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/auto",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/central",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/complex",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/different-alignment-baseline-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/dummy-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/equal-alignment-baseline-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/hanging",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/ideographic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/inherit",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/inherited-through-nested-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/mathematical",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/middle",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/nested",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/no-change",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/reset-size",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/sequential",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/text-after-edge",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/text-before-edge",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/dominant-baseline/use-script",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/bold-sans-serif",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/cursive",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/double-quoted",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/fallback-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/fallback-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/fantasy",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/font-list",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/monospace",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/noto-sans-malayalam-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/noto-sans",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/sans-serif",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/serif",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-family/source-sans-pro",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-kerning/arabic-script",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-kerning/as-property",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-kerning/none",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size-adjust/simple-case",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/em-nested-and-mixed",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/em-on-the-root-element",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/em",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/ex-nested-and-mixed",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/ex-on-the-root-element",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/ex",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/inheritance",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/mixed-values",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/named-value-without-a-parent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/named-value",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/negative-size",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/nested-percent-values-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/nested-percent-values-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/percent-value-without-a-parent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/percent-value",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/simple-case",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/zero-size-on-parent-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/zero-size-on-parent-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/zero-size-on-parent-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-size/zero-size",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-stretch/extra-condensed",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-stretch/inherit",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-stretch/narrower",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-style/inherit",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-style/italic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-style/oblique",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variant/inherit",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variant/small-caps",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/all-axes-combined",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/auto-font-stretch-condensed",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/auto-font-style-oblique",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/auto-font-weight-700",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/explicit-overrides-auto",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/grad-negative",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/multiple-axes",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/opsz-144",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/slnt-negative",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/wdth-151",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/wdth-25",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/wght-100",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/wght-700",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-variation-settings/xtra-extreme",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/650",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/700",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/bold",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/bolder-with-clamping",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/bolder-without-parent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/bolder",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/inherit",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/invalid-number-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/lighter-with-clamping",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/lighter-without-parent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/lighter",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font-weight/normal",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font/font-shorthand",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/font/simple-case",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/glyph-orientation-horizontal/simple-case",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/glyph-orientation-vertical/simple-case",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/kerning/0",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/kerning/10percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/lengthAdjust/spacingAndGlyphs",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/lengthAdjust/text-on-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/lengthAdjust/vertical",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/lengthAdjust/with-underline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/0",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/1mm",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/5percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/filter-bbox",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/large-negative",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/mixed-scripts",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/mixed-spacing",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/non-ASCII-character",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/normal",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/letter-spacing/on-Arabic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/arabic-with-dx",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/coordinates-list",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/end-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/end-with-letter-spacing",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/inheritance-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/inheritance-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/inheritance-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/invalid-value-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/middle-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/negative-dx",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/on-the-first-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/on-tspan-with-arabic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/start-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-anchor/text-anchor-not-on-text-chunk",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/all-types-inline-comma-separated",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/all-types-inline-no-spaces",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/all-types-inline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/all-types-nested",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/indirect-with-multiple-colors",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/indirect",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/line-through",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/outside-the-text-element",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/overline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/style-resolving-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/style-resolving-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/style-resolving-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/style-resolving-4",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/tspan-decoration",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/underline-with-dy-list-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/underline-with-dy-list-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/underline-with-dy-on-arabic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/underline-with-rotate-list-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/underline-with-rotate-list-4",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/underline-with-y-list",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/underline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-decoration/with-textLength-on-a-single-character",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-rendering/geometricPrecision",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-rendering/on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-rendering/optimizeLegibility",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-rendering/optimizeSpeed",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text-rendering/with-underline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/bidi-reordering",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/complex-grapheme-split-by-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/complex-graphemes-and-coordinates-list",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/complex-graphemes",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/dx-and-dy-instead-of-x-and-y",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/dx-and-dy-with-less-values-than-characters",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/dx-and-dy-with-more-values-than-characters",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/dx-and-dy-with-multiple-values",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/em-and-ex-coordinates",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/escaped-text-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/escaped-text-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/escaped-text-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/escaped-text-4",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/fill-rule=evenodd",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/filter-bbox",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/glyph-splitting",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/ligatures-handling-in-mixed-fonts-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/ligatures-handling-in-mixed-fonts-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/mm-coordinates",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/nested",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/no-coordinates",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/percent-value-on-dx-and-dy",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/percent-value-on-x-and-y",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/real-text-height",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/rotate-on-Arabic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/rotate-with-an-invalid-angle",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/rotate-with-less-values-than-characters",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/rotate-with-more-values-than-characters",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/rotate-with-multiple-values-and-complex-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/rotate-with-multiple-values-underline-and-pattern",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/rotate-with-multiple-values",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/rotate",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/simple-case",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/transform",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/x-and-y-with-dx-and-dy-lists",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/x-and-y-with-dx-and-dy",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/x-and-y-with-less-values-than-characters",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/x-and-y-with-more-values-than-characters",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/x-and-y-with-multiple-values-and-arabic-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/x-and-y-with-multiple-values-and-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/x-and-y-with-multiple-values",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/xml-lang=ja",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/xml-space",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/text/zalgo",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/150-on-parent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/150-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/150",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/40mm",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/75percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/arabic-with-lengthAdjust",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/arabic",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/inherit",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/negative",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/on-a-single-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/on-text-and-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textLength/zero",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/arabic-with-dy",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/closed-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/complex",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/dy-with-tiny-coordinates",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/invalid-link",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/invalid-textPath-in-the-middle",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/link-to-rect",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/m-A-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/m-L-Z-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/method=stretch",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/mixed-children-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/mixed-children-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/nested",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/no-link",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/path-with-ClosePath",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/path-with-subpaths-and-startOffset",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/path-with-subpaths",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/side=right",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/simple-case",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/spacing=auto",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/startOffset=-100",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/startOffset=10percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/startOffset=30",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/startOffset=5mm",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/startOffset=9999",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/tspan-with-absolute-position",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/tspan-with-relative-position",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/two-paths",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/very-long-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-baseline-shift-and-rotate",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-baseline-shift",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-big-letter-spacing",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-coordinates-on-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-coordinates-on-textPath",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-error-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-filter",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-invalid-path-and-xlink-href",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-letter-spacing",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-path-and-xlink-href",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-rotate",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-text-anchor",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-transform-on-a-referenced-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-transform-outside-a-referenced-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/with-underline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/textPath/writing-mode=tb",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/link-to-a-complex-text",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/link-to-a-non-SVG-element",
+        "原因": [
+          "元素/not-a-text：没登记",
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/link-to-a-non-text-element",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/link-to-an-external-file-element",
+        "原因": [
+          "元素/not-a-text：没登记",
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记",
+          "禁止/外部资源：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/link-to-text",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/nested",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/position-attributes",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/style-attributes",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/with-a-title-child",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/with-text",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tref/xml-space",
+        "原因": [
+          "禁止/系统字体：不支持",
+          "元素/tref：没登记"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/arabic-with-dy",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/bidi-reordering",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/mixed-font-size",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/mixed-xml-space-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/mixed-xml-space-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/mixed-xml-space-3",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/mixed",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/multiple-coordinates",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/nested-rotate",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/nested-whitespaces",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/nested",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/only-with-y",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/outside-the-text",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/pseudo-multi-line",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/rotate-and-display-none",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/rotate-on-child",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/sequential",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/style-override",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/text-shaping-across-multiple-tspan-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/text-shaping-across-multiple-tspan-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/transform",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/tspan-bbox-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/tspan-bbox-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/with-clip-path",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/with-dy",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/with-filter",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/with-mask",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/with-opacity",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/with-x-and-y",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/without-attributes",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/xml-space-1",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/tspan/xml-space-2",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/unicode-bidi/bidi-override",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/word-spacing/-5",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/word-spacing/0",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/word-spacing/10",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/word-spacing/2mm",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/word-spacing/5percent",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/word-spacing/large-negative",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/word-spacing/normal",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/arabic-with-rl",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/horizontal-tb",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/inheritance",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/invalid-value",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/japanese-with-tb",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/lr-tb",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/lr",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/mixed-languages-with-tb-and-underline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/mixed-languages-with-tb",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/rl-tb",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/rl",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-and-punctuation",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-rl",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-with-alignment",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-with-dx-on-second-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-with-dx-on-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-with-dy-on-second-tspan",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-with-negative-dy-and-text-anchor",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-with-rotate-and-underline",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb-with-rotate",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/tb",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/vertical-lr",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      },
+      {
+        "id": "公开测试集/tests/text/writing-mode/vertical-rl",
+        "原因": [
+          "禁止/系统字体：不支持"
+        ]
+      }
+    ]
+  },
+  "Chrome验证": {
+    "状态": "完成",
+    "登记集合检查": {
+      "状态": "完成",
+      "未完成": [],
+      "待人工决定": [],
+      "不支持": []
+    },
+    "版本": "157.0.8103.50",
+    "扫描数量": 1960,
+    "报告目录": "out/mac/scan"
+  },
+  "待人工决定": [],
+  "候选未知排除数": 22,
+  "清单未知待决数": 0
+}

@@ -1,0 +1,9 @@
+{
+  "目标": "mac-arm64",
+  "Skia": "ca84ce0a6f1659748188469a89361ccea71e3a64",
+  "本次构建秒": 185.57,
+  "计时说明": "本次调用含增量复用，不代表首次完整构建时长",
+  "静态库字节": 14763048,
+  "静态库": "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64/libskia.a",
+  "说明": "这只是静态库构建记录，尚非动态库体积、实验5或Mac验收通过。"
+}

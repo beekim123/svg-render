@@ -1,0 +1,7 @@
+通过：现有游戏/ui_heart/gain 455.0066ms @1x ；SSIM=1；值复核=true；冻结动画=0/0
+通过：现有游戏/ui_rainbow_slot/light 50ms @2x #3FE3F0；SSIM=1；值复核=true；冻结动画=0/0
+通过：现有游戏/ui_rainbow_slot/light 100ms @1x #E3263A；SSIM=1；值复核=true；冻结动画=0/0
+通过：现有游戏/ui_rule_sign/flip 150ms @1x ；SSIM=1；值复核=true；冻结动画=0/0
+通过：现有游戏/ui_rule_sign/flip 200ms @1x ；SSIM=1；值复核=true；冻结动画=0/0
+通过：现有游戏/ui_rule_sign/flip 250ms @1x ；SSIM=1；值复核=true；冻结动画=0/0
+通过：原computed will-change:filter与transform/opacity提示合并，冻结无动画且值复核通过。

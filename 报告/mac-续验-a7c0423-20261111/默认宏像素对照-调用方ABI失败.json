@@ -1,0 +1,26 @@
+{
+  "说明": "同一CPU最小模块与同一场景/工具链，仅去掉Chromium覆盖头，比较默认宏与Chromium宏的实际像素；默认版不作实验5放行依据。",
+  "编译": {
+    "命令": "clang++",
+    "参数": [
+      "-std=c++20",
+      "-DNDEBUG",
+      "-O3",
+      "-ffp-contract=off",
+      "-flto=thin",
+      "-I/private/tmp/svg-render-mac-cache/skia/ca84ce0a6f1659748188469a89361ccea71e3a64",
+      "/private/tmp/svg-render-mac-volume/svg-render/实验/micro/draw.cpp",
+      "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64-default-a7c0423/libskia.a",
+      "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64-default-a7c0423/libskcms.a",
+      "-o",
+      "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/default-macros/micro",
+      "-arch",
+      "arm64",
+      "-Wl,-dead_strip"
+    ],
+    "退出码": 0,
+    "日志": ""
+  },
+  "帧": [],
+  "错误": "Error: 01-path@1x绘制失败\n    at file:///private/tmp/svg-default-compare.mjs:19:127"
+}

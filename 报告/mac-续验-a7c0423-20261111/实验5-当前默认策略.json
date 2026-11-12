@@ -1,0 +1,1140 @@
+{
+  "基础提交": "a7c042326f4c9f11271d6b5e2a3095e076210ac8",
+  "代码工作区有修改": true,
+  "冻结策略": "value-only",
+  "当前源码指纹一致": true,
+  "范围": "静态8场景×3倍率；与保层候选决策无关，不是整体验收",
+  "实验": 5,
+  "平台": "darwin",
+  "架构": "arm64",
+  "时间": "2026-11-11T13:11:42.568Z",
+  "及格": true,
+  "像素及格": true,
+  "指令已校准": true,
+  "说明": "C++按固定Chrome真实指令核对；CDP未展开的参数按固定Blink源码及SVG数值核对。只有当前源码、库、配置和24份指令匹配已核对凭据且像素全部达标才放行，不代表阶段0最终验收。",
+  "帧": [
+    {
+      "场景": 1,
+      "文件": "01-path.svg",
+      "倍率": 1,
+      "宽": 256,
+      "高": 256,
+      "非透明像素": 11774,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/01-path@1x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/01-path@1x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/01-path@1x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "浅",
+            "内容像素": 20888,
+            "ssim": 0.999981463723507,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.012459353714676198,
+            "通道平均差": [
+              -0.008888676113877187,
+              -0.012459353714676198,
+              -0.012309535074083283
+            ],
+            "最大差": 1.9058823529411768,
+            "平均绝对差": 0.02497346570442295
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 1,
+      "文件": "01-path.svg",
+      "倍率": 1.5,
+      "宽": 384,
+      "高": 384,
+      "非透明像素": 25852,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/01-path@1.5x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/01-path@1.5x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/01-path@1.5x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "浅",
+            "内容像素": 39471,
+            "ssim": 0.9999834204007356,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.009705710968738014,
+            "通道平均差": [
+              -0.008346758429246398,
+              -0.009705710968738014,
+              -0.007508019042026899
+            ],
+            "最大差": 6.192156862745094,
+            "平均绝对差": 0.02192754074597336
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 1,
+      "文件": "01-path.svg",
+      "倍率": 2,
+      "宽": 512,
+      "高": 512,
+      "非透明像素": 45459,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/01-path@2x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/01-path@2x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/01-path@2x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 63592,
+            "ssim": 0.999830450788482,
+            "大差比例": 0.0009120644106176877,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.035720919390526636,
+            "通道平均差": [
+              -0.035720919390526636,
+              -0.020232783011304975,
+              -0.031114839947804465
+            ],
+            "最大差": 25.19999999999996,
+            "平均绝对差": 0.06146804341730832
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 2,
+      "文件": "02-primitives.svg",
+      "倍率": 1,
+      "宽": 256,
+      "高": 256,
+      "非透明像素": 24443,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/02-primitives@1x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/02-primitives@1x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/02-primitives@1x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 33843,
+            "ssim": 0.999992162323463,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.01798941247154532,
+            "通道平均差": [
+              -0.011356361236690982,
+              -0.009916610322289838,
+              -0.01798941247154532
+            ],
+            "最大差": 1.9058823529411768,
+            "平均绝对差": 0.014254016866426073
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 2,
+      "文件": "02-primitives.svg",
+      "倍率": 1.5,
+      "宽": 384,
+      "高": 384,
+      "非透明像素": 54353,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/02-primitives@1.5x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/02-primitives@1.5x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/02-primitives@1.5x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 68133,
+            "ssim": 0.9999920509755202,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.01302078431948125,
+            "通道平均差": [
+              -0.008301755821874347,
+              -0.011023307066944885,
+              -0.01302078431948125
+            ],
+            "最大差": 1.9058823529411768,
+            "平均绝对差": 0.011989736721209161
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 2,
+      "文件": "02-primitives.svg",
+      "倍率": 2,
+      "宽": 512,
+      "高": 512,
+      "非透明像素": 96018,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/02-primitives@2x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/02-primitives@2x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/02-primitives@2x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "浅",
+            "内容像素": 114190,
+            "ssim": 0.9998936407628208,
+            "大差比例": 0.00009633067694193887,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.009888747512316077,
+            "通道平均差": [
+              0.009888747512316077,
+              0.005217997523906653,
+              -0.001430158542092723
+            ],
+            "最大差": 20.752941176470586,
+            "平均绝对差": 0.036583048433782246
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 3,
+      "文件": "03-strokes.svg",
+      "倍率": 1,
+      "宽": 256,
+      "高": 256,
+      "非透明像素": 7974,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/03-strokes@1x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/03-strokes@1x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/03-strokes@1x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 20548,
+            "ssim": 0.9999833166047596,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.033595369235878046,
+            "通道平均差": [
+              -0.021863871108108338,
+              -0.015745437750728074,
+              -0.033595369235878046
+            ],
+            "最大差": 1.75686274509804,
+            "平均绝对差": 0.02576590950441558
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 3,
+      "文件": "03-strokes.svg",
+      "倍率": 1.5,
+      "宽": 384,
+      "高": 384,
+      "非透明像素": 16957,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/03-strokes@1.5x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/03-strokes@1.5x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/03-strokes@1.5x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 36001,
+            "ssim": 0.9999818402651751,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.028471213490257028,
+            "通道平均差": [
+              -0.027655005225889574,
+              -0.017208999096430373,
+              -0.028471213490257028
+            ],
+            "最大差": 1.9058823529411768,
+            "平均绝对差": 0.025883304258251385
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 3,
+      "文件": "03-strokes.svg",
+      "倍率": 2,
+      "宽": 512,
+      "高": 512,
+      "非透明像素": 28542,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/03-strokes@2x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/03-strokes@2x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/03-strokes@2x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "浅",
+            "内容像素": 53094,
+            "ssim": 0.9999652960373162,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.01871641638913426,
+            "通道平均差": [
+              -0.0058780690111581635,
+              -0.00322121993031973,
+              -0.01871641638913426
+            ],
+            "最大差": 13.670588235294133,
+            "平均绝对差": 0.03228807902915299
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 4,
+      "文件": "04-linear.svg",
+      "倍率": 1,
+      "宽": 256,
+      "高": 256,
+      "非透明像素": 45312,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/04-linear@1x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/04-linear@1x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/04-linear@1x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "浅",
+            "内容像素": 54612,
+            "ssim": 0.999999934139935,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.0000627600340656299,
+            "通道平均差": [
+              -0.0000627600340656299,
+              -0.000008042475761270568,
+              -0.00002448646638029719
+            ],
+            "最大差": 1.3372549019607902,
+            "平均绝对差": 0.00003176299206906589
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 4,
+      "文件": "04-linear.svg",
+      "倍率": 1.5,
+      "宽": 384,
+      "高": 384,
+      "非透明像素": 101952,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/04-linear@1.5x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/04-linear@1.5x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/04-linear@1.5x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "浅",
+            "内容像素": 115752,
+            "ssim": 0.9999999417369955,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.000008503643353809713,
+            "通道平均差": [
+              0.0000037266962905143185,
+              0.000006165988407941587,
+              0.000008503643353809713
+            ],
+            "最大差": 0.9843137254901819,
+            "平均绝对差": 0.000006132109350755206
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 4,
+      "文件": "04-linear.svg",
+      "倍率": 2,
+      "宽": 512,
+      "高": 512,
+      "非透明像素": 181248,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/04-linear@2x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/04-linear@2x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/04-linear@2x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 199548,
+            "ssim": 0.9993702866519539,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.00039825299294050926,
+            "通道平均差": [
+              0.00039825299294050926,
+              0.00029366367991661134,
+              -0.0001539950877217819
+            ],
+            "最大差": 1.9529411764705742,
+            "平均绝对差": 0.06333470506088819
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 5,
+      "文件": "05-radial.svg",
+      "倍率": 1,
+      "宽": 256,
+      "高": 256,
+      "非透明像素": 39724,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/05-radial@1x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/05-radial@1x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/05-radial@1x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 44304,
+            "ssim": 0.9999999916078213,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.000022571325388226798,
+            "通道平均差": [
+              -0.000022571325388226798,
+              0,
+              0
+            ],
+            "最大差": 1,
+            "平均绝对差": 0.000007523775129408932
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 5,
+      "文件": "05-radial.svg",
+      "倍率": 1.5,
+      "宽": 384,
+      "高": 384,
+      "非透明像素": 89130,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/05-radial@1.5x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/05-radial@1.5x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/05-radial@1.5x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 95950,
+            "ssim": 0.9999999922757555,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.000010422094841063054,
+            "通道平均差": [
+              -0.000010422094841063054,
+              0,
+              -0.000010422094841063054
+            ],
+            "最大差": 1,
+            "平均绝对差": 0.000006948063227375369
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 5,
+      "文件": "05-radial.svg",
+      "倍率": 2,
+      "宽": 512,
+      "高": 512,
+      "非透明像素": 158406,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/05-radial@2x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/05-radial@2x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/05-radial@2x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 167466,
+            "ssim": 0.9993431303366959,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.0005592706789999872,
+            "通道平均差": [
+              -0.0005592706789999872,
+              0.00029315871667716934,
+              -0.0002048059857862865
+            ],
+            "最大差": 3.482352941176458,
+            "平均绝对差": 0.06666199885741095
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 6,
+      "文件": "06-opacity.svg",
+      "倍率": 1,
+      "宽": 256,
+      "高": 256,
+      "非透明像素": 53824,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/06-opacity@1x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/06-opacity@1x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/06-opacity@1x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 58564,
+            "ssim": 0.9999679532016463,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.46588347790451473,
+            "通道平均差": [
+              -0.11268014479885254,
+              -0.46588347790451473,
+              -0.2917491974591899
+            ],
+            "最大差": 2,
+            "平均绝对差": 0.2912881633768821
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 6,
+      "文件": "06-opacity.svg",
+      "倍率": 1.5,
+      "宽": 384,
+      "高": 384,
+      "非透明像素": 121104,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/06-opacity@1.5x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/06-opacity@1.5x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/06-opacity@1.5x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 128164,
+            "ssim": 0.9999733936652758,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.4781061764614088,
+            "通道平均差": [
+              -0.1139243469304953,
+              -0.4781061764614088,
+              -0.3007552822945601
+            ],
+            "最大差": 2,
+            "平均绝对差": 0.29943145761169976
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 6,
+      "文件": "06-opacity.svg",
+      "倍率": 2,
+      "宽": 512,
+      "高": 512,
+      "非透明像素": 215296,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/06-opacity@2x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/06-opacity@2x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/06-opacity@2x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 224676,
+            "ssim": 0.9999683446371681,
+            "大差比例": 0.000004450853673734622,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.4861444925136641,
+            "通道平均差": [
+              -0.11750698784026777,
+              -0.4861444925136641,
+              -0.30462977799141877
+            ],
+            "最大差": 17,
+            "平均绝对差": 0.30394434652592944
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 7,
+      "文件": "07-filters.svg",
+      "倍率": 1,
+      "宽": 256,
+      "高": 256,
+      "非透明像素": 22867,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/07-filters@1x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/07-filters@1x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/07-filters@1x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 29487,
+            "ssim": 1,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0,
+            "通道平均差": [
+              0,
+              0,
+              0
+            ],
+            "最大差": 0,
+            "平均绝对差": 0
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 7,
+      "文件": "07-filters.svg",
+      "倍率": 1.5,
+      "宽": 384,
+      "高": 384,
+      "非透明像素": 50042,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/07-filters@1.5x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/07-filters@1.5x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/07-filters@1.5x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 59622,
+            "ssim": 1,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0,
+            "通道平均差": [
+              0,
+              0,
+              0
+            ],
+            "最大差": 0,
+            "平均绝对差": 0
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 7,
+      "文件": "07-filters.svg",
+      "倍率": 2,
+      "宽": 512,
+      "高": 512,
+      "非透明像素": 88980,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/07-filters@2x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/07-filters@2x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/07-filters@2x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 101640,
+            "ssim": 1,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0,
+            "通道平均差": [
+              0,
+              0,
+              0
+            ],
+            "最大差": 0,
+            "平均绝对差": 0
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 8,
+      "文件": "08-clip-mask-blend.svg",
+      "倍率": 1,
+      "宽": 256,
+      "高": 256,
+      "非透明像素": 41987,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/08-clip-mask-blend@1x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/08-clip-mask-blend@1x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/08-clip-mask-blend@1x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 50803,
+            "ssim": 0.9999908169613234,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.007624684816745029,
+            "通道平均差": [
+              -0.005799719253880706,
+              -0.007324949545591918,
+              -0.007624684816745029
+            ],
+            "最大差": 2.117647058823536,
+            "平均绝对差": 0.008451176073051056
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 8,
+      "文件": "08-clip-mask-blend.svg",
+      "倍率": 1.5,
+      "宽": 384,
+      "高": 384,
+      "非透明像素": 94339,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/08-clip-mask-blend@1.5x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/08-clip-mask-blend@1.5x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/08-clip-mask-blend@1.5x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "浅",
+            "内容像素": 107469,
+            "ssim": 0.9999921616330291,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.0037525093875680326,
+            "通道平均差": [
+              -0.002287536086557747,
+              -0.0037034300269717427,
+              -0.0037525093875680326
+            ],
+            "最大差": 2.596078431372547,
+            "平均绝对差": 0.005517225608819758
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    },
+    {
+      "场景": 8,
+      "文件": "08-clip-mask-blend.svg",
+      "倍率": 2,
+      "宽": 512,
+      "高": 512,
+      "非透明像素": 167546,
+      "Skia": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/08-clip-mask-blend@2x.png",
+      "RGBA": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/skia/08-clip-mask-blend@2x.rgba",
+      "参照": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/ref/08-clip-mask-blend@2x.png",
+      "指标": [
+        {
+          "区域": "全图",
+          "线": "静止",
+          "指标": {
+            "底": "深",
+            "内容像素": 184906,
+            "ssim": 0.9999939624098204,
+            "大差比例": 0,
+            "大差比例_不算边": 0,
+            "不算边大差像素": 0,
+            "最大差异块": 0,
+            "平均偏色": 0.004373160034892124,
+            "通道平均差": [
+              -0.0032716782645045048,
+              -0.004153631426503299,
+              -0.004373160034892124
+            ],
+            "最大差": 2.117647058823536,
+            "平均绝对差": 0.004748259652723091
+          },
+          "阈值": {
+            "ssim": 0.999,
+            "大差比例_不算边": 0.0001,
+            "最大差异块": 0,
+            "平均偏色": 255
+          },
+          "通过": true,
+          "未通过": []
+        }
+      ],
+      "通过": true
+    }
+  ],
+  "阻塞": [],
+  "编译": {
+    "文件指纹": {
+      "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64/libskia.a": "a0cf0f75fa0bd41607ef4f4146ec5092ecf0ff563edd23a5443b1da368b7fdaa",
+      "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64/libskcms.a": "958819857c61b8a5ef9846daa2e473479714dfad1ee5e2eeddd598b1ec331926",
+      "/private/tmp/svg-render-mac-volume/svg-render/实验/skia/chromium-config.h": "1011cb837da54ed7ccd9d3c1add5a57441599ad3b64c88907fef9b311fc60a70",
+      "/private/tmp/svg-render-mac-volume/svg-render/实验/micro/draw.cpp": "2dc8165d7bf447b280b68bef6087ca9a7584b969f908d59b779bce39ea85c587"
+    },
+    "编译器": "clang++",
+    "参数": [
+      "-std=c++20",
+      "-DNDEBUG",
+      "-O3",
+      "-ffp-contract=off",
+      "-flto=thin",
+      "-I/private/tmp/svg-render-mac-cache/skia/ca84ce0a6f1659748188469a89361ccea71e3a64",
+      "-DSK_USER_CONFIG_HEADER=\"/private/tmp/svg-render-mac-volume/svg-render/实验/skia/chromium-config.h\"",
+      "/private/tmp/svg-render-mac-volume/svg-render/实验/micro/draw.cpp",
+      "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64/libskia.a",
+      "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64/libskcms.a",
+      "-o",
+      "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/micro-value-only-final/micro",
+      "-arch",
+      "arm64",
+      "-Wl,-dead_strip",
+      "-Wl,-mllvm,-threads=1"
+    ],
+    "Skia提交": "ca84ce0a6f1659748188469a89361ccea71e3a64",
+    "静态库": "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64/libskia.a",
+    "编译设置": "is_official_build = true\nis_debug = false\nis_component_build = false\nis_trivial_abi = true\ncc = \"clang\"\ncxx = \"clang++\"\nskia_enable_optimize_size = false\nskia_disable_tracing = true\nskia_enable_ganesh = false\nskia_enable_graphite = false\nskia_use_gl = false\nskia_use_vulkan = false\nskia_use_metal = false\nskia_use_dawn = false\nskia_use_direct3d = false\nskia_use_angle = false\nskia_use_webgl = false\nskia_use_webgpu = false\nskia_enable_pdf = false\nskia_enable_skottie = false\nskia_enable_svg = false\nskia_enable_tools = false\nskia_enable_precompile = false\nskia_enable_fontmgr_empty = false\nskia_enable_fontmgr_win = false\nskia_enable_fontmgr_win_gdi = false\nskia_enable_fontmgr_android = false\nskia_enable_fontmgr_android_ndk = false\nskia_enable_fontmgr_custom_directory = false\nskia_enable_fontmgr_custom_embedded = false\nskia_enable_fontmgr_custom_empty = false\nskia_enable_fontmgr_fontations_empty = false\nskia_enable_fontmgr_fontconfig = false\nskia_enable_fontmgr_FontConfigInterface = false\nskia_use_freetype = false\nskia_use_fonthost_mac = false\nskia_use_fontconfig = false\nskia_use_fontations = false\nskia_use_harfbuzz = false\nskia_pdf_subset_harfbuzz = false\nskia_use_icu = false\nskia_use_client_icu = false\nskia_use_bidi = false\nskia_use_icu4x = false\nskia_use_libgrapheme = false\nskia_use_apple_unicode = false\nskia_enable_skunicode = false\nskia_use_libjpeg_turbo_decode = false\nskia_use_libjpeg_turbo_encode = false\nskia_use_libpng_decode = false\nskia_use_libpng_encode = false\nskia_use_libwebp_decode = false\nskia_use_libwebp_encode = false\nskia_use_libjxl_decode = false\nskia_use_libavif = false\nskia_use_crabbyavif = false\nskia_use_wuffs = false\nskia_use_dng_sdk = false\nskia_use_piex = false\nskia_use_ndk_images = false\nskia_use_ffmpeg = false\nskia_use_jpeg_gainmaps = false\nskia_use_rust_exif = false\nskia_use_rust_icc = false\nskia_use_rust_png_decode = false\nskia_use_rust_png_encode = false\nskia_use_rust_png_for_android = false\nskia_use_rust_bmp_decode = false\nskia_use_rust_ico_decode = false\nskia_use_rust_jpeg_decode = false\nskia_use_rust_jpeg_encode = false\nskia_use_expat = false\nskia_use_zlib = false\nskia_use_xps = false\nskia_use_perfetto = false\nskia_use_partition_alloc = false\nskia_build_rust_targets = false\nskia_use_lua = false\nskia_use_x11 = false\nskia_enable_android_utils = false\nskia_use_no_jpeg_encode = true\nskia_use_no_png_encode = true\nskia_use_no_webp_encode = true\nextra_cflags = [\"-DSK_USER_CONFIG_HEADER=\\\"/private/tmp/svg-render-mac-volume/svg-render/实验/skia/chromium-config.h\\\"\",\"-O3\",\"-ffp-contract=off\",\"-ffunction-sections\",\"-fdata-sections\",\"-flto=thin\",\"-fPIC\"]\nextra_ldflags = [\"-flto=thin\",\"-Wl,-dead_strip\"]\ntarget_os = \"mac\"\ntarget_cpu = \"arm64\"\n",
+    "耗时毫秒": 16375,
+    "退出码": 0,
+    "标准输出": "",
+    "标准错误": ""
+  },
+  "校准输入": {
+    "平台": "darwin",
+    "架构": "arm64",
+    "文件SHA256": {
+      "实验/micro/draw.cpp": "2dc8165d7bf447b280b68bef6087ca9a7584b969f908d59b779bce39ea85c587",
+      "实验/micro/sources.json": "eee3bb775e49291f602a8172db7a82f320d5ac0ae7260bd21c0b13da7cb21436",
+      "实验/skia/chromium-config.h": "1011cb837da54ed7ccd9d3c1add5a57441599ad3b64c88907fef9b311fc60a70",
+      "tools/chrome/index.mjs": "1fdadd0870522b3457e5da56a89eefadfaa7d58f48ec52c84166f156b66b18e3",
+      "tools/chrome/svg.mjs": "1773968794d7b9d8b603422e1b8eb3dc89b152d392c84f88edfdf1e8657ee913",
+      "tools/ref/index.mjs": "0c1dda06f021e2877e27bd0d5652131cd69d062b2f3071d326764c96243a8611",
+      "tools/ref/page.mjs": "8a3909f76bb4bd62a59aa087534e52478a91145a24d343e216dc6afa802379db",
+      "tools/ref/verify.mjs": "9881a9a394f650fca8b175dad034b6dd61e49b485b2ff9da87d16cf1710e2c7d",
+      "参照版本.json": "433197fb5a7756b9eb44dbf0cb9b1a91abb0ecbbb3a87c6298e2333f44451d1e",
+      "实验/micro/scenes/01-path.svg": "e01b7bce2c0fd804c64a9c9234ce471d156c2e40eacf95ef467080bea2615688",
+      "实验/micro/scenes/02-primitives.svg": "4f8a86f822cd772191790d8611fa0ef237b59d63fae2bd2828b6ac7a21264c41",
+      "实验/micro/scenes/03-strokes.svg": "3647133634d46bc1f7085610a2b0f78888ddf5aa02402b1c6c333c10dea36afd",
+      "实验/micro/scenes/04-linear.svg": "c2c619640981cbadad41842d8fcc05797200ce596e47a0b01866d170e72dec54",
+      "实验/micro/scenes/05-radial.svg": "3bf935ab66805b514f976e36530bfbe8b31240b04c87df7a265a36ae5d3ba0ea",
+      "实验/micro/scenes/06-opacity.svg": "edbeabc619db0577414abe010e4a0aedee54e0c4cbb3c8409e9c0e38cff62db3",
+      "实验/micro/scenes/07-filters.svg": "5482edddcf2e34fd14ab7273ff1e963cdf891da7e5242c8fce75568118ed46a7",
+      "实验/micro/scenes/08-clip-mask-blend.svg": "74ad25ef06c824bf81520ae2ea7c86f2260762ee3d3ec9879dd718d37a7564b4",
+      "libskia.a": "a0cf0f75fa0bd41607ef4f4146ec5092ecf0ff563edd23a5443b1da368b7fdaa",
+      "libskcms.a": "958819857c61b8a5ef9846daa2e473479714dfad1ee5e2eeddd598b1ec331926",
+      "Skia-args.gn": "c2aa084614b65c902e4befbca6b1f3840e48ae31c3b159bf5f0675b39211b168"
+    },
+    "指令SHA256": {
+      "01-path.svg@1": "e44dd2044b134eb825562608f6fef70f789254a1ce46ca821912a3996f4497c6",
+      "01-path.svg@1.5": "1541b14b04a6182198c970817ca99840edcc1aae3331f1aaee3117a3f00f74de",
+      "01-path.svg@2": "f66eeb12cc3de8dca44885040b28b2a9b48d18a4380fd23f250051d53944f5a8",
+      "02-primitives.svg@1": "cfb822eeeb0b675740ac3fb2200a167e9dcc486adf51eb9cee17e236f0aed3f1",
+      "02-primitives.svg@1.5": "9ecafae6056cd8c0cb54c11902fff79f8e553d88088444fbfd2202416d275cea",
+      "02-primitives.svg@2": "d5a1f07293815e2278086a774f3447fff36744046deb6dc71e93a2a87d30b9e4",
+      "03-strokes.svg@1": "9855c1d3c6240e38df3e5c6cef0c704820c3d39296c3ffddabe181dfd8ac4c6e",
+      "03-strokes.svg@1.5": "279765f7ec5b1b4bc1dd34571bf92d494e7fe1cd816ae2a08e1529a419bbb22b",
+      "03-strokes.svg@2": "4cca045e2fc33d44266d058988a3c23d80ed8b60f65f1f19ea961a0785070cef",
+      "04-linear.svg@1": "e258a067ff1f9259727ac94881cf7a48c0c60462e0ef4a5d92dc2b96eb31a894",
+      "04-linear.svg@1.5": "52b10b8671b3b19925109e091e6142a805b0dc64136b938c49f2f28e2de56a96",
+      "04-linear.svg@2": "bb04cdc331cea876d1eafbb1779c3d8f21555a8e533613d7b8eb5dbd43d4a1f0",
+      "05-radial.svg@1": "1f6839d36eff97f324432319d651540ba57b61ff5b16c28b94eb3e35932bfc9d",
+      "05-radial.svg@1.5": "2ba976ca948cc59e3f1d19e30c131668724deb6308c3e58725553cf32a879373",
+      "05-radial.svg@2": "5c24e3826ddc2142b5aed949a81383d9e73313d356178a1c7bea30d41f4cd46c",
+      "06-opacity.svg@1": "dff0ab2b22800a5ec2667db871ebdd63b5d065b1043fb23479a9bd82335224d6",
+      "06-opacity.svg@1.5": "249cd6b6e63773e9f62883ef573269325da176ed55a0804396a071d5d75daab5",
+      "06-opacity.svg@2": "fdca5824982fe2c3da0e50d2bdfe61727fd4d6d76507843dac3c73fdb9bc59ef",
+      "07-filters.svg@1": "79d2534ae77a133023c371e861a264200a8d815b06a721aa1496b3c3e619140a",
+      "07-filters.svg@1.5": "9b5d2735a40ee6333fa891fc887341fb01392815a8de6760ace3ff86c1856938",
+      "07-filters.svg@2": "de22f6dbbc86dad18340a76c2c6d34355d2618930409eda35c15bf5951832d18",
+      "08-clip-mask-blend.svg@1": "a61cf6cbaeb8feefc94a2b3db4028701140b9fa16eedb77b30c4e56364906ebb",
+      "08-clip-mask-blend.svg@1.5": "96534bfdf31557ab12ffbbdf7b855d4b42b6eacaaf521a6eac965abb049a483b",
+      "08-clip-mask-blend.svg@2": "c4880dbdef27b35313297ac40e05030f8e4386a0893a33132f930a410b29ffe2"
+    }
+  },
+  "校准复核": {
+    "通过": true,
+    "原因": []
+  }
+}

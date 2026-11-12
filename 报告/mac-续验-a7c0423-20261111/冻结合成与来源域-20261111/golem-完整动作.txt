@@ -1,0 +1,21 @@
+{
+  "输出": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/composite-golem-complete",
+  "通过": true,
+  "动作": [
+    {
+      "id": "复杂测试图/char_golem",
+      "动作": "受击",
+      "帧数": 26,
+      "通过": true
+    },
+    {
+      "id": "复杂测试图/char_golem",
+      "动作": "受击@switch1234",
+      "帧数": 26,
+      "通过": true
+    }
+  ],
+  "帧数": 52,
+  "最差相似度": 0.9997674322363854,
+  "错误": []
+}

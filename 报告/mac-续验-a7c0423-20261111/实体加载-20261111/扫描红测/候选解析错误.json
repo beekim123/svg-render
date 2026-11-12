@@ -1,0 +1,57 @@
+{
+  "退出码": 2,
+  "stdout": "",
+  "stderr": "SVG加载失败（来源：public-invalid）：XML解析失败；This page contains the following errors:error on line 1 at column 49: Unexpected closing tag: {http://www.w3.org/2000/svg}svg != {http://www.w3.org/2000/svg}gBelow is a rendering of the page up to the first error.\n",
+  "报告": {
+    "公开测试集": {
+      "状态": "已筛选"
+    },
+    "分批数量": {},
+    "Chrome验证": {
+      "状态": "阻塞",
+      "版本": "157.0.8103.50",
+      "素材": "public-invalid",
+      "原因": "SVG加载失败（来源：public-invalid）：XML解析失败；This page contains the following errors:error on line 1 at column 49: Unexpected closing tag: {http://www.w3.org/2000/svg}svg != {http://www.w3.org/2000/svg}gBelow is a rendering of the page up to the first error.",
+      "已扫描数量": 0
+    },
+    "状态": "待验证"
+  },
+  "清单": [
+    {
+      "id": "public-invalid",
+      "文件": "素材/invalid.svg",
+      "批": "公开测试集",
+      "候选": true,
+      "动作": [
+        {
+          "名字": "待机",
+          "种类": "循环"
+        }
+      ]
+    },
+    {
+      "id": "public-entity",
+      "文件": "素材/entity.svg",
+      "批": "公开测试集",
+      "候选": true,
+      "动作": [
+        {
+          "名字": "待机",
+          "种类": "循环"
+        }
+      ]
+    },
+    {
+      "id": "ordinary",
+      "文件": "素材/ordinary.svg",
+      "批": "现有游戏",
+      "动作": [
+        {
+          "名字": "待机",
+          "种类": "循环"
+        }
+      ]
+    }
+  ],
+  "清单未修改": true
+}

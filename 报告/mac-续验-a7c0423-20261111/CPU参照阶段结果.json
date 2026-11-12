@@ -1,0 +1,43 @@
+{
+  "阶段": "正式CPU参照已结束，按9.6待systemLanguage定档",
+  "基础提交": "a7c042326f4c9f11271d6b5e2a3095e076210ac8",
+  "冻结策略": "value-only（用户已选择，不重问）",
+  "整体通过": false,
+  "完整动作": 1514,
+  "期望动作": 1518,
+  "已记录帧": 8732,
+  "值复核失败": 0,
+  "图像低于095": 14,
+  "执行异常": [
+    {
+      "素材": "公开测试集/extra/hidden-element",
+      "动作": "待机",
+      "错误": "Error: 未捕获到绘图层，指令记录不能为空\n    at commandLog (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:17:740)\n    at async Object.render (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:26:880)\n    at async worker (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:36:93)\n    at async Promise.all (index 0)\n    at async runBatch (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:42:2)\n    at async main (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:44:461)\n    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:45:110"
+    },
+    {
+      "素材": "公开测试集/extra/horizontal-line-no-stroke",
+      "动作": "待机",
+      "错误": "Error: 未捕获到绘图层，指令记录不能为空\n    at commandLog (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:17:740)\n    at async Object.render (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:26:880)\n    at async worker (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:36:93)\n    at async Promise.all (index 0)\n    at async runBatch (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:42:2)\n    at async main (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:44:461)\n    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:45:110"
+    },
+    {
+      "素材": "公开测试集/tests/structure/svg/no-children",
+      "动作": "待机",
+      "错误": "Error: 未捕获到绘图层，指令记录不能为空\n    at commandLog (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:17:740)\n    at async Object.render (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:26:880)\n    at async worker (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:36:93)\n    at async Promise.all (index 0)\n    at async runBatch (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:42:2)\n    at async main (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:44:461)\n    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:45:110"
+    },
+    {
+      "素材": "公开测试集/tests/structure/systemLanguage/on-svg",
+      "动作": "待机",
+      "错误": "Error: 未捕获到绘图层，指令记录不能为空\n    at commandLog (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:17:740)\n    at async Object.render (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/index.mjs:26:880)\n    at async worker (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:36:93)\n    at async Promise.all (index 0)\n    at async runBatch (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:42:2)\n    at async main (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:44:461)\n    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/batch.mjs:45:110"
+    }
+  ],
+  "新归档项": {
+    "特性": "systemLanguage",
+    "位置": "公开测试集/tests/structure/systemLanguage/on-svg",
+    "事实": "源根svg上systemLanguage=ru-RU，本机不绘制；没有switch元素；支持范围没有独立归档",
+    "规则": "需求9.6必须人定",
+    "建议": "不支持，排除相关公开样例后继续"
+  },
+  "下一步": "用户在当前聊天给systemLanguage定档；之后本会话代理更新可写支持范围/扫描识别并按缓存继续，不改docs或原件",
+  "执行人": "先用户定档，后本会话代理执行",
+  "时间": "2026-11-11T14:56:37.899Z"
+}

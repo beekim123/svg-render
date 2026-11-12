@@ -1,0 +1,17 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 真实XML前缀SVG在1倍HTML内嵌/冻结路径失败（/private/tmp/svg-render-mac-cache/tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4/crates/resvg/tests/tests/structure/svg/explicit-svg-namespace.svg）：TypeError: Cannot read properties of null (reading 'viewBox')
+    at <anonymous>:1:55
+    at <anonymous>:1:277
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/chrome/check-svg.mjs:19:23 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'fail',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

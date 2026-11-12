@@ -1,0 +1,1 @@
+通过：SVG根/子元素systemLanguage明确不支持并排除公开样例；其他namespace不误计，无该属性的普通SVG仍可登记。仅纯测试，真实Chrome留给主代理。

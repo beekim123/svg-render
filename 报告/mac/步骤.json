@@ -1,0 +1,55 @@
+{
+  "提交": "a7c042326f4c9f11271d6b5e2a3095e076210ac8",
+  "环境": {
+    "通过": false,
+    "检查": [
+      {
+        "检查": "Node >=22",
+        "通过": true,
+        "修复": null
+      },
+      {
+        "检查": "git",
+        "通过": true,
+        "修复": null
+      },
+      {
+        "检查": "curl",
+        "通过": true,
+        "修复": null
+      },
+      {
+        "检查": "unzip",
+        "通过": true,
+        "修复": null
+      },
+      {
+        "检查": "python3",
+        "通过": true,
+        "修复": null
+      },
+      {
+        "检查": "Python >=3.10",
+        "通过": false,
+        "修复": "建议安装Python3.12后，用python3.12创建虚拟环境。"
+      },
+      {
+        "检查": "Python numpy/Pillow",
+        "通过": false,
+        "修复": "python3.12 -m venv .venv && .venv/bin/python -m pip install numpy==2.2.4 Pillow==11.1.0（需先安装Python3.12）；然后 PATH=\"$PWD/.venv/bin:$PATH\" npm run mac"
+      },
+      {
+        "检查": "Mac Apple Silicon",
+        "通过": true,
+        "修复": null
+      },
+      {
+        "检查": "Xcode命令行工具",
+        "通过": true,
+        "修复": null
+      }
+    ]
+  },
+  "步骤": [],
+  "全部步骤成功": false
+}

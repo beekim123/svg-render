@@ -1,0 +1,17 @@
+{
+  "实验": 3,
+  "类型": "Linux 对 Mac",
+  "说明": "跨平台差没有画质及格线。完成表示全部PNG配对、尺寸相同并成功计算四项指标，不表示图像相同或画质通过。",
+  "来源": {
+    "Linux": "/private/tmp/svg-render-mac-volume/svg-render/out/linux/ref",
+    "Mac": "/private/tmp/svg-render-mac-volume/svg-render/out/mac/ref"
+  },
+  "完成": false,
+  "错误": [
+    {
+      "错误": "ENOENT: no such file or directory, stat 'out/linux/ref'"
+    }
+  ],
+  "帧": [],
+  "汇总": {}
+}

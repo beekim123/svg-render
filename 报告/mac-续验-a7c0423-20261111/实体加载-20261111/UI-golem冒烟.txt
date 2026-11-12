@@ -1,0 +1,5 @@
+通过：现有游戏-ui_heart-gain-1000；SSIM=1；值复核=true
+通过：现有游戏-ui_rainbow_slot-light-1000；SSIM=1；值复核=true
+通过：现有游戏-ui_rule_sign-flip-1000；SSIM=1；值复核=true
+通过：复杂测试图-char_golem-受击-1000；SSIM=1；值复核=true
+通过：复杂测试图-char_golem-受击-1234；SSIM=0.9999997398913573；值复核=true

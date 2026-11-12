@@ -1,0 +1,2 @@
+nice: setpriority: Operation not permitted
+参照时刻安排与页面脚本语法检查通过；不代替 Chrome 冻结正确性验收。

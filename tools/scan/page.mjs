@@ -3,7 +3,7 @@ export function scanPage(countPathSegments) {
  const root=document.querySelector('svg');if(!root)throw new Error('没有SVG根元素');
  const verifiedCSS=new Set();
  const validateCSS=p=>{const standard=p.replace(/[A-Z]/g,c=>'-'+c.toLowerCase());if(!standard.startsWith('--')&&CSS.supports(standard,'initial'))verifiedCSS.add(p);};
- const counts={},tags={},details={渐变:[],遮罩:[],滤镜引用:[],文字:[],CSS动画:[],SMIL:[],根混合模式:getComputedStyle(root).mixBlendMode},unknown=[];
+ const counts={},tags={},details={渐变:[],遮罩:[],滤镜引用:[],文字:[],CSS动画:[],SMIL:[],其他命名空间:[],根混合模式:getComputedStyle(root).mixBlendMode},unknown=[];
  const hit=(key,n=1)=>counts[key]=(counts[key]||0)+n;
  let depth=0,segments=0,pathUnavailable=0;
  const urls=value=>[...value.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/g)].map(m=>m[1]);
@@ -12,9 +12,16 @@ export function scanPage(countPathSegments) {
  const rules=rs=>{for(const rule of rs){if(rule.type===CSSRule.MEDIA_RULE)hit('禁止/@media');if(rule.selectorText?.includes(':hover'))hit('禁止/:hover');if(rule.type===CSSRule.FONT_FACE_RULE){for(const u of urls(rule.style.getPropertyValue('src')))if(external(u))hit('禁止/外链字体');}if(rule.type===CSSRule.KEYFRAMES_RULE){hit('CSS/@keyframes');for(const k of rule.cssRules){for(const p of k.style){hit('CSS属性/'+p);validateCSS(p);}declaration(k.style);}}else if(rule.style)declaration(rule.style);if(rule.cssRules&&rule.type!==CSSRule.KEYFRAMES_RULE)rules(rule.cssRules);}};
  for(const sheet of document.styleSheets){try{rules(sheet.cssRules);}catch{hit('禁止/外部资源');}}
  for(const el of [root,...root.querySelectorAll('*')]){
-  const tag=el.localName,cs=getComputedStyle(el);tags[tag]=(tags[tag]||0)+1;hit('元素/'+tag);let d=0;for(let p=el;p&&p!==root;p=p.parentElement)d++;depth=Math.max(depth,d);
+  const tag=el.localName;let d=0;for(let p=el;p&&p!==root;p=p.parentElement)d++;depth=Math.max(depth,d);
+  // 同名XML元素不一定是SVG；保留namespace未知，不访问通用Element不存在的SVG/style接口。
+  if(el.namespaceURI!=='http://www.w3.org/2000/svg'){
+   const key=(el.namespaceURI||'(无命名空间)')+'/'+tag;
+   tags[key]=(tags[key]||0)+1;hit('元素命名空间/'+key);
+   details.其他命名空间.push({id:el.id,元素:tag,前缀:el.prefix,命名空间:el.namespaceURI});continue;
+  }
+  const cs=getComputedStyle(el);tags[tag]=(tags[tag]||0)+1;hit('元素/'+tag);
   declaration(el.style);
-  for(const p of ['fill-rule','stroke-width','stroke-linecap','stroke-linejoin','stroke-miterlimit','viewBox','preserveAspectRatio','x','y','dx','dy','rotate'])if(el.hasAttribute(p))hit('属性/'+p);
+  for(const p of ['fill-rule','stroke-width','stroke-linecap','stroke-linejoin','stroke-miterlimit','viewBox','preserveAspectRatio','x','y','dx','dy','rotate','systemLanguage'])if(el.hasAttribute(p))hit('属性/'+p);
   for(const attr of el.attributes){if(attr.value.toLowerCase().includes('currentcolor'))hit('颜色/currentColor');if(attr.name.startsWith('on'))hit('禁止/脚本');if(['href','xlink:href','src'].includes(attr.name)&&external(attr.value))hit('禁止/外部资源');}
   if(['script','foreignObject','image'].includes(tag))hit('禁止/'+tag);
   if(tag==='path'){

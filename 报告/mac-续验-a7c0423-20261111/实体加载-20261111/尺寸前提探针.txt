@@ -1,0 +1,62 @@
+[
+  {
+    "file": "structure/svg/negative-size.svg",
+    "width": -50,
+    "height": -100,
+    "valid": false,
+    "viewBox": null,
+    "widthAttribute": "-50",
+    "heightAttribute": "-100",
+    "formula": "v.width || s.width.baseVal.value；v.height || s.height.baseVal.value"
+  },
+  {
+    "file": "structure/svg/zero-size.svg",
+    "width": 0,
+    "height": 0,
+    "valid": false,
+    "viewBox": null,
+    "widthAttribute": "0",
+    "heightAttribute": "0",
+    "formula": "v.width || s.width.baseVal.value；v.height || s.height.baseVal.value"
+  },
+  {
+    "file": "structure/svg/no-size.svg",
+    "width": 300,
+    "height": 150,
+    "valid": true,
+    "viewBox": null,
+    "widthAttribute": null,
+    "heightAttribute": null,
+    "formula": "v.width || s.width.baseVal.value；v.height || s.height.baseVal.value"
+  },
+  {
+    "file": "filters/feMorphology/radius-larger-than-region.svg",
+    "width": 300,
+    "height": 300,
+    "valid": true,
+    "viewBox": null,
+    "widthAttribute": "300",
+    "heightAttribute": "300",
+    "formula": "v.width || s.width.baseVal.value；v.height || s.height.baseVal.value"
+  },
+  {
+    "file": "filters/feMorphology/centered-kernel.svg",
+    "width": 300,
+    "height": 300,
+    "valid": true,
+    "viewBox": null,
+    "widthAttribute": "300",
+    "heightAttribute": "300",
+    "formula": "v.width || s.width.baseVal.value；v.height || s.height.baseVal.value"
+  },
+  {
+    "file": "filters/feMorphology/fractional-radius.svg",
+    "width": 300,
+    "height": 300,
+    "valid": true,
+    "viewBox": null,
+    "widthAttribute": "300",
+    "heightAttribute": "300",
+    "formula": "v.width || s.width.baseVal.value；v.height || s.height.baseVal.value"
+  }
+]

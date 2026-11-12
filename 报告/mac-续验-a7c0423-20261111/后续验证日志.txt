@@ -1,0 +1,19 @@
+提交：a7c042326f4c9f11271d6b5e2a3095e076210ac8
+受验基础提交加本地修复，首次验证，不是最终验收。
+开始：实验5同版结果复核
+完成：实验5同版结果复核
+开始：实验6文字轮廓
+{"状态":"已运行","及格":false,"行数":72,"最低2倍SSIM":0.8996179978417649,"最大字符位置差":20.815994262695312}
+
+失败：实验6文字轮廓；/Users/key_/.nvm/versions/node/v24.18.0/bin/node --input-type=module -e const {runText}=await import('./实验/text/run.mjs');const r=await runText({output:'/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/text'});console.log(JSON.stringify({状态:r.状态,及格:r.及格,行数:r.结果.length,最低2倍SSIM:Math.min(...r.结果.filter(x=>x.倍率===2).map(x=>x.比较.分组[0].指标.ssim)),最大字符位置差:Math.max(...r.结果.map(x=>x.最大字符位置差)),错误:r.错误}));if(!r.及格)process.exitCode=r.错误?2:1; 退出码 1
+开始：素材登记
+已登记 162 个SVG；15 个stay动作待Chrome判断；公开测试集未登记
+
+完成：素材登记
+开始：Chrome特性扫描及公开测试集筛选
+TypeError: Cannot read properties of null (reading 'pauseAnimations')
+    at <anonymous>:1:51
+    at <anonymous>:1:544
+
+失败：Chrome特性扫描及公开测试集筛选；/Users/key_/.nvm/versions/node/v24.18.0/bin/node tools/scan/cli.mjs --register-public /private/tmp/svg-render-mac-cache/tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4 退出码 2
+开始：完整参照

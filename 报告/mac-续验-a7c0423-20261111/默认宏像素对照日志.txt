@@ -1,0 +1,1 @@
+{"帧数":0,"最低SSIM":null,"错误":"Error: 01-path@1x绘制失败\n    at file:///private/tmp/svg-default-compare.mjs:19:127"}

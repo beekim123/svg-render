@@ -1,0 +1,9 @@
+通过：elements-via-ENTITY-reference-1@1x；rect=2；fill=rgb(0, 128, 0)；冻结PNG相同=true；活图相同=true
+通过：elements-via-ENTITY-reference-1@2x；rect=2；fill=rgb(0, 128, 0)；冻结PNG相同=true；活图相同=true
+通过：attribute-value-via-ENTITY-reference@1x；rect=2；fill=rgb(0, 128, 0)；冻结PNG相同=true；活图相同=true
+通过：attribute-value-via-ENTITY-reference@2x；rect=2；fill=rgb(0, 128, 0)；冻结PNG相同=true；活图相同=true
+通过：合法XML的literal-parsererror原样保留，不伪造输入错误或特性归类。
+通过：合法XML的foreign-namespace原样保留，不伪造输入错误或特性归类。
+通过：bad-xml具有SVG_INPUT_INVALID及来源/完整原因。
+通过：wrong-root具有SVG_INPUT_INVALID及来源/完整原因。
+通过：协议异常即使含XML解析失败字样，也保持普通阻塞错误。

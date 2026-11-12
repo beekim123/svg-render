@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'没登记' !== '支持'
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/scan/check-color-case.mjs:6:50 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '没登记',
+  expected: '支持',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.18.0

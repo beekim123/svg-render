@@ -1,0 +1,33 @@
+{
+  "阶段": "本次Mac初验已执行并完成收尾；最终验收未通过",
+  "归档": [
+    {
+      "文件": "/Users/key_/Desktop/CURRGO/game/svg-render/out/mac-原算法完整验证-20261111.tar",
+      "字节": 11950409728,
+      "SHA256": "8bb1ab2fef9043c9fca00783fd052fb4691deac462d50a8c40725c0515d09d67",
+      "tar条目数": 302778,
+      "内容": "补测前out/mac全部产物：CPU/GPU PNG、两遍完整重复性、实验4/5/6和原失败报告。"
+    },
+    {
+      "文件": "/Users/key_/Desktop/CURRGO/game/svg-render/out/mac-160帧补测与审核证据-20261111.tar",
+      "字节": 116122112,
+      "SHA256": "20d9825a9de83034b7a9a078e0024ac89f59d43c9d05b36d1d9738bc1b5d9ca8",
+      "tar条目数": 71,
+      "内容": "新增160帧补测合并结果与来源证据、原始JSON、45变更文件快照、最终清单、脚本和网页QA截图。"
+    },
+    {
+      "类型": "完整基线Git bundle，不含未提交补丁",
+      "文件": "/Users/key_/Desktop/CURRGO/game/svg-render/out/stage-0-a7c0423.bundle",
+      "字节": 39830206,
+      "SHA256": "6cce9813ffea2bfa3abda19e45a090b5a04e153a90734230dd15e53aafa0285a",
+      "提交": "a7c042326f4c9f11271d6b5e2a3095e076210ac8",
+      "分支": "refs/heads/stage-0",
+      "完整历史验证": true
+    }
+  ],
+  "说明": "数据主包未改，补充包包含160帧与审核证据，另有完整a7基线bundle。45文件补丁另存；基线、补丁、两数据包和当前文档构成本次完整资料。",
+  "原始报告及脚本目录": "/Users/key_/Desktop/CURRGO/game/svg-render/out/mac-续验-a7c0423-20261111-最终结果",
+  "最终文档目录": "/Users/key_/Desktop/CURRGO/game/svg-render/报告/mac-续验-a7c0423-20261111",
+  "恢复说明": "主包包含大小写不同路径，必须解到区分大小写文件系统。JSON原临时绝对路径不自动改写；45文件快照需结合a7c0423基线，不是完整工作树。",
+  "时间": "2026-11-11T19:51:12.879Z"
+}

@@ -1,0 +1,33 @@
+{
+  "输出": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/composite-ui-complete",
+  "通过": true,
+  "动作": [
+    {
+      "id": "现有游戏/ui_heart",
+      "动作": "gain",
+      "帧数": 30,
+      "通过": true
+    },
+    {
+      "id": "现有游戏/ui_rainbow_slot@3FE3F0",
+      "动作": "light",
+      "帧数": 22,
+      "通过": true
+    },
+    {
+      "id": "现有游戏/ui_rainbow_slot@E3263A",
+      "动作": "light",
+      "帧数": 22,
+      "通过": true
+    },
+    {
+      "id": "现有游戏/ui_rule_sign",
+      "动作": "flip",
+      "帧数": 26,
+      "通过": true
+    }
+  ],
+  "帧数": 100,
+  "最差相似度": 0.9999665002271506,
+  "错误": []
+}

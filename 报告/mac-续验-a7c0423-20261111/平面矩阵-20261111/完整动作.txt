@@ -1,0 +1,8 @@
+{
+  "输出": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/planar-door-complete",
+  "通过": true,
+  "动作数": 1,
+  "帧数": 34,
+  "最低相似度": 1,
+  "错误": []
+}

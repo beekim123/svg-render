@@ -1,0 +1,51 @@
+失败：参照身份与缓存键包含实际策略，缺策略不能补默认
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ undefined
+- 'value-only'
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:26:10
+    at test (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:22:40)
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:24:8
+失败：未知策略在尝试启动Chrome前拒绝
+AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false
+
+Caught error:
+
+Error: spawn /var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-freeze-policy-cache-PxzPwo/must-not-start-Chrome ENOENT
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:30:44
+    at async test (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:22:34)
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:30:2
+失败：候选和默认跨策略缓存不能命中
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+2 !== 4
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:33:132
+    at async test (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:22:34)
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:31:2
+失败：默认覆盖拒候选，显式候选覆盖才允许
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+true !== false
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:37:10
+    at async test (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:22:34)
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:35:2
+失败：无策略旧缓存即使保留当前key也不能命中或覆盖通过
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+true !== false
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:43:10
+    at async test (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:22:34)
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:40:2
+失败：工厂实际策略与请求不一致时拒绝，不能重新贴标签
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+true !== false
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:45:221
+    at async test (file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:22:34)
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/ref/check-freeze-cache.mjs:45:2

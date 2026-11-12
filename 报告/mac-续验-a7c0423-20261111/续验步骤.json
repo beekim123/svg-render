@@ -1,0 +1,80 @@
+{
+  "提交": "a7c042326f4c9f11271d6b5e2a3095e076210ac8",
+  "代码工作区有修改": true,
+  "源码SHA256": {
+    "tools/chrome/index.mjs": "1fdadd0870522b3457e5da56a89eefadfaa7d58f48ec52c84166f156b66b18e3",
+    "tools/chrome/self-test.mjs": "4820feaf9d0a84d3a09c9acf50bcc0ea936b0d28003eb0f697617252197c92d3",
+    "tools/mac.mjs": "9825e5dc3751e1472f3e4a27275208ed42745486a5970d09287d55296814bc67",
+    "tools/mac/runner.mjs": "efd8c226f4fb7e695823b0bc81e9067032059db58cb5a3786dc1e2c70b689016",
+    "tools/mac/self-test.mjs": "667c47b912485d774b703190642336f4be9dab4c54133f408b4b802acbce5280",
+    "实验/micro/draw.cpp": "07cd5bc7b102273ab854c565d5f21e4665d43d90ce6ec2a88ac7694d02fd807c",
+    "实验/micro/check-filters.mjs": "dbef00158c0689cd0e83895fdf10053a065547c83202f6ddaf36df0a734e2497",
+    "参照版本.json": "3fafbaf5c6eebaa08ba204cf6c97ccd8b3e70713d24c3b6f374934c25c075a73"
+  },
+  "开始": "2026-11-11T08:24:20.951Z",
+  "阶段": "首次Mac验证续验",
+  "输出": "out/mac-续验-a7c0423-20261111/micro-裁剪修复后",
+  "实验4": {
+    "状态": "复用此前成功结果，未重建",
+    "arm64字节": 2379832,
+    "x64字节": 2532024,
+    "x64运行探针": "未运行"
+  },
+  "步骤": [
+    {
+      "步骤": "实验5微场景",
+      "成功": false,
+      "状态": "失败",
+      "开始": "2026-11-11T08:24:20.954Z",
+      "原因": "/Users/key_/.nvm/versions/node/v24.18.0/bin/node 实验/micro/run.mjs --output=out/mac-续验-a7c0423-20261111/micro-裁剪修复后 退出码 2",
+      "退出码": 2,
+      "停止后续": true,
+      "停止类型": "关键步骤未成功",
+      "结束": "2026-11-11T08:24:41.746Z"
+    },
+    {
+      "步骤": "实验6文字轮廓",
+      "成功": false,
+      "状态": "停止后未运行",
+      "停止步骤": "实验5微场景",
+      "原因": "/Users/key_/.nvm/versions/node/v24.18.0/bin/node 实验/micro/run.mjs --output=out/mac-续验-a7c0423-20261111/micro-裁剪修复后 退出码 2"
+    },
+    {
+      "步骤": "素材扫描",
+      "成功": false,
+      "状态": "停止后未运行",
+      "停止步骤": "实验5微场景",
+      "原因": "/Users/key_/.nvm/versions/node/v24.18.0/bin/node 实验/micro/run.mjs --output=out/mac-续验-a7c0423-20261111/micro-裁剪修复后 退出码 2"
+    },
+    {
+      "步骤": "完整参照",
+      "成功": false,
+      "状态": "停止后未运行",
+      "停止步骤": "实验5微场景",
+      "原因": "/Users/key_/.nvm/versions/node/v24.18.0/bin/node 实验/micro/run.mjs --output=out/mac-续验-a7c0423-20261111/micro-裁剪修复后 退出码 2"
+    },
+    {
+      "步骤": "Chrome自己的差",
+      "成功": false,
+      "状态": "停止后未运行",
+      "停止步骤": "实验5微场景",
+      "原因": "/Users/key_/.nvm/versions/node/v24.18.0/bin/node 实验/micro/run.mjs --output=out/mac-续验-a7c0423-20261111/micro-裁剪修复后 退出码 2"
+    },
+    {
+      "步骤": "Linux对Mac",
+      "成功": false,
+      "状态": "停止后未运行",
+      "停止步骤": "实验5微场景",
+      "原因": "/Users/key_/.nvm/versions/node/v24.18.0/bin/node 实验/micro/run.mjs --output=out/mac-续验-a7c0423-20261111/micro-裁剪修复后 退出码 2"
+    },
+    {
+      "步骤": "完整验收",
+      "成功": false,
+      "状态": "停止后未运行",
+      "停止步骤": "实验5微场景",
+      "原因": "/Users/key_/.nvm/versions/node/v24.18.0/bin/node 实验/micro/run.mjs --output=out/mac-续验-a7c0423-20261111/micro-裁剪修复后 退出码 2"
+    }
+  ],
+  "后续已停止": true,
+  "全部通过": false
+}

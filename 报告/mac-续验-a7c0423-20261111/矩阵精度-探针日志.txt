@@ -1,0 +1,437 @@
+{
+  "Chrome": {
+    "browser": "Chrome/157.0.8103.50",
+    "rasterization": "disabled_software",
+    "devices": [
+      {
+        "vendorId": 0,
+        "deviceId": 0,
+        "vendorString": "",
+        "deviceString": "",
+        "driverVendor": "",
+        "driverVersion": ""
+      }
+    ],
+    "featureStatus": {
+      "2d_canvas": "disabled_software",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "disabled_software",
+      "multiple_raster_threads": "disabled_off",
+      "opengl": "disabled_off",
+      "rasterization": "disabled_software",
+      "skia_graphite": "disabled_off",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "disabled_software",
+      "video_encode": "disabled_software",
+      "webgl": "disabled_off",
+      "webgpu": "disabled_off",
+      "webnn": "disabled_off"
+    }
+  },
+  "参数": [
+    "--headless=new",
+    "--force-device-scale-factor=1",
+    "--force-color-profile=srgb",
+    "--hide-scrollbars",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--num-raster-threads=1",
+    "--user-data-dir=/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-chrome-3iama6/profile",
+    "--remote-debugging-address=127.0.0.1",
+    "--remote-debugging-port=0",
+    "--disable-gpu",
+    "about:blank"
+  ],
+  "素材": "素材/源文件/现有游戏/svg/fx_overkill.svg",
+  "探针": [
+    {
+      "时刻": 200,
+      "值": [
+        {
+          "id": "burst_outer",
+          "css": "matrix(1.01598, 0.00709296, -0.00709296, 1.01598, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.016, 1.016) rotate(0.4deg)",
+          "numeric": [
+            1.0159752732208176,
+            0.007092960689095791,
+            -0.007092960689095791,
+            1.0159752732208176,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0159752732208176,
+            0.007092960689095791,
+            -0.007092960689095791,
+            1.0159752732208176,
+            -2.9829102903047158,
+            -3.619343351881099
+          ]
+        },
+        {
+          "id": "gem_shards_a",
+          "css": "matrix(0.94, 0, 0, 0.94, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(0.94, 0.94) rotate(0deg)",
+          "numeric": [
+            0.9399999976158142,
+            0,
+            0,
+            0.9399999976158142,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            0.9399999976158142,
+            0,
+            0,
+            0.9399999976158142,
+            14.399993896484375,
+            7.1999969482421875
+          ]
+        },
+        {
+          "id": "gem_shards_b",
+          "css": "matrix(0.729, 0.0382052, -0.0382052, 0.729, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(0.73, 0.73) rotate(3deg)",
+          "numeric": [
+            0.7289995794181857,
+            0.03820524905557814,
+            -0.03820524905557814,
+            0.7289995794181857,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            0.7289995794181857,
+            0.03820524905557814,
+            -0.03820524905557814,
+            0.7289995794181857,
+            69.62473082630481,
+            23.350790696478967
+          ]
+        }
+      ]
+    },
+    {
+      "时刻": 550,
+      "值": [
+        {
+          "id": "burst_outer",
+          "css": "matrix(1.00199, -0.00524644, 0.00524644, 1.00199, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.002, 1.002) rotate(-0.3deg)",
+          "numeric": [
+            1.001986239083068,
+            -0.005246435624260455,
+            0.005246435624260455,
+            1.001986239083068,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.001986239083068,
+            -0.005246435624260455,
+            0.005246435624260455,
+            1.001986239083068,
+            -1.1062696548475799,
+            1.0207958598543456
+          ]
+        },
+        {
+          "id": "gem_shards_a",
+          "css": "matrix(1.0205, 0.0320704, -0.0320704, 1.0205, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.021, 1.021) rotate(1.8deg)",
+          "numeric": [
+            1.0204962257763204,
+            0.03207038588748238,
+            -0.03207038588748238,
+            1.0204962257763204,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0204962257763204,
+            0.03207038588748238,
+            -0.03207038588748238,
+            1.0204962257763204,
+            -1.0706478798190062,
+            -10.15643970615423
+          ]
+        },
+        {
+          "id": "gem_shards_b",
+          "css": "matrix(1.0075, -0.031662, 0.031662, 1.0075, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.008, 1.008) rotate(-1.8deg)",
+          "numeric": [
+            1.007502629053121,
+            -0.031662045659999055,
+            0.031662045659999055,
+            1.007502629053121,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.007502629053121,
+            -0.031662045659999055,
+            0.031662045659999055,
+            1.007502629053121,
+            -5.600076451948922,
+            6.698575472025254
+          ]
+        }
+      ]
+    },
+    {
+      "时刻": 700,
+      "值": [
+        {
+          "id": "burst_outer",
+          "css": "matrix(1.02599, 0.0053721, -0.0053721, 1.02599, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.026, 1.026) rotate(0.3deg)",
+          "numeric": [
+            1.0259859587337297,
+            0.00537209901087819,
+            -0.00537209901087819,
+            1.0259859587337297,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0259859587337297,
+            0.00537209901087819,
+            -0.00537209901087819,
+            1.0259859587337297,
+            -5.591978214789748,
+            -4.4076188106583345
+          ]
+        },
+        {
+          "id": "gem_shards_a",
+          "css": "matrix(1.03676, 0.0507061, -0.0507061, 1.03676, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.038, 1.038) rotate(2.8deg)",
+          "numeric": [
+            1.0367607581774436,
+            0.05070606044221854,
+            -0.05070606044221854,
+            1.0367607581774436,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0367607581774436,
+            0.05070606044221854,
+            -0.05070606044221854,
+            1.0367607581774436,
+            -2.737854709520235,
+            -16.580745487425673
+          ]
+        },
+        {
+          "id": "gem_shards_b",
+          "css": "matrix(1.03857, -0.0544294, 0.0544294, 1.03857, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.04, 1.04) rotate(-3deg)",
+          "numeric": [
+            1.0385746780500633,
+            -0.054429392496203294,
+            0.054429392496203294,
+            1.0385746780500633,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0385746780500633,
+            -0.054429392496203294,
+            0.054429392496203294,
+            1.0385746780500633,
+            -15.789449831559608,
+            8.434092833081195
+          ]
+        }
+      ]
+    },
+    {
+      "时刻": 750,
+      "值": [
+        {
+          "id": "burst_outer",
+          "css": "matrix(1.02996, 0.00898833, -0.00898833, 1.02996, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.03, 1.03) rotate(0.5deg)",
+          "numeric": [
+            1.0299607521469563,
+            0.008988331313656969,
+            -0.008988331313656969,
+            1.0299607521469563,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0299607521469563,
+            0.008988331313656969,
+            -0.008988331313656969,
+            1.0299607521469563,
+            -6.1119807576306755,
+            -5.752489772912426
+          ]
+        },
+        {
+          "id": "gem_shards_a",
+          "css": "matrix(1.04038, 0.058166, -0.058166, 1.04038, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.042, 1.042) rotate(3.2deg)",
+          "numeric": [
+            1.0403753315044884,
+            0.05816601129053775,
+            -0.05816601129053775,
+            1.0403753315044884,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0403753315044884,
+            0.05816601129053775,
+            -0.05816601129053775,
+            1.0403753315044884,
+            -2.710158206212668,
+            -18.80488249026766
+          ]
+        },
+        {
+          "id": "gem_shards_b",
+          "css": "matrix(1.04017, -0.0617972, 0.0617972, 1.04017, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.042, 1.042) rotate(-3.4deg)",
+          "numeric": [
+            1.0401659559123133,
+            -0.061797244546571976,
+            0.061797244546571976,
+            1.0401659559123133,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0401659559123133,
+            -0.061797244546571976,
+            0.061797244546571976,
+            1.0401659559123133,
+            -17.055498764543813,
+            10.011423981699679
+          ]
+        }
+      ]
+    },
+    {
+      "时刻": 850,
+      "值": [
+        {
+          "id": "burst_outer",
+          "css": "matrix(1.03984, 0.0181505, -0.0181505, 1.03984, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.04, 1.04) rotate(1deg)",
+          "numeric": [
+            1.0398415648214843,
+            0.01815050202901838,
+            -0.01815050202901838,
+            1.0398415648214843,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0398415648214843,
+            0.01815050202901838,
+            -0.01815050202901838,
+            1.0398415648214843,
+            -7.383915313674009,
+            -9.137108265542508
+          ]
+        },
+        {
+          "id": "gem_shards_a",
+          "css": "matrix(1.0457, 0.069455, -0.069455, 1.0457, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.048, 1.048) rotate(3.8deg)",
+          "numeric": [
+            1.0456959168837827,
+            0.06945504616551466,
+            -0.06945504616551466,
+            1.0456959168837827,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0456959168837827,
+            0.06945504616551466,
+            -0.06945504616551466,
+            1.0456959168837827,
+            -2.632414512246072,
+            -22.15272110577743
+          ]
+        },
+        {
+          "id": "gem_shards_b",
+          "css": "matrix(1.04391, -0.0803248, 0.0803248, 1.04391, 0, 0)",
+          "typedClass": "CSSTransformValue",
+          "typedString": "scale(1.047, 1.047) rotate(-4.4deg)",
+          "numeric": [
+            1.0439142819773564,
+            -0.08032482632652233,
+            0.08032482632652233,
+            1.0439142819773564,
+            0,
+            0
+          ],
+          "error": null,
+          "local": [
+            1.0439142819773564,
+            -0.08032482632652233,
+            0.08032482632652233,
+            1.0439142819773564,
+            -20.178406833748227,
+            14.008244481082585
+          ]
+        }
+      ]
+    }
+  ],
+  "边界": [
+    {
+      "id": "none",
+      "css": "none",
+      "typedClass": "CSSKeywordValue",
+      "typedString": "none",
+      "numeric": null,
+      "error": "typed.toMatrix is not a function"
+    },
+    {
+      "id": "percent",
+      "css": "matrix(1, 0, 0, 1, 50, 0)",
+      "typedClass": "CSSTransformValue",
+      "typedString": "translate(50%, 0px)",
+      "numeric": null,
+      "error": "Failed to execute 'toMatrix' on 'CSSTransformValue': Cannot create matrix if units are not compatible with px"
+    }
+  ]
+}

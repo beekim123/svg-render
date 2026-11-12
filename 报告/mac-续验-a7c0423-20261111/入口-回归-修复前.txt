@@ -1,0 +1,47 @@
+失败：实验5退出2后不启动实验6或后续命令
+AssertionError [ERR_ASSERTION]: 实验5失败仍实际启动了实验6
+
+true !== false
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:31:10
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:73:35
+失败：实验5退出1后不启动实验6或后续命令
+AssertionError [ERR_ASSERTION]: 实验5失败仍实际启动了实验6
+
+true !== false
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:31:10
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:73:35
+失败：实验5退出3后不启动实验6或后续命令
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+undefined !== 3
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:34:60
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:73:35
+失败：实验5SIGTERM后不启动实验6或后续命令
+AssertionError [ERR_ASSERTION]: 实验5失败仍实际启动了实验6
+
+true !== false
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:31:10
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:73:35
+失败：实验5启动错误后不启动实验6或后续命令
+AssertionError [ERR_ASSERTION]: 实验5失败仍实际启动了实验6
+
+true !== false
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:31:10
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:73:35
+通过：普通步骤退出1仍继续收集后续信息
+通过：普通步骤退出2仍继续收集后续信息
+通过：实验6阈值不及格仍执行后续诊断
+通过：任意步骤退出3仍执行第9节停止
+失败：关键步骤成功后继续，且逐步保留结果
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+undefined !== 2
+
+    at file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:68:9
+    at async file:///private/tmp/svg-render-mac-volume/svg-render/tools/mac/self-test.mjs:73:35
+4/10 项通过；子进程串行执行。

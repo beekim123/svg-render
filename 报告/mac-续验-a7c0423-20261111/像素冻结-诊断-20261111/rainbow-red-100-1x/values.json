@@ -1,0 +1,191 @@
+{
+  "live": [
+    {
+      "节点号": 14,
+      "元素id": "",
+      "属性": "transform",
+      "来自": "css",
+      "值": "matrix(1.1200000047683716, 0, 0, 1.1200000047683716, 0, 0)",
+      "变换精度": {
+        "来源": "CSS Typed OM",
+        "精确矩阵": true
+      },
+      "局部矩阵": [
+        1.1200000047683716,
+        0,
+        0,
+        1.1200000047683716,
+        -2.8800010681152344,
+        -2.8800010681152344
+      ],
+      "写回": "style"
+    },
+    {
+      "节点号": 14,
+      "元素id": "",
+      "属性": "opacity",
+      "来自": "css",
+      "值": "1",
+      "写回": "style"
+    },
+    {
+      "节点号": 17,
+      "元素id": "gem_lit",
+      "属性": "transform",
+      "来自": "css",
+      "值": "matrix(1.2399994134902954, 0, 0, 1.2399994134902954, 0, 0)",
+      "变换精度": {
+        "来源": "CSS Typed OM",
+        "精确矩阵": true
+      },
+      "局部矩阵": [
+        1.2399994134902954,
+        0,
+        0,
+        1.2399994134902954,
+        -5.759986877441406,
+        -5.759986877441406
+      ],
+      "写回": "style"
+    },
+    {
+      "节点号": 17,
+      "元素id": "gem_lit",
+      "属性": "opacity",
+      "来自": "css",
+      "值": "1",
+      "写回": "style"
+    }
+  ],
+  "frozen": [
+    {
+      "节点号": 14,
+      "元素id": "",
+      "属性": "transform",
+      "来自": "css",
+      "值": "matrix(1.1200000047683716, 0, 0, 1.1200000047683716, 0, 0)",
+      "变换精度": {
+        "来源": "CSS Typed OM",
+        "精确矩阵": true
+      },
+      "局部矩阵": [
+        1.1200000047683716,
+        0,
+        0,
+        1.1200000047683716,
+        -2.880000114440918,
+        -2.880000114440918
+      ],
+      "写回": "style"
+    },
+    {
+      "节点号": 14,
+      "元素id": "",
+      "属性": "opacity",
+      "来自": "css",
+      "值": "1",
+      "写回": "style"
+    },
+    {
+      "节点号": 17,
+      "元素id": "gem_lit",
+      "属性": "transform",
+      "来自": "css",
+      "值": "matrix(1.2399994134902954, 0, 0, 1.2399994134902954, 0, 0)",
+      "变换精度": {
+        "来源": "CSS Typed OM",
+        "精确矩阵": true
+      },
+      "局部矩阵": [
+        1.2399994134902954,
+        0,
+        0,
+        1.2399994134902954,
+        -5.75998592376709,
+        -5.75998592376709
+      ],
+      "写回": "style"
+    },
+    {
+      "节点号": 17,
+      "元素id": "gem_lit",
+      "属性": "opacity",
+      "来自": "css",
+      "值": "1",
+      "写回": "style"
+    }
+  ],
+  "verification": {
+    "通过": true,
+    "轨道数": 4,
+    "容差": 0.001,
+    "错误": []
+  },
+  "metadata": {
+    "素材": "现有游戏/ui_rainbow_slot",
+    "动作": "light",
+    "时刻": 100,
+    "全局时刻": 1100,
+    "倍率": 1,
+    "Chrome版本": "157.0.8103.50",
+    "完整启动参数": [
+      "--headless=new",
+      "--force-device-scale-factor=1",
+      "--force-color-profile=srgb",
+      "--hide-scrollbars",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--disable-background-networking",
+      "--num-raster-threads=1",
+      "--user-data-dir=/var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-chrome-G8IT56/profile",
+      "--remote-debugging-address=127.0.0.1",
+      "--remote-debugging-port=0",
+      "--disable-gpu",
+      "about:blank"
+    ],
+    "光栅信息": {
+      "browser": "Chrome/157.0.8103.50",
+      "rasterization": "disabled_software",
+      "devices": [
+        {
+          "vendorId": 0,
+          "deviceId": 0,
+          "vendorString": "",
+          "deviceString": "",
+          "driverVendor": "",
+          "driverVersion": ""
+        }
+      ],
+      "featureStatus": {
+        "2d_canvas": "disabled_software",
+        "direct_rendering_display_compositor": "disabled_off_ok",
+        "gpu_compositing": "disabled_software",
+        "multiple_raster_threads": "disabled_off",
+        "opengl": "disabled_off",
+        "rasterization": "disabled_software",
+        "skia_graphite": "disabled_off",
+        "trees_in_viz": "disabled_off",
+        "video_decode": "disabled_software",
+        "video_encode": "disabled_software",
+        "webgl": "disabled_off",
+        "webgpu": "disabled_off",
+        "webnn": "disabled_off"
+      }
+    },
+    "源文件指纹": "0cc8944be55689a3337a5827bf5d0bb9a1a3f5475e5d7fe4f7c658824500def1",
+    "文字区域": [],
+    "工具版本": "stage0-ref-3",
+    "字体指纹": {
+      "NotoSansCJKsc-Regular.otf": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+      "NotoSansCJKsc-Bold.otf": "b5f0d1a190a7f9b43c310a8850630af12553df32c4c050543f9059732d9b4c0a"
+    },
+    "冻结复核": {
+      "通过": true,
+      "轨道数": 4,
+      "容差": 0.001,
+      "错误": []
+    },
+    "width": 48,
+    "height": 48
+  }
+}

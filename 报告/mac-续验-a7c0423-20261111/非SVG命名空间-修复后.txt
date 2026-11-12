@@ -1,0 +1,1 @@
+通过：真实xmlns-validation保留其他namespace未知，SVG矩形计数正确；公开候选有理由排除，正式登记未知返回3。

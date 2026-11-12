@@ -1,0 +1,7 @@
+{
+  "输出": "/private/tmp/svg-render-mac-volume/svg-render/out/mac-续验-a7c0423-20261111/precision-play-complete",
+  "动作数": 1,
+  "帧数": 50,
+  "通过": true,
+  "错误": []
+}

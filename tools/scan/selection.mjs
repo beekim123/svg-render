@@ -3,10 +3,26 @@ export function selectRegistered(assets,results){
  const byId=new Map(results.map(r=>[r.id,r]));
  const registered=[],excluded=[];
  for(const asset of assets){
+  const input=byId.get(asset.id)?.输入错误;
+  if(input?.code==='SVG_INPUT_INVALID'){
+   if(asset.批==='公开测试集'&&asset.候选===true)excluded.push({id:asset.id,原因:[input.message],输入错误:input});
+   else registered.push(asset);
+   continue;
+  }
+  const size=byId.get(asset.id)?.采样尺寸错误;
+  if(size?.code==='SVG_SAMPLE_SIZE_INVALID'){
+   if(asset.批==='公开测试集'&&asset.候选===true)excluded.push({id:asset.id,原因:[size.message],采样尺寸错误:size});
+   else registered.push(asset);
+   continue;
+  }
   if(asset.批!=='公开测试集'){registered.push(asset);continue;}
   const r=byId.get(asset.id),reasons=[];
   if(!r)reasons.push('缺少Chrome扫描结果');
   else{
+   if(r.状态!=='完成'){
+    reasons.push('Chrome扫描未完成');
+    for(const action of r.动作)reasons.push(...(action.未完成||[]));
+   }
    if(!asset.动作.every(a=>a.静态)||!r.动作.every(a=>a.明细.SMIL.length===0&&!a.特性计数['CSS/@keyframes']))reasons.push('不是静态图');
    for(const [key,status] of Object.entries(r.分类))if(status!=='支持')reasons.push(`${key}：${status}`);
   }

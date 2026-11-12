@@ -1,0 +1,32 @@
+{
+  "退出码": 2,
+  "stdout": "",
+  "stderr": "spawn /var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-input-test-clMXMd/missing-Chrome ENOENT\n",
+  "报告": {
+    "公开测试集": {
+      "状态": "已筛选"
+    },
+    "分批数量": {},
+    "Chrome验证": {
+      "状态": "阻塞",
+      "版本": "157.0.8103.50",
+      "原因": "spawn /var/folders/jp/gwzwdjx53fz62z9mllkfy1400000gn/T/svg-render-input-test-clMXMd/missing-Chrome ENOENT",
+      "已扫描数量": 0
+    },
+    "状态": "待验证"
+  },
+  "清单": [
+    {
+      "id": "ordinary",
+      "文件": "素材/ordinary.svg",
+      "批": "现有游戏",
+      "动作": [
+        {
+          "名字": "待机",
+          "种类": "循环"
+        }
+      ]
+    }
+  ],
+  "清单未修改": true
+}
