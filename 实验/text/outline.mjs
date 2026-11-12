@@ -7,6 +7,8 @@ export function outlineRecords(records,fonts){
   const font=fonts.get(c.weight);if(!font)throw new Error(`未支持字重 ${c.weight}`);
   const glyph=font.glyphForCodePoint(c.char.codePointAt(0));
   if(glyph.id===0)throw new Error(`字体缺字：${c.char}`);
-  return {...c,glyphId:glyph.id,path:glyph.path.toSVG(),scale:c.size/font.unitsPerEm};
+  const scale=c.size/font.unitsPerEm;
+  // 字身框用：步进宽、上伸、下伸（hhea），单位换成像素。
+  return {...c,glyphId:glyph.id,path:glyph.path.toSVG(),scale,advance:glyph.advanceWidth*scale,ascent:font.ascent*scale,descent:-font.descent*scale};
  })}));
 }

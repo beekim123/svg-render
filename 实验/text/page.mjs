@@ -9,7 +9,7 @@ export function readCharacters() {
   return {index:ti,id:text.id,box:rect(text.getBoundingClientRect()),characters:nodes.map(({ch,owner},i)=>{
    const css=getComputedStyle(owner),p=text.getStartPositionOfChar(i);
    if(css.writingMode!=='horizontal-tb')throw new Error('本实验只支持横排');
-   return {index:i,char:ch,x:p.x,y:p.y,rotation:text.getRotationOfChar(i),extent:rect(text.getExtentOfChar(i)),size:parseFloat(css.fontSize),weight:Number(css.fontWeight),style:Object.fromEntries(props.map(k=>[k,css.getPropertyValue(k)]))};
+   return {index:i,char:ch,x:p.x,y:p.y,rotation:text.getRotationOfChar(i),extent:rect(text.getExtentOfChar(i)),size:parseFloat(css.fontSize),weight:Number(css.fontWeight),letterSpacing:parseFloat(css.letterSpacing)||0,style:Object.fromEntries(props.map(k=>[k,css.getPropertyValue(k)]))};
   })};
  });
 }
@@ -31,7 +31,14 @@ export function replaceWithPaths(records) {
   for(const c of record.characters){
    // 父组 getBBox 让 Chrome 对旋转后的实际曲线求紧包围盒，不能旋转未转时的矩形代替。
    const b=c.element.getBBox(),box={x:b.x,y:b.y,width:b.width,height:b.height},x=b.x,y=b.y;
-   geometry.push({text:record.id,index:c.index,char:c.char,empty:c.path.length===0,chrome:c.extent,outline:box,positionDelta:c.path.length?Math.max(Math.abs(x-c.extent.x),Math.abs(y-c.extent.y)):null,edgeDelta:c.path.length?Math.max(Math.abs(x-c.extent.x),Math.abs(y-c.extent.y),Math.abs(x+box.width-c.extent.x-c.extent.width),Math.abs(y+box.height-c.extent.y-c.extent.height)):null});
+   // getExtentOfChar 是字身框：起点到（步进宽 + 字间距），上伸到下伸，再按字的转角取外接矩形。
+   // Chrome 的上伸、下伸在设备像素里取整（2 倍时按 2 倍字号取整再折回），所以分两种算：按字体原值，和按 Chrome 取整。
+   // 屏幕缩放系数照 Blink 的 SVG 文字算法：sqrt((a²+b²+c²+d²)/2)。
+   const m=group.getScreenCTM(),zoom=m?Math.sqrt((m.a*m.a+m.b*m.b+m.c*m.c+m.d*m.d)/2):1,snap=v=>Math.round(v*zoom)/zoom;
+   const cellBox=(ascent,descent)=>{const a=c.rotation*Math.PI/180,cos=Math.cos(a),sin=Math.sin(a),w=c.advance+c.letterSpacing;const pts=[[0,-ascent],[w,-ascent],[0,descent],[w,descent]].map(([u,v])=>[c.x+u*cos-v*sin,c.y+u*sin+v*cos]);const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);return {x:Math.min(...xs),y:Math.min(...ys),width:Math.max(...xs)-Math.min(...xs),height:Math.max(...ys)-Math.min(...ys)};};
+   const edges=(r,e)=>Math.max(Math.abs(r.x-e.x),Math.abs(r.y-e.y),Math.abs(r.x+r.width-e.x-e.width),Math.abs(r.y+r.height-e.y-e.height));
+   const cell=cellBox(snap(c.ascent),snap(c.descent)),cellRaw=cellBox(c.ascent,c.descent);
+   geometry.push({text:record.id,index:c.index,char:c.char,empty:c.path.length===0,chrome:c.extent,cell,cellDelta:edges(cell,c.extent),cellRawDelta:edges(cellRaw,c.extent),outline:box,inkDelta:c.path.length?Math.max(Math.abs(x-c.extent.x),Math.abs(y-c.extent.y)):null,edgeDelta:c.path.length?Math.max(Math.abs(x-c.extent.x),Math.abs(y-c.extent.y),Math.abs(x+box.width-c.extent.x-c.extent.width),Math.abs(y+box.height-c.extent.y-c.extent.height)):null});
   }
  }
  return {svg:new XMLSerializer().serializeToString(document.querySelector('svg')),geometry};

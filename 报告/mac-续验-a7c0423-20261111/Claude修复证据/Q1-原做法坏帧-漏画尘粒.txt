@@ -1,0 +1,19 @@
+diffpx 1851
+blobs 17
+  180px x3537-3552 y1901-1915 svg(1772.2,954.0) size 16x15 maxd 208 brighter=A ratio 5.18
+  171px x3249-3263 y1141-1154 svg(1628.0,573.8) size 15x14 maxd 148 brighter=A ratio 2.04
+  171px x3267-3281 y336-350 svg(1637.0,171.5) size 15x15 maxd 106 brighter=A ratio 1.29
+  145px x3343-3355 y536-549 svg(1674.5,271.2) size 13x14 maxd 210 brighter=A ratio 2.00
+  142px x3541-3553 y1453-1465 svg(1773.5,729.5) size 13x13 maxd 192 brighter=A ratio 3.08
+  139px x3506-3519 y1748-1760 svg(1756.2,877.0) size 14x13 maxd 68 brighter=A ratio 1.94
+  131px x3435-3447 y848-860 svg(1720.5,427.0) size 13x13 maxd 93 brighter=A ratio 1.35
+  129px x3273-3285 y1641-1653 svg(1639.5,823.5) size 13x13 maxd 192 brighter=A ratio 2.79
+  102px x3605-3616 y336-347 svg(1805.2,170.8) size 12x12 maxd 76 brighter=A ratio 2.86
+   97px x3322-3332 y1180-1190 svg(1663.5,592.5) size 11x11 maxd 106 brighter=A ratio 1.89
+   95px x3352-3362 y940-949 svg(1678.5,472.2) size 11x10 maxd 168 brighter=A ratio 1.44
+   93px x3443-3452 y803-813 svg(1723.8,404.0) size 10x11 maxd 168 brighter=A ratio 1.95
+   89px x3333-3342 y1545-1554 svg(1668.8,774.8) size 10x10 maxd 184 brighter=A ratio 2.41
+   67px x3602-3610 y1751-1759 svg(1803.0,877.5) size 9x9 maxd 184 brighter=A ratio 3.30
+   48px x3508-3515 y1450-1456 svg(1755.8,726.5) size 8x7 maxd 102 brighter=A ratio 2.12
+   29px x3438-3443 y1167-1172 svg(1720.2,584.8) size 6x6 maxd 111 brighter=A ratio 1.88
+   23px x3453-3457 y454-458 svg(1727.5,228.0) size 5x5 maxd 129 brighter=A ratio 1.37

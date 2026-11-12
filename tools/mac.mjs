@@ -54,7 +54,10 @@ if(!ready.通过){await log(JSON.stringify(ready,null,2));await log('环境缺�
   await step('参照、值表、冻结检查及指令',()=>command(process.execPath,['tools/ref/batch.mjs','--out','out/mac']));
   await step('Chrome自己的差',()=>command(process.execPath,['tools/ref/audit.mjs','noise','--out','out/mac/noise']));
   const linux=process.env.SVG_RENDER_LINUX_REF||path.join(root,'out/linux/ref');
-  await step('Linux对Mac逐帧四项指标',()=>command(process.execPath,['tools/ref/audit.mjs','cross','--linux',linux,'--mac','out/mac/ref','--out','out/mac/报告/Linux对Mac']));
+  // 2026-11-11 用户定：整个项目不再用 Linux（云端 Linux 跑不了 Chrome），只以用户的 Mac 为准。有 Linux 参照目录时照常测。
+   const hasLinux=await fs.stat(linux).then(s=>s.isDirectory(),()=>false);
+   if(hasLinux)await step('Linux对Mac逐帧四项指标',()=>command(process.execPath,['tools/ref/audit.mjs','cross','--linux',linux,'--mac','out/mac/ref','--out','out/mac/报告/Linux对Mac']));
+   else await step('Linux对Mac：不做（项目只用Mac，用户定）',async()=>{});
   await step('完整验收',()=>command(process.execPath,['tools/check/index.mjs','--全部']));
  }
 }

@@ -20,7 +20,7 @@ try{
  report=await runBatch({manifest,out,sessionFactory:factory});assert(report.通过);assert(report.动作[0].缓存);assert.equal(renders,2);
  await fs.writeFile(path.join(out,'ref/试验图/试验图/待机/0@1x.png'),'损坏');assert(!(await checkCoverage({manifest,out})).通过);report=await runBatch({manifest,out,sessionFactory:factory});assert(report.通过);assert.equal(renders,4);
  const before=sessions;const repeat=await verifyRepeatability({manifest,out:path.join(tmp,'repeat'),sessionFactory:factory});assert(repeat.通过,JSON.stringify(repeat));assert.equal(sessions-before,2);
- const noise=await measureNoise({manifest,out:path.join(tmp,'noise'),sessionFactory:factory});assert(noise.完成,JSON.stringify(noise));assert.equal(noise.CPU对GPU.length,2);
+ const noise=await measureNoise({manifest,out:path.join(tmp,'noise'),cpuOut:path.join(tmp,'noise/cpu'),sessionFactory:factory});assert(noise.完成,JSON.stringify(noise));assert.equal(noise.CPU对GPU.length,2);
  const key='试验图/试验图/待机/0@1x.png';assert(noise.帧[key].全图);assert(noise.帧[key].非文字);const gpuCompare=await compareFiles(path.join(tmp,'noise/cpu/ref',key),path.join(tmp,'noise/gpu/ref',key),{line:'GPU',baseline:noise.帧[key]});assert(gpuCompare.通过);
  const cross=await measureCrossPlatform({linux:path.join(tmp,'noise/cpu/ref'),mac:path.join(tmp,'noise/gpu/ref'),out:path.join(tmp,'cross')});assert(cross.完成);assert.equal(cross.帧.length,2);assert(!('通过' in cross));
  const changedImage=new PNG({width:4,height:4});changedImage.data.fill(255);await fs.writeFile(path.join(tmp,'noise/gpu/ref',key),PNG.sync.write(changedImage));const different=await measureCrossPlatform({linux:path.join(tmp,'noise/cpu/ref'),mac:path.join(tmp,'noise/gpu/ref'),out:path.join(tmp,'cross-different')});assert(different.完成);assert(different.帧.some(f=>f.指标.ssim<.995));

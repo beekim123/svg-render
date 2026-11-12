@@ -12,11 +12,13 @@ function crop(image,box){
  if(right<=x||bottom<=y)throw new Error('文字包围盒为空');
  const result=new PNG({width:right-x,height:bottom-y});PNG.bitblt(image,result,x,y,result.width,result.height,0,0);return result;
 }
-export async function runText({platform=process.platform==='darwin'?'mac':'linux',output=path.join(root,'out',platform,'text')}={}){
- await fs.mkdir(output,{recursive:true});const rows=[],result={实验:6,平台:platform,状态:'未验证',及格:false,阈值:{'2倍SSIM':0.98,字符位置差:0.1},结果:rows};let session;
+// smoothing='antialiased' 只用于诊断：给 SVG 根加 -webkit-font-smoothing，看 Mac 上文字比轮廓粗是不是 CoreText 平滑造成的。
+export async function runText({platform=process.platform==='darwin'?'mac':'linux',smoothing=null,output=path.join(root,'out',platform,smoothing?`text-${smoothing}`:'text')}={}){
+ await fs.mkdir(output,{recursive:true});const rows=[],result={实验:6,平台:platform,字体平滑:smoothing??'默认',状态:'未验证',及格:false,阈值:{'2倍SSIM':0.98,字符位置差:0.1},结果:rows};let session;
  try{
   const fonts=loadFonts();session=await createReferenceSession();
-  for(const fixture of fixtures())for(const scale of [1,2]){
+  for(const base of fixtures())for(const scale of [1,2]){
+   const fixture=smoothing?{...base,svg:base.svg.replace('<svg ',`<svg style="-webkit-font-smoothing:${smoothing}" `)}:base;
    const dir=path.join(output,fixture.id);await fs.mkdir(dir,{recursive:true});
    const original=await session.render({svg:fixture.svg,scale,id:fixture.id});
    // 从原始 text 读取字符接口。prepare 会等待固定字体加载。
@@ -31,8 +33,10 @@ export async function runText({platform=process.platform==='darwin'?'mac':'linux
    }
    const box=records[0].box,a=crop(PNG.sync.read(original.png),box),b=crop(PNG.sync.read(outlined.png),box),comparison=compareImages(a,b,{line:'文字',scale});
    await fs.writeFile(path.join(dir,`diff@${scale}x.png`),PNG.sync.write(comparison.差异图));delete comparison.差异图;
-   const visible=converted.geometry.filter(g=>!g.empty),maxPosition=Math.max(0,...visible.map(g=>g.positionDelta));
-   const row={id:fixture.id,倍率:scale,截图区域:box,比较:comparison,字符:converted.geometry,最大字符位置差:maxPosition,及格:scale===2?comparison.分组[0].指标.ssim>=0.98&&maxPosition<=0.1:null};
+   // 位置差 = 我们按字体度量摆出的字身框 和 getExtentOfChar 四条边的最大差（含空格）。
+   // 原来比的是墨迹框对字身框，口径不同，差值随字号线性变大，留作"墨迹框差"只看不判。
+   const visible=converted.geometry.filter(g=>!g.empty),maxPosition=Math.max(0,...converted.geometry.map(g=>g.cellDelta));
+   const row={id:fixture.id,倍率:scale,截图区域:box,比较:comparison,字符:converted.geometry,最大字符位置差:maxPosition,字身框差_按字体原值:Math.max(0,...converted.geometry.map(g=>g.cellRawDelta)),墨迹框差_只看不判:Math.max(0,...visible.map(g=>g.inkDelta)),及格:scale===2?comparison.分组[0].指标.ssim>=0.98&&maxPosition<=0.1:null};
    rows.push(row);await fs.writeFile(path.join(dir,`result@${scale}x.json`),JSON.stringify(row,null,2));
   }
   result.状态='已运行';result.及格=rows.filter(r=>r.倍率===2).every(r=>r.及格);
@@ -40,4 +44,4 @@ export async function runText({platform=process.platform==='darwin'?'mac':'linux
  finally{try{if(session)await session.close();}catch(error){result.状态='清理失败';result.及格=false;result.清理错误=error.stack;process.exitCode=2;}await fs.writeFile(path.join(output,'result.json'),JSON.stringify(result,null,2));}
  return result;
 }
-if(process.argv[1]===import.meta.filename){const result=await runText();console.log(JSON.stringify(result,null,2));if(!result.及格)process.exitCode=result.错误?2:1;}
+if(process.argv[1]===import.meta.filename){const at=process.argv.indexOf('--smoothing');const result=await runText({smoothing:at>0?process.argv[at+1]:null});console.log(JSON.stringify(result,null,2));if(!result.及格)process.exitCode=result.错误?2:1;}

@@ -86,9 +86,13 @@ try {
     const exported = exportEvidence.split('\n').map(line => line.trim().split(/\s+/).at(-1)).filter(Boolean);
     if (exported.length !== 1 || !['svg_render_probe', '_svg_render_probe'].includes(exported[0])) throw new Error('动态库不是单一导出');
     const smoke = `import ctypes, hashlib, json, sys\nl=ctypes.CDLL(sys.argv[1]); f=l.svg_render_probe\nf.argtypes=[ctypes.c_uint,ctypes.POINTER(ctypes.c_ubyte),ctypes.c_int,ctypes.c_int]; f.restype=ctypes.c_int\nrows=[]\nfor mode in range(28):\n b=(ctypes.c_ubyte*(128*128*4))(); code=f(mode,b,128,128); raw=bytes(b)\n rows.append({'mode':mode,'return_code':code,'nonzero_alpha':sum(raw[i]>0 for i in range(3,len(raw),4)),'sha256':hashlib.sha256(raw).hexdigest()})\nprint(json.dumps(rows))\n`;
-    // 用户要求 x64 编译和体积，不额外引入 Rosetta 或 x64 Python。
-    if (target === 'mac-x64' && process.arch === 'arm64') modes = null;
-    else modes = JSON.parse(run('python3', ['-c', smoke, output]));
+    // ARM Mac 上的 x64 动态库用 Rosetta 跑：系统自带的 /usr/bin/python3 是通用二进制，arch -x86_64 就能载入 x64 库（2026-11-11）。
+    // 没装 Rosetta 时照旧只检查链接、架构、导出和体积，并写明没运行。
+    if (target === 'mac-x64' && process.arch === 'arm64') {
+      let rosetta = false;
+      try { run('arch', ['-x86_64', '/usr/bin/true']); rosetta = true; } catch {}
+      modes = rosetta ? JSON.parse(run('arch', ['-x86_64', '/usr/bin/python3', '-c', smoke, output])) : null;
+    } else modes = JSON.parse(run('python3', ['-c', smoke, output]));
   }
   if (modes !== null && !modes.every(row => row.return_code === 0 && row.nonzero_alpha > 0)) throw new Error('至少一个能力模式未通过；详见记录');
   const binaryPath = wasm ? output.replace(/\.cjs$/, '.wasm') : output;
@@ -96,7 +100,7 @@ try {
   const info = { target, Skia: skiaRevision, compiler, link_and_smoke_seconds: (Date.now() - started) / 1000,
     bytes: binary.length, sha256: createHash('sha256').update(binary).digest('hex'),
     exports: exportEvidence, architecture: architectureEvidence, build_pass: true,
-    runtime_validation: modes === null ? '未运行：ARM Mac只检查x64链接、架构、导出与体积，不要求Rosetta' : '28模式全部通过',
+    runtime_validation: modes === null ? '未运行：没有 Rosetta，只检查了x64链接、架构、导出与体积' : (target === 'mac-x64' && process.arch === 'arm64' ? '28模式全部通过（Rosetta）' : '28模式全部通过'),
     modes, commands, scope: '28模式运行冒烟与体积；不是Chrome像素一致性验收。Mac分支未在Linux执行。' };
   if (wasm) {
     const gzip = gzipSync(binary, { level: 9 });

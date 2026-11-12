@@ -6,6 +6,7 @@ import {root} from '../setup/paths.mjs';
 import {checkReadonly} from '../setup/readonly.mjs';
 import {openChrome} from '../chrome/index.mjs';
 import {checkCoverage,verifyRepeatability} from '../ref/audit.mjs';
+import {isTransparentPng} from '../ref/index.mjs';
 const platform=process.platform==='darwin'?'mac':'linux',out=path.join(root,'out',platform),rows=[];
 const commit=spawnSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).stdout.trim();
 async function read(file){return JSON.parse(await fs.readFile(file,'utf8'));}
@@ -18,7 +19,9 @@ await check(3,'覆盖',()=>checkCoverage({out}));
 await check(4,'可重复性',async()=>{if(!browserAvailable)throw new Error('浏览器环境检查失败，没有运行两遍参照');return verifyRepeatability({out:path.join(out,'repeat'),full:process.argv.includes('--全部')});});
 await check(5,'冻结正确',async()=>{const r=await read(path.join(out,'报告/参照.json'));if(!r.通过||!r.动作?.length)throw new Error('参照批处理没有完整通过；冻结值和图像不能判通过');return {通过:r.动作.every(a=>a.通过),动作数:r.动作.length};});
 await check(6,'特性清单',async()=>{const r=await read(path.join(root,'报告/素材登记.json'));return {通过:r.状态==='完成',详情:r};});
-await check(7,'指令记录',async()=>{const assets=await read(path.join(root,'素材/清单.json'));const missing=[];for(const asset of assets)for(const id of asset.染色?['E3263A','3FE3F0'].map(c=>asset.id+'@'+c):[asset.id]){const a={id};try{const f=await read(path.join(out,'oplog',a.id+'.json'));if(!Array.isArray(f)||!f.length)throw new Error('空指令');}catch(e){missing.push(a.id);}}return {通过:missing.length===0,缺少:missing};});
+await check(7,'指令记录',async()=>{const assets=await read(path.join(root,'素材/清单.json'));const missing=[],empty=[];for(const asset of assets)for(const id of asset.染色?['E3263A','3FE3F0'].map(c=>asset.id+'@'+c):[asset.id]){const a={id};try{const f=await read(path.join(out,'oplog',a.id+'.json'));if(!Array.isArray(f))throw new Error('格式不对');if(!f.length){
+ // 空指令只认合法空图：重新读 0 毫秒 1 倍冻结图，必须每个像素全透明。
+ const action=(asset.动作.find(x=>x.名字==='待机')||asset.动作[0]).名字;if(!isTransparentPng(await fs.readFile(path.join(out,'ref',a.id,action,'0@1x.png'))))throw new Error('空指令但冻结图不透明');empty.push(a.id);}}catch(e){missing.push(a.id);}}return {通过:missing.length===0,缺少:missing,空图:empty};});
 await check(8,'实验4、5、6',async()=>{const micro=await read(path.join(out,'micro/result.json'));const text=await read(path.join(out,'text/result.json'));const targets=platform==='mac'?['mac-arm64','mac-x64']:['linux-x64','wasm'];const sizes=await Promise.all(targets.map(t=>read(path.join(out,'skia',t,'link-result.json'))));return {通过:micro.及格===true&&text.及格===true&&sizes.every(s=>s.build_pass===true&&(s.target.startsWith('mac-')?s.bytes<=6000000:true)),实验4:sizes,实验5:micro,实验6:text};});
 await check(9,'只读目录',checkReadonly);
 await check(10,'Mac验证',async()=>{if(platform==='mac')return {通过:true,说明:'本项表示正在Mac原生运行，其余九项仍须全部通过；最终验收还要核对用户提交回来的报告。'};const r=await read(path.join(root,'报告/mac/验收.json'));return {通过:r.提交===commit&&r.全部通过===true,要求提交:commit,报告提交:r.提交,说明:'Mac报告必须对应本次代码提交；缺报告或不匹配均不通过。'};});

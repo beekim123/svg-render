@@ -1,0 +1,711 @@
+--- a/tools/chrome/index.mjs	2026-11-11 20:45:40
++++ b/tools/chrome/index.mjs	2026-11-11 20:45:40
+@@ -7,13 +7,30 @@
+ export const cacheRoot=process.env.SVG_RENDER_CACHE || (process.platform==='darwin'?path.join(os.homedir(),'Library/Caches/svg-render'):path.join(os.homedir(),'.cache/svg-render'));
+ export function chromePath(){return process.env.SVG_RENDER_CHROME || path.join(cacheRoot,'chrome',VERSION,process.platform==='darwin'?'chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing':'chrome-linux64/chrome');}
+ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+-async function connect(url){
++export const SHOT_MAX_TRIES=6;
++// 连接断开后必须立刻失败：WebSocket 关闭后 send 不报错、直接丢弃，不处理就会每个请求白等到超时。
++export class ChromeDisconnectedError extends Error {
++ constructor(message){super(message);this.name='ChromeDisconnectedError';this.code='CHROME_DISCONNECTED';}
++}
++export async function connect(url,{describe=()=>'',timeoutMs=30000}={}){
+  const ws=new WebSocket(url); await new Promise((resolve,reject)=>{const timer=setTimeout(()=>{ws.close();reject(new Error('Chrome 调试连接超时'));},15000);ws.onopen=()=>{clearTimeout(timer);resolve();};ws.onerror=e=>{clearTimeout(timer);reject(e);};});
+- let sequence=0; const pending=new Map(),listeners=new Set();
++ let sequence=0,closedReason=null; const pending=new Map(),listeners=new Set();
++ const closedError=()=>new ChromeDisconnectedError(closedReason);
+  ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);if(!p)return;pending.delete(m.id);clearTimeout(p.timer);m.error?p.reject(new Error(JSON.stringify(m.error))):p.resolve(m.result);}else for(const f of listeners)f(m);};
+- ws.onclose=()=>{for(const p of pending.values()){clearTimeout(p.timer);p.reject(new Error('Chrome 调试连接已关闭'));}pending.clear();};
+- const send=(method,params={})=>new Promise((resolve,reject)=>{const id=++sequence;const timer=setTimeout(()=>{pending.delete(id);reject(new Error(`调试协议超时：${method}`));},30000);pending.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params}));});
+- return {send,on:fn=>{listeners.add(fn);return()=>listeners.delete(fn);},close:()=>ws.close()};
++ ws.onclose=event=>{
++  const detail=describe();
++  closedReason=`Chrome 调试连接已关闭（关闭码 ${event?.code??'未知'}${detail?'；'+detail:''}）`;
++  for(const p of pending.values()){clearTimeout(p.timer);p.reject(closedError());}
++  pending.clear();
++ };
++ const send=(method,params={})=>new Promise((resolve,reject)=>{
++  if(closedReason||ws.readyState!==WebSocket.OPEN){closedReason??='Chrome 调试连接已关闭（发送前发现）';reject(closedError());return;}
++  const id=++sequence;
++  const timer=setTimeout(()=>{pending.delete(id);const detail=describe();reject(new Error(`调试协议超时：${method}${detail?'；'+detail:''}`));},timeoutMs);
++  pending.set(id,{resolve,reject,timer});
++  ws.send(JSON.stringify({id,method,params}));
++ });
++ return {send,on:fn=>{listeners.add(fn);return()=>listeners.delete(fn);},close:()=>ws.close(),isClosed:()=>closedReason!==null};
+ }
+ export async function openChrome({mode='cpu',executable=chromePath(),extra=[]}={}){
+  if(!['cpu','gpu'].includes(mode))throw new Error('光栅模式只能是 cpu 或 gpu');
+@@ -21,15 +38,32 @@
+  const tmp=await fs.mkdtemp(path.join(os.tmpdir(),'svg-render-chrome-')),profile=path.join(tmp,'profile');
+  const flags=['--headless=new','--force-device-scale-factor=1','--force-color-profile=srgb','--hide-scrollbars','--no-first-run','--no-default-browser-check','--disable-background-networking','--num-raster-threads=1',`--user-data-dir=${profile}`,'--remote-debugging-address=127.0.0.1','--remote-debugging-port=0',...(mode==='cpu'?['--disable-gpu']:['--enable-gpu-rasterization','--ignore-gpu-blocklist']),...extra,'about:blank'];
+  const child=spawn(executable,flags,{stdio:['ignore','ignore','pipe']});let stderr='',spawnError;child.stderr.on('data',d=>stderr=(stderr+d).slice(-12000));child.on('error',e=>spawnError=e);const connections=[];
+- const close=async()=>{for(const c of connections)c.close();if(child.exitCode===null&&child.signalCode===null&&!spawnError){child.kill('SIGTERM');for(let i=0;i<50&&child.exitCode===null&&child.signalCode===null;i++)await sleep(100);if(child.exitCode===null&&child.signalCode===null){child.kill('SIGKILL');await new Promise(r=>child.once('exit',r));}}await fs.rm(tmp,{recursive:true,force:true,maxRetries:5,retryDelay:100});};
++ let closing=false;
++ // 断连时把 Chrome 自己的退出码和最后的 stderr 带进错误信息，否则查不出为什么断。
++ const describe=()=>{
++  if(closing)return '本工具主动关闭';
++  const exited=child.exitCode!==null||child.signalCode!==null;
++  const tail=stderr.trim().split('\n').slice(-8).join(' | ');
++  return `${exited?`Chrome 已退出：退出码 ${child.exitCode}，信号 ${child.signalCode}`:'Chrome 进程仍在'}${tail?`；stderr 末尾：${tail}`:''}`;
++ };
++ const alive=()=>!closing&&child.exitCode===null&&child.signalCode===null&&connections.every(c=>!c.isClosed());
++ const connectChrome=url=>connect(url,{describe});
++ const close=async()=>{closing=true;for(const c of connections)c.close();if(child.exitCode===null&&child.signalCode===null&&!spawnError){child.kill('SIGTERM');for(let i=0;i<50&&child.exitCode===null&&child.signalCode===null;i++)await sleep(100);if(child.exitCode===null&&child.signalCode===null){child.kill('SIGKILL');await new Promise(r=>child.once('exit',r));}}await fs.rm(tmp,{recursive:true,force:true,maxRetries:5,retryDelay:100});};
+  try{
+  let port;for(let i=0;i<200;i++){if(spawnError)throw spawnError;if(child.exitCode!==null||child.signalCode!==null)throw new Error(`Chrome 启动失败：${stderr}`);try{port=(await fs.readFile(path.join(profile,'DevToolsActivePort'),'utf8')).split('\n')[0];break;}catch{await sleep(50);}}if(!port)throw new Error(`Chrome 启动超时：${stderr}`);
+  const base=`http://127.0.0.1:${port}`,version=await(await fetch(`${base}/json/version`)).json();if(version.Browser.split('/')[1]!==VERSION)throw new Error(`版本不符：${version.Browser}，要求 ${VERSION}`);
+- const browser=await connect(version.webSocketDebuggerUrl);connections.push(browser);const info=await browser.send('SystemInfo.getInfo');const raster=info.gpu.featureStatus.rasterization;if(mode==='cpu'?raster!=='disabled_software':!['enabled','enabled_force'].includes(raster))throw new Error(`光栅校验失败：${mode} / ${raster}`);
++ const browser=await connectChrome(version.webSocketDebuggerUrl);connections.push(browser);const info=await browser.send('SystemInfo.getInfo');const raster=info.gpu.featureStatus.rasterization;if(mode==='cpu'?raster!=='disabled_software':!['enabled','enabled_force'].includes(raster))throw new Error(`光栅校验失败：${mode} / ${raster}`);
+  const gpuInfo={browser:version.Browser,rasterization:raster,devices:info.gpu.devices,featureStatus:info.gpu.featureStatus};
+  // Mac 无头 Chrome 也会暂停后台页的 rAF；先激活本次求值的页，双页面冻结流程才会继续。
+- const newPage=async()=>{const target=await(await fetch(`${base}/json/new?about:blank`,{method:'PUT'})).json();const c=await connect(target.webSocketDebuggerUrl);connections.push(c);const evaluate=async(expression,awaitPromise=true)=>{await c.send('Page.bringToFront');const r=await c.send('Runtime.evaluate',{expression,awaitPromise,returnByValue:true});if(r.exceptionDetails)throw new Error(r.exceptionDetails.exception?.description||JSON.stringify(r.exceptionDetails));return r.result.value;};await c.send('Page.enable');await c.send('Runtime.enable');await c.send('Emulation.setDefaultBackgroundColorOverride',{color:{r:0,g:0,b:0,a:0}});
+- return {...c,evaluate,setHtml:async html=>{const {frameTree}=await c.send('Page.getFrameTree');await c.send('Page.setDocumentContent',{frameId:frameTree.frame.id,html});},shot:async clip=>Buffer.from((await c.send('Page.captureScreenshot',{format:'png',clip:{...clip,scale:1},captureBeyondViewport:true})).data,'base64'),viewport:async(width,height)=>c.send('Emulation.setDeviceMetricsOverride',{width:Math.ceil(width),height:Math.ceil(height),deviceScaleFactor:1,mobile:false})};};
+- const page=await newPage();return {...page,newPage,close,gpuInfo,flags,pid:child.pid,tmp};
++ const newPage=async()=>{const shotStats={last:0,retried:0};const target=await(await fetch(`${base}/json/new?about:blank`,{method:'PUT'})).json();const c=await connectChrome(target.webSocketDebuggerUrl);connections.push(c);const evaluate=async(expression,awaitPromise=true)=>{await c.send('Page.bringToFront');const r=await c.send('Runtime.evaluate',{expression,awaitPromise,returnByValue:true});if(r.exceptionDetails)throw new Error(r.exceptionDetails.exception?.description||JSON.stringify(r.exceptionDetails));return r.result.value;};await c.send('Page.enable');await c.send('Runtime.enable');await c.send('Emulation.setDefaultBackgroundColorOverride',{color:{r:0,g:0,b:0,a:0}});
++ return {...c,evaluate,setHtml:async html=>{const {frameTree}=await c.send('Page.getFrameTree');await c.send('Page.setDocumentContent',{frameId:frameTree.frame.id,html});},shot:async clip=>{
++  // 截到连续两次逐字节相同为止：防止截到某些合成层还没光栅化完的帧（实验 1 的 scene_hall 两帧就是这样漏画了尘粒）。
++  // 视口已经等于 SVG 显示尺寸，不扩视口截图，免得截图前 Chrome 改布局、重新光栅化。
++  const raw=async()=>Buffer.from((await c.send('Page.captureScreenshot',{format:'png',clip:{...clip,scale:1},captureBeyondViewport:false})).data,'base64');
++  let previous=await raw();
++  for(let tries=2;tries<=SHOT_MAX_TRIES;tries++){const next=await raw();if(next.equals(previous)){shotStats.last=tries;shotStats.retried+=tries>2?1:0;return next;}previous=next;}
++  throw new Error(`截图连续 ${SHOT_MAX_TRIES} 次都不一致，画面不稳定`);
++ },shotStats,viewport:async(width,height)=>c.send('Emulation.setDeviceMetricsOverride',{width:Math.ceil(width),height:Math.ceil(height),deviceScaleFactor:1,mobile:false})};};
++ const page=await newPage();return {...page,newPage,close,alive,describe,gpuInfo,flags,pid:child.pid,tmp};
+  }catch(e){await close();throw e;}
+ }
+--- a/tools/ref/index.mjs	2026-11-11 20:45:40
++++ b/tools/ref/index.mjs	2026-11-11 20:45:40
+@@ -6,24 +6,28 @@
+ import {setSvgContent} from '../chrome/svg.mjs';
+ import {verifyValues} from './verify.mjs';
+ import {installTimeline} from './page.mjs';
++import {PNG} from 'pngjs';
++// 合法空图：Chrome 没有任何画内容的层。只有截图每个像素都全透明时，才承认指令记录为空。
++export function isTransparentPng(buffer){const {data}=PNG.sync.read(buffer);for(let i=3;i<data.length;i+=4)if(data[i]!==0)return false;return true;}
+ const root=path.resolve(import.meta.dirname,'../..');
+-export const TOOL_VERSION='stage0-ref-3';
++// stage0-ref-5：参照页关掉 Mac 字形平滑（-webkit-font-smoothing:antialiased），2026-11-11 用户定。
++export const TOOL_VERSION='stage0-ref-5';
+ export function validateFreezePolicy(policy){if(!['value-only','preserve-layers'].includes(policy))throw new Error(`未知或缺失的冻结策略：${policy}`);return policy;}
+ export async function resolveFreezePolicy(explicit){if(explicit!==undefined)return validateFreezePolicy(explicit);const config=JSON.parse(await fs.readFile(path.join(root,'参照版本.json'),'utf8'));return validateFreezePolicy(config.冻结策略===undefined?'value-only':config.冻结策略);}
+ export const sha256=data=>crypto.createHash('sha256').update(data).digest('hex');
+ export const triggersAction=action=>Boolean(action&&(action.触发||action.smil||action.名字&&action.名字!=='待机'));
+ const frames='new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))';
+ async function fontServer(){const files=new Map();for(const weight of ['Regular','Bold']){const name=`NotoSansCJKsc-${weight}.otf`;files.set('/'+name,await fs.readFile(path.join(root,'素材/字体',name)));}const server=http.createServer((req,res)=>{const b=files.get(req.url);res.setHeader('Access-Control-Allow-Origin','*');if(!b){res.writeHead(404);res.end();return;}res.setHeader('Content-Type','font/otf');res.end(b);});await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});return {url:`http://127.0.0.1:${server.address().port}`,hashes:Object.fromEntries([...files].map(([k,b])=>[k.slice(1),sha256(b)])),close:()=>new Promise((r,j)=>server.close(e=>e?j(e):r()))};}
+-export async function commandLog(page){let layers=[];const off=page.on(m=>{if(m.method==='LayerTree.layerTreeDidChange')layers=m.params.layers||[];});await page.send('LayerTree.enable');try{await page.evaluate(frames);await page.shot({x:0,y:0,width:1,height:1});await page.evaluate(frames);const result=[];for(const layer of layers.filter(l=>l.drawsContent&&l.width>0&&l.height>0)){const {snapshotId}=await page.send('LayerTree.makeSnapshot',{layerId:layer.layerId});try{const {commandLog}=await page.send('LayerTree.snapshotCommandLog',{snapshotId});result.push({layerId:layer.layerId,width:layer.width,height:layer.height,commands:commandLog});}finally{await page.send('LayerTree.releaseSnapshot',{snapshotId});}}if(!result.length)throw new Error('未捕获到绘图层，指令记录不能为空');return result;}finally{off();await page.send('LayerTree.disable');}}
++export async function commandLog(page,png){let layers=[];const off=page.on(m=>{if(m.method==='LayerTree.layerTreeDidChange')layers=m.params.layers||[];});await page.send('LayerTree.enable');try{await page.evaluate(frames);await page.shot({x:0,y:0,width:1,height:1});await page.evaluate(frames);const result=[];for(const layer of layers.filter(l=>l.drawsContent&&l.width>0&&l.height>0)){const {snapshotId}=await page.send('LayerTree.makeSnapshot',{layerId:layer.layerId});try{const {commandLog}=await page.send('LayerTree.snapshotCommandLog',{snapshotId});result.push({layerId:layer.layerId,width:layer.width,height:layer.height,commands:commandLog});}finally{await page.send('LayerTree.releaseSnapshot',{snapshotId});}}if(!result.length){if(png&&isTransparentPng(png))return [];throw new Error('未捕获到绘图层，而冻结图不是全透明；指令记录不能为空');}return result;}finally{off();await page.send('LayerTree.disable');}}
+ export async function createReferenceSession(options={}){
+  const freezePolicy=await resolveFreezePolicy(options.freezePolicy),timelineOptions=JSON.stringify({freezePolicy});
+  const {freezePolicy:requestedPolicy,...browserOptions}=options;
+  const browser=await openChrome(browserOptions);let fonts;try{fonts=await fontServer();}catch(e){await browser.close();throw e;}let frozen;try{frozen=await browser.newPage();}catch(e){await browser.close();await fonts.close();throw e;}
+- const html=svg=>`<!doctype html><meta charset="utf-8"><style>@font-face{font-family:'Noto Sans CJK SC';font-weight:400;src:url('${fonts.url}/NotoSansCJKsc-Regular.otf')}@font-face{font-family:'Noto Sans CJK SC';font-weight:700;src:url('${fonts.url}/NotoSansCJKsc-Bold.otf')}html,body{margin:0;background:transparent}svg{display:block}</style>${svg}`;
++ const html=svg=>`<!doctype html><meta charset="utf-8"><style>@font-face{font-family:'Noto Sans CJK SC';font-weight:400;src:url('${fonts.url}/NotoSansCJKsc-Regular.otf')}@font-face{font-family:'Noto Sans CJK SC';font-weight:700;src:url('${fonts.url}/NotoSansCJKsc-Bold.otf')}html,body{margin:0;background:transparent;-webkit-font-smoothing:antialiased}svg{display:block}</style>${svg}`;
+  const load=async(page,svg,scale,source)=>{await setSvgContent(page,svg,html,source);const size=await page.evaluate(`(()=>{const s=document.querySelector('svg');const v=s.viewBox.baseVal;const w=(v.width||s.width.baseVal.value)*${scale},h=(v.height||s.height.baseVal.value)*${scale};if(!(w>0&&h>0))throw new Error('SVG 尺寸无效');s.setAttribute('width',w);s.setAttribute('height',h);return {width:w,height:h};})()`);await page.viewport(size.width,size.height);await page.evaluate(`Promise.all([document.fonts.load('400 16px "Noto Sans CJK SC"'),document.fonts.load('700 16px "Noto Sans CJK SC"')]).then(()=>document.fonts.ready)`);await page.evaluate(frames);return size;};
+  const prepare=async({svg,scale=1,action,triggerTime=1000,color,id=''})=>{const size=await load(browser,svg,scale,id||'参照SVG');if(color)await browser.evaluate(`document.querySelector('svg').style.color=${JSON.stringify(color)}`);await browser.evaluate(`(${installTimeline.toString()})(${timelineOptions})`);if(triggersAction(action)){await browser.evaluate(`__ref.seek(${triggerTime});__ref.trigger(${JSON.stringify(action)});`);}return size;};
+- const render=async({svg,scale=1,time=0,action,triggerTime=1000,color,oplog=false,id='',...rest})=>{const size=await prepare({svg,scale,action,triggerTime,color,id});const globalTime=time+(triggersAction(action)?triggerTime:0);await browser.evaluate(`__ref.seek(${globalTime})`);await browser.evaluate(frames);const data=await browser.evaluate('__ref.freeze()'),textBoxes=await browser.evaluate('__ref.textBoxes()');const clip={x:0,y:0,...size};const livePng=await browser.shot(clip);await load(frozen,data.svg,1,`${id||'参照SVG'} 冻结SVG`);await frozen.viewport(size.width,size.height); // 冻结 SVG 已经带有显示尺寸，不再按 viewBox 缩放。
+- await frozen.evaluate(`(()=>{const s=document.querySelector('svg');s.setAttribute('width',${size.width});s.setAttribute('height',${size.height});})()`);await frozen.evaluate(frames);const png=await frozen.shot(clip);await frozen.evaluate(`(${installTimeline.toString()})(${timelineOptions})`);const frozenValues=await frozen.evaluate(`__ref.read(${JSON.stringify(data.values)})`);const verification=verifyValues(data.values,frozenValues);if(data.freezePolicy!==freezePolicy)throw new Error('页面冻结策略与会话实际策略不一致');return {png,livePng,svg:data.svg,values:data.values,frozenValues,verification,metadata:{素材:id,动作:action?.名字||'待机',时刻:time,全局时刻:globalTime,倍率:scale,Chrome版本:VERSION,完整启动参数:browser.flags,光栅信息:browser.gpuInfo,源文件指纹:sha256(svg),文字区域:textBoxes,工具版本:TOOL_VERSION,字体指纹:fonts.hashes,冻结策略:freezePolicy,冻结复核:verification,冻结合成提示:data.compositeHints||[],...size},...(oplog?{oplog:await commandLog(frozen)}:{})};};
++ const render=async({svg,scale=1,time=0,action,triggerTime=1000,color,oplog=false,id='',...rest})=>{const size=await prepare({svg,scale,action,triggerTime,color,id});const globalTime=time+(triggersAction(action)?triggerTime:0);await browser.evaluate(`__ref.seek(${globalTime})`);await browser.evaluate(frames);const data=await browser.evaluate('__ref.freeze()'),textBoxes=await browser.evaluate('__ref.textBoxes()');const clip={x:0,y:0,...size};const livePng=await browser.shot(clip);const liveTries=browser.shotStats?.last;await load(frozen,data.svg,1,`${id||'参照SVG'} 冻结SVG`);await frozen.viewport(size.width,size.height); // 冻结 SVG 已经带有显示尺寸，不再按 viewBox 缩放。
++ await frozen.evaluate(`(()=>{const s=document.querySelector('svg');s.setAttribute('width',${size.width});s.setAttribute('height',${size.height});})()`);await frozen.evaluate(frames);const png=await frozen.shot(clip);const frozenTries=frozen.shotStats?.last;await frozen.evaluate(`(${installTimeline.toString()})(${timelineOptions})`);const frozenValues=await frozen.evaluate(`__ref.read(${JSON.stringify(data.values)})`);const verification=verifyValues(data.values,frozenValues);if(data.freezePolicy!==freezePolicy)throw new Error('页面冻结策略与会话实际策略不一致');return {png,livePng,svg:data.svg,values:data.values,frozenValues,verification,metadata:{素材:id,动作:action?.名字||'待机',时刻:time,全局时刻:globalTime,倍率:scale,Chrome版本:VERSION,完整启动参数:browser.flags,光栅信息:browser.gpuInfo,源文件指纹:sha256(svg),文字区域:textBoxes,工具版本:TOOL_VERSION,字体指纹:fonts.hashes,冻结策略:freezePolicy,冻结复核:verification,冻结合成提示:data.compositeHints||[],截图次数:{活图:liveTries,冻结图:frozenTries},...size},...(oplog?await(async()=>{const log=await commandLog(frozen,png);return {oplog:log,空图:log.length===0};})():{})};};
+  const sampleValues=async({svg,scale=1,action,triggerTime=1000,color,duration=0,id=''})=>{
+   await prepare({svg,scale,action,triggerTime,color});const times=[];for(let t=0;t<=duration;t+=20)times.push(t);
+   const rows=[];for(const time of times){await browser.evaluate(`__ref.seek(${time+(triggersAction(action)?triggerTime:0)})`);rows.push(await browser.evaluate('__ref.read()'));}
+--- a/tools/ref/batch.mjs	2026-11-11 20:45:40
++++ b/tools/ref/batch.mjs	2026-11-11 20:45:40
+@@ -11,6 +11,16 @@
+ export async function saveJson(file,value){await fs.mkdir(path.dirname(file),{recursive:true});await fs.writeFile(file,JSON.stringify(value,null,2));}
+ export function safeRelative(value){if(typeof value!=='string'||!value||path.isAbsolute(value)||value.split(/[\\/]/).some(p=>!p||p==='.'||p==='..'))throw new Error(`不安全的输出名称：${value}`);return value;}
+ export function normalizeManifest(data){const list=Array.isArray(data)?data:data.素材??data.assets;if(!Array.isArray(list)||!list.length)throw new Error('清单必须包含非空素材数组');const seen=new Set();for(const a of list){safeRelative(a.id);if(seen.has(a.id))throw new Error(`重复素材 id：${a.id}`);seen.add(a.id);if(typeof a.文件!=='string'||!a.文件)throw new Error(`${a.id} 缺少文件路径`);if(!Array.isArray(a.动作)||!a.动作.length)throw new Error(`${a.id} 缺少动作`);const names=new Set();for(const action of a.动作){safeRelative(action.名字);if(names.has(action.名字))throw new Error(`重复动作：${a.id}/${action.名字}`);names.add(action.名字);if(!['循环','播一次','播完停住','进场后循环'].includes(action.种类)&&!(action.种类===null&&action.分类状态==='待验证'))throw new Error(`未知动作种类：${a.id}/${action.种类}`);if(action.种类!=='循环'&&!(Number.isFinite(action.毫秒)&&action.毫秒>0))throw new Error(`${a.id}/${action.名字} 缺少正数毫秒`);}}return list;}
++// 实验 2 第 2 条（2026-11-11 用户定）：冻结图对活图，原图相似度 ≥ 0.95，或两张图各模糊 1 像素后 ≥ 0.95。
++// 活图里有动画的元素在合成层上先光栅再缩放会发虚，冻结图反而是对的；模糊后发虚的差基本消掉，写错属性的差还在。
++export async function freezeAgainstLive(refFile,liveFile){
++ const thresholds=JSON.parse(await fs.readFile(path.join(ROOT,'阈值.json'),'utf8')).冻结对活图??{ssim:.95,模糊sigma:1};
++ const {compareFiles,loadPng}=await import('../compare/cli.mjs');const {compareImages}=await import('../compare/metrics.mjs');const {gaussianBlur}=await import('../compare/blur.mjs');
++ const similarity=(await compareFiles(refFile,liveFile)).分组.find(g=>g.区域==='全图').指标.ssim;
++ if(similarity>=thresholds.ssim)return {similarity,blurred:null,passed:true};
++ const [a,b]=await Promise.all([loadPng(refFile),loadPng(liveFile)]);const result=compareImages(gaussianBlur(a,thresholds.模糊sigma),gaussianBlur(b,thresholds.模糊sigma));
++ const blurred=result.分组.find(g=>g.区域==='全图').指标.ssim;return {similarity,blurred,passed:blurred>=thresholds.ssim};
++}
+ export function jobsForAsset(asset){const jobs=[];for(const color of asset.染色?['#E3263A','#3FE3F0']:[null])for(const action of asset.动作){const id=asset.id+(color?'@'+color.slice(1):'');jobs.push({id,color,action,triggerTime:1000,actionName:action.名字});if(triggersAction(action)&&(/(^|\/)(试验图|char_golem|mon_chest)$/.test(asset.id)))jobs.push({id,color,action,triggerTime:1234,actionName:action.名字+'@switch1234'});}return jobs;}
+ export async function toolFingerprint(){const files=['index.mjs','page.mjs','schedule.mjs','verify.mjs','batch.mjs','../chrome/index.mjs','../chrome/svg.mjs','../scan/path.mjs'];return sha256(Buffer.concat(await Promise.all(files.map(f=>fs.readFile(path.join(import.meta.dirname,f))))));}
+ export function referenceIdentity(session){return {平台:process.platform,架构:process.arch,冻结策略:validateFreezePolicy(session.freezePolicy),Chrome:session.browser.gpuInfo,参数:session.browser.flags.map(f=>f.startsWith('--user-data-dir=')?'--user-data-dir=<临时目录>':f),字体:session.fonts};}
+@@ -27,17 +37,28 @@
+ export async function runBatch({manifest=path.join(ROOT,'素材/清单.json'),out=path.join(ROOT,'out',process.platform==='darwin'?'mac':'linux'),mode='cpu',cache=true,concurrency=1,ids,sessionOptions={},sessionFactory=createReferenceSession}={}){
+  const start=performance.now(),freezePolicy=await resolveFreezePolicy(sessionOptions.freezePolicy);const list=normalizeManifest(typeof manifest==='string'?await json(manifest):manifest).filter(a=>!ids||ids.includes(a.id));if(!list.length)throw new Error('所选素材为空');if(!Number.isInteger(concurrency)||concurrency<1||concurrency>16)throw new Error('并行数必须为1到16的整数');
+  out=path.resolve(out);await fs.mkdir(out,{recursive:true});const fingerprint=await toolFingerprint();const report={工具版本:TOOL_VERSION,代码指纹:fingerprint,模式:mode,冻结策略:freezePolicy,素材数:list.length,开始:new Date().toISOString(),通过:false,浏览器:[],动作:[],错误:[]};let cursor=0;
+- const worker=async()=>{let session;try{session=await sessionFactory({...sessionOptions,mode,freezePolicy});const reference=referenceIdentity(session);if(reference.冻结策略!==freezePolicy)throw new Error(`会话实际冻结策略${reference.冻结策略}与请求${freezePolicy}不一致`);reference.参照配置指纹=await referenceConfigFingerprint();report.浏览器.push({...reference,完整启动参数:session.browser.flags});await saveJson(path.join(out,'reference',`process-${session.browser.pid}.json`),{...reference,完整启动参数:session.browser.flags});while(cursor<list.length){const asset=list[cursor++];let svg;try{svg=await fs.readFile(resolveAssetPath(asset),'utf8');}catch(e){report.错误.push({素材:asset.id,错误:e.message});continue;}for(const job of jobsForAsset(asset)){const base={svg,id:job.id,action:job.action,color:job.color,triggerTime:job.triggerTime};const cacheFile=path.join(out,'cache',job.id,job.actionName+'.json');const key=actionCacheKey({svg,job,reference,fingerprint});try{const hit=cache?await cacheHit(cacheFile,key,out,freezePolicy):null;if(hit){report.动作.push({...hit.summary,缓存:true});continue;}
++ const worker=async()=>{let session;
++ // 工作进程用的 Chrome 断了：关掉旧会话、重开一个，这个动作重试一次；再失败照实记错。
++ const openSession=async()=>{const s=await sessionFactory({...sessionOptions,mode,freezePolicy});const r=referenceIdentity(s);if(r.冻结策略!==freezePolicy)throw new Error(`会话实际冻结策略${r.冻结策略}与请求${freezePolicy}不一致`);r.参照配置指纹=await referenceConfigFingerprint();report.浏览器.push({...r,完整启动参数:s.browser.flags});await saveJson(path.join(out,'reference',`process-${s.browser.pid}.json`),{...r,完整启动参数:s.browser.flags});return {s,r};};
++ try{session=await sessionFactory({...sessionOptions,mode,freezePolicy});let reference=referenceIdentity(session);if(reference.冻结策略!==freezePolicy)throw new Error(`会话实际冻结策略${reference.冻结策略}与请求${freezePolicy}不一致`);reference.参照配置指纹=await referenceConfigFingerprint();report.浏览器.push({...reference,完整启动参数:session.browser.flags});await saveJson(path.join(out,'reference',`process-${session.browser.pid}.json`),{...reference,完整启动参数:session.browser.flags});while(cursor<list.length){const asset=list[cursor++];let svg;try{svg=await fs.readFile(resolveAssetPath(asset),'utf8');}catch(e){report.错误.push({素材:asset.id,错误:e.message});continue;}for(const job of jobsForAsset(asset))for(let attempt=0;;attempt++){const base={svg,id:job.id,action:job.action,color:job.color,triggerTime:job.triggerTime};const cacheFile=path.join(out,'cache',job.id,job.actionName+'.json');const key=actionCacheKey({svg,job,reference,fingerprint});try{const hit=cache?await cacheHit(cacheFile,key,out,freezePolicy):null;if(hit){report.动作.push({...hit.summary,缓存:true});break;}
+  const size=await session.prepare(base);const state=await session.browser.evaluate('({period:__ref.period(),animated:__ref.hasAnimations()})');let kind=job.action.种类;let period=job.action.周期毫秒??state.period;
+  // 清单可将旧 stay 标为待判定，是否还有无限循环以进场结束时的浏览器状态为准。
+  if(job.action.stay===true||job.action.需判定停住||job.action.种类===null&&job.action.分类状态==='待验证'){await session.browser.evaluate(`__ref.seek(${job.triggerTime+job.action.毫秒})`);const remaining=await session.browser.evaluate('__ref.period()');kind=remaining>0?'进场后循环':'播完停住';period=remaining;}
+  if(kind==='循环'&&state.animated&&!(period>0))throw new Error('循环动作存在动画，但没有可确定的无限循环周期；需要核对清单');
+  const duration=kind==='循环'?period:job.action.毫秒;const times=frameTimes({id:asset.id,kind,duration,period,animated:state.animated});const files=[],frames=[];const write=async(rel,data)=>{const dest=path.join(out,rel);await fs.mkdir(path.dirname(dest),{recursive:true});await fs.writeFile(dest,data);files.push({path:rel,hash:sha256(data)});};
+- for(const scale of [1,2])for(const time of scaleTimes(times,size.width,scale)){const frame=await session.render({...base,scale,time,oplog:scale===1&&time===0});if(frame.metadata?.冻结策略!==freezePolicy)throw new Error('帧元数据冻结策略与会话实际策略不一致');if(scale===1&&time===0&&(!Array.isArray(frame.oplog)||!frame.oplog.length))throw new Error('0毫秒1倍帧缺少非空Chrome指令记录');const stem=`${job.id}/${job.actionName}/${time}@${scale}x`;await write(`ref/${stem}.png`,frame.png);await write(`live/${stem}.png`,frame.livePng);const meta={...frame.metadata,时间表:job.triggerTime===1234?'switch1234':'默认',动作种类:kind};await write(`ref/${stem}.json`,JSON.stringify(meta,null,2));await write(`live/${stem}.json`,JSON.stringify(meta,null,2));await write(`ref/${job.id}/${job.actionName}/${time}${scale===1?'':`@${scale}x`}.svg`,frame.svg);if(frame.oplog){await write(`oplog/${job.id}/${job.actionName}.json`,JSON.stringify(frame.oplog,null,2));if(job.action.名字==='待机'||!asset.动作.some(a=>a.名字==='待机')&&job.action===asset.动作[0]&&job.triggerTime===1000)await write(`oplog/${job.id}.json`,JSON.stringify(frame.oplog,null,2));}
+- const {compareFiles}=await import('../compare/cli.mjs');const comparison=await compareFiles(path.join(out,`ref/${stem}.png`),path.join(out,`live/${stem}.png`));const similarity=comparison.分组.find(g=>g.区域==='全图').指标.ssim;frames.push({时刻:time,倍率:scale,文件:`ref/${stem}.png`,冻结复核:frame.verification,相似度:similarity,通过:frame.verification.通过&&similarity>=.95});}
++ for(const scale of [1,2])for(const time of scaleTimes(times,size.width,scale)){const frame=await session.render({...base,scale,time,oplog:scale===1&&time===0});if(frame.metadata?.冻结策略!==freezePolicy)throw new Error('帧元数据冻结策略与会话实际策略不一致');if(scale===1&&time===0&&(!Array.isArray(frame.oplog)||!frame.oplog.length&&frame.空图!==true))throw new Error('0毫秒1倍帧缺少非空Chrome指令记录');const stem=`${job.id}/${job.actionName}/${time}@${scale}x`;await write(`ref/${stem}.png`,frame.png);await write(`live/${stem}.png`,frame.livePng);const meta={...frame.metadata,时间表:job.triggerTime===1234?'switch1234':'默认',动作种类:kind};await write(`ref/${stem}.json`,JSON.stringify(meta,null,2));await write(`live/${stem}.json`,JSON.stringify(meta,null,2));await write(`ref/${job.id}/${job.actionName}/${time}${scale===1?'':`@${scale}x`}.svg`,frame.svg);if(frame.oplog){await write(`oplog/${job.id}/${job.actionName}.json`,JSON.stringify(frame.oplog,null,2));if(job.action.名字==='待机'||!asset.动作.some(a=>a.名字==='待机')&&job.action===asset.动作[0]&&job.triggerTime===1000)await write(`oplog/${job.id}.json`,JSON.stringify(frame.oplog,null,2));}
++ const {similarity,blurred,passed}=await freezeAgainstLive(path.join(out,`ref/${stem}.png`),path.join(out,`live/${stem}.png`));frames.push({时刻:time,倍率:scale,文件:`ref/${stem}.png`,冻结复核:frame.verification,相似度:similarity,相似度_模糊后:blurred,通过:frame.verification.通过&&passed});}
+  const valueDuration=kind==='进场后循环'?duration+period:duration;const values=await session.sampleValues({...base,duration:state.animated?valueDuration:0});await write(`values/${job.id}/${job.actionName}.json`,JSON.stringify(values,null,2));
+- const summary={素材:job.id,冻结策略:freezePolicy,源文件指纹:sha256(svg),首帧指令:`oplog/${job.id}/${job.actionName}.json`,动作:job.actionName,种类:kind,触发毫秒:job.triggerTime,周期毫秒:period,值表范围:state.animated?valueDuration:0,期望时刻:times,帧:frames,通过:frames.length>0&&frames.every(f=>f.通过),缓存:false};report.动作.push(summary);await saveJson(cacheFile,{key,reference,planningEvidence:{size,state,kind,period,duration},通过:summary.通过,files,summary});
+- }catch(e){report.错误.push({素材:job.id,动作:job.actionName,错误:e.stack||e.message});}}
++ const summary={素材:job.id,冻结策略:freezePolicy,源文件指纹:sha256(svg),首帧指令:`oplog/${job.id}/${job.actionName}.json`,动作:job.actionName,种类:kind,触发毫秒:job.triggerTime,周期毫秒:period,值表范围:state.animated?valueDuration:0,期望时刻:times,帧:frames,通过:frames.length>0&&frames.every(f=>f.通过),缓存:false};report.动作.push(summary);await saveJson(cacheFile,{key,reference,planningEvidence:{size,state,kind,period,duration},通过:summary.通过,files,summary});break;
++ }catch(e){
++  if(session.browser.alive?.()===false){
++   report.浏览器重开??=[];report.浏览器重开.push({素材:job.id,动作:job.actionName,第几次:attempt+1,原因:e.message});
++   try{await session.close();}catch{}
++   session=null;const opened=await openSession();session=opened.s;reference=opened.r;
++   if(attempt===0)continue;
++  }
++  report.错误.push({素材:job.id,动作:job.actionName,错误:e.stack||e.message});break;
++ }}
+  }}catch(e){report.错误.push({阶段:'浏览器/工作进程',错误:e.stack||e.message});}finally{if(session)try{await session.close();}catch(e){report.错误.push({阶段:'关闭浏览器',错误:e.message});}}};
+  await Promise.all(Array.from({length:Math.min(concurrency,list.length)},worker));report.动作.sort((a,b)=>(a.素材+'/'+a.动作).localeCompare(b.素材+'/'+b.动作));report.耗时毫秒=performance.now()-start;report.期望动作数=list.reduce((n,a)=>n+jobsForAsset(a).length,0);report.通过=!report.错误.length&&report.动作.length===report.期望动作数&&report.动作.every(a=>a.通过);await saveJson(path.join(out,'报告/参照.json'),report);return report;
+ }
+--- a/tools/ref/page.mjs	2026-11-11 20:45:40
++++ b/tools/ref/page.mjs	2026-11-11 20:45:40
+@@ -24,13 +24,17 @@
+  for(const [a] of kept){for(const k of a.effect?.getKeyframes()||[])for(const p of Object.keys(k))if(!['offset','computedOffset','easing','composite'].includes(p))add(a.effect.target,cssName(p),'css');}
+  for(const a of svg.querySelectorAll('animate,animateTransform,animateMotion,set')){const href=a.getAttribute('href')||a.getAttributeNS('http://www.w3.org/1999/xlink','href');const e=href?document.querySelector(href):a.parentNode;add(e,a.localName==='animateMotion'?'motion':a.getAttribute('attributeName'),'smil');}return [...out.values()];};
+  const cssProperties=new Set(['d','fill','fill-opacity','stroke','stroke-width','stroke-opacity','stroke-dasharray','stroke-dashoffset','opacity','visibility','color','font-size','letter-spacing','stop-color','stop-opacity','flood-color','flood-opacity','transform']);
++ // SVGLength/SVGAngle 只有纯数字才取 .value；带单位的（%、em、px…）保留原单位文本。
++ // .value 会把百分比按视口换算，而 startOffset 等属性的百分比按路径长度算，换成数字就错了。
++ const unitValue=x=>x.unitType===1?x.value:x.valueAsString;
++ const isUnitValue=x=>x&&typeof x==='object'&&x.unitType!==undefined&&typeof x.valueAsString==='string';
+  const attrValue=(e,p)=>{
+  const pairs={stdDeviation:['stdDeviationX','stdDeviationY'],baseFrequency:['baseFrequencyX','baseFrequencyY'],radius:['radiusX','radiusY']};
+  if(pairs[p])return pairs[p].map(k=>e[k].animVal);
+  const v=p==='points'?e.animatedPoints:e[p]?.animVal;if(v===undefined)throw new Error(`不能读取动画属性 ${e.localName}.${p} 的 animVal`);
+  if(typeof v==='number'||typeof v==='string'||typeof v==='boolean')return v;
+- if(v.numberOfItems!==undefined){const items=Array.from({length:v.numberOfItems},(_,i)=>v.getItem(i));if(['transform','gradientTransform','patternTransform'].includes(p)){let m=new DOMMatrix();for(const item of items)m=m.multiply(item.matrix);return `matrix(${fullMatrix(m).join(' ')})`;}return items.map(x=>x.value!==undefined?x.value:x.x!==undefined?[x.x,x.y]:x);}
+- if(v.value!==undefined)return v.value;if(v.width!==undefined)return [v.x,v.y,v.width,v.height];throw new Error(`未覆盖 animVal 类型：${p}`);
++ if(v.numberOfItems!==undefined){const items=Array.from({length:v.numberOfItems},(_,i)=>v.getItem(i));if(['transform','gradientTransform','patternTransform'].includes(p)){let m=new DOMMatrix();for(const item of items)m=m.multiply(item.matrix);return `matrix(${fullMatrix(m).join(' ')})`;}return items.map(x=>isUnitValue(x)?unitValue(x):x.value!==undefined?x.value:x.x!==undefined?[x.x,x.y]:x);}
++ if(isUnitValue(v))return unitValue(v);if(v.value!==undefined)return v.value;if(v.width!==undefined)return [v.x,v.y,v.width,v.height];throw new Error(`未覆盖 animVal 类型：${p}`);
+  };
+  const read=(descriptors)=> (descriptors?descriptors.map(t=>({...t,element:svg.querySelector(`[data-svg-render-node="${t.节点号}"]`) || (svg.getAttribute('data-svg-render-node')===String(t.节点号)?svg:null)})):tracks()).map(t=>{const {element:e,...r}=t,p=t.属性;if(!e)throw new Error(`冻结复核找不到节点 ${t.节点号}`);const css=t.来自==='css'||(cssProperties.has(p)&&p!=='transform');if(css&&p==='transform'){const value=cssTransform(e);r.值=value.值;r.变换精度=value.精度;}else r.值=p==='motion'?`matrix(${fullMatrix(local(e)).join(' ')})`:css?getComputedStyle(e).getPropertyValue(p):attrValue(e,p);if(p==='transform'||p==='motion'){r.完整局部矩阵=fullMatrix(local(e));r.局部矩阵=r.完整局部矩阵?.map(value=>+value.toFixed(4))??null;}r.写回=css?'style':'attribute';return r;});
+  window.__ref={seek(t){now=t;svg.pauseAnimations();svg.setCurrentTime(t/1000);collect();for(const [a,start] of kept)if(a.playState!=='idle')a.currentTime=t-start;void svg.getBoundingClientRect();},trigger(action){if(previousClass)svg.classList.remove(previousClass);previousClass=action.触发?.class||null;if(previousClass)svg.classList.add(previousClass);if(action.触发?.attr)svg.setAttribute(...action.触发.attr);void svg.getBoundingClientRect();collect();const selectors=action.smil;const animations=selectors?selectors.map(s=>{const e=svg.querySelector(s);if(!e)throw new Error(`找不到 SMIL：${s}`);return e;}):[...svg.querySelectorAll('[begin="indefinite"]')];for(const a of animations)a.beginElement();},read,hasAnimations(){if([...kept.keys()].some(a=>a.playState!=='idle'))return true;return [...svg.querySelectorAll('animate,animateTransform,animateMotion,set')].some(a=>{try{const start=a.getStartTime();if(!Number.isFinite(start)||start>now/1000)return false;const count=a.getAttribute('repeatCount');if(count==='indefinite')return true;let duration;try{duration=a.getSimpleDuration();}catch{return false;}return now/1000<start+duration*(Number(count)||1);}catch{return false;}});},freeze(){const values=read(),copy=svg.cloneNode(true),clones=[copy,...copy.querySelectorAll('*')],transforms=[];clones.forEach((e,n)=>e.setAttribute('data-svg-render-node',n));for(const t of values){const e=clones[t.节点号],p=t.属性==='motion'?'transform':t.属性,v=Array.isArray(t.值)?t.值.flat().join(' '):String(t.值);if(t.写回==='style'){if(p==='transform')transforms.push({e,v});else e.style.setProperty(p,v,'important');}else e.setAttribute(p,v);}for(const a of copy.querySelectorAll('animate,animateTransform,animateMotion,set'))a.remove();const style=document.createElementNS('http://www.w3.org/2000/svg','style');style.textContent='*{animation:none!important;transition:none!important}';copy.append(style);
+--- a/tools/ref/audit.mjs	2026-11-11 20:45:40
++++ b/tools/ref/audit.mjs	2026-11-11 20:45:40
+@@ -17,11 +17,12 @@
+ }
+ const metricKeys=['ssim','大差比例_不算边','最大差异块','平均偏色'];
+ export function summarizeNoise(rows){const groups=new Map();for(const r of rows){const key=r.素材;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r);}return Object.fromEntries([...groups].map(([id,items])=>[id,Object.fromEntries(metricKeys.map(key=>{const values=items.map(r=>r.指标[key]).sort((a,b)=>a-b),n=values.length;return [key,{最差:key==='ssim'?values[0]:values.at(-1),中位数:n%2?values[(n-1)/2]:(values[n/2-1]+values[n/2])/2}];}))]));}
+-export async function measureNoise({manifest=path.join(root,'素材/清单.json'),out=path.join(root,'out',process.platform==='darwin'?'mac':'linux','noise'),...options}={}){
++// 需求 4.2：CPU 冻结图和活图直接用 4.1 的正式参照（有缓存就不重出），只新出 GPU 冻结图。
++export async function measureNoise({manifest=path.join(root,'素材/清单.json'),out=path.join(root,'out',process.platform==='darwin'?'mac':'linux','noise'),cpuOut=path.join(root,'out',process.platform==='darwin'?'mac':'linux'),...options}={}){
+  const report={实验:3,平台:process.platform,说明:'测量没有画质及格线；完成仅表示运行完整且得到数字。',完成:false,错误:[],CPU对GPU:[],活图对冻结图:[],帧:{}};
+- const cpu=await runBatch({...options,manifest,out:path.join(out,'cpu'),mode:'cpu'});const gpu=await runBatch({...options,manifest,out:path.join(out,'gpu'),mode:'gpu'});report.运行={CPU:{通过:cpu.通过,错误:cpu.错误},GPU:{通过:gpu.通过,错误:gpu.错误}};
++ const cpu=await runBatch({...options,manifest,out:cpuOut,mode:'cpu',cache:true});const gpu=await runBatch({...options,manifest,out:path.join(out,'gpu'),mode:'gpu'});report.运行={CPU:{通过:cpu.通过,错误:cpu.错误},GPU:{通过:gpu.通过,错误:gpu.错误}};
+  const {compareFiles}=await import('../compare/cli.mjs');const gpuFrames=new Map(gpu.动作.flatMap(a=>a.帧.map(f=>[f.文件,f])));
+- for(const action of cpu.动作)for(const frame of action.帧){const relative=frame.文件;try{if(!gpuFrames.has(relative))throw new Error(`GPU 缺少 ${relative}`);const ref=path.join(out,'cpu',relative),gpuRef=path.join(out,'gpu',relative),live=path.join(out,'cpu',relative.replace(/^ref\//,'live/'));const comparisons=await Promise.all([compareFiles(ref,gpuRef),compareFiles(ref,live)]);for(let i=0;i<comparisons.length;i++){const c=comparisons[i];if(i===0)report.帧[relative.replace(/^ref\//,'')]=Object.fromEntries(c.分组.map(g=>[g.区域,g.指标]));report[i===0?'CPU对GPU':'活图对冻结图'].push({素材:action.素材,动作:action.动作,文件:relative,倍率:frame.倍率,时刻:frame.时刻,指标:c.分组.find(g=>g.区域==='全图').指标,分区指标:c.分组.map(g=>({区域:g.区域,指标:g.指标}))});}gpuFrames.delete(relative);}catch(e){report.错误.push({文件:relative,错误:e.message});}}
++ for(const action of cpu.动作)for(const frame of action.帧){const relative=frame.文件;try{if(!gpuFrames.has(relative))throw new Error(`GPU 缺少 ${relative}`);const ref=path.join(cpuOut,relative),gpuRef=path.join(out,'gpu',relative),live=path.join(cpuOut,relative.replace(/^ref\//,'live/'));const comparisons=await Promise.all([compareFiles(ref,gpuRef),compareFiles(ref,live)]);for(let i=0;i<comparisons.length;i++){const c=comparisons[i];if(i===0)report.帧[relative.replace(/^ref\//,'')]=Object.fromEntries(c.分组.map(g=>[g.区域,g.指标]));report[i===0?'CPU对GPU':'活图对冻结图'].push({素材:action.素材,动作:action.动作,文件:relative,倍率:frame.倍率,时刻:frame.时刻,指标:c.分组.find(g=>g.区域==='全图').指标,分区指标:c.分组.map(g=>({区域:g.区域,指标:g.指标}))});}gpuFrames.delete(relative);}catch(e){report.错误.push({文件:relative,错误:e.message});}}
+  for(const file of gpuFrames.keys())report.错误.push({文件:file,错误:'CPU 缺少对应帧'});
+  report.汇总={CPU对GPU:summarizeNoise(report.CPU对GPU),活图对冻结图:summarizeNoise(report.活图对冻结图)};report.完成=cpu.通过&&gpu.通过&&!report.错误.length&&report.CPU对GPU.length>0;await saveJson(path.join(out,'报告/自身差/结果.json'),report);
+  const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));await fs.writeFile(path.join(out,'报告/自身差/index.html'),`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Chrome 自己的差</title><style>body{font:16px system-ui;max-width:1000px;margin:24px auto}pre{white-space:pre-wrap}</style><h1>Chrome 自己的差</h1><p>${esc(report.说明)}</p><p>运行${report.完成?'完整':'未完成，有阻塞或失败'}</p><h2>按素材汇总</h2><pre>${esc(JSON.stringify(report.汇总,null,2))}</pre><h2>逐帧数据及错误</h2><pre>${esc(JSON.stringify({...report,汇总:undefined},null,2))}</pre></html>`);return report;
+--- a/tools/ref/check-batch.mjs	2026-11-11 20:45:40
++++ b/tools/ref/check-batch.mjs	2026-11-11 20:45:40
+@@ -20,7 +20,7 @@
+  report=await runBatch({manifest,out,sessionFactory:factory});assert(report.通过);assert(report.动作[0].缓存);assert.equal(renders,2);
+  await fs.writeFile(path.join(out,'ref/试验图/试验图/待机/0@1x.png'),'损坏');assert(!(await checkCoverage({manifest,out})).通过);report=await runBatch({manifest,out,sessionFactory:factory});assert(report.通过);assert.equal(renders,4);
+  const before=sessions;const repeat=await verifyRepeatability({manifest,out:path.join(tmp,'repeat'),sessionFactory:factory});assert(repeat.通过,JSON.stringify(repeat));assert.equal(sessions-before,2);
+- const noise=await measureNoise({manifest,out:path.join(tmp,'noise'),sessionFactory:factory});assert(noise.完成,JSON.stringify(noise));assert.equal(noise.CPU对GPU.length,2);
++ const noise=await measureNoise({manifest,out:path.join(tmp,'noise'),cpuOut:path.join(tmp,'noise/cpu'),sessionFactory:factory});assert(noise.完成,JSON.stringify(noise));assert.equal(noise.CPU对GPU.length,2);
+  const key='试验图/试验图/待机/0@1x.png';assert(noise.帧[key].全图);assert(noise.帧[key].非文字);const gpuCompare=await compareFiles(path.join(tmp,'noise/cpu/ref',key),path.join(tmp,'noise/gpu/ref',key),{line:'GPU',baseline:noise.帧[key]});assert(gpuCompare.通过);
+  const cross=await measureCrossPlatform({linux:path.join(tmp,'noise/cpu/ref'),mac:path.join(tmp,'noise/gpu/ref'),out:path.join(tmp,'cross')});assert(cross.完成);assert.equal(cross.帧.length,2);assert(!('通过' in cross));
+  const changedImage=new PNG({width:4,height:4});changedImage.data.fill(255);await fs.writeFile(path.join(tmp,'noise/gpu/ref',key),PNG.sync.write(changedImage));const different=await measureCrossPlatform({linux:path.join(tmp,'noise/cpu/ref'),mac:path.join(tmp,'noise/gpu/ref'),out:path.join(tmp,'cross-different')});assert(different.完成);assert(different.帧.some(f=>f.指标.ssim<.995));
+--- a/tools/check/index.mjs	2026-11-11 20:45:40
++++ b/tools/check/index.mjs	2026-11-11 20:45:40
+@@ -6,6 +6,7 @@
+ import {checkReadonly} from '../setup/readonly.mjs';
+ import {openChrome} from '../chrome/index.mjs';
+ import {checkCoverage,verifyRepeatability} from '../ref/audit.mjs';
++import {isTransparentPng} from '../ref/index.mjs';
+ const platform=process.platform==='darwin'?'mac':'linux',out=path.join(root,'out',platform),rows=[];
+ const commit=spawnSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).stdout.trim();
+ async function read(file){return JSON.parse(await fs.readFile(file,'utf8'));}
+@@ -18,7 +19,9 @@
+ await check(4,'可重复性',async()=>{if(!browserAvailable)throw new Error('浏览器环境检查失败，没有运行两遍参照');return verifyRepeatability({out:path.join(out,'repeat'),full:process.argv.includes('--全部')});});
+ await check(5,'冻结正确',async()=>{const r=await read(path.join(out,'报告/参照.json'));if(!r.通过||!r.动作?.length)throw new Error('参照批处理没有完整通过；冻结值和图像不能判通过');return {通过:r.动作.every(a=>a.通过),动作数:r.动作.length};});
+ await check(6,'特性清单',async()=>{const r=await read(path.join(root,'报告/素材登记.json'));return {通过:r.状态==='完成',详情:r};});
+-await check(7,'指令记录',async()=>{const assets=await read(path.join(root,'素材/清单.json'));const missing=[];for(const asset of assets)for(const id of asset.染色?['E3263A','3FE3F0'].map(c=>asset.id+'@'+c):[asset.id]){const a={id};try{const f=await read(path.join(out,'oplog',a.id+'.json'));if(!Array.isArray(f)||!f.length)throw new Error('空指令');}catch(e){missing.push(a.id);}}return {通过:missing.length===0,缺少:missing};});
++await check(7,'指令记录',async()=>{const assets=await read(path.join(root,'素材/清单.json'));const missing=[],empty=[];for(const asset of assets)for(const id of asset.染色?['E3263A','3FE3F0'].map(c=>asset.id+'@'+c):[asset.id]){const a={id};try{const f=await read(path.join(out,'oplog',a.id+'.json'));if(!Array.isArray(f))throw new Error('格式不对');if(!f.length){
++ // 空指令只认合法空图：重新读 0 毫秒 1 倍冻结图，必须每个像素全透明。
++ const action=(asset.动作.find(x=>x.名字==='待机')||asset.动作[0]).名字;if(!isTransparentPng(await fs.readFile(path.join(out,'ref',a.id,action,'0@1x.png'))))throw new Error('空指令但冻结图不透明');empty.push(a.id);}}catch(e){missing.push(a.id);}}return {通过:missing.length===0,缺少:missing,空图:empty};});
+ await check(8,'实验4、5、6',async()=>{const micro=await read(path.join(out,'micro/result.json'));const text=await read(path.join(out,'text/result.json'));const targets=platform==='mac'?['mac-arm64','mac-x64']:['linux-x64','wasm'];const sizes=await Promise.all(targets.map(t=>read(path.join(out,'skia',t,'link-result.json'))));return {通过:micro.及格===true&&text.及格===true&&sizes.every(s=>s.build_pass===true&&(s.target.startsWith('mac-')?s.bytes<=6000000:true)),实验4:sizes,实验5:micro,实验6:text};});
+ await check(9,'只读目录',checkReadonly);
+ await check(10,'Mac验证',async()=>{if(platform==='mac')return {通过:true,说明:'本项表示正在Mac原生运行，其余九项仍须全部通过；最终验收还要核对用户提交回来的报告。'};const r=await read(path.join(root,'报告/mac/验收.json'));return {通过:r.提交===commit&&r.全部通过===true,要求提交:commit,报告提交:r.提交,说明:'Mac报告必须对应本次代码提交；缺报告或不匹配均不通过。'};});
+--- a/tools/mac.mjs	2026-11-11 20:45:40
++++ b/tools/mac.mjs	2026-11-11 20:45:40
+@@ -54,7 +54,10 @@
+   await step('参照、值表、冻结检查及指令',()=>command(process.execPath,['tools/ref/batch.mjs','--out','out/mac']));
+   await step('Chrome自己的差',()=>command(process.execPath,['tools/ref/audit.mjs','noise','--out','out/mac/noise']));
+   const linux=process.env.SVG_RENDER_LINUX_REF||path.join(root,'out/linux/ref');
+-  await step('Linux对Mac逐帧四项指标',()=>command(process.execPath,['tools/ref/audit.mjs','cross','--linux',linux,'--mac','out/mac/ref','--out','out/mac/报告/Linux对Mac']));
++  // 2026-11-11 用户定：整个项目不再用 Linux（云端 Linux 跑不了 Chrome），只以用户的 Mac 为准。有 Linux 参照目录时照常测。
++   const hasLinux=await fs.stat(linux).then(s=>s.isDirectory(),()=>false);
++   if(hasLinux)await step('Linux对Mac逐帧四项指标',()=>command(process.execPath,['tools/ref/audit.mjs','cross','--linux',linux,'--mac','out/mac/ref','--out','out/mac/报告/Linux对Mac']));
++   else await step('Linux对Mac：不做（项目只用Mac，用户定）',async()=>{});
+   await step('完整验收',()=>command(process.execPath,['tools/check/index.mjs','--全部']));
+  }
+ }
+--- a/实验/skia/link.mjs	2026-11-11 20:45:40
++++ b/实验/skia/link.mjs	2026-11-11 20:45:40
+@@ -86,9 +86,13 @@
+     const exported = exportEvidence.split('\n').map(line => line.trim().split(/\s+/).at(-1)).filter(Boolean);
+     if (exported.length !== 1 || !['svg_render_probe', '_svg_render_probe'].includes(exported[0])) throw new Error('动态库不是单一导出');
+     const smoke = `import ctypes, hashlib, json, sys\nl=ctypes.CDLL(sys.argv[1]); f=l.svg_render_probe\nf.argtypes=[ctypes.c_uint,ctypes.POINTER(ctypes.c_ubyte),ctypes.c_int,ctypes.c_int]; f.restype=ctypes.c_int\nrows=[]\nfor mode in range(28):\n b=(ctypes.c_ubyte*(128*128*4))(); code=f(mode,b,128,128); raw=bytes(b)\n rows.append({'mode':mode,'return_code':code,'nonzero_alpha':sum(raw[i]>0 for i in range(3,len(raw),4)),'sha256':hashlib.sha256(raw).hexdigest()})\nprint(json.dumps(rows))\n`;
+-    // 用户要求 x64 编译和体积，不额外引入 Rosetta 或 x64 Python。
+-    if (target === 'mac-x64' && process.arch === 'arm64') modes = null;
+-    else modes = JSON.parse(run('python3', ['-c', smoke, output]));
++    // ARM Mac 上的 x64 动态库用 Rosetta 跑：系统自带的 /usr/bin/python3 是通用二进制，arch -x86_64 就能载入 x64 库（2026-11-11）。
++    // 没装 Rosetta 时照旧只检查链接、架构、导出和体积，并写明没运行。
++    if (target === 'mac-x64' && process.arch === 'arm64') {
++      let rosetta = false;
++      try { run('arch', ['-x86_64', '/usr/bin/true']); rosetta = true; } catch {}
++      modes = rosetta ? JSON.parse(run('arch', ['-x86_64', '/usr/bin/python3', '-c', smoke, output])) : null;
++    } else modes = JSON.parse(run('python3', ['-c', smoke, output]));
+   }
+   if (modes !== null && !modes.every(row => row.return_code === 0 && row.nonzero_alpha > 0)) throw new Error('至少一个能力模式未通过；详见记录');
+   const binaryPath = wasm ? output.replace(/\.cjs$/, '.wasm') : output;
+@@ -96,7 +100,7 @@
+   const info = { target, Skia: skiaRevision, compiler, link_and_smoke_seconds: (Date.now() - started) / 1000,
+     bytes: binary.length, sha256: createHash('sha256').update(binary).digest('hex'),
+     exports: exportEvidence, architecture: architectureEvidence, build_pass: true,
+-    runtime_validation: modes === null ? '未运行：ARM Mac只检查x64链接、架构、导出与体积，不要求Rosetta' : '28模式全部通过',
++    runtime_validation: modes === null ? '未运行：没有 Rosetta，只检查了x64链接、架构、导出与体积' : (target === 'mac-x64' && process.arch === 'arm64' ? '28模式全部通过（Rosetta）' : '28模式全部通过'),
+     modes, commands, scope: '28模式运行冒烟与体积；不是Chrome像素一致性验收。Mac分支未在Linux执行。' };
+   if (wasm) {
+     const gzip = gzipSync(binary, { level: 9 });
+--- a/HANDOFF.md	2026-11-11 20:45:41
++++ b/HANDOFF.md	2026-11-11 20:45:41
+@@ -1,5 +1,19 @@
+ # 阶段0交接：首次Linux检查点
+ 
++## 2026-11-11 更新：Mac 首轮之后的修复和决定（先读这一节）
++
++下面"首次Linux检查点"的内容是当时的状态，已经过时。Mac 首轮验证的结果见 `报告/mac-续验-a7c0423-20261111/`，Claude 的审核和修复见同目录的 `Claude审核结论.md`、`Claude修复记录.md`。
++
++**用户定的（2026-11-11，不再等 Fable）：**
++
++1. 实验 2 第 2 条（冻结图对活图，防漏写属性）：原图相似度 ≥ 0.95，**或两张图各做 σ=1 像素高斯模糊后 ≥ 0.95**。原因：活图里有动画的元素在合成层上先光栅再缩放，发虚；冻结图反而是对的。写在 `阈值.json` 的"冻结对活图"。
++2. 参照页**关掉 Mac 字形平滑**（`-webkit-font-smoothing:antialiased`）。不关时 Chrome 的字比字形轮廓粗约 9%，文字转轮廓过不了线。写在 `参照版本.json` 的"页面样式"。参照全部重出。
++3. **整个项目不再用 Linux**：dot 的云端 Linux 跑不了 Chrome，开发、参照、验收全部在用户的 Mac（M3）上做。需求里所有"Linux 上做"的部分（Linux 参照、Linux 对 Mac、Linux 版 Skia / WASM 编译）都不再要求。没有 Linux 参照目录时，`npm run mac` 记"不做"。
++4. x64 动态库在 ARM Mac 上**用 Rosetta 跑 28 模式探针**（系统自带 /usr/bin/python3 是通用二进制）。
++
++**改了的（Claude）：** 截图连截到两次相同为止、不扩视口（修实验 1 漏画）；带单位的 SMIL 长度按原单位写回（修 fx_circle）；合法空图允许空指令记录（冻结图须全透明）；Chrome 断连立刻报错、重开重试；`ref:noise` 复用正式 CPU 参照；实验 6 位置差改比字身框。新回归：`tools/ref/check-restart.mjs`、`tools/ref/check-units.mjs`。
++
++
+ **阶段0未完成、未验收；本分支不得合并main。** 这是可继续开发和供Mac首次验证的检查点，不是最终通过声明。
+ 
+ 已按用户许可同步main的ee0bb407补充，原件与该提交完全一致；只读基线更新记录见报告/只读基线更新.json。
+--- a/阈值.json	2026-11-11 20:45:41
++++ b/阈值.json	2026-11-11 20:45:41
+@@ -23,5 +23,10 @@
+     "大差比例_不算边": 0.002,
+     "最大差异块": 16,
+     "平均偏色": 1.5
++  },
++  "冻结对活图": {
++    "ssim": 0.95,
++    "模糊sigma": 1,
++    "说明": "实验2第2条，只防漏写属性，不是质量线。原图相似度≥0.95，或两张图各做σ=1像素高斯模糊后≥0.95。2026-11-11用户定。"
+   }
+ }
+--- a/参照版本.json	2026-11-11 20:45:41
++++ b/参照版本.json	2026-11-11 20:45:41
+@@ -28,5 +28,8 @@
+     "NotoSansCJKsc-Bold.otf": "b5f0d1a190a7f9b43c310a8850630af12553df32c4c050543f9059732d9b4c0a",
+     "NotoSansCJKsc-Regular.otf": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
+   },
+-  "说明": "实际完整启动参数与光栅状态保存至各次运行结果。Mac续验按本机资源限制固定一个光栅线程；此参数变化视为参照变化，全部正式参照须重新生成，旧缓存不能充当新参照。首次验证及续验状态以各自报告为准，不能据此认为Linux或Mac整体验收通过。"
++  "说明": "实际完整启动参数与光栅状态保存至各次运行结果。Mac续验按本机资源限制固定一个光栅线程；此参数变化视为参照变化，全部正式参照须重新生成，旧缓存不能充当新参照。首次验证及续验状态以各自报告为准，不能据此认为Linux或Mac整体验收通过。",
++  "页面样式": "html,body{margin:0;background:transparent;-webkit-font-smoothing:antialiased}svg{display:block}",
++  "页面样式说明": "2026-11-11 用户定：参照页关掉 Mac 上 CoreText 的字形平滑。不关时 Chrome 画的字比字形轮廓粗约 9%，文字转轮廓过不了线；关掉后 36 组 2 倍相似度全部 ≥ 0.992。改了页面样式就等于换了参照，全部重出。",
++  "截图": "Page.captureScreenshot，不扩视口；连截到两次逐字节相同为止，最多 6 次（2026-11-11，修实验 1 的漏画）。"
+ }
+--- a/实验/text/run.mjs	2026-11-11 20:45:41
++++ b/实验/text/run.mjs	2026-11-11 20:45:41
+@@ -12,11 +12,13 @@
+  if(right<=x||bottom<=y)throw new Error('文字包围盒为空');
+  const result=new PNG({width:right-x,height:bottom-y});PNG.bitblt(image,result,x,y,result.width,result.height,0,0);return result;
+ }
+-export async function runText({platform=process.platform==='darwin'?'mac':'linux',output=path.join(root,'out',platform,'text')}={}){
+- await fs.mkdir(output,{recursive:true});const rows=[],result={实验:6,平台:platform,状态:'未验证',及格:false,阈值:{'2倍SSIM':0.98,字符位置差:0.1},结果:rows};let session;
++// smoothing='antialiased' 只用于诊断：给 SVG 根加 -webkit-font-smoothing，看 Mac 上文字比轮廓粗是不是 CoreText 平滑造成的。
++export async function runText({platform=process.platform==='darwin'?'mac':'linux',smoothing=null,output=path.join(root,'out',platform,smoothing?`text-${smoothing}`:'text')}={}){
++ await fs.mkdir(output,{recursive:true});const rows=[],result={实验:6,平台:platform,字体平滑:smoothing??'默认',状态:'未验证',及格:false,阈值:{'2倍SSIM':0.98,字符位置差:0.1},结果:rows};let session;
+  try{
+   const fonts=loadFonts();session=await createReferenceSession();
+-  for(const fixture of fixtures())for(const scale of [1,2]){
++  for(const base of fixtures())for(const scale of [1,2]){
++   const fixture=smoothing?{...base,svg:base.svg.replace('<svg ',`<svg style="-webkit-font-smoothing:${smoothing}" `)}:base;
+    const dir=path.join(output,fixture.id);await fs.mkdir(dir,{recursive:true});
+    const original=await session.render({svg:fixture.svg,scale,id:fixture.id});
+    // 从原始 text 读取字符接口。prepare 会等待固定字体加载。
+@@ -31,8 +33,10 @@
+    }
+    const box=records[0].box,a=crop(PNG.sync.read(original.png),box),b=crop(PNG.sync.read(outlined.png),box),comparison=compareImages(a,b,{line:'文字',scale});
+    await fs.writeFile(path.join(dir,`diff@${scale}x.png`),PNG.sync.write(comparison.差异图));delete comparison.差异图;
+-   const visible=converted.geometry.filter(g=>!g.empty),maxPosition=Math.max(0,...visible.map(g=>g.positionDelta));
+-   const row={id:fixture.id,倍率:scale,截图区域:box,比较:comparison,字符:converted.geometry,最大字符位置差:maxPosition,及格:scale===2?comparison.分组[0].指标.ssim>=0.98&&maxPosition<=0.1:null};
++   // 位置差 = 我们按字体度量摆出的字身框 和 getExtentOfChar 四条边的最大差（含空格）。
++   // 原来比的是墨迹框对字身框，口径不同，差值随字号线性变大，留作"墨迹框差"只看不判。
++   const visible=converted.geometry.filter(g=>!g.empty),maxPosition=Math.max(0,...converted.geometry.map(g=>g.cellDelta));
++   const row={id:fixture.id,倍率:scale,截图区域:box,比较:comparison,字符:converted.geometry,最大字符位置差:maxPosition,字身框差_按字体原值:Math.max(0,...converted.geometry.map(g=>g.cellRawDelta)),墨迹框差_只看不判:Math.max(0,...visible.map(g=>g.inkDelta)),及格:scale===2?comparison.分组[0].指标.ssim>=0.98&&maxPosition<=0.1:null};
+    rows.push(row);await fs.writeFile(path.join(dir,`result@${scale}x.json`),JSON.stringify(row,null,2));
+   }
+   result.状态='已运行';result.及格=rows.filter(r=>r.倍率===2).every(r=>r.及格);
+@@ -40,4 +44,4 @@
+  finally{try{if(session)await session.close();}catch(error){result.状态='清理失败';result.及格=false;result.清理错误=error.stack;process.exitCode=2;}await fs.writeFile(path.join(output,'result.json'),JSON.stringify(result,null,2));}
+  return result;
+ }
+-if(process.argv[1]===import.meta.filename){const result=await runText();console.log(JSON.stringify(result,null,2));if(!result.及格)process.exitCode=result.错误?2:1;}
++if(process.argv[1]===import.meta.filename){const at=process.argv.indexOf('--smoothing');const result=await runText({smoothing:at>0?process.argv[at+1]:null});console.log(JSON.stringify(result,null,2));if(!result.及格)process.exitCode=result.错误?2:1;}
+--- a/实验/text/page.mjs	2026-11-11 20:45:41
++++ b/实验/text/page.mjs	2026-11-11 20:45:41
+@@ -9,7 +9,7 @@
+   return {index:ti,id:text.id,box:rect(text.getBoundingClientRect()),characters:nodes.map(({ch,owner},i)=>{
+    const css=getComputedStyle(owner),p=text.getStartPositionOfChar(i);
+    if(css.writingMode!=='horizontal-tb')throw new Error('本实验只支持横排');
+-   return {index:i,char:ch,x:p.x,y:p.y,rotation:text.getRotationOfChar(i),extent:rect(text.getExtentOfChar(i)),size:parseFloat(css.fontSize),weight:Number(css.fontWeight),style:Object.fromEntries(props.map(k=>[k,css.getPropertyValue(k)]))};
++   return {index:i,char:ch,x:p.x,y:p.y,rotation:text.getRotationOfChar(i),extent:rect(text.getExtentOfChar(i)),size:parseFloat(css.fontSize),weight:Number(css.fontWeight),letterSpacing:parseFloat(css.letterSpacing)||0,style:Object.fromEntries(props.map(k=>[k,css.getPropertyValue(k)]))};
+   })};
+  });
+ }
+@@ -31,7 +31,14 @@
+   for(const c of record.characters){
+    // 父组 getBBox 让 Chrome 对旋转后的实际曲线求紧包围盒，不能旋转未转时的矩形代替。
+    const b=c.element.getBBox(),box={x:b.x,y:b.y,width:b.width,height:b.height},x=b.x,y=b.y;
+-   geometry.push({text:record.id,index:c.index,char:c.char,empty:c.path.length===0,chrome:c.extent,outline:box,positionDelta:c.path.length?Math.max(Math.abs(x-c.extent.x),Math.abs(y-c.extent.y)):null,edgeDelta:c.path.length?Math.max(Math.abs(x-c.extent.x),Math.abs(y-c.extent.y),Math.abs(x+box.width-c.extent.x-c.extent.width),Math.abs(y+box.height-c.extent.y-c.extent.height)):null});
++   // getExtentOfChar 是字身框：起点到（步进宽 + 字间距），上伸到下伸，再按字的转角取外接矩形。
++   // Chrome 的上伸、下伸在设备像素里取整（2 倍时按 2 倍字号取整再折回），所以分两种算：按字体原值，和按 Chrome 取整。
++   // 屏幕缩放系数照 Blink 的 SVG 文字算法：sqrt((a²+b²+c²+d²)/2)。
++   const m=group.getScreenCTM(),zoom=m?Math.sqrt((m.a*m.a+m.b*m.b+m.c*m.c+m.d*m.d)/2):1,snap=v=>Math.round(v*zoom)/zoom;
++   const cellBox=(ascent,descent)=>{const a=c.rotation*Math.PI/180,cos=Math.cos(a),sin=Math.sin(a),w=c.advance+c.letterSpacing;const pts=[[0,-ascent],[w,-ascent],[0,descent],[w,descent]].map(([u,v])=>[c.x+u*cos-v*sin,c.y+u*sin+v*cos]);const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);return {x:Math.min(...xs),y:Math.min(...ys),width:Math.max(...xs)-Math.min(...xs),height:Math.max(...ys)-Math.min(...ys)};};
++   const edges=(r,e)=>Math.max(Math.abs(r.x-e.x),Math.abs(r.y-e.y),Math.abs(r.x+r.width-e.x-e.width),Math.abs(r.y+r.height-e.y-e.height));
++   const cell=cellBox(snap(c.ascent),snap(c.descent)),cellRaw=cellBox(c.ascent,c.descent);
++   geometry.push({text:record.id,index:c.index,char:c.char,empty:c.path.length===0,chrome:c.extent,cell,cellDelta:edges(cell,c.extent),cellRawDelta:edges(cellRaw,c.extent),outline:box,inkDelta:c.path.length?Math.max(Math.abs(x-c.extent.x),Math.abs(y-c.extent.y)):null,edgeDelta:c.path.length?Math.max(Math.abs(x-c.extent.x),Math.abs(y-c.extent.y),Math.abs(x+box.width-c.extent.x-c.extent.width),Math.abs(y+box.height-c.extent.y-c.extent.height)):null});
+   }
+  }
+  return {svg:new XMLSerializer().serializeToString(document.querySelector('svg')),geometry};
+--- a/实验/text/outline.mjs	2026-11-11 20:45:41
++++ b/实验/text/outline.mjs	2026-11-11 20:45:41
+@@ -7,6 +7,8 @@
+   const font=fonts.get(c.weight);if(!font)throw new Error(`未支持字重 ${c.weight}`);
+   const glyph=font.glyphForCodePoint(c.char.codePointAt(0));
+   if(glyph.id===0)throw new Error(`字体缺字：${c.char}`);
+-  return {...c,glyphId:glyph.id,path:glyph.path.toSVG(),scale:c.size/font.unitsPerEm};
++  const scale=c.size/font.unitsPerEm;
++  // 字身框用：步进宽、上伸、下伸（hhea），单位换成像素。
++  return {...c,glyphId:glyph.id,path:glyph.path.toSVG(),scale,advance:glyph.advanceWidth*scale,ascent:font.ascent*scale,descent:-font.descent*scale};
+  })}));
+ }
+--- a/实验/text/README.md	2026-11-11 20:45:41
++++ b/实验/text/README.md	2026-11-11 20:45:41
+@@ -8,6 +8,12 @@
+ 
+ 字符接口从未替换的原始 text 读取；tspan 的位移与 textPath 的位置、转角已在接口结果里，不再应用第二遍。text 自身 transform 只复制到替换组一次。轮廓的 Y 轴反转，描边宽度和虚线距离除以字体缩放率。由 Chrome 对每个字形组求实际曲线包围盒，避免旋转未旋转矩形产生虚假的边界。空格保留定位信息，但没有墨迹，包围盒差写 null，不当成缺字或错误。
+ 
+-逐字墨迹包围盒和 getExtentOfChar 原值都保留。位置差定义为本地 SVG 坐标中 x/y 差的较大值，要求 ≤ 0.1；另报四边最大差供解释。字体字框与墨迹框可能语义不同，不能通过移动、拉伸轮廓或改判定线来掩盖。若实测不及格，保留数字供 Fable 决定下一步。
++**位置差怎么量（2026-11-11 Claude 改）**：`getExtentOfChar` 给的是字身框，不是墨迹框。所以位置差 = 我们自己按字体度量算出的字身框，和 `getExtentOfChar` 四条边的最大差（本地 SVG 坐标，含空格）。字身框 = 从字的起点（`getStartPositionOfChar`）开始，宽是步进宽（fontkit 的 advanceWidth）加字间距，高是从上伸到下伸（hhea 的 ascent / descent），再按字的转角（`getRotationOfChar`）旋转后取外接矩形。
+ 
++- Chrome 把上伸、下伸**在设备像素里取整**（例：1 倍 24px 时上伸 27.84 → 28；2 倍 48px 时按 96 设备像素算 111.36 → 111，折回是 55.5），判定用取整后的值（`最大字符位置差`）；按字体原值算的另报一个数（`字身框差_按字体原值`），只看不判。屏幕缩放系数照 Blink 的算法取 sqrt((a²+b²+c²+d²)/2)。
++- Chrome 的字的起点按 1/64 像素量化，在 0.1 像素线以内。
++- 原来的做法是拿墨迹框去比字身框，两个口径不同，差值随字号线性变大（14px 约 5.7、48px 约 20.3）。这个数仍报为 `墨迹框差_只看不判`。
++
++**2026-11-11 起参照页本身就关了字形平滑**（`tools/ref/index.mjs` 的页面样式，用户定），正式结果已经是关平滑的。下面这个开关是当时做诊断用的：`node 实验/text/run.mjs --smoothing antialiased` 会给 SVG 根加 `-webkit-font-smoothing:antialiased`，输出到 `out/<平台>/text-antialiased/`，用来看 Mac 上文字比轮廓粗是不是 CoreText 平滑造成的。不是正式结果。
++
+ 本实验仅涵盖指定的中文、ASCII 数字和空格。不把逐字 cmap 查找宣称为完整文字整形实现；如换成连字、组合字符、代理对或折叠空白导致 DOM 字符索引不对应，直接报错，不猜测字符映射。
+--- /dev/null
++++ b/tools/compare/blur.mjs
+@@ -0,0 +1,37 @@
++// 高斯模糊（预乘透明度后分两遍卷积，边上用镜像补），只给"冻结图对活图"这条防漏写检查用。
++// 活图里有动画的元素在单独的合成层上，先光栅再缩放，边缘发虚；先把两张图都模糊 1 像素，
++// 发虚造成的差就基本消掉，而写错属性造成的位置、颜色差还在。
++export function gaussianBlur(image, sigma = 1) {
++  const {width: w, height: h, data} = image;
++  const radius = Math.max(1, Math.ceil(sigma * 3));
++  const kernel = [];
++  let sum = 0;
++  for (let i = -radius; i <= radius; i++) { const v = Math.exp(-(i * i) / (2 * sigma * sigma)); kernel.push(v); sum += v; }
++  for (let i = 0; i < kernel.length; i++) kernel[i] /= sum;
++  const mirror = (i, n) => (i < 0 ? -i - 1 : i >= n ? 2 * n - i - 1 : i);
++
++  // 预乘：颜色 × 不透明度，避免透明像素的颜色渗进来。
++  const src = new Float32Array(w * h * 4);
++  for (let p = 0; p < w * h; p++) {
++    const a = data[p * 4 + 3] / 255;
++    src[p * 4] = data[p * 4] * a; src[p * 4 + 1] = data[p * 4 + 1] * a; src[p * 4 + 2] = data[p * 4 + 2] * a; src[p * 4 + 3] = data[p * 4 + 3];
++  }
++  const tmp = new Float32Array(w * h * 4);
++  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) for (let c = 0; c < 4; c++) {
++    let v = 0;
++    for (let k = -radius; k <= radius; k++) v += kernel[k + radius] * src[(y * w + mirror(x + k, w)) * 4 + c];
++    tmp[(y * w + x) * 4 + c] = v;
++  }
++  const out = new Uint8ClampedArray(w * h * 4);
++  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
++    const o = (y * w + x) * 4;
++    const px = [0, 0, 0, 0];
++    for (let k = -radius; k <= radius; k++) {
++      const s = (mirror(y + k, h) * w + x) * 4, kv = kernel[k + radius];
++      px[0] += kv * tmp[s]; px[1] += kv * tmp[s + 1]; px[2] += kv * tmp[s + 2]; px[3] += kv * tmp[s + 3];
++    }
++    const a = px[3] / 255;
++    out[o] = a > 0 ? px[0] / a : 0; out[o + 1] = a > 0 ? px[1] / a : 0; out[o + 2] = a > 0 ? px[2] / a : 0; out[o + 3] = px[3];
++  }
++  return {width: w, height: h, data: Buffer.from(out.buffer)};
++}
+--- /dev/null
++++ b/tools/ref/check-restart.mjs
+@@ -0,0 +1,86 @@
++// Chrome 断连回归：①真 Chrome 被杀后，请求要在几秒内报"已关闭"并带退出信息，不能白等 30 秒超时；
++// ②批量出图时会话死了，要重开 Chrome 并把这个动作重试一次。只杀本测试自己开的 Chrome 进程。
++import assert from 'node:assert/strict';
++import fs from 'node:fs/promises';
++import os from 'node:os';
++import path from 'node:path';
++import {PNG} from 'pngjs';
++import {openChrome, ChromeDisconnectedError} from '../chrome/index.mjs';
++import {runBatch} from './batch.mjs';
++import {sha256} from './index.mjs';
++
++// ① 真 Chrome
++const browser = await openChrome();
++try {
++  assert.equal(browser.alive(), true);
++  process.kill(browser.pid, 'SIGKILL');
++  const started = performance.now();
++  let error;
++  try {
++    // 第一次可能还没收到关闭事件，连发几次，任何一次都必须很快失败。
++    for (let i = 0; i < 3; i++) await browser.send('Runtime.evaluate', {expression: '1'});
++  } catch (e) {
++    error = e;
++  }
++  const elapsed = performance.now() - started;
++  assert(error instanceof ChromeDisconnectedError, `应报断连，实际：${error?.message}`);
++  assert(elapsed < 5000, `断连后 ${Math.round(elapsed)} 毫秒才报错`);
++  for (let i = 0; i < 50 && browser.alive(); i++) await new Promise(r => setTimeout(r, 100));
++  assert.equal(browser.alive(), false);
++  const again = await browser.send('Page.getFrameTree').then(() => null, e => e);
++  assert(again instanceof ChromeDisconnectedError, '关闭后再发请求必须立刻失败');
++  console.log(`真 Chrome：${Math.round(elapsed)} 毫秒报错；${again.message}`);
++} finally {
++  await browser.close();
++}
++
++// ② 批量重开（模拟会话，不出真图）
++const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'svg-ref-restart-'));
++try {
++  const fonts = {};
++  for (const weight of ['Regular', 'Bold']) {
++    const name = `NotoSansCJKsc-${weight}.otf`;
++    fonts[name] = sha256(await fs.readFile(path.resolve(import.meta.dirname, '../../素材/字体', name)));
++  }
++  let sessions = 0;
++  const factory = async ({mode, freezePolicy}) => {
++    const index = ++sessions;
++    let dead = false;
++    return {
++      freezePolicy, fonts,
++      browser: {
++        pid: 1000 + index, alive: () => !dead,
++        gpuInfo: {browser: 'Chrome/157.0.8103.50', rasterization: 'disabled_software'},
++        flags: ['--user-data-dir=/tmp/test'],
++        evaluate: async () => ({period: 0, animated: false}),
++      },
++      prepare: async () => {
++        // 第一个会话一开工就"断连"。
++        if (index === 1) { dead = true; throw new ChromeDisconnectedError('Chrome 调试连接已关闭（模拟）'); }
++        return {width: 4, height: 4};
++      },
++      render: async ({scale, time, id, action, oplog}) => {
++        const image = new PNG({width: 4 * scale, height: 4 * scale});
++        image.data.fill(0);
++        const png = PNG.sync.write(image);
++        return {png, livePng: png, svg: '<svg/>', verification: {通过: true, 轨道数: 0, 错误: []},
++          metadata: {素材: id, 动作: action.名字, 时刻: time, 倍率: scale, 冻结策略: freezePolicy, 文字区域: []},
++          ...(oplog ? {oplog: [{commands: [{method: 'drawRect'}]}]} : {})};
++      },
++      sampleValues: async ({id, action}) => ({id, 动作: action.名字, 步长毫秒: 20, 时刻: [0], 轨: []}),
++      close: async () => {},
++    };
++  };
++  const source = path.join(tmp, 'fixture.svg');
++  await fs.writeFile(source, '<svg viewBox="0 0 4 4"/>');
++  const manifest = [{id: '试验图/试验图', 文件: source, 染色: false, 动作: [{名字: '待机', 种类: '循环'}]}];
++  const report = await runBatch({manifest, out: path.join(tmp, 'out'), cache: false, sessionFactory: factory, sessionOptions: {freezePolicy: 'value-only'}});
++  assert.equal(sessions, 2, '断连后应重开一个会话');
++  assert.equal(report.浏览器重开?.length, 1);
++  assert.deepEqual(report.错误, []);
++  assert(report.通过, JSON.stringify(report.错误));
++  console.log('批量重开：断连后重开 1 次，动作重试成功');
++} finally {
++  await fs.rm(tmp, {recursive: true, force: true});
++}
++console.log('断连回归通过');
+--- /dev/null
++++ b/tools/ref/check-units.mjs
+@@ -0,0 +1,40 @@
++// 带单位的 SMIL 长度回归：百分比 / em / 用户单位的 startOffset、r、x 冻结后必须保留原单位，
++// 冻结图要和活图对得上。原来用 SVGLength.value 写回，百分比按视口换算，startOffset 的文字转错位置。
++import assert from 'node:assert/strict';
++import {createReferenceSession} from './index.mjs';
++import {PNG} from 'pngjs';
++
++const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
++  <path id="ring" d="M 100,20 A 80,80 0 1,1 99.9,20" fill="none"/>
++  <text font-family="Noto Sans CJK SC" font-size="14" fill="#123">
++    <textPath id="pct" href="#ring" startOffset="0%">百分比沿圆排的文字ABC<animate attributeName="startOffset" values="0%;60%" dur="2s" repeatCount="indefinite"/></textPath>
++  </text>
++  <text font-family="Noto Sans CJK SC" font-size="10" fill="#a33">
++    <textPath id="user" href="#ring" startOffset="0">用户单位<animate attributeName="startOffset" values="0;200" dur="2s" repeatCount="indefinite"/></textPath>
++  </text>
++  <circle id="r" cx="100" cy="100" r="5%" fill="#3a6"><animate attributeName="r" values="5%;15%" dur="2s" repeatCount="indefinite"/></circle>
++  <rect id="em" x="1em" y="150" width="20" height="20" font-size="10" fill="#36a"><animate attributeName="x" values="1em;10em" dur="2s" repeatCount="indefinite"/></rect>
++</svg>`;
++
++const session = await createReferenceSession();
++try {
++  const frame = await session.render({svg, id: '单位夹具', scale: 1, time: 1300});
++  const frozen = frame.svg;
++  const attr = (id, name) => frozen.match(new RegExp(`id="${id}"[^>]*?${name}="([^"]*)"`))?.[1] ?? frozen.match(new RegExp(`${name}="([^"]*)"[^>]*?id="${id}"`))?.[1];
++  const pct = attr('pct', 'startOffset'), user = attr('user', 'startOffset'), r = attr('r', 'r'), em = attr('em', 'x');
++  console.log({pct, user, r, em});
++  assert.match(pct, /^39(\.\d+)?%$/, `百分比 startOffset 应保留 %：${pct}`);
++  assert.match(r, /^11(\.\d+)?%$/, `百分比 r 应保留 %：${r}`);
++  assert.match(em, /^6\.85\d*em$/, `em 的 x 应保留 em：${em}`);
++  assert(Math.abs(Number(user) - 130) < 0.01, `用户单位 startOffset 仍写数字：${user}`);
++  assert(frame.verification.通过, JSON.stringify(frame.verification.错误));
++  // 冻结图对活图：逐像素最大差很小（同一时刻，文字位置一致）。
++  const a = PNG.sync.read(frame.png), b = PNG.sync.read(frame.livePng);
++  let worst = 0;
++  for (let i = 0; i < a.data.length; i++) worst = Math.max(worst, Math.abs(a.data[i] - b.data[i]));
++  console.log('冻结图对活图最大通道差', worst);
++  assert(worst <= 16, `冻结图和活图差太多：${worst}`);
++} finally {
++  await session.close();
++}
++console.log('单位回归通过');
+--- /dev/null
++++ b/实验/capture/probe.mjs
+@@ -0,0 +1,72 @@
++// 截图稳定性定向实验：用正式出图流程反复出同一帧，看冻结图是否每次逐字节相同。
++// 用法：node 实验/capture/probe.mjs <做法> [次数] [素材id] [毫秒] [前一帧：毫秒@倍率，默认 同毫秒@1]
++//   做法：new（现在的默认：截到连续两次相同、不扩视口）| current（原做法）| no-beyond（截图不扩视口）| all-stages（加 --run-all-compositor-stages-before-draw）
++//        | stable（截到连续两次相同为止）| all-stages-no-beyond
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import {createReferenceSession, sha256} from '../../tools/ref/index.mjs';
++import {resolveAssetPath} from '../../tools/scan/path.mjs';
++
++const ROOT = path.resolve(import.meta.dirname, '../..');
++const [variant = 'current', countText = '20', assetId = '复杂测试图/scene_hall', timeText = '2666.6667', previousText] = process.argv.slice(2);
++const count = Number(countText);
++const time = Number(timeText);
++const scale = 2;
++const [previousTime, previousScale] = previousText ? previousText.split('@').map(Number) : [time, 1];
++
++const manifest = JSON.parse(await fs.readFile(path.join(ROOT, '素材/清单.json'), 'utf8'));
++const assets = Array.isArray(manifest) ? manifest : manifest.素材;
++const asset = assets.find(a => a.id === assetId);
++if (!asset) throw new Error(`清单里没有 ${assetId}`);
++const action = asset.动作[0];
++const svg = await fs.readFile(resolveAssetPath(asset), 'utf8');
++
++const platform = process.platform === 'darwin' ? 'mac' : 'linux';
++const formalFile = path.join(ROOT, 'out', platform, 'ref', assetId, action.名字, `${time}@${scale}x.png`);
++const formalHash = sha256(await fs.readFile(formalFile));
++
++const extra = variant.startsWith('all-stages') ? ['--run-all-compositor-stages-before-draw'] : [];
++const session = await createReferenceSession({extra});
++const originalShot = session.frozen.shot;
++const beyond = !variant.endsWith('no-beyond');
++const send = session.frozen.send;
++const rawShot = async clip => Buffer.from((await send('Page.captureScreenshot', {format: 'png', clip: {...clip, scale: 1}, captureBeyondViewport: beyond})).data, 'base64');
++if (variant === 'stable') {
++  session.frozen.shot = async clip => {
++    let previous = await rawShot(clip);
++    for (let i = 0; i < 10; i++) {
++      const next = await rawShot(clip);
++      if (next.equals(previous)) return next;
++      previous = next;
++    }
++    throw new Error('连截 10 次仍不稳定');
++  };
++} else if (variant === 'current') {
++  // 原做法：一次截图、扩视口。
++  session.frozen.shot = async clip => Buffer.from((await send('Page.captureScreenshot', {format: 'png', clip: {...clip, scale: 1}, captureBeyondViewport: true})).data, 'base64');
++} else if (variant !== 'new') {
++  session.frozen.shot = rawShot;
++}
++
++const outDir = path.join(ROOT, 'out', platform, 'capture-probe', `${variant}-前${previousTime}@${previousScale}`);
++await fs.mkdir(outDir, {recursive: true});
++const rows = [];
++try {
++  for (let i = 0; i < count; i++) {
++    // 正式流程里 2 倍帧之前总有 1 倍帧，视口会从 1920 变到 3840；这里照样走一遍。
++    await session.render({svg, id: assetId, action, scale: previousScale, time: previousTime});
++    const started = performance.now();
++    const frame = await session.render({svg, id: assetId, action, scale, time});
++    const hash = sha256(frame.png);
++    const same = hash === formalHash;
++    if (!same) await fs.writeFile(path.join(outDir, `${i}.png`), frame.png);
++    rows.push({次: i, 哈希: hash, 等于正式参照: same, 毫秒: Math.round(performance.now() - started), 截图次数: frame.metadata.截图次数?.冻结图 ?? null});
++    console.log(`${variant} ${i + 1}/${count} ${same ? '相同' : '不同'} ${hash.slice(0, 12)} ${rows.at(-1).毫秒}ms 截图${rows.at(-1).截图次数 ?? '-'}次`);
++  }
++} finally {
++  await session.close();
++}
++const distinct = new Set(rows.map(r => r.哈希)).size;
++const summary = {做法: variant, 前一帧: `${previousTime}@${previousScale}x`, 素材: assetId, 毫秒: time, 倍率: scale, 次数: count, 不同哈希数: distinct, 等于正式参照: rows.filter(r => r.等于正式参照).length, 启动参数补充: extra, 截图扩视口: beyond, 行: rows};
++await fs.writeFile(path.join(outDir, '结果.json'), JSON.stringify(summary, null, 2));
++console.log(JSON.stringify({做法: variant, 次数: count, 不同哈希数: distinct, 等于正式参照: summary.等于正式参照}));
+--- /dev/null
++++ b/实验/capture/live-probe.mjs
+@@ -0,0 +1,42 @@
++// 活图对冻结图差异的定向实验：同几个素材分别用不同的 Chrome 参数出图，
++// 看冻结图是否和正式参照逐字节相同、活图对冻结图相似度是否回到 0.95 以上。
++// 用法：node 实验/capture/live-probe.mjs <名字> [--flag ...] -- <素材id> ...
++import fs from 'node:fs/promises';
++import path from 'node:path';
++import {runBatch} from '../../tools/ref/batch.mjs';
++import {sha256} from '../../tools/ref/index.mjs';
++
++const ROOT = path.resolve(import.meta.dirname, '../..');
++const args = process.argv.slice(2);
++const name = args.shift();
++const split = args.indexOf('--');
++const extra = split < 0 ? [] : args.slice(0, split);
++const ids = split < 0 ? args : args.slice(split + 1);
++const platform = process.platform === 'darwin' ? 'mac' : 'linux';
++const formal = path.join(ROOT, 'out', platform);
++const out = path.join(ROOT, 'out', platform, 'capture-probe', 'live-' + name);
++
++const report = await runBatch({ids, out, cache: false, sessionOptions: {extra}});
++const rows = [];
++for (const action of report.动作) {
++  for (const frame of action.帧) {
++    const mine = await fs.readFile(path.join(out, frame.文件));
++    const theirs = await fs.readFile(path.join(formal, frame.文件)).catch(() => null);
++    rows.push({素材: action.素材, 动作: action.动作, 时刻: frame.时刻, 倍率: frame.倍率, 相似度: frame.相似度, 相似度_模糊后: frame.相似度_模糊后 ?? null, 通过: frame.通过,
++      冻结图等于正式参照: theirs ? sha256(mine) === sha256(theirs) : null});
++  }
++}
++const byAction = {};
++for (const r of rows) {
++  const key = `${r.素材}/${r.动作}`;
++  byAction[key] ??= {帧数: 0, 最低相似度: 1, 低于095: 0, 未通过: 0, 冻结图不同于正式参照: 0};
++  const a = byAction[key];
++  a.帧数++;
++  a.最低相似度 = Math.min(a.最低相似度, r.相似度);
++  if (r.相似度 < 0.95) a.低于095++;
++  if (!r.通过) a.未通过++;
++  if (r.冻结图等于正式参照 === false) a.冻结图不同于正式参照++;
++}
++const summary = {名字: name, 参数: extra, 错误: report.错误, 按动作: byAction, 行: rows};
++await fs.writeFile(path.join(out, '实验结果.json'), JSON.stringify(summary, null, 2));
++console.log(JSON.stringify({名字: name, 参数: extra, 错误数: report.错误.length, 按动作: byAction}, null, 1));
