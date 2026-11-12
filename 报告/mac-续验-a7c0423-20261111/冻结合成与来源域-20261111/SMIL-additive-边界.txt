@@ -1,1 +1,0 @@
-通过：两个同来源SMIL additive合并为最终animVal矩阵，值复核通过、SSIM=1、冻结无动画，未添加CSS合成提示并保留原hint。

@@ -1,1 +1,0 @@
-通过：none原样、合法translate(50%)兼容回退；CSS字符串相等但完整CTM漂移超过0.001仍拒绝；逐20ms来源数组记录none→CSSOM回退→Typed OM。

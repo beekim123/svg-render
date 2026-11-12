@@ -1,9 +1,0 @@
-通过：1倍真实前缀/普通SVG的活图与冻结PNG逐字节一致；冻结再载入保持namespace/viewBox和HTML字体样式上下文。
-通过：1倍普通SVG根/带前缀子元素与普通SVG的活图、冻结PNG逐字节一致；子元素namespace和冻结再载入均正确。
-通过：1倍前缀外根/普通嵌套svg与普通等价图的活图、冻结PNG及冻结重载逐字节一致；正确保留200×200外根及外层图元。
-通过：2倍真实前缀/普通SVG的活图与冻结PNG逐字节一致；冻结再载入保持namespace/viewBox和HTML字体样式上下文。
-通过：2倍普通SVG根/带前缀子元素与普通SVG的活图、冻结PNG逐字节一致；子元素namespace和冻结再载入均正确。
-通过：2倍前缀外根/普通嵌套svg与普通等价图的活图、冻结PNG及冻结重载逐字节一致；正确保留200×200外根及外层图元。
-通过：fixture/malformed-prefixed.svg明确拒绝，并保留来源和解析原因。
-通过：fixture/not-svg.xml明确拒绝，并保留来源和解析原因。
-通过：fixture/wrong-namespace.svg明确拒绝，并保留来源和解析原因。

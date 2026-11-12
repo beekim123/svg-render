@@ -1,2 +1,0 @@
-nice: setpriority: Operation not permitted
-时间线离线测试通过：1234ms触发、循环不重置、结束动画回跳、取消动画不复活。尚非Chrome行为验证。

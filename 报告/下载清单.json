@@ -1,22 +1,50 @@
 {
-  "已下载": [
+  "平台": "mac-arm64",
+  "缓存目录": "/private/tmp/svg-render-mac-cache",
+  "已有下载归档": [
     {
-      "文件": "emscripten-7.0.0-linux.tar.xz",
-      "字节": 322310412,
-      "sha256": "6e7c6d26cf8bde31e6cf6a377c113f913cb2d30f4c2d671c1042e1c4bcd16495",
-      "缓存路径": "/workspace/shared/svg-render-cache/downloads/emscripten-7.0.0-linux.tar.xz"
+      "文件": "chrome-mac-arm64.zip",
+      "字节": 196583703,
+      "缓存路径": "/private/tmp/svg-render-mac-cache/downloads/chrome-mac-arm64.zip"
     },
     {
-      "文件": "chrome-linux64.zip",
-      "字节": 203527334,
-      "sha256": "d17167bc092eb495a3b768c7467f27e35f625aa03834233a1663af67dcb668c9",
-      "缓存路径": "/workspace/shared/svg-render-cache/downloads/chrome-linux64.zip"
+      "文件": "gn-mac-arm64.zip",
+      "字节": 828016,
+      "缓存路径": "/private/tmp/svg-render-mac-cache/downloads/gn-mac-arm64.zip"
+    },
+    {
+      "文件": "ninja-mac-arm64.zip",
+      "字节": 145520,
+      "缓存路径": "/private/tmp/svg-render-mac-cache/downloads/ninja-mac-arm64.zip"
     }
   ],
-  "Skia提交": "ca84ce0a6f1659748188469a89361ccea71e3a64",
-  "额外已批准工具": {
-    "GN": "b2afae122eeb6ce09c52d63f67dc53fc517dbdc8",
-    "Ninja": "1.12.1.chromium.4"
+  "Chrome": {
+    "版本": "157.0.8103.50",
+    "目录": "/private/tmp/svg-render-mac-cache/chrome/157.0.8103.50"
   },
-  "Mac": "尚未下载；用户机器使用~/Library/Caches/svg-render/"
+  "Skia": {
+    "提交": "ca84ce0a6f1659748188469a89361ccea71e3a64",
+    "源码": "/private/tmp/svg-render-mac-cache/skia/ca84ce0a6f1659748188469a89361ccea71e3a64",
+    "构建源码与依赖": "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64"
+  },
+  "公开测试集": {
+    "项目": "resvg",
+    "提交": "500d8605a28ac092c1b146c06ec65c0e70e99ec4",
+    "目录": "/private/tmp/svg-render-mac-cache/tests/resvg/500d8605a28ac092c1b146c06ec65c0e70e99ec4"
+  },
+  "构建工具": {
+    "GN": "b2afae122eeb6ce09c52d63f67dc53fc517dbdc8",
+    "Ninja": "1.12.1.chromium.4",
+    "目录": "/private/tmp/svg-render-mac-cache/build-tools"
+  },
+  "npm": {
+    "固定依赖": {
+      "fontkit": "2.0.4",
+      "pngjs": "7.0.0"
+    },
+    "安装目录": "node_modules",
+    "缓存目录": "/private/tmp/svg-render-mac-cache/npm"
+  },
+  "本次新增下载": [],
+  "Emscripten": "Mac 单平台方案不使用"
 }

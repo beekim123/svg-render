@@ -1,5 +1,0 @@
-value-only rule-sign-200-1x：SSIM=0.9101903858765885；原像素线=false；值复核=true；PNG逐字节相同=false
-value-only rainbow-red-100-1x：SSIM=0.9452977100891061；原像素线=false；值复核=true；PNG逐字节相同=false
-preserve-layers rule-sign-200-1x：SSIM=1；原像素线=true；值复核=true；PNG逐字节相同=true
-preserve-layers rainbow-red-100-1x：SSIM=1；原像素线=true；值复核=true；PNG逐字节相同=true
-对照通过：默认两帧值通过但像素未过线；显式候选两帧仍无动画、CTM不变且PNG逐字节相同。候选未成为默认验收标准。

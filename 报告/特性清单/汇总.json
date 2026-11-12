@@ -1,0 +1,2976 @@
+{
+  "扫描素材数": 1960,
+  "正式登记数": 1384,
+  "公开登记数": 1222,
+  "公开排除数": 576,
+  "正式清单未知待决数": 0,
+  "分类": {
+    "不支持": [
+      {
+        "特性": "元素/a",
+        "素材数": 6,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/a/inside-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/inside-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/on-shape",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/svg/mixed-namespaces",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "元素/feImage",
+        "素材数": 32,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/filters/feImage/chained-feImage",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/embedded-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/empty",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-on-an-element-with-complex-transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-on-an-element-with-transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-to-an-element-outside-defs-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-to-an-element-outside-defs-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-to-an-element-with-opacity",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-to-an-element-with-transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-to-an-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-to-an-invalid-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-to-g",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/link-to-use",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/preserveAspectRatio=none",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/recursive-links-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/recursive-links-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/recursive-links-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/self-recursive",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/shared-with-objectBoundingBox-gradient",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/with-subregion-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/with-subregion-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/with-subregion-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/with-subregion-4",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/with-subregion-5",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/with-x-y-and-protruding-subregion-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/with-x-y-and-protruding-subregion-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/with-x-y",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter/on-group-with-child-outside-of-canvas",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter/with-transform-outside-of-canvas",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/image-rendering/on-feImage",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "元素/image",
+        "素材数": 67,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/resources/image-033",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clip/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clipPath/image-is-not-a-valid-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/mask/with-grayscale-image",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/mask/with-image",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/image-rendering/high-quality",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/image-rendering/optimizeSpeed-on-SVG",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/image-rendering/optimizeSpeed",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/marker/with-an-image-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-16bit-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-gif",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-jpeg-as-image-jpeg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-jpeg-as-image-jpg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-jpeg-luma",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-jpeg-without-mime",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-png-luma",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-svg-with-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-svg-without-mime",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-svgz",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-webp",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-gif",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-jpeg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-svg-with-transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-svgz",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-webp",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/float-size",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/image-with-float-size-scaling",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/nested-embedded-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/nested-external-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-height-non-square",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-height-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-and-height-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-and-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/objectBoundingBox-clip-on-sliced-image",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=none-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=none",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-meet-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-meet",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-slice-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-slice",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-meet-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-meet",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-slice-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-slice",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-meet-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-meet",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-slice-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-slice",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/raster-image-and-size-with-odd-numbers",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/recursive-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/url-to-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/url-to-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/width-and-height-set-to-auto",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/with-transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/with-zero-width-and-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/zero-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/zero-width",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/symbol/with-size-on-use-and-relative-units",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/transform-origin/on-image",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "元素/switch",
+        "素材数": 14,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/masking/clipPath/switch-is-not-a-valid-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/comment-as-first-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/display-none-on-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/non-SVG-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/requiredFeatures",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/single-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=en-GB",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=en-US",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=en",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=ru-Ru",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=ru-en",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/with-attributes",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "属性/systemLanguage",
+        "素材数": 16,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=en-GB",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=en-US",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=en",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=ru-Ru",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/systemLanguage=ru-en",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/en-GB",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/en-US",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/en",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/on-clipPath",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/on-defs",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/on-linearGradient",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/ru-Ru",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/ru-en",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "禁止/3D变换",
+        "素材数": 2,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-2",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "禁止/backdrop-filter",
+        "素材数": 2,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-2",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "禁止/image",
+        "素材数": 67,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/resources/image-033",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clip/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clipPath/image-is-not-a-valid-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/mask/with-grayscale-image",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/mask/with-image",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/image-rendering/high-quality",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/image-rendering/optimizeSpeed-on-SVG",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/image-rendering/optimizeSpeed",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/marker/with-an-image-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-16bit-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-gif",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-jpeg-as-image-jpeg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-jpeg-as-image-jpg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-jpeg-luma",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-jpeg-without-mime",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-png-luma",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-svg-with-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-svg-without-mime",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-svgz",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/embedded-webp",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-gif",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-jpeg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-svg-with-transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-svgz",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-webp",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/float-size",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/image-with-float-size-scaling",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/nested-embedded-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/nested-external-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-height-non-square",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-height-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-and-height-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-and-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/objectBoundingBox-clip-on-sliced-image",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=none-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=none",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-meet-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-meet",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-slice-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMaxYMax-slice",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-meet-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-meet",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-slice-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMidYMid-slice",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-meet-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-meet",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-slice-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/preserveAspectRatio=xMinYMin-slice",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/raster-image-and-size-with-odd-numbers",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/recursive-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/url-to-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/url-to-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/width-and-height-set-to-auto",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/with-transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/with-zero-width-and-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/zero-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/zero-width",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/symbol/with-size-on-use-and-relative-units",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/transform-origin/on-image",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "禁止/transition",
+        "素材数": 2,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-2",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "禁止/外部资源",
+        "素材数": 35,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/resources/image-033",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/feImage/svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clipPath/image-is-not-a-valid-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/paint-servers/radialGradient/invalid-xlink-href",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/marker/with-an-image-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/inside-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/inside-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/on-shape",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-gif",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-jpeg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-svgz",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/external-webp",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/float-size",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-height-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-and-height-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-and-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width-on-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/no-width",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/raster-image-and-size-with-odd-numbers",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/recursive-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/url-to-png",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/url-to-svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/width-and-height-set-to-auto",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/with-zero-width-and-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/zero-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/image/zero-width",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/xlink-to-an-external-file",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-an-external-file-element",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "禁止/系统字体",
+        "素材数": 432,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/resources/simple-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-0percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-100percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-200percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-50percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-default-value",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/filters/filter-functions/color-adjust-functions-negative",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clipPath/clip-path-with-transform-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clipPath/clipping-with-complex-text-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clipPath/clipping-with-complex-text-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clipPath/clipping-with-complex-text-and-clip-rule",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/masking/clipPath/clipping-with-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/paint-servers/pattern/text-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/context/with-gradient-on-text-decoration-in-use",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/context/with-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/display/none-on-tref",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/display/none-on-tspan-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/display/none-on-tspan-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/fill/linear-gradient-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/fill/pattern-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/fill/radial-gradient-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/fill-opacity/on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/marker/marker-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/marker/with-a-text-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/paint-order/on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/paint-order/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/shape-rendering/optimizeSpeed-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/stroke/linear-gradient-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/stroke/pattern-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/stroke/radial-gradient-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/stroke-opacity/on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/visibility/bbox-impact-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/visibility/collapse-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/painting/visibility/hidden-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/inside-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/inside-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/a/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/defs/style-inheritance-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/svg/mixed-namespaces",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/svg/not-UTF-8-encoding",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/systemLanguage/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/transform-origin/on-text-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/transform-origin/on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/after-edge",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/alphabetic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/auto",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/baseline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/before-edge",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/central",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/hanging-and-baseline-shift-eq-20-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/hanging-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/hanging-on-vertical",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/hanging-with-underline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/hanging",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/ideographic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/inherit",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/mathematical",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/middle-on-textPath",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/middle",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/text-after-edge",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/text-before-edge",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/alignment-baseline/two-textPath-with-middle-on-first",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/-10",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/-50percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/0",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/10",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/2mm",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/50percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/baseline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/deeply-nested-super",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/inheritance-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/inheritance-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/inheritance-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/inheritance-4",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/inheritance-5",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/invalid-value",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/mixed-nested",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/nested-length",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/nested-super",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/nested-with-baseline-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/nested-with-baseline-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/sub",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/super",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/baseline-shift/with-rotate",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/cbdt",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/colrv0",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/colrv1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/compound-emojis-and-coordinates-list",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/compound-emojis",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/mixed-text-rtl",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/mixed-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/sbix",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/svg",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/color-font/writing-mode=tb",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/direction/rtl-with-vertical-writing-mode",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/direction/rtl",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/alignment-baseline-and-baseline-shift-on-tspans",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/alignment-baseline=baseline-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/alphabetic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/auto",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/central",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/complex",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/different-alignment-baseline-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/dummy-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/equal-alignment-baseline-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/hanging",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/ideographic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/inherit",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/inherited-through-nested-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/mathematical",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/middle",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/nested",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/no-change",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/reset-size",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/sequential",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/text-after-edge",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/text-before-edge",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/dominant-baseline/use-script",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font/font-shorthand",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/bold-sans-serif",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/cursive",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/double-quoted",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/fallback-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/fallback-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/fantasy",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/font-list",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/monospace",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/noto-sans-malayalam-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/noto-sans",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/sans-serif",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/serif",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-family/source-sans-pro",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-kerning/arabic-script",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-kerning/as-property",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-kerning/none",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/em-nested-and-mixed",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/em-on-the-root-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/em",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/ex-nested-and-mixed",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/ex-on-the-root-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/ex",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/inheritance",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/mixed-values",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/named-value-without-a-parent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/named-value",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/negative-size",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/nested-percent-values-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/nested-percent-values-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/percent-value-without-a-parent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/percent-value",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/zero-size-on-parent-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/zero-size-on-parent-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/zero-size-on-parent-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size/zero-size",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-size-adjust/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-stretch/extra-condensed",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-stretch/inherit",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-stretch/narrower",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-style/inherit",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-style/italic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-style/oblique",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variant/inherit",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variant/small-caps",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/all-axes-combined",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/auto-font-stretch-condensed",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/auto-font-style-oblique",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/auto-font-weight-700",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/explicit-overrides-auto",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/grad-negative",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/multiple-axes",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/opsz-144",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/slnt-negative",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/wdth-151",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/wdth-25",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/wght-100",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/wght-700",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-variation-settings/xtra-extreme",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/650",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/700",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/bold",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/bolder-with-clamping",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/bolder-without-parent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/bolder",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/inherit",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/invalid-number-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/lighter-with-clamping",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/lighter-without-parent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/lighter",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/font-weight/normal",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/glyph-orientation-horizontal/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/glyph-orientation-vertical/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/kerning/0",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/kerning/10percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/lengthAdjust/spacingAndGlyphs",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/lengthAdjust/text-on-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/lengthAdjust/vertical",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/lengthAdjust/with-underline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/0",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/1mm",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/5percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/filter-bbox",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/large-negative",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/mixed-scripts",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/mixed-spacing",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/non-ASCII-character",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/normal",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/letter-spacing/on-Arabic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/bidi-reordering",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/complex-grapheme-split-by-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/complex-graphemes-and-coordinates-list",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/complex-graphemes",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/dx-and-dy-instead-of-x-and-y",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/dx-and-dy-with-less-values-than-characters",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/dx-and-dy-with-more-values-than-characters",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/dx-and-dy-with-multiple-values",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/em-and-ex-coordinates",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/escaped-text-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/escaped-text-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/escaped-text-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/escaped-text-4",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/fill-rule=evenodd",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/filter-bbox",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/glyph-splitting",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/ligatures-handling-in-mixed-fonts-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/ligatures-handling-in-mixed-fonts-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/mm-coordinates",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/nested",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/no-coordinates",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/percent-value-on-dx-and-dy",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/percent-value-on-x-and-y",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/real-text-height",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/rotate-on-Arabic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/rotate-with-an-invalid-angle",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/rotate-with-less-values-than-characters",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/rotate-with-more-values-than-characters",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/rotate-with-multiple-values-and-complex-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/rotate-with-multiple-values-underline-and-pattern",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/rotate-with-multiple-values",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/rotate",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/x-and-y-with-dx-and-dy-lists",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/x-and-y-with-dx-and-dy",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/x-and-y-with-less-values-than-characters",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/x-and-y-with-more-values-than-characters",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/x-and-y-with-multiple-values-and-arabic-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/x-and-y-with-multiple-values-and-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/x-and-y-with-multiple-values",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/xml-lang=ja",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/xml-space",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text/zalgo",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/arabic-with-dx",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/coordinates-list",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/end-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/end-with-letter-spacing",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/inheritance-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/inheritance-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/inheritance-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/invalid-value-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/middle-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/negative-dx",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/on-the-first-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/on-tspan-with-arabic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/start-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-anchor/text-anchor-not-on-text-chunk",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/all-types-inline-comma-separated",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/all-types-inline-no-spaces",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/all-types-inline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/all-types-nested",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/indirect-with-multiple-colors",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/indirect",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/line-through",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/outside-the-text-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/overline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/style-resolving-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/style-resolving-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/style-resolving-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/style-resolving-4",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/tspan-decoration",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/underline-with-dy-list-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/underline-with-dy-list-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/underline-with-dy-on-arabic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/underline-with-rotate-list-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/underline-with-rotate-list-4",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/underline-with-y-list",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/underline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-decoration/with-textLength-on-a-single-character",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-rendering/geometricPrecision",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-rendering/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-rendering/optimizeLegibility",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-rendering/optimizeSpeed",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/text-rendering/with-underline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/150-on-parent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/150-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/150",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/40mm",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/75percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/arabic-with-lengthAdjust",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/arabic",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/inherit",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/negative",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/on-a-single-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/on-text-and-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textLength/zero",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/arabic-with-dy",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/closed-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/complex",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/dy-with-tiny-coordinates",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/invalid-link",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/invalid-textPath-in-the-middle",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/link-to-rect",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/m-A-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/m-L-Z-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/method=stretch",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/mixed-children-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/mixed-children-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/nested",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/no-link",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/path-with-ClosePath",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/path-with-subpaths-and-startOffset",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/path-with-subpaths",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/side=right",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/simple-case",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/spacing=auto",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/startOffset=-100",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/startOffset=10percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/startOffset=30",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/startOffset=5mm",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/startOffset=9999",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/tspan-with-absolute-position",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/tspan-with-relative-position",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/two-paths",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/very-long-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-baseline-shift-and-rotate",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-baseline-shift",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-big-letter-spacing",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-coordinates-on-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-coordinates-on-textPath",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-error-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-filter",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-invalid-path-and-xlink-href",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-letter-spacing",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-path-and-xlink-href",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-rotate",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-text-anchor",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-transform-on-a-referenced-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-transform-outside-a-referenced-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/with-underline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/textPath/writing-mode=tb",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-a-complex-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-a-non-SVG-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-a-non-text-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-an-external-file-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/nested",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/position-attributes",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/style-attributes",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/with-a-title-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/with-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/xml-space",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/arabic-with-dy",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/bidi-reordering",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/mixed-font-size",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/mixed-xml-space-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/mixed-xml-space-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/mixed-xml-space-3",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/mixed",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/multiple-coordinates",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/nested-rotate",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/nested-whitespaces",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/nested",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/only-with-y",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/outside-the-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/pseudo-multi-line",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/rotate-and-display-none",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/rotate-on-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/sequential",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/style-override",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/text-shaping-across-multiple-tspan-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/text-shaping-across-multiple-tspan-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/transform",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/tspan-bbox-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/tspan-bbox-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/with-clip-path",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/with-dy",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/with-filter",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/with-mask",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/with-opacity",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/with-x-and-y",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/without-attributes",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/xml-space-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tspan/xml-space-2",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/unicode-bidi/bidi-override",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/word-spacing/-5",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/word-spacing/0",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/word-spacing/10",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/word-spacing/2mm",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/word-spacing/5percent",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/word-spacing/large-negative",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/word-spacing/normal",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/arabic-with-rl",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/horizontal-tb",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/inheritance",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/invalid-value",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/japanese-with-tb",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/lr-tb",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/lr",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/mixed-languages-with-tb-and-underline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/mixed-languages-with-tb",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/rl-tb",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/rl",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-and-punctuation",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-rl",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-with-alignment",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-with-dx-on-second-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-with-dx-on-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-with-dy-on-second-tspan",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-with-negative-dy-and-text-anchor",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-with-rotate-and-underline",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb-with-rotate",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/tb",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/vertical-lr",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/writing-mode/vertical-rl",
+            "已登记": false
+          }
+        ]
+      }
+    ],
+    "没登记": [
+      {
+        "特性": "元素/not-a-text",
+        "素材数": 2,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/text/tref/link-to-a-non-SVG-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-an-external-file-element",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "元素/random",
+        "素材数": 4,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/svg/rect-inside-a-non-SVG-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/switch/non-SVG-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/xlink-to-a-child-of-a-non-SVG-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/xlink-to-an-invalid-element-2",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "元素/tref",
+        "素材数": 12,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/painting/display/none-on-tref",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-a-complex-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-a-non-SVG-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-a-non-text-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-an-external-file-element",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/link-to-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/nested",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/position-attributes",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/style-attributes",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/with-a-title-child",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/with-text",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/text/tref/xml-space",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "元素命名空间/http://example.org/notsvg/a",
+        "素材数": 1,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/svg/mixed-namespaces",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "元素命名空间/http://www.example.org/notsvg/rect",
+        "素材数": 1,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/svg/xmlns-validation",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "描边/vector-effect/",
+        "素材数": 2,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-2",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "混合/",
+        "素材数": 2,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-2",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "混合/plus-lighter",
+        "素材数": 1,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/painting/mix-blend-mode/plus-lighter",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "渐变/spreadMethod/invalid",
+        "素材数": 2,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/paint-servers/linearGradient/invalid-spreadMethod",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/paint-servers/radialGradient/invalid-spreadMethod",
+            "已登记": false
+          }
+        ]
+      },
+      {
+        "特性": "裁剪/",
+        "素材数": 2,
+        "正式登记数": 0,
+        "素材": [
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-1",
+            "已登记": false
+          },
+          {
+            "id": "公开测试集/tests/structure/use/nested-recursive-2",
+            "已登记": false
+          }
+        ]
+      }
+    ]
+  }
+}

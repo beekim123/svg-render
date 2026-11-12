@@ -1,4 +1,0 @@
-TypeError: style is not iterable
-    at declaration (<anonymous>:10:45)
-    at scanPage (<anonymous>:15:3)
-    at <anonymous>:48:3

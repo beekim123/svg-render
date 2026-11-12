@@ -1,8 +1,0 @@
-{
-  "目标": "linux-x64",
-  "Skia": "ca84ce0a6f1659748188469a89361ccea71e3a64",
-  "构建秒": 85.143,
-  "静态库字节": 14564420,
-  "静态库": "/workspace/shared/svg-render-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-linux-x64/libskia.a",
-  "说明": "这只是静态库构建记录，尚非动态库体积、实验5或Mac验收通过。"
-}

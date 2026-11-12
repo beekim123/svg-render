@@ -1,6 +1,0 @@
-rule-sign-200-1x 基线 SSIM=0.9101903858765885，CTM最大差=0.000002800458332785638，值复核=true
-rule-sign-200-1x typed-functions SSIM=0.9101903858765885，CTM最大差=0，值复核=true
-rule-sign-200-1x will-change SSIM=1，CTM最大差=0.000002800458332785638，值复核=true
-rainbow-red-100-1x 基线 SSIM=0.9452977100891061，CTM最大差=9.5367431640625e-7，值复核=true
-rainbow-red-100-1x typed-functions SSIM=0.9452977100891061，CTM最大差=0，值复核=true
-rainbow-red-100-1x will-change SSIM=1，CTM最大差=9.5367431640625e-7，值复核=true
