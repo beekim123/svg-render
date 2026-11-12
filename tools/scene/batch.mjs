@@ -7,6 +7,7 @@ const phase = args.shift();
 const option = (name, fallback) => args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
 const selected = args.flatMap((arg, index) => arg === '--id' ? [args[index + 1]] : []);
 const root = path.resolve(option('--out', 'out/mac/新画法'));
+const referenceDirectory = phase === 'compare' ? path.resolve(option('--ref', path.join(root, 'ref'))) : path.join(root, 'ref');
 const binary = path.resolve(option('--binary', 'out/mac/scene/scene-draw'));
 const reportDirectory = path.resolve(option('--report', '报告/阶段1A'));
 
@@ -20,12 +21,12 @@ async function files(directory, extension) {
   return result.sort();
 }
 
-const images = (await files(path.join(root, 'ref'), '.png')).filter(file => {
-  const id = path.relative(path.join(root, 'ref'), file).split(path.sep).slice(0, 2).join('/');
+const images = (await files(referenceDirectory, '.png')).filter(file => {
+  const id = path.relative(referenceDirectory, file).split(path.sep).slice(0, 2).join('/');
   return !selected.length || selected.includes(id) || selected.includes(id.replace(/@[0-9a-f]{6}$/i, ''));
 });
 if (!images.length) throw new Error('没有所选参照帧');
-const relative = file => path.relative(path.join(root, 'ref'), file);
+const relative = file => path.relative(referenceDirectory, file);
 
 if (phase === 'export') {
   const {createSceneExportSession} = await import('./export.mjs');
@@ -60,7 +61,7 @@ if (phase === 'export') {
     const target = path.join(root, 'compare', id);
     await fs.rm(path.join(target, '结果.json'), {force: true});
     const result = spawnSync(process.execPath, [
-      'tools/compare/cli.mjs', path.join(root, 'ref', id), path.join(root, 'skia', id),
+      'tools/compare/cli.mjs', path.join(referenceDirectory, id), path.join(root, 'skia', id),
       '--线', '静止', '--报告', target,
     ], {encoding: 'utf8', maxBuffer: 16 * 1024 * 1024});
     if (result.error || result.status > 2 || result.status === null) {
@@ -77,11 +78,17 @@ if (phase === 'export') {
     worst = worst.slice(0, 20);
     console.log(`${id}: ${data.汇总.通过数}/${data.汇总.配对数}`);
   }
-  await writeStageReport(reportDirectory, {rows, worst});
+  await writeStageReport(reportDirectory, {
+    rows,
+    worst,
+    detailsFile: path.join(root, 'compare', '结果.json'),
+    referenceDirectory,
+    skiaDirectory: path.join(root, 'skia'),
+  });
   console.log(`对照报告：${reportDirectory}/index.html`);
   if (rows.some(row => !row.通过)) process.exitCode = 1;
 } else {
-  throw new Error('用法：node tools/scene/batch.mjs export|draw|compare [--id 新画法/素材] [--out out/mac/新画法]');
+  throw new Error('用法：node tools/scene/batch.mjs export|draw|compare [--id 新画法/素材] [--out out/mac/新画法] [--ref 参照目录]');
 }
 console.log(`${phase}: ${images.length} 帧`);
 
