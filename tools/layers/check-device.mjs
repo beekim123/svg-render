@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {structureLayers, setReferenceRects, relativePose, compileDeviceLayers} from './device.mjs';
+
+const shape = {type: 'path', path: 'M0 0H2V3H0Z', matrix: [1,0,0,1,0,0], bounds: [0,0,2,3], fill: {type: 'color', color: [1,0,0,1]}, stroke: null, opacity: 1, clips: []};
+const scene = {width: 80, height: 60, nodes: [{type:'layer', node:0, matrix:[1,0,0,1,0,0], opacity:1, clips:[], children:[{type:'layer', node:10, matrix:[1,0,0,1,0,0], opacity:1, clips:[], children:[shape]}]}]};
+const structure = structureLayers(scene, [{node:10,property:'transform'}]);
+const references = {0:[1,0,0,1,0,0],10:[0,1,-1,0,10.25,20.5]};
+setReferenceRects(structure, references);
+const first = {matrices: references, locals: references, opacities:{0:1,10:1}};
+const second = {matrices:{0:references[0],10:[0,1,-1,0,14.25,20.5]}, locals:{0:references[0],10:[0,1,-1,0,14.25,20.5]}, opacities:{0:1,10:1}};
+const compiled = compileDeviceLayers(structure, {references, actions:[{times:[0,20], samples:[first,second]}]});
+assert.equal(compiled.jobs.length, 1);
+assert.deepEqual(compiled.jobs[0].scene.nodes[0].matrix, [0,2,-2,0,7.5,1]);
+assert.deepEqual([compiled.jobs[0].scene.width,compiled.jobs[0].scene.height],[9,6]);
+assert.deepEqual(compiled.root.children[0].children[0].rect,[6.5,20,4.5,3]);
+assert.deepEqual(relativePose(structure.layers,references,second)[10],[1,0,0,1,4,0]);
+const singular = {matrices:{0:[0,0,0,0,0,0],10:[0,0,0,0,0,0]},locals:{0:[0,0,0,0,0,0],10:[1,0,0,1,3,4]},opacities:{0:0,10:1}};
+const upright={0:[1,0,0,1,0,0],10:[1,0,0,1,0,0]};
+assert.deepEqual(relativePose(structure.layers,upright,singular)[10],[1,0,0,1,3,4]);
+console.log('设备空间：静态祖先旋转、小数位移、整数像素栅格、相对D与奇异父姿态通过');

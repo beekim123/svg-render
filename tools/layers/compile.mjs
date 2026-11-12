@@ -30,7 +30,7 @@ function union(rects) {
   return [left, top, right - left, bottom - top];
 }
 
-function transformClips(clips, matrix) {
+export function transformClips(clips, matrix) {
   return (clips || []).map(clip => ({paths: clip.paths.map(item => ({...item, matrix: multiply(matrix, item.matrix)}))}));
 }
 
@@ -40,7 +40,7 @@ function transformPaint(paint, matrix) {
   return {...paint, matrix: multiply(matrix, paint.matrix)};
 }
 
-function flatten(node, parent = identity) {
+export function flatten(node, parent = identity) {
   const current = multiply(parent, node.matrix || identity);
   if (node.type === 'layer' || node.type === 'group') {
     return {
@@ -59,7 +59,7 @@ function flatten(node, parent = identity) {
   };
 }
 
-function contentBounds(node) {
+export function contentBounds(node) {
   if (node.type === 'group') return union(node.children.map(contentBounds).filter(Boolean));
   return transformBounds(node.bounds, node.matrix);
 }
