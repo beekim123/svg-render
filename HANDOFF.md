@@ -55,10 +55,35 @@ export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM
 nice -n 10 npm run mac
 ```
 
-## 下一步与执行人
+## 下一步：阶段 0 收尾（GPT 做）
 
-- 本轮全量与报告整理结束，当前无需用户操作。
-- Claude 的计时探针和提速建议见 [`实验记录/full-run-speedup.md`](实验记录/full-run-speedup.md)；简短总结见 [`实验记录/mac-full-run-review.md`](实验记录/mac-full-run-review.md)。
-- 下一次本来就需要全量时，由接手的编码代理按提速方案实施并做定向复核，随后跑全量；这一轮结束后不为提速另跑一遍。
+> 2026-11-12 用户定：阶段方向、阈值、判法由 Claude 审核决定，Claude 拿不准时才问 Fable。`docs/` 里写"Fable 定"的地方，现在都找 Claude。
+
+全量已经通过，下面只用现有的 `out/mac/` 结果，**不重跑全量**，不改 `tools/ref/`、`tools/chrome/`。
+
+1. **7 份实验记录按 Mac 实测重写**（`实验记录/实验1`–`实验7`，现在还是 `24980aa` 的 Linux 版）。每份写：状态、关键数字、一句结论；有坑写一行。实验 7 写"没做"。数字从 `报告/mac/` 和上面的验收表取。
+2. **对照报告样例重新生成**：用 `npm run compare` 对 `out/mac/ref` 和 `out/mac/live`，挑相似度最低的 20 帧，图片缩小，输出到 `报告/对照样例/`，替换 Linux 时期的旧版。浏览器直接打开 `index.html` 要能看。
+3. **特性清单汇总网页放进 `报告/`**：把 `out/mac/scan/index.html` 和它引用的数据复制到 `报告/特性清单/`，附"不支持"和"没登记"两个列表。
+4. **删掉过时内容**：
+   - `报告/linux/`；
+   - `报告/mac-续验-a7c0423-20261111/` 只留 `Claude审核结论.md`、`Claude修复记录.md`、`Claude修复证据/`、`问题清单-交Claude审核.md`、`指令校准.md`，其余过程文件全删（历史在 `git log`）；
+   - `实验记录/mac-full-run-review.md`（内容已被 `full-run-speedup.md` 覆盖）。
+5. **本文件补齐需求第 8 节**，每项几行：
+   - 每个实验一句话结论和关键数字；
+   - 测试图里用到的"不支持"和"拿不准"的特性；
+   - 出全部参照用了多久、`out/mac/` 占多少磁盘；
+   - 下载了什么、放在哪；
+   - 阶段 1 会再遇到的坑（至少：截图要等稳定、合成层发虚、Mac 字形平滑、`SVGLength` 百分比、断连）；
+   - 要 Claude 决定的问题，一条一行。
+6. 跑 `npm run check`（快速模式）和 `npm run check:wording`，都通过后提交到 `stage-0`。不推送。
+
+做完给用户回 5 行以内：做了什么、`报告/` 多大、有哪些要 Claude 决定的问题。
+
+## 之后
+
+- Claude 审核收尾结果，定最终阈值（看 `报告/mac/Chrome自己的差.json`），写阶段 1 需求。
+- 用户打开 `报告/对照样例/index.html`，确认看得懂。
+- 推送到 GitHub 的 `stage-0` 由用户决定。
+- 提速方案见 [`实验记录/full-run-speedup.md`](实验记录/full-run-speedup.md)，等下一次本来就要跑全量时再做。
 - 改动工具指纹文件或重编 Skia 后，重跑实验 5；24 份指令指纹不变、像素 24/24 时更新 `实验/micro/calibration.json` 的文件指纹。
 - 结果异常时先做单素材、单帧对照；原因一小时内未查明，交最小复现给 Claude。
