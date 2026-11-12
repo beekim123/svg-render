@@ -1,75 +1,64 @@
 # 阶段 0 交接
 
-> 2026-11-11，Claude 写给接手的编码代理（GPT）。先读 [`AGENTS.md`](AGENTS.md)。
-> 更早的 Linux 检查点版本在 git 历史里（`a7c0423` 的 `HANDOFF.md`）。
+> 2026-11-12。先读 [`AGENTS.md`](AGENTS.md)。
 
 ## 现在在哪
 
-- 检出：`/private/tmp/svg-render-mac-volume/svg-render`，分支 `stage-0`。这是一个区分大小写的临时卷，用前先 `mount | grep svg-render-mac-volume` 确认还挂着。
-- 提交：`466d5e1` 是 GPT 首轮的 45 文件改动和报告；`4dadf7f` 是 Claude 的修复和用户定的判法；`8760465` 重签了实验 5 的校准凭据；之后一个提交加了本文件、`AGENTS.md` 和用词检查。
-- **还没推送**。`origin` 是本机临时副本 `/private/tmp/svg-render-stage-0-mac`，不是 GitHub。推不推送，等用户说。
-- 缓存：`/private/tmp/svg-render-mac-cache`（Chrome、Skia、公开测试集都在这里，已下载、已编译）。
+- 检出：`/private/tmp/svg-render-mac-volume/svg-render`，分支 `stage-0`。这是区分大小写的临时卷，用前运行 `mount | rg svg-render-mac-volume`。
+- 本轮测试源提交：`d96358fcbb55239b3e754b32e882a7c9fc26d810`。启动时工作区干净；本轮渲染工具未改动。
+- 本轮报告、计时探针和提速方案随本提交保存。验收数据见 [`报告/mac/验收.json`](报告/mac/验收.json)，步骤与时间见 [`报告/mac/步骤.json`](报告/mac/步骤.json)。
+- 缓存：`/private/tmp/svg-render-mac-cache`。完整逐帧产物和原始日志：`out/mac/`。
+- 未推送。`origin` 是本机副本 `/private/tmp/svg-render-stage-0-mac`；推送由用户另行决定。
 
-## 已经定下的事（不要再问）
+## 已经定下的事
 
-1. 实验 2 第 2 条（冻结图对活图）：原图相似度 ≥ 0.95，或两张图各做 σ=1 像素高斯模糊后 ≥ 0.95。见 `阈值.json` 的"冻结对活图"、`tools/ref/batch.mjs` 的 `freezeAgainstLive`。
-2. 参照页关掉 Mac 字形平滑（`-webkit-font-smoothing:antialiased`），见 `参照版本.json` 的"页面样式"。
-3. 截图连截到两次逐字节相同为止，最多 6 次，不扩视口；每帧 `.json` 记 `截图次数`。
-4. 整个项目只用 Mac，不做 Linux 参照、Linux 对 Mac、Linux 版 Skia / WASM。
+1. 冻结图对活图：原图 SSIM ≥ 0.95，或各做 σ=1 像素高斯模糊后 SSIM ≥ 0.95。
+2. 参照页使用 `-webkit-font-smoothing:antialiased`。
+3. 截图连截到两次逐字节相同，最多 6 次，不扩视口；每帧元数据记录 `截图次数`。
+4. 整个项目只用 Mac。
 5. x64 动态库用 Rosetta 跑 28 模式探针。
 6. 冻结策略 `value-only`；`systemLanguage` 不支持。
 
-为什么这样定、证据在哪：`报告/mac-续验-a7c0423-20261111/Claude修复记录.md`。
+判法和修复依据：[`Claude修复记录.md`](报告/mac-续验-a7c0423-20261111/Claude修复记录.md)。
 
-## 已验证（定向复核，不是全量）
+## 验收（Mac 全量技术检查）
 
-| 项目 | 结果 |
-|---|---|
-| 实验 1 漏画 | 原截图方式在正式流程顺序下 9 次坏 1 次；新方式 30 次 0 次。抽样 5 个素材 440 帧，冻结图和旧参照逐字节相同 |
-| 实验 2 | fx_circle 修好（最低 0.988）；5 个问题素材 302 帧按新判法全部通过 |
-| 实验 4 | arm64 2,379,832 字节、x64 2,532,024 字节；两种都 28/28 |
-| 实验 5 | 24/24，校准凭据有效 |
-| 实验 6 | 及格：2 倍最低 0.9923，位置差最大 0.028 |
-| 空图 | 3 个合法空图出 0 层指令记录 |
-| 断连 | 杀掉 Chrome 后 27 毫秒报错，批量出图会重开重试 |
-| 回归 | `tools/**/check-*.mjs` 18 个全部通过 |
+| # | 检查 | 结果 |
+|---|---|---|
+| 1 | 环境 | 通过 1 轮，darwin / arm64，Chrome 157.0.8103.50 |
+| 2 | 对照工具自测 | 通过 1 项，退出码 0 |
+| 3 | 覆盖 | 通过 1,384 素材，1,509/1,509 动作，8,722 帧 |
+| 4 | 可重复（实验 1） | 通过 8,722/8,722 帧逐字节相同，两遍各 1,509 动作，缓存命中 0 |
+| 5 | 冻结正确（实验 2） | 通过 1,509/1,509 动作 |
+| 6 | 特性清单 | 通过 1,384 素材，公开登记 1,222、排除 576 |
+| 7 | 指令记录 | 通过 0 缺少、3 合法空图 |
+| 8 | 实验 4、5、6 | 通过 2 种动态库：arm64 2,379,832 字节、x64 2,532,024 字节，各 28/28；实验 5 为 24/24，实验 6 的 2 倍组为 36/36 |
+| 9 | 只读目录 | 通过 266 文件，变化 0 |
+| 10 | Mac 验证 | 通过 1 轮 Mac 原生运行 |
 
-## 下一步：跑全量
+## 本轮核对
+
+- 纽约时间 2026-11-11 21:15:21 至 2026-11-12 02:34:48，耗时 5 小时 19 分 27 秒；`npm run mac` 退出码 0。
+- 冻结截图：本轮 8,722 帧中 2 次 8,712 帧、3 次 10 帧；目录另有 16 条旧元数据缺截图次数。
+- 活图截图：2 次 8,385 帧、3 次 308 帧、4 次 29 帧。
+- 8,716 到 8,722 的增量来自 3 个合法空图，各恢复 0 毫秒的 1x、2x 帧：`extra/hidden-element`、`extra/horizontal-line-no-stroke`、`tests/structure/svg/no-children`。其余 1,506 动作的时间表与周期相同。
+- 素材登记的 `重新筛选已有登记` 为 0；`systemLanguage` 排除 16 项，清单未知待决 0。
+- 报告合计 14,301,193 字节。`Chrome自己的差.json` 保留原汇总、运行证据、错误及两组帧数；逐帧明细在 `out/mac/noise/报告/自身差/结果.json`，完整日志在 `out/mac/运行日志.txt`。
+- 自动归档的 6 个文件与已提交版本逐字节相同，已清理；旧生成对照样例 3 个文件从报告中移除，可从 `d96358f` 恢复。
+- 补充检查命令：`node --check 实验/capture/timing-probe.mjs`、暂存后 `npm run check:wording`。
+
+本轮命令：
 
 ```sh
-cd /private/tmp/svg-render-mac-volume/svg-render
 export SVG_RENDER_CACHE=/private/tmp/svg-render-mac-cache SVG_RENDER_JOBS=1
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 nice -n 10 npm run mac
 ```
 
-要出 4 遍全部素材（正式参照、GPU 参照、实验 1 两遍），机器忙时大约 4–5 小时。Claude 跑到"参照"那一步时停了，`out/mac/` 里有部分新产物，缓存会接着用。
+## 下一步与执行人
 
-跑完看这几样：
-
-1. `报告/mac/验收.json` 十项。重点：实验 1 两遍 8,716 帧逐字节相同；覆盖 1,509/1,509 动作；第 7 项指令记录（含 3 个空图）。
-2. 统计 `out/mac/ref/**/*.json` 的 `截图次数`：冻结图有多少帧截了 3 次以上，写一行进本文件。
-3. `报告/素材登记.json` 会被重写。Claude 中途试跑时看到"重新筛选已有登记"清空、多出一批 `systemLanguage` 排除记录，像是正常结果，核对一下。
-4. `npm run mac` 每次会把旧的 `报告/mac/` 复制到 `报告/mac-归档-<时间>/`。确认和已提交的内容相同后删掉，`报告/` 要在 20 MB 以内。
-5. 把下面"验收"表填上实测结果，提交 `报告/mac/` 和本文件。
-
-## 验收（全量后填）
-
-| # | 检查 | 结果 |
-|---|---|---|
-| 1 | 环境 | |
-| 2 | 对照工具自测 | |
-| 3 | 覆盖 | |
-| 4 | 可重复（实验 1） | |
-| 5 | 冻结正确（实验 2） | |
-| 6 | 特性清单 | |
-| 7 | 指令记录 | |
-| 8 | 实验 4、5、6 | |
-| 9 | 只读目录 | |
-| 10 | Mac 验证 | |
-
-## 出问题怎么办
-
-- 哪一步失败：在上表写"未通过"和一行原因。
-- 原因一小时内查不出来：留下最小复现（素材、帧、命令、两张图），交给 Claude 诊断。
-- 改了 `tools/chrome/index.mjs`、`tools/chrome/svg.mjs`、`tools/ref/index.mjs`、`tools/ref/page.mjs`、`tools/ref/verify.mjs`、`参照版本.json`、`实验/micro/` 下的文件、`实验/skia/chromium-config.h`，或重新编译了 Skia，实验 5 的校准凭据都会失效。处理办法：重跑实验 5，确认 24 份指令指纹不变、像素 24/24 后，只更新 `实验/micro/calibration.json` 的文件指纹（做法见 `8760465`）。
+- 本轮全量与报告整理结束，当前无需用户操作。
+- Claude 的计时探针和提速建议见 [`实验记录/full-run-speedup.md`](实验记录/full-run-speedup.md)；简短总结见 [`实验记录/mac-full-run-review.md`](实验记录/mac-full-run-review.md)。
+- 下一次本来就需要全量时，由接手的编码代理按提速方案实施并做定向复核，随后跑全量；这一轮结束后不为提速另跑一遍。
+- 改动工具指纹文件或重编 Skia 后，重跑实验 5；24 份指令指纹不变、像素 24/24 时更新 `实验/micro/calibration.json` 的文件指纹。
+- 结果异常时先做单素材、单帧对照；原因一小时内未查明，交最小复现给 Claude。

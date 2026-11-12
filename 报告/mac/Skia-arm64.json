@@ -1,0 +1,264 @@
+{
+  "target": "mac-arm64",
+  "Skia": "ca84ce0a6f1659748188469a89361ccea71e3a64",
+  "compiler": "clang++",
+  "link_and_smoke_seconds": 5.565,
+  "bytes": 2379832,
+  "sha256": "a66a93625bae58fe9acf7e1d091fe2222408e530792be0746efb41111f5816ce",
+  "exports": "0000000000000758 T _svg_render_probe\n",
+  "architecture": "/private/tmp/svg-render-mac-volume/svg-render/out/mac/skia/mac-arm64/libsvg-render-probe.dylib: Mach-O 64-bit dynamically linked shared library arm64\n",
+  "build_pass": true,
+  "runtime_validation": "28模式全部通过",
+  "modes": [
+    {
+      "mode": 0,
+      "return_code": 0,
+      "nonzero_alpha": 10055,
+      "sha256": "df1e2ef4b8a0e53b31521a3fc01655129204c462c2b0443af77f59031ec6f6f3"
+    },
+    {
+      "mode": 1,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "43ad40e68104d6dd2fbbca194a7d862e65c37eebbbb1899d39ab4317799b5a57"
+    },
+    {
+      "mode": 2,
+      "return_code": 0,
+      "nonzero_alpha": 16381,
+      "sha256": "8010643dd433544cecc8b8f77291aa228c8fb84044d5db336144047537e40f10"
+    },
+    {
+      "mode": 3,
+      "return_code": 0,
+      "nonzero_alpha": 11776,
+      "sha256": "6b65f5376d3c0a793e089d965c7717fe6922f3bcee35040c7d0372cea4acf5ae"
+    },
+    {
+      "mode": 4,
+      "return_code": 0,
+      "nonzero_alpha": 7100,
+      "sha256": "38713b495828b9536c5902dbc9350b56dca408141a0326c94668804f85336122"
+    },
+    {
+      "mode": 5,
+      "return_code": 0,
+      "nonzero_alpha": 7809,
+      "sha256": "d7b9c13ed0d64dee273adc5b477174df0a1aa3d9eeca977e1dceab624131ba90"
+    },
+    {
+      "mode": 6,
+      "return_code": 0,
+      "nonzero_alpha": 9355,
+      "sha256": "9a4fb427458b3f99d92f87454215fbbfb9929d034198ac257517b9b0bdb7ded1"
+    },
+    {
+      "mode": 7,
+      "return_code": 0,
+      "nonzero_alpha": 8739,
+      "sha256": "1913feb4836e57eefbb2c8c084d8a016eb5f608e1406ffbf0d12660a0fd9dc5a"
+    },
+    {
+      "mode": 8,
+      "return_code": 0,
+      "nonzero_alpha": 6179,
+      "sha256": "c612271a839e977f6a619a4213c8373e37ac7a51fc9b1b89221cdc4402394739"
+    },
+    {
+      "mode": 9,
+      "return_code": 0,
+      "nonzero_alpha": 7832,
+      "sha256": "6be58950145b79be4aa80d58c7c0a011ef5e11033ccbc823859b1c47ed7cae7e"
+    },
+    {
+      "mode": 10,
+      "return_code": 0,
+      "nonzero_alpha": 6179,
+      "sha256": "dea9fb35eb2e3b88dac884f2163bbb95ab50855442d0b58387f3f45be5eb7cb9"
+    },
+    {
+      "mode": 11,
+      "return_code": 0,
+      "nonzero_alpha": 7795,
+      "sha256": "5baf4f6a180d95b56de9e688af421b0a485f8de58a6039ab107c6763af0cffad"
+    },
+    {
+      "mode": 12,
+      "return_code": 0,
+      "nonzero_alpha": 6789,
+      "sha256": "1f84a98f9bf5c2b27be0214a9b91a0e1ee5f8cc0a676ef2a46d50361e3746e70"
+    },
+    {
+      "mode": 13,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "1b308ae2829d080cb47d9ef5467f0d0fe7d7f1f6f4d686121d9a114921691602"
+    },
+    {
+      "mode": 14,
+      "return_code": 0,
+      "nonzero_alpha": 6172,
+      "sha256": "865f3a21eb051a47c2f9a32921d6da48da492fd4d6af2c439b3b6f2e13197dc0"
+    },
+    {
+      "mode": 15,
+      "return_code": 0,
+      "nonzero_alpha": 7131,
+      "sha256": "85e9cf2eddeb26b2c55da4e8b713080cdd431f62ee22740b1cac009848bef1f9"
+    },
+    {
+      "mode": 16,
+      "return_code": 0,
+      "nonzero_alpha": 5248,
+      "sha256": "cfe83ed8f9c47b0306d96c1d413189fb25d91786d09201858ab43a5adfb7c287"
+    },
+    {
+      "mode": 17,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "06594186c66ced16169507b8a553cab628ac1d4f1ad5e2a2eaacbb95fddcf275"
+    },
+    {
+      "mode": 18,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "ba0b0addf0d5fc2e5f6029797892bb808a12ab98a8c9c191508c4fe020b8bd76"
+    },
+    {
+      "mode": 19,
+      "return_code": 0,
+      "nonzero_alpha": 16384,
+      "sha256": "943b10cba434acf897d0a47cc3b3722cf3f6366e1da44fa160ed9c017ab832a7"
+    },
+    {
+      "mode": 20,
+      "return_code": 0,
+      "nonzero_alpha": 15942,
+      "sha256": "06f2c8f6a307a072e1e4b9089c6ebf0ed8928ddafb35aea7de73db143635dbe9"
+    },
+    {
+      "mode": 21,
+      "return_code": 0,
+      "nonzero_alpha": 15707,
+      "sha256": "19a648542ed4c7105f8e529455b2f913cb07f09b80fecbf8c9019b8c5d1bc7c2"
+    },
+    {
+      "mode": 22,
+      "return_code": 0,
+      "nonzero_alpha": 15483,
+      "sha256": "47ef39ebc87e0b940a3daf5805e00cec7988efd4e4f52a813b21d234e7b61e86"
+    },
+    {
+      "mode": 23,
+      "return_code": 0,
+      "nonzero_alpha": 6083,
+      "sha256": "0a801f5f2ccb692f6186bf041562ce36447247133fab901ea862535b65135e02"
+    },
+    {
+      "mode": 24,
+      "return_code": 0,
+      "nonzero_alpha": 12427,
+      "sha256": "c8ae4238062fd5ad392455e21c5c4082f31a9993ce5109fee72488bce78e5d1d"
+    },
+    {
+      "mode": 25,
+      "return_code": 0,
+      "nonzero_alpha": 6180,
+      "sha256": "8793efee85029964547e3680d91b5bf51b40bdf90f9689b76ce4e01cc779c163"
+    },
+    {
+      "mode": 26,
+      "return_code": 0,
+      "nonzero_alpha": 8706,
+      "sha256": "4846800c03c3db3de40e275436577d6015b844cb2fbee2f929b2fafe3d049c73"
+    },
+    {
+      "mode": 27,
+      "return_code": 0,
+      "nonzero_alpha": 4543,
+      "sha256": "20ca45c6f7d347eb2641cecc9e3f069d660496fa15eac4c5398bf6167c829dc3"
+    }
+  ],
+  "commands": [
+    {
+      "command": "clang++",
+      "args": [
+        "-std=c++20",
+        "-DNDEBUG",
+        "-DSK_USER_CONFIG_HEADER=\"/private/tmp/svg-render-mac-volume/svg-render/实验/skia/chromium-config.h\"",
+        "-I/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64",
+        "-O3",
+        "-ffp-contract=off",
+        "-flto=thin",
+        "-arch",
+        "arm64",
+        "-fPIC",
+        "-fvisibility=hidden",
+        "-dynamiclib",
+        "-Wl,-dead_strip",
+        "-Wl,-exported_symbol,_svg_render_probe",
+        "-Wl,-undefined,error",
+        "/private/tmp/svg-render-mac-volume/svg-render/实验/skia/capabilities.cpp",
+        "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64/libskia.a",
+        "/private/tmp/svg-render-mac-cache/skia-build-source/ca84ce0a6f1659748188469a89361ccea71e3a64/out/stage0-mac-arm64/libskcms.a",
+        "-pthread",
+        "-o",
+        "/private/tmp/svg-render-mac-volume/svg-render/out/mac/skia/mac-arm64/libsvg-render-probe.dylib"
+      ],
+      "cwd": "/private/tmp/svg-render-mac-volume/svg-render"
+    },
+    {
+      "command": "file",
+      "args": [
+        "/private/tmp/svg-render-mac-volume/svg-render/out/mac/skia/mac-arm64/libsvg-render-probe.dylib"
+      ],
+      "cwd": "/private/tmp/svg-render-mac-volume/svg-render"
+    },
+    {
+      "command": "nm",
+      "args": [
+        "-gU",
+        "/private/tmp/svg-render-mac-volume/svg-render/out/mac/skia/mac-arm64/libsvg-render-probe.dylib"
+      ],
+      "cwd": "/private/tmp/svg-render-mac-volume/svg-render"
+    },
+    {
+      "command": "python3",
+      "args": [
+        "-c",
+        "import ctypes, hashlib, json, sys\nl=ctypes.CDLL(sys.argv[1]); f=l.svg_render_probe\nf.argtypes=[ctypes.c_uint,ctypes.POINTER(ctypes.c_ubyte),ctypes.c_int,ctypes.c_int]; f.restype=ctypes.c_int\nrows=[]\nfor mode in range(28):\n b=(ctypes.c_ubyte*(128*128*4))(); code=f(mode,b,128,128); raw=bytes(b)\n rows.append({'mode':mode,'return_code':code,'nonzero_alpha':sum(raw[i]>0 for i in range(3,len(raw),4)),'sha256':hashlib.sha256(raw).hexdigest()})\nprint(json.dumps(rows))\n",
+        "/private/tmp/svg-render-mac-volume/svg-render/out/mac/skia/mac-arm64/libsvg-render-probe.dylib"
+      ],
+      "cwd": "/private/tmp/svg-render-mac-volume/svg-render"
+    },
+    {
+      "command": "size",
+      "args": [
+        "/private/tmp/svg-render-mac-volume/svg-render/out/mac/skia/mac-arm64/libsvg-render-probe.dylib"
+      ],
+      "cwd": "/private/tmp/svg-render-mac-volume/svg-render"
+    }
+  ],
+  "scope": "28模式运行冒烟与体积。",
+  "size_command": "__TEXT\t__DATA\t__OBJC\tothers\tdec\thex\n1884160\t16384\t0\t491520\t2392064\t248000\n",
+  "section_bytes": {
+    "__TEXT": 1884160,
+    "__DATA": 16384,
+    "__OBJC": 0
+  },
+  "section_convention": "Apple size 的 __TEXT/__DATA/__OBJC；__TEXT含代码及只读数据，不冒称纯机器指令大小",
+  "size_limit_decimal_bytes": 6000000,
+  "size_pass": true,
+  "must_pause": false,
+  "提交": "d96358fcbb55239b3e754b32e882a7c9fc26d810",
+  "测试时工作区有修改": false,
+  "代码工作区有修改": false,
+  "工作区记录时点": "运行开始",
+  "工作区状态": "",
+  "源码补丁SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "未跟踪源码SHA256": {},
+  "开始时间": "2026-11-12T02:15:21.403Z",
+  "历史报告归档": "/private/tmp/svg-render-mac-volume/svg-render/报告/mac-归档-2026-11-12T02-15-21-403Z",
+  "本轮状态": "已运行",
+  "来源文件": "out/mac/skia/mac-arm64/link-result.json"
+}
