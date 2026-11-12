@@ -279,7 +279,7 @@ int main(int argc, char** argv) {
             throw std::runtime_error("无效的输出大小：" + std::to_string(width) + "×" + std::to_string(height));
         }
         SkBitmap bitmap;
-        if (!bitmap.tryAllocPixels(SkImageInfo::Make(width, height, kRGBA_8888_SkColorType,
+        if (!bitmap.tryAllocPixels(SkImageInfo::Make(width, height, kN32_SkColorType,
                                                     kPremul_SkAlphaType, SkColorSpace::MakeSRGB()))) {
             throw std::runtime_error("无法分配画布：" + std::to_string(width) + "×" + std::to_string(height));
         }
