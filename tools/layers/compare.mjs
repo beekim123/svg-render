@@ -62,6 +62,7 @@ for (const [source, frames] of groups) {
     配对: rows,
   });
   assets.push({素材: source, 报告: path.relative(reportDirectory, path.join(target, 'index.html')), 汇总: report.汇总});
+  console.log(`素材 ${source}：通过 ${report.汇总.通过数}/${report.汇总.配对数}，2倍上限 ${report.汇总['2倍上限数']}，失败 ${report.汇总.失败数}`);
   for (const {图片, ...row} of rows) metrics.push(row);
 }
 const report = {

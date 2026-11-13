@@ -24,6 +24,20 @@ float reconstruction_weight(float distance) {
 	return sin(angle) * sin(angle / 3.0) / (angle * angle / 3.0);
 }
 
+vec4 premultiplied_texel(vec4 value, vec2 point, vec2 texture_size) {
+	if (straight_texture) {
+		value.rgb *= value.a;
+	}
+	if (use_clip_texture) {
+		// Clip source texels before resampling the transformed group.
+		vec2 local = content_rect.xy + (point + vec2(0.5)) / texture_size * content_rect.zw;
+		vec2 uv = (local - clip_rect.xy) / clip_rect.zw;
+		float inside = step(0.0, uv.x) * step(0.0, uv.y) * step(uv.x, 1.0) * step(uv.y, 1.0);
+		value *= texture(clip_texture, uv).a * inside;
+	}
+	return value;
+}
+
 void fragment() {
 	ivec2 size = textureSize(TEXTURE, 0);
 	vec2 position = UV * vec2(size) - vec2(0.5);
@@ -31,20 +45,44 @@ void fragment() {
 	vec2 fraction = fract(position);
 	vec4 composed = vec4(0.0);
 	vec2 center_distance = abs(position - round(position));
-	if (max(center_distance.x, center_distance.y) < 0.001) {
-		composed = texelFetch(TEXTURE, clamp(ivec2(round(position)), ivec2(0), size - ivec2(1)), 0);
-		if (straight_texture) {
-			composed.rgb *= composed.a;
+	vec2 step_x = dFdx(position);
+	vec2 step_y = dFdy(position);
+	float footprint = max(length(step_x), length(step_y));
+	if (footprint <= 1.001 && max(center_distance.x, center_distance.y) < 0.001) {
+		ivec2 point = clamp(ivec2(round(position)), ivec2(0), size - ivec2(1));
+		composed = premultiplied_texel(texelFetch(TEXTURE, point, 0), vec2(point), vec2(size));
+	} else if (footprint > 2.001) {
+		// Strong compression covers more than the four texels of one bilinear lookup.
+		int count_x = int(clamp(ceil(length(step_x)), 1.0, 32.0));
+		int count_y = int(clamp(ceil(length(step_y)), 1.0, 32.0));
+		for (int iy = 0; iy < count_y; iy++) {
+			for (int ix = 0; ix < count_x; ix++) {
+				vec2 offset = step_x * ((float(ix) + 0.5) / float(count_x) - 0.5) + step_y * ((float(iy) + 0.5) / float(count_y) - 0.5);
+				vec2 sample_position = position + offset;
+				if (!straight_texture && !use_clip_texture) {
+					composed += texture(TEXTURE, (sample_position + vec2(0.5)) / vec2(size));
+				} else {
+					ivec2 sample_base = ivec2(floor(sample_position));
+					vec2 sample_fraction = fract(sample_position);
+					for (int y = 0; y <= 1; y++) {
+						for (int x = 0; x <= 1; x++) {
+							ivec2 point = clamp(sample_base + ivec2(x, y), ivec2(0), size - ivec2(1));
+							vec4 value = premultiplied_texel(texelFetch(TEXTURE, point, 0), vec2(point), vec2(size));
+							composed += value * (x == 0 ? 1.0 - sample_fraction.x : sample_fraction.x) * (y == 0 ? 1.0 - sample_fraction.y : sample_fraction.y);
+						}
+					}
+				}
+			}
 		}
-	} else if (max(length(dFdx(position)), length(dFdy(position))) > 1.001) {
-		if (!straight_texture) {
+		composed /= float(count_x * count_y);
+	} else if (footprint > 1.001) {
+		if (!straight_texture && !use_clip_texture) {
 			composed = texture(TEXTURE, UV);
 		} else {
 			for (int y = 0; y <= 1; y++) {
 				for (int x = 0; x <= 1; x++) {
 					ivec2 point = clamp(base + ivec2(x, y), ivec2(0), size - ivec2(1));
-					vec4 value = texelFetch(TEXTURE, point, 0);
-					value.rgb *= value.a;
+					vec4 value = premultiplied_texel(texelFetch(TEXTURE, point, 0), vec2(point), vec2(size));
 					composed += value * (x == 0 ? 1.0 - fraction.x : fraction.x) * (y == 0 ? 1.0 - fraction.y : fraction.y);
 				}
 			}
@@ -54,10 +92,7 @@ void fragment() {
 		for (int y = -2; y <= 3; y++) {
 			for (int x = -2; x <= 3; x++) {
 				ivec2 point = clamp(base + ivec2(x, y), ivec2(0), size - ivec2(1));
-				vec4 value = texelFetch(TEXTURE, point, 0);
-				if (straight_texture) {
-					value.rgb *= value.a;
-				}
+				vec4 value = premultiplied_texel(texelFetch(TEXTURE, point, 0), vec2(point), vec2(size));
 				float weight = reconstruction_weight(float(x) - fraction.x) * reconstruction_weight(float(y) - fraction.y);
 				composed += value * weight;
 				total_weight += weight;
@@ -67,12 +102,5 @@ void fragment() {
 		composed.a = clamp(composed.a, 0.0, 1.0);
 		composed.rgb = clamp(composed.rgb, vec3(0.0), vec3(composed.a));
 	}
-	float coverage = 1.0;
-	if (use_clip_texture) {
-		vec2 local = content_rect.xy + UV * content_rect.zw;
-		vec2 uv = (local - clip_rect.xy) / clip_rect.zw;
-		float inside = step(0.0, uv.x) * step(0.0, uv.y) * step(uv.x, 1.0) * step(uv.y, 1.0);
-		coverage = texture(clip_texture, uv).a * inside;
-	}
-	COLOR = vec4(composed.rgb * modulation.rgb, composed.a) * modulation.a * coverage;
+	COLOR = vec4(composed.rgb * modulation.rgb, composed.a) * modulation.a;
 }
