@@ -11,9 +11,17 @@ var duration: float = 0.0
 var elapsed: float = 0.0
 var playing: bool = true
 var asset_size: Vector2 = Vector2.ZERO
+var renderer_mode: String = "skia"
+var quality_mode: bool = false
+var using_runtime: bool = false
+var render_stats: Dictionary = {}
+var runtime_image: Image
 var _directory: String = ""
 var _texture_scale: float = 2.0
 var _opacity_nodes: Dictionary = {}
+var _runtime_renderer: RefCounted
+var _runtime_sprite: Sprite2D
+var _runtime_texture: ImageTexture
 
 static func _decompose_matrix(m: Array) -> Array:
 	var sx: float = sqrt(float(m[0]) * float(m[0]) + float(m[1]) * float(m[1]))
@@ -50,6 +58,12 @@ func load_data(data: Dictionary, directory: String) -> void:
 		child.free()
 	layers.clear()
 	_opacity_nodes.clear()
+	_runtime_renderer = null
+	_runtime_sprite = null
+	_runtime_texture = null
+	render_stats.clear()
+	runtime_image = null
+	using_runtime = renderer_mode != "png" and data.has("runtimeScene")
 	_directory = directory
 	_texture_scale = float(data.get("textureScale", 2.0))
 	asset_size = Vector2(data.width, data.height)
@@ -62,7 +76,19 @@ func load_data(data: Dictionary, directory: String) -> void:
 	for track: Dictionary in tracks:
 		if track.property == "opacity":
 			_opacity_nodes[int(track.node)] = true
-	_compose(self, [0, 0, asset_size.x, asset_size.y], [_create_layer(data.root)])
+	if using_runtime:
+		if not ClassDB.class_exists("SkiaLayerRenderer"):
+			push_error("SkiaLayerRenderer 未载入，请先构建 GDExtension")
+			get_tree().quit(1)
+			return
+		_runtime_renderer = ClassDB.instantiate("SkiaLayerRenderer")
+		_runtime_renderer.call("load_scene", ProjectSettings.globalize_path(directory.path_join(str(data.runtimeScene))))
+		_runtime_sprite = Sprite2D.new()
+		_runtime_sprite.centered = false
+		_runtime_sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		add_child(_runtime_sprite)
+	else:
+		_compose(self, [0, 0, asset_size.x, asset_size.y], [_create_layer(data.root)])
 	seek(0.0)
 
 func _texture(filename: String) -> ImageTexture:
@@ -148,13 +174,39 @@ func seek(milliseconds: float) -> void:
 		else:
 			following = middle
 	var weight: float = 0.0 if index == following else (milliseconds - float(times[index])) / (float(times[following]) - float(times[index]))
+	var poses: Dictionary = {}
+	var opacities: Dictionary = {}
 	for track: Dictionary in tracks:
 		var node_id: int = int(track.node)
-		var layer: Node2D = layers[node_id]
 		if track.property == "transform":
-			layer.transform = _matrix(interpolate_matrix(track.values[index], track.values[following], weight))
+			var value: Array = interpolate_matrix(track.values[index], track.values[following], weight)
+			if using_runtime:
+				poses[node_id] = value
+			else:
+				layers[node_id].transform = _matrix(value)
 		else:
-			layer.modulate.a = lerpf(float(track.values[index]), float(track.values[following]), weight)
+			var value: float = lerpf(float(track.values[index]), float(track.values[following]), weight)
+			if using_runtime:
+				opacities[node_id] = value
+			else:
+				layers[node_id].modulate.a = value
+	if using_runtime:
+		_render_runtime(poses, opacities)
+
+func _render_runtime(poses: Dictionary, opacities: Dictionary) -> void:
+	var output_scale: float = minf(2.0, maxf(global_transform.x.length(), global_transform.y.length()))
+	var result: Dictionary = _runtime_renderer.call("render", poses, opacities, output_scale, global_transform, quality_mode)
+	var image: Image = result.image
+	runtime_image = image
+	if _runtime_texture == null or _runtime_texture.get_size() != Vector2(image.get_size()):
+		_runtime_texture = ImageTexture.create_from_image(image)
+		_runtime_sprite.texture = _runtime_texture
+	else:
+		_runtime_texture.update(image)
+	_runtime_sprite.scale = Vector2.ONE / output_scale
+	_runtime_sprite.position = result.get("offset", Vector2.ZERO)
+	render_stats = result.duplicate()
+	render_stats.erase("image")
 
 func _process(delta: float) -> void:
 	if playing:

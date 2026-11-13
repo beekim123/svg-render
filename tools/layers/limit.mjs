@@ -4,6 +4,10 @@ const tolerance = 1e-6;
 // Claude confirmed these frames in HANDOFF; enlargement alone does not identify the cause of other frames' differences.
 const confirmedFrames = new Set(['新画法/ui_heart/gain/279.0587@2x.png', '新画法/ui_heart/gain/350@2x.png']);
 
+export function usesPngRenderer(bundle, renderer = 'skia') {
+  return renderer === 'png' || !bundle.runtimeScene;
+}
+
 function sampleInterval(times, time) {
   time = Math.min(times.at(-1), Math.max(times[0], time));
   let first = 0;

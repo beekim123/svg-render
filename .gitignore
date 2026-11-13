@@ -18,3 +18,5 @@ __pycache__/
 
 # Godot 导入缓存
 godot/.godot/
+godot/bin/
+godot/*.uid

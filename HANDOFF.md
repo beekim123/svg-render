@@ -1,83 +1,52 @@
 # 交接
 
-> 2026-11-12。方向、判法、阈值由 Claude 定；先读 AGENTS.md，进度只写本文件。
+> 2026-11-12。方向、判法、阈值由 Claude 定；进度只写本文件。
 
 ## 当前
 
-- 分支 stage-1。A技术验证完成：118/118件、7522/7522帧，最低SSIM 0.9956843486887914；用户验收未进行。
-- B已导出118件、126变体、241动作；7522帧Chrome运动自差基准与Godot截图均已生成，基准生成没有启动Chrome。
-- 新判法的五件定向580帧：578普通通过、2倍上限2、失败0；已按顺序进入全量。
-- 全量7522帧：7382普通通过、2倍上限2、失败138、出错0，B尚未满足验收。完整报告 `out/mac/新画法/layers/compare/index.html`。
-- 已修强缩小漏采样和裁剪次序；原140个非普通通过帧加3个控制帧复核：24普通通过、2上限、117失败，原失败恢复21帧；不是整套新回归。
-- 定向复核报告 `out/mac/新画法/layers/failure-compare/index.html`；全量138帧及定向117帧的分组清单、复现命令、图片已整理到 `报告/阶段1B/结果.json`。
-- 共享纹理869张：PNG 5.724625MB，RGBA8解码约123.529MB（不含合成缓冲）；118件全部动作样本合计最多1809、中位151，单动作最多585、中位151。
-- 本轮用户明确保持当前方案、交Claude重定：正式上限2倍，未加LOD；原生1倍LOD单帧诊断也未全过，先前提议已撤回。
-- B未进入用户演示验收，最终帧率待全量满足判法后实测；C未开始。版本库内报告19,992,740字节。
+- 分支 stage-1。A 技术验证 118/118 件、7522/7522 帧，最低 SSIM 0.9956843486887914；用户验收未进行。
+- B2 已接入 Godot GDExtension，链接阶段 0 Skia；118 件、126 变体、241 动作已导出运行时场景与原值表，原 869 张 PNG 退回路径保留。
+- 指定单帧 3/3 过运动线；card_gem_bar/待机/0@1x 对 Skia 原生 1 倍 SSIM=1。relic_same4/待机/1250@2x、ui_heart/gain/279.0587@2x 均通过。
+- 最终 143 帧质量模式复核：142 通过、1 失败、0 上限、0 出错，最低 SSIM 0.9833457581944102。报告 `out/mac/新画法/layers/b2-failure-compare/index.html`。
+- 已修 ui_rule_sign/flip/200@1x 的零缩放细线：D、R 保留双精度，消除奇异矩阵的抵消残差；此件复核 4/4。
+- 143 帧质量模式重画均值 0.833 ms、P95 3.485 ms、最大 8.082 ms；单层超过 8 ms 清单为空。逐帧/逐层数据 `out/mac/新画法/layers/b2-failure-plan.json.metrics.json`。
+- 现停在 143 帧技术复核；本轮 7522 帧全量、118 件网格帧率/预算实测和用户演示验收均未开始。C 未开始。
 
-## A 的判法（Claude）
+## Claude 定：B2（阈值和 2 倍上限不改）
 
-- A比Chrome整图参照ref-img；页面ref带合成层，留给B运动线；原参照7439/7522，差来自合成层。复现 `实验/capture/img-ref-probe.mjs`。 `tools/ref/page.mjs` 旧改动影响的校准凭据，下次全量验收重签；本轮未改tools/ref或阈值.json。
+- 包含场景 JSON 与值表；原生绘制复用 `tools/scene/draw.cpp`，默认不加载层 PNG；`--renderer png` 可选择原路径。
+- 按当前输出倍率在整数像素格生成静止缓存；D 为单位矩阵或整数像素平移（误差 <0.001 px）时 1:1 贴缓存，只变透明度时合成调制。
+- 小数平移、旋转、缩放用精确矩阵重画到屏幕 1:1 纹理；裁剪组整组交 Skia，B2 无 SubViewport 遮罩。
+- 实时模式全游戏帧共享 8 ms 重画预算，超出后余层退回缓存加变换；截图质量模式不限预算。逐层记录重画毫秒。
+- 所有纹理密度不超过输出倍率，最高 2 倍；B2 未过帧计失败。Chrome 运动自差基准与 `阈值.json` 保持原值。
+- 原采样规则保留：20ms 网格加关键点，中点真值二分至最短 1ms，2 倍四角误差限 0.25px、alpha 限 1/255；播放器二分不等间距 times。
+- R 为完整静止参考，奇异静止层沿用原选定可逆参考；相对量 D父⁻¹·D自己写表，运行时恢复完整 D·R。
 
-## Claude 定：B 的采样与纹理
+## 验证顺序
 
-- 从document.getAnimations/effect.getKeyframes补关键点、开始结束与触发前环境动画相位；20ms网格加关键点，播放器二分查不等间距times。
-- 中点seek真值，2倍输出下最终纹理/合成矩形四角误差>0.25px或alpha误差>1/255则二分，最短1ms；JS/GDScript同一显式公式，36组检查已过。
-- 静止姿态去动画，完整参考R含祖先和小数位移；R不可逆选全部样本中最大缩放的可逆姿态。Skia按R画在整数像素格，每变体跨动作共享。
-- 倍率2×D最大缩放，限1–2并向上取0.25，缩放取最大奇异值；D=M·R⁻¹，相对量D父⁻¹·D自己离线写表，父奇异用等价R父·局部矩阵·R自己⁻¹。
-- SubViewport/裁剪在静止设备空间；用户已允许无裁剪组用运动包围盒并集，有裁剪组按遮罩。保留真实默认alpha和零缩放层几何。
-
-## Claude 定：剩余 29 帧（2倍上限不变）
-
-- 原29帧Chrome live对ref有27帧不过，Godot有26帧更接近ref；原因同为纹理变换重采样。不再加密度、不换Lanczos3，性能留以后。
-- 运动基准由ref/live全部7522帧生成；SSIM=max(0.95,min(原线,1-(1-自差)×1.2))，其余三指标=max(原线,自差×1.2)，最大块只缩放原线一次；GPU旧行为不变。
-- 上限类要求真实可见输出层D>1、纹理密度2被放大、仅SSIM未过；只自动归类已确认的ui_heart/gain/279.0587@2x与350@2x，其他新未过帧计失败。
-- 报告保留原指标/通过布尔，单列上限且不计失败；缺帧基准直接报完整key。专项检查与独立代码复核已过。
-
-## 本轮修正
-
-- 强压缩时一个输出像素覆盖6–13个源像素，原2×2 bilinear会漏绳/衣边；现在按屏幕两轴足迹平均，中心直取仅用于未缩小情况，Lanczos3公式未动。
-- 裁剪在源采样像素上先乘遮罩，再重采样，修正原先在变换采样后乘中心遮罩的次序；无窗口与实际143帧检查已执行。
-- 1倍栅格反例card_gem_bar/待机/0@1x：Godot SSIM .970304、大差 .024733；正确Skia2倍整图缩1倍也为 .971890/.024510。
-- 独立原生1倍诊断SSIM升至 .982633，但大差 .051248 仍超 .01；单加LOD不足以解决，未采用。相关四图与命令在阶段1B报告。
-
-## Claude 定：新未过帧（2026-11-12，阈值和 2 倍上限不改）
-
-**诊断（Claude 复核 117 帧）：**
-- 1 倍 70 帧：2 倍纹理缩到 1 倍，本身就和 1 倍矢量栅格不一样。我把正确的 Skia 2 倍图按预乘 2×2 精确平均缩到 1 倍，card_gem_bar 仍是 0.9719、ui_hp_frame 大差 0.0387，和 Godot 一样不过；Skia 直接画 1 倍和 ref 相同。不是重采样滤镜的问题。
-- 2 倍 47 帧：待机微晃（平移 1px、旋转 2–3°）和动作帧。纹理只要被小数平移或旋转，就要重采样，细线变软。Chrome 播放时是每帧重画矢量，所以 live 不软。
-- 关键证据：A 的 Skia 每帧矢量图对 ref，用运动线、不加基准，117 帧过 116。剩下的 fx_kill/play/300@1x 是 A 里那类 Chrome 合成层帧，加基准就过。**所以每帧重画就能全过，只是性能问题。**
-
-**方案 B2：Skia 搬进 Godot 运行时，缓存不精确时就重画。**
-1. 写 GDExtension（godot-cpp），链接阶段 0 的 Skia，复用 `tools/scene/draw.cpp` 的绘制代码。包里放场景 JSON 和值表，不再放层纹理 PNG。
-2. 载入时按当前输出倍率（1 倍或 2 倍）用 Skia 画各层静止内容，放在该倍率的整数像素格上。1 倍输出用 1 倍纹理，不再从 2 倍缩。
-3. 每帧每层：
-   - D(t) 是单位矩阵，或只是整数像素平移（误差 < 0.001 px）→ 直接贴缓存，1:1。只变透明度也直接贴，透明度用 modulate。
-   - 其他情况（小数平移、旋转、缩放）→ 用 Skia 按当前精确矩阵重画这一层（含裁剪），画到和屏幕 1:1 的纹理上。
-   - 有裁剪的组整组交给 Skia 画，不再用 SubViewport 加遮罩。
-4. 预算：游戏里每帧重画总时间上限 8 ms，超了剩下的层这一帧退回缓存加变换。验证截图用不限预算的质量模式，先证明画对；速度单独记。
-   - Claude 实测整件 Skia 重画（上限估计，实际只重画动的层）：小图标 0.06–0.8 ms，ui_heart 2.6 ms，mon_portrait 5.3 ms，bg_tile_hall 13.8 ms，mon_dragon 36.6 ms（2 倍）。
-   - 记录每层重画毫秒，超过 8 ms 的层列表写进本文件，以后优化用。
-5. 2 倍上限照旧：所有纹理密度都不超过输出倍率，重画纹理也是 1:1。原来的「2 倍上限」类会自然消失；剩下的照常算失败。
-6. 运动线的 Chrome 自差基准保留。阈值.json 不改。
-
-**验证顺序：**
-1. 单帧：`card_gem_bar/待机/0@1x` 对 Skia 1 倍要 SSIM ≥ 0.999；`relic_same4/待机/1250@2x`、`ui_heart/gain/279.0587@2x` 过运动线。
-2. 143 帧复核集全过，再跑全量 7522 帧。
-3. 网格演示（8 ms 预算）：118 件待机，记录帧率、每帧重画毫秒、退回次数。退回多不算失败，写进本文件，性能以后再优化。
-4. 然后停下等用户看演示。
-
-## 现在做
-
-1. 按上面的 B2 做，按验证顺序跑。现在的 PNG 纹理路径留着当退回路径，不删。
-2. C 接 gemcard-demo 并留精灵图开关；开始 C 前问用户。
+1. 指定三个单帧（已通过）。
+2. 143 帧全过后，再跑 7522 帧全量（当前 142/143）。
+3. 网格演示 118 件待机，8 ms 预算；记录 FPS、每帧重画毫秒、退回次数和超过 8 ms 的层。
+4. 然后停下等用户看演示；开始 C 接 gemcard-demo、保留精灵图开关前问用户。
 
 ## 命令
 
-- 缓存 `SVG_RENDER_CACHE=/private/tmp/svg-render-mac-cache`，计算1 worker、数值库线程1；run.mjs每次重新识别内屏。
-- 基准 `node tools/layers/motion-baseline.mjs`；导出 `node tools/layers/batch.mjs --id 新画法/素材名`，省略id生成全部。
-- 计划 `node tools/layers/capture.mjs --id 新画法/素材名 --time 时刻 --scale 倍率`；截图 `node tools/layers/run.mjs -- --plan "$PWD/out/mac/新画法/layers/capture-plan.json"`。
-- 对照 `node tools/layers/compare.mjs --运动基准 out/mac/新画法/layers/motion-baseline.json`；演示 `node tools/layers/run.mjs`。
+- 缓存 `SVG_RENDER_CACHE=/private/tmp/svg-render-mac-cache`；计算 1 worker、数值库线程 1；run.mjs 每次重新识别内屏。
+- 构建 `node tools/layers/build-runtime.mjs`；本地绑定缓存 `godot-cpp-10.0.0-stable`，Godot 4.7.2，arm64。
+- 导出 `node tools/layers/batch.mjs --runtime-only` 复用原值表/PNG；正常 batch 也写 runtime.json。
+- 143 帧截图 `node tools/layers/run.mjs -- --plan "$PWD/out/mac/新画法/layers/b2-failure-plan.json"`。
+- 对照 `node tools/layers/compare.mjs --plan out/mac/新画法/layers/b2-failure-plan.json --report out/mac/新画法/layers/b2-failure-compare`。
+- 全量计划 `out/mac/新画法/layers/b2-capture-plan.json`（7522 帧）；演示 `node tools/layers/run.mjs`。
+- 集成检查 `../gemcard-demo/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://check_runtime.gd`；JS 检查 `node tools/layers/check-runtime.mjs`、`node tools/layers/check-limit.mjs`。
 
-## 要 Claude 定的事
+## 要 Claude 定：fx_kill/play/300@1x
 
-（GPT 填，一条一行）
+- B2 对 Chrome 整图 ref-img：SSIM 0.999999282、大差 0；对页面 ref：大差 483/47535=0.010160934，超过 0.01。A 逐帧 Skia 和 ref-img 对页面 ref 也同样失败。
+- 正确 key 的 ref/live 基准大差 316/48197=0.006556425；按既定 ×1.2 公式阈值仍为 0.01。「加基准就过」的前提与实测冲突，需要 Claude 定此合成层帧的处理。
+- 两图：`out/mac/新画法/ref/新画法/fx_kill/play/300@1x.png`、`out/mac/新画法/godot-b2/新画法/fx_kill/play/300@1x.png`。
+- 复现：`node tools/compare/cli.mjs out/mac/新画法/ref/新画法/fx_kill/play/300@1x.png out/mac/新画法/godot-b2/新画法/fx_kill/play/300@1x.png --线 运动 --运动基准 out/mac/新画法/layers/motion-baseline.json --报告 /private/tmp/b2-fx-kill-300`。
+
+## 下一步与执行人
+
+- 最近一步：用户在 Claude 聊天发送「读 HANDOFF.md『要 Claude 定：fx_kill/play/300@1x』，根据两图与命令决定此已确认合成层帧的处理，写回 HANDOFF；B2 当前 142/143，阈值和基准未改。」
+- Claude 定后，由本 Codex 会话先复核该帧及 143 集合；通过后按序跑 7522、网格实测，再停下等用户看演示。

@@ -6,10 +6,12 @@ import {structureLayers, setReferenceRects, relativePose, compileDeviceLayers} f
 import {sampleAdaptive} from './sample.mjs';
 import {inverse, maxScale} from './math.mjs';
 import {mergeVariants, migrateAssets, selectVariants} from './catalog.mjs';
+import {runtimeScene, restoreReferences} from './runtime.mjs';
 
 const args = process.argv.slice(2);
 const option = (name, fallback) => args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
 const selected = args.flatMap((arg, index) => arg === '--id' ? [args[index + 1]] : []);
+const runtimeOnly = args.includes('--runtime-only');
 const output = path.resolve(option('--out', 'out/mac/新画法'));
 const binary = path.resolve(option('--binary', 'out/mac/scene/scene-draw'));
 const directory = path.join(output, 'layers');
@@ -19,7 +21,7 @@ const groups = selectVariants(report.动作, selected);
 if (!groups.size) throw new Error(`没有所选动作：${selected.join(', ')}`);
 await fs.mkdir(directory, {recursive: true});
 let assets = [];
-if (selected.length) {
+if (selected.length || runtimeOnly) {
   try {
     assets = migrateAssets(JSON.parse(await fs.readFile(path.join(directory, 'index.json'), 'utf8')).assets);
   } catch (error) {
@@ -44,6 +46,35 @@ async function exportVariant(group, variant) {
   const rest = await session.rest({svg, id: variant.source, color, tracks});
   const structure = structureLayers(rest.scene, tracks);
   const nodes = structure.layers.map(layer => layer.node);
+  const target = path.join(directory, variant.source);
+  if (runtimeOnly) {
+    const actions = [];
+    for (const summary of variant.actions) {
+      const filename = path.join(target, summary.动作, 'bundle.json');
+      const bundle = JSON.parse(await fs.readFile(filename, 'utf8'));
+      actions.push({...bundle, summary, filename});
+    }
+    let current;
+    const references = await restoreReferences(structure, rest.matrices, actions, async (action, time, numbers) => {
+      if (current !== action) {
+        current = action;
+        const description = entry.动作.find(item => item.名字 === action.summary.动作.replace(/@switch\d+$/, ''));
+        await session.load({svg, id: variant.source, color, action: description, triggerTime: action.summary.触发毫秒});
+      }
+      return session.sample(time, numbers);
+    });
+    await fs.writeFile(path.join(target, 'runtime.json'), JSON.stringify(runtimeScene(structure, references, rest.opacities)));
+    for (const action of actions) {
+      const {summary, filename, ...bundle} = action;
+      await fs.writeFile(filename, JSON.stringify({...bundle, runtimeScene: '../runtime.json'}));
+      actionCount++;
+    }
+    const previous = assets.find(asset => asset.id === group.id).variants.find(item => item.source === variant.source);
+    textureBytes += previous.textureBytes;
+    variantCount++;
+    console.log(`${variant.source}：运行时场景，保留 ${actions.length} 动作和 ${previous.textureCount} 张退回纹理`);
+    return previous;
+  }
   const actions = [];
   for (const summary of variant.actions) {
     const action = entry.动作.find(action => action.名字 === summary.动作.replace(/@switch\d+$/, ''));
@@ -96,7 +127,8 @@ async function exportVariant(group, variant) {
     const next = rects(compiled.root);
     changed ||= structure.layers.some(layer => next[layer.node].some((value, index) => value !== previous[layer.node][index]));
   } while (changed);
-  const target = path.join(directory, variant.source);
+  await fs.mkdir(target, {recursive: true});
+  await fs.writeFile(path.join(target, 'runtime.json'), JSON.stringify(runtimeScene(structure, references, rest.opacities)));
   await fs.rm(path.join(target, 'textures'), {recursive: true, force: true});
   await fs.mkdir(path.join(target, 'textures'), {recursive: true});
   let bytes = 0;
@@ -125,7 +157,7 @@ async function exportVariant(group, variant) {
     await fs.rm(actionDirectory, {recursive: true, force: true});
     await fs.mkdir(actionDirectory, {recursive: true});
     const bundleFile = path.join(actionDirectory, 'bundle.json');
-    await fs.writeFile(bundleFile, JSON.stringify({width: structure.width, height: structure.height, textureScale: 2, root: compiled.root, times: action.times, tracks: runtime, kind: action.summary.种类, period: action.summary.周期毫秒, duration: action.duration}));
+    await fs.writeFile(bundleFile, JSON.stringify({width: structure.width, height: structure.height, textureScale: 2, root: compiled.root, runtimeScene: '../runtime.json', times: action.times, tracks: runtime, kind: action.summary.种类, period: action.summary.周期毫秒, duration: action.duration}));
     result.actions.push({name: action.summary.动作, bundle: path.relative(directory, bundleFile)});
     result.samples.push({action: action.summary.动作, count: action.times.length});
     actionCount++;

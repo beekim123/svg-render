@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {densityLimitEvidence, isDensityLimit} from './limit.mjs';
+import {densityLimitEvidence, isDensityLimit, usesPngRenderer} from './limit.mjs';
 
 const matrix = scale => [scale, 0, 0, scale, 0, 0];
 const texture = (rasterScale = 2) => ({texture: 'texture.png', rect: [0, 0, 10, 10], rasterScale});
@@ -33,6 +33,9 @@ assert.equal(densityLimitEvidence(bundle(layer(0, [texture()], {matrix: matrix(1
 
 const group = (extra = {}) => ({区域: '全图', 线: '运动', 指标: {ssim: 0.971, 大差比例_不算边: 0.001, 最大差异块: 0, 平均偏色: 0}, 阈值: {ssim: 0.975, 大差比例_不算边: 0.01, 最大差异块: 128, 平均偏色: 1.5}, 通过: false, 未通过: ['ssim'], ...extra});
 const row = {路径: '新画法/ui_heart/gain/279.0587@2x.png', 通过: false, 运动基准: {ssim: 0.98}, 分组: [group()]};
+assert.equal(usesPngRenderer({runtimeScene: '../runtime.json'}), false);
+assert.equal(usesPngRenderer({runtimeScene: '../runtime.json'}, 'png'), true);
+assert.equal(usesPngRenderer({}), true);
 assert.equal(isDensityLimit(row, evidence), true);
 assert.equal(isDensityLimit({...row, 路径: '新画法/ui_heart/gain/350@2x.png'}, evidence), true);
 assert.equal(isDensityLimit({...row, 路径: '新画法/ui_heart/gain/300@2x.png'}, evidence), false);
